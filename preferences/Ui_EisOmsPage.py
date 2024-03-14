@@ -1,0 +1,166 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file '/home/green/s11_trunk/preferences/EisOmsPage.ui'
+#
+# Created by: PyQt4 UI code generator 4.12.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_eisOmsPage(object):
+    def setupUi(self, eisOmsPage):
+        eisOmsPage.setObjectName(_fromUtf8("eisOmsPage"))
+        eisOmsPage.resize(526, 300)
+        self.gridLayout = QtGui.QGridLayout(eisOmsPage)
+        self.gridLayout.setMargin(4)
+        self.gridLayout.setSpacing(4)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.lblDriverName = QtGui.QLabel(eisOmsPage)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblDriverName.sizePolicy().hasHeightForWidth())
+        self.lblDriverName.setSizePolicy(sizePolicy)
+        self.lblDriverName.setMinimumSize(QtCore.QSize(130, 0))
+        self.lblDriverName.setObjectName(_fromUtf8("lblDriverName"))
+        self.gridLayout.addWidget(self.lblDriverName, 0, 0, 1, 1)
+        self.cmbDriverName = QtGui.QComboBox(eisOmsPage)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cmbDriverName.sizePolicy().hasHeightForWidth())
+        self.cmbDriverName.setSizePolicy(sizePolicy)
+        self.cmbDriverName.setObjectName(_fromUtf8("cmbDriverName"))
+        self.cmbDriverName.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbDriverName, 0, 1, 1, 1)
+        self.lblServerName = QtGui.QLabel(eisOmsPage)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblServerName.sizePolicy().hasHeightForWidth())
+        self.lblServerName.setSizePolicy(sizePolicy)
+        self.lblServerName.setMinimumSize(QtCore.QSize(130, 0))
+        self.lblServerName.setObjectName(_fromUtf8("lblServerName"))
+        self.gridLayout.addWidget(self.lblServerName, 1, 0, 1, 1)
+        self.edtServerName = QtGui.QLineEdit(eisOmsPage)
+        self.edtServerName.setMinimumSize(QtCore.QSize(300, 0))
+        self.edtServerName.setObjectName(_fromUtf8("edtServerName"))
+        self.gridLayout.addWidget(self.edtServerName, 1, 1, 1, 2)
+        spacerItem = QtGui.QSpacerItem(77, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem, 1, 3, 1, 1)
+        self.lblServerPort = QtGui.QLabel(eisOmsPage)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblServerPort.sizePolicy().hasHeightForWidth())
+        self.lblServerPort.setSizePolicy(sizePolicy)
+        self.lblServerPort.setObjectName(_fromUtf8("lblServerPort"))
+        self.gridLayout.addWidget(self.lblServerPort, 2, 0, 1, 1)
+        self.edtServerPort = QtGui.QSpinBox(eisOmsPage)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.edtServerPort.sizePolicy().hasHeightForWidth())
+        self.edtServerPort.setSizePolicy(sizePolicy)
+        self.edtServerPort.setMaximum(99999)
+        self.edtServerPort.setObjectName(_fromUtf8("edtServerPort"))
+        self.gridLayout.addWidget(self.edtServerPort, 2, 1, 1, 1)
+        self.lblDatabaseName = QtGui.QLabel(eisOmsPage)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblDatabaseName.sizePolicy().hasHeightForWidth())
+        self.lblDatabaseName.setSizePolicy(sizePolicy)
+        self.lblDatabaseName.setMinimumSize(QtCore.QSize(130, 0))
+        self.lblDatabaseName.setObjectName(_fromUtf8("lblDatabaseName"))
+        self.gridLayout.addWidget(self.lblDatabaseName, 3, 0, 1, 1)
+        self.edtDatabaseName = QtGui.QLineEdit(eisOmsPage)
+        self.edtDatabaseName.setMinimumSize(QtCore.QSize(300, 0))
+        self.edtDatabaseName.setObjectName(_fromUtf8("edtDatabaseName"))
+        self.gridLayout.addWidget(self.edtDatabaseName, 3, 1, 1, 3)
+        self.lblUserName = QtGui.QLabel(eisOmsPage)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblUserName.sizePolicy().hasHeightForWidth())
+        self.lblUserName.setSizePolicy(sizePolicy)
+        self.lblUserName.setMinimumSize(QtCore.QSize(130, 0))
+        self.lblUserName.setObjectName(_fromUtf8("lblUserName"))
+        self.gridLayout.addWidget(self.lblUserName, 4, 0, 1, 1)
+        self.edtUserName = QtGui.QLineEdit(eisOmsPage)
+        self.edtUserName.setMinimumSize(QtCore.QSize(300, 0))
+        self.edtUserName.setObjectName(_fromUtf8("edtUserName"))
+        self.gridLayout.addWidget(self.edtUserName, 4, 1, 1, 2)
+        spacerItem1 = QtGui.QSpacerItem(77, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem1, 4, 3, 1, 1)
+        self.lblPassword = QtGui.QLabel(eisOmsPage)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblPassword.sizePolicy().hasHeightForWidth())
+        self.lblPassword.setSizePolicy(sizePolicy)
+        self.lblPassword.setMinimumSize(QtCore.QSize(130, 0))
+        self.lblPassword.setObjectName(_fromUtf8("lblPassword"))
+        self.gridLayout.addWidget(self.lblPassword, 5, 0, 1, 1)
+        self.edtPassword = QtGui.QLineEdit(eisOmsPage)
+        self.edtPassword.setMinimumSize(QtCore.QSize(300, 0))
+        self.edtPassword.setEchoMode(QtGui.QLineEdit.Password)
+        self.edtPassword.setObjectName(_fromUtf8("edtPassword"))
+        self.gridLayout.addWidget(self.edtPassword, 5, 1, 1, 2)
+        spacerItem2 = QtGui.QSpacerItem(77, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem2, 5, 3, 1, 1)
+        self.btnEisTest = QtGui.QPushButton(eisOmsPage)
+        self.btnEisTest.setObjectName(_fromUtf8("btnEisTest"))
+        self.gridLayout.addWidget(self.btnEisTest, 6, 1, 1, 1)
+        spacerItem3 = QtGui.QSpacerItem(231, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem3, 6, 2, 1, 2)
+        spacerItem4 = QtGui.QSpacerItem(20, 110, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem4, 7, 0, 1, 1)
+        self.lblDriverName.setBuddy(self.cmbDriverName)
+        self.lblServerName.setBuddy(self.edtServerName)
+        self.lblServerPort.setBuddy(self.edtServerPort)
+        self.lblDatabaseName.setBuddy(self.edtDatabaseName)
+        self.lblUserName.setBuddy(self.edtUserName)
+        self.lblPassword.setBuddy(self.edtPassword)
+
+        self.retranslateUi(eisOmsPage)
+        self.cmbDriverName.setCurrentIndex(0)
+        QtCore.QMetaObject.connectSlotsByName(eisOmsPage)
+
+    def retranslateUi(self, eisOmsPage):
+        eisOmsPage.setWindowTitle(_translate("eisOmsPage", "Подключение к БД ЕИС ОМС", None))
+        self.lblDriverName.setText(_translate("eisOmsPage", "Тип", None))
+        self.cmbDriverName.setItemText(0, _translate("eisOmsPage", "FireBird", None))
+        self.lblServerName.setText(_translate("eisOmsPage", "&Адрес", None))
+        self.edtServerName.setText(_translate("eisOmsPage", "localhost", None))
+        self.lblServerPort.setText(_translate("eisOmsPage", "По&рт", None))
+        self.lblDatabaseName.setText(_translate("eisOmsPage", "&База", None))
+        self.lblUserName.setText(_translate("eisOmsPage", "&Логин", None))
+        self.lblPassword.setText(_translate("eisOmsPage", "&Пароль", None))
+        self.btnEisTest.setText(_translate("eisOmsPage", "Проверить соединение", None))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    eisOmsPage = QtGui.QWidget()
+    ui = Ui_eisOmsPage()
+    ui.setupUi(eisOmsPage)
+    eisOmsPage.show()
+    sys.exit(app.exec_())
+

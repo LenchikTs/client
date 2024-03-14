@@ -1,0 +1,678 @@
+<ui version="4.0" >
+ <class>ResourceTemplateDialog</class>
+ <widget class="QDialog" name="ResourceTemplateDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>277</width>
+    <height>273</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Шаблон планировщика</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" >
+   <property name="margin" >
+    <number>4</number>
+   </property>
+   <property name="spacing" >
+    <number>4</number>
+   </property>
+   <item row="0" column="0" colspan="3" >
+    <layout class="QHBoxLayout" name="dateRangeLayout" >
+     <property name="spacing" >
+      <number>4</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblBegDate" >
+       <property name="text" >
+        <string>В период &amp;с</string>
+       </property>
+       <property name="buddy" >
+        <cstring>edtBegDate</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CDateEdit" name="edtBegDate" >
+       <property name="calendarPopup" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblEndDate" >
+       <property name="text" >
+        <string>&amp;По</string>
+       </property>
+       <property name="buddy" >
+        <cstring>edtEndDate</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CDateEdit" name="edtEndDate" >
+       <property name="calendarPopup" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QLabel" name="lblAmbHours" >
+     <property name="text" >
+      <string>Часы</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="buddy" >
+      <cstring>edtTimeRange1</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" >
+    <widget class="QLabel" name="lblAmbPlan" >
+     <property name="text" >
+      <string>План</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="buddy" >
+      <cstring>edtQuantity1</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <widget class="QRadioButton" name="rbSingle" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text" >
+      <string>&amp;Один план</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" >
+    <widget class="CTimeRangeEdit" name="edtTimeRange1" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="maxLength" >
+      <number>13</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" >
+    <widget class="QSpinBox" name="edtQuantity1" >
+     <property name="maximum" >
+      <number>999999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" >
+    <widget class="QRadioButton" name="rbDual" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text" >
+      <string>&amp;Нечет/чёт</string>
+     </property>
+     <property name="checked" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" >
+    <widget class="CTimeRangeEdit" name="edtTimeRange2" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="maxLength" >
+      <number>13</number>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2" >
+    <widget class="QSpinBox" name="edtQuantity2" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="maximum" >
+      <number>999999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" >
+    <widget class="QRadioButton" name="rbWeek" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text" >
+      <string>Не&amp;деля</string>
+     </property>
+     <property name="checked" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" >
+    <widget class="CTimeRangeEdit" name="edtTimeRange3" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="maxLength" >
+      <number>13</number>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2" >
+    <widget class="QSpinBox" name="edtQuantity3" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="maximum" >
+      <number>999999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" >
+    <widget class="CTimeRangeEdit" name="edtTimeRange4" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="maxLength" >
+      <number>13</number>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2" >
+    <widget class="QSpinBox" name="edtQuantity4" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="maximum" >
+      <number>999999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" >
+    <widget class="CTimeRangeEdit" name="edtTimeRange5" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="maxLength" >
+      <number>13</number>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2" >
+    <widget class="QSpinBox" name="edtQuantity5" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="maximum" >
+      <number>999999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" >
+    <widget class="CTimeRangeEdit" name="edtTimeRange6" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="maxLength" >
+      <number>13</number>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2" >
+    <widget class="QSpinBox" name="edtQuantity6" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="maximum" >
+      <number>999999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1" >
+    <widget class="CTimeRangeEdit" name="edtTimeRange7" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="maxLength" >
+      <number>13</number>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2" >
+    <widget class="QSpinBox" name="edtQuantity7" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="maximum" >
+      <number>999999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="3" >
+    <widget class="QCheckBox" name="chkFillRedDays" >
+     <property name="text" >
+      <string>&amp;Заполнять выходные дни</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>20</width>
+       <height>161</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="11" column="0" colspan="3" >
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTimeRangeEdit</class>
+   <extends>QLineEdit</extends>
+   <header>library/TimeEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>rbSingle</tabstop>
+  <tabstop>rbDual</tabstop>
+  <tabstop>rbWeek</tabstop>
+  <tabstop>edtTimeRange1</tabstop>
+  <tabstop>edtQuantity1</tabstop>
+  <tabstop>edtTimeRange2</tabstop>
+  <tabstop>edtQuantity2</tabstop>
+  <tabstop>edtTimeRange3</tabstop>
+  <tabstop>edtQuantity3</tabstop>
+  <tabstop>edtTimeRange4</tabstop>
+  <tabstop>edtQuantity4</tabstop>
+  <tabstop>edtTimeRange5</tabstop>
+  <tabstop>edtQuantity5</tabstop>
+  <tabstop>edtTimeRange6</tabstop>
+  <tabstop>edtQuantity6</tabstop>
+  <tabstop>edtTimeRange7</tabstop>
+  <tabstop>edtQuantity7</tabstop>
+  <tabstop>chkFillRedDays</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ResourceTemplateDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>239</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>157</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ResourceTemplateDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>262</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>266</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbSingle</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtTimeRange2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>55</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>164</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbSingle</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtQuantity2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>55</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>247</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtTimeRange3</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>59</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>164</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtTimeRange4</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>59</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>164</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtTimeRange5</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>59</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>164</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtQuantity3</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>59</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>247</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtQuantity4</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>59</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>247</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtQuantity5</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>59</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>247</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtTimeRange6</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>39</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>105</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtQuantity6</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>39</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>180</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtTimeRange7</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>39</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>88</x>
+     <y>201</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtQuantity7</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>38</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>176</x>
+     <y>201</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbWeek</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkFillRedDays</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>21</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

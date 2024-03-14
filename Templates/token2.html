@@ -1,0 +1,22 @@
+<HTML>
+<BODY STYLE="font-family: Arial; font-size: 8pt; color: black">
+{setPageSize('A5')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+
+
+{if:len(client.socStatuses)}
+<TABLE BORDER=2><TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100><FONT SIZE=+1>
+Л {client.socStatuses[-1].code}
+</TR></TD></FONT></TABLE>
+{end:}
+&nbsp; код: <FONT SIZE=+2>{client.id}</FONT>&nbsp;<FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT> СПб ГУЗ Городская поликлиника № 120 <BR/>
+&nbsp; <B>{currentDate}</B><BIG> ТАЛОН АМБУЛАТОРНОГО ПАЦИЕНТА </BIG><BR/>
+&nbsp; ФИО: <FONT SIZE=+2><B>{client.fullName}</B></FONT><BR/>
+&nbsp; ДР:  <B>{client.birthDate}</B> (<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС: <B>{client.SNILS}</B><BR/>
+&nbsp; <B>{client.document}</B>.<BR/> 
+&nbsp;Полис: <B>{client.policy}</B><BR/>
+&nbsp; Рег.: <B>{client.regAddress}</B><BR/>
+&nbsp; Прож.: <B>{client.locAddress}</B><BR/>
+&nbsp; Тел.: <B> {client.phones}</B>
+</BODY></HTML>

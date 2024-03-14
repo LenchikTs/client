@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RBCounterEditor</class>
+ <widget class="QDialog" name="RBCounterEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>302</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblSeparator">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Разделитель</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtSeparator</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QSpinBox" name="edtValue">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximum">
+      <number>99999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblCode">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Код</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtCode</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="edtCode">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="edtPostfix">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;body&gt;&lt;p&gt;Можно использовать функции:&lt;/p&gt;&lt;p&gt;date, id и str.&lt;/p&gt;&lt;p&gt;Формат:&lt;/p&gt;&lt;p&gt;date(yy:MM:dd)&lt;/p&gt;&lt;p&gt;id(2)&lt;/p&gt;&lt;p&gt;str(текст)&lt;/p&gt;&lt;p&gt;Возможна комбинация через ;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblPrefix">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;body&gt;&lt;p&gt;Можно использовать функции:&lt;/p&gt;&lt;p&gt;date, id и str.&lt;/p&gt;&lt;p&gt;Формат:&lt;/p&gt;&lt;p&gt;date(yy:MM:dd)&lt;/p&gt;&lt;p&gt;id(2)&lt;/p&gt;&lt;p&gt;str(текст)&lt;/p&gt;&lt;p&gt;Возможна комбинация через ;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>&amp;Префикс</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtPrefix</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblPostfix">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;body&gt;&lt;p&gt;Можно использовать функции:&lt;/p&gt;&lt;p&gt;date, id и str.&lt;/p&gt;&lt;p&gt;Формат:&lt;/p&gt;&lt;p&gt;date(yy:MM:dd)&lt;/p&gt;&lt;p&gt;id(2)&lt;/p&gt;&lt;p&gt;str(текст)&lt;/p&gt;&lt;p&gt;Возможна комбинация через ;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>П&amp;остфикс</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtPostfix</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblValue">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Текущее &amp;значение</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtValue</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblName">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Наименование</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtName</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="edtPrefix">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;body&gt;&lt;p&gt;Можно использовать функции:&lt;/p&gt;&lt;p&gt;date, id и str.&lt;/p&gt;&lt;p&gt;Формат:&lt;/p&gt;&lt;p&gt;date(yy:MM:dd)&lt;/p&gt;&lt;p&gt;id(2)&lt;/p&gt;&lt;p&gt;str(текст)&lt;/p&gt;&lt;p&gt;Возможна комбинация через ;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QLineEdit" name="edtFormat">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="edtName">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLineEdit" name="edtSeparator">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lblFormat">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Формат</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtFormat</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="cmbReset">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>Не сбрасывается</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Каждые сутки</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Каждую неделю</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Каждый месяц</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Каждый квартал</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Каждое полугодие</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Каждый год</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QCheckBox" name="chkSequenceFlag">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Флаг последовательности</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblReset">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Сброс</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbReset</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QPushButton" name="btnFormatTest">
+     <property name="text">
+      <string>Сконструировать и проверить формат</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>edtCode</tabstop>
+  <tabstop>edtName</tabstop>
+  <tabstop>edtValue</tabstop>
+  <tabstop>cmbReset</tabstop>
+  <tabstop>chkSequenceFlag</tabstop>
+  <tabstop>edtPrefix</tabstop>
+  <tabstop>edtPostfix</tabstop>
+  <tabstop>edtSeparator</tabstop>
+  <tabstop>edtFormat</tabstop>
+  <tabstop>btnFormatTest</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>RBCounterEditor</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>RBCounterEditor</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

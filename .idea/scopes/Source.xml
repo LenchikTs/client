@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Source" pattern="file:*.py&amp;&amp;!file:*i_*.py&amp;&amp;!file:*_rc.py&amp;&amp;!file:Qrc_s11main.py" />
+</component>

@@ -1,0 +1,76 @@
+<HTML> <BODY> 
+code: {action.code}<BR>
+name: {action.name}<BR>
+status: {action.status}<BR>
+office: {action.office}<BR>
+note: {action.note}<BR>
+service: {action.service}<BR>
+amount: {action.amount}<BR>
+directionDate: {action.directionDate}<BR>
+begDate: {action.begDate}<BR>
+endDate: {action.endDate}<BR>
+setPerson: {action.setPerson}<BR>
+person: {action.person}<BR>
+
+Рост и вес - если я знаю имена свойств <HR> 
+рост: { action[u'Рост'] }/{ action[u'Рост'].value }/{ action[u'Рост'].unit }/{ action[u'Рост'].norm } <HR>
+вес: { action[u'Вес'] }/{ action[u'Вес'].value }/{ action[u'Вес'].unit }/{ action[u'Вес'].norm } <HR>
+
+
+<HR>
+{action.name} - цикл по свойствам<BR>
+{for: prop in action}
+  {prop.name}: {prop.value}/{prop.unit}/{prop.norm}<BR>
+{end:}
+
+<HR>
+{action.name} - цикл по номерам свойств<BR>
+{for: i in xrange(len(action))}
+{if: i == action.currentPropertyIndex}<B>{end:}
+{i+1})  {action[i].name}: {action[i].value}/{action[i].unit}/{action[i].norm}<BR>
+{if: i == action.currentPropertyIndex}</B>{end:}
+{end:}
+
+<HR>
+{action.name} - цикл по свойствам с фильтром<BR>
+{:l = [x for x in action if x.value]}
+{for:  i,prop in enumerate(l)}
+  {i}) {prop.name}: {prop.value}/{prop.unit}/{prop.norm}<BR>
+{end:}
+<HR>
+{for:  i,prop in enumerate([x for x in action if x.value])}
+  {i}) {prop.name}: {prop.value}/{prop.unit}/{prop.norm}<BR>
+{end:}
+
+<p style="page-break-before:always;"> </p>
+<HR>
+len(actions): { len(actions)}<BR>
+{for: i,a in enumerate(actions)}
+{if: i == currentActionIndex}<B>{end:}
+{i}/{a.code}/{a.name}/{len(a)}
+{if: i == currentActionIndex}</B>{end:}
+<BR>
+{end:}
+
+<p style="page-break-before:always;"> </p>
+<HR>
+{event} - {event.client}<BR>
+цикл по диагнозам<BR>
+{for: diagnosis in event.diagnosises}
+  {diagnosis.MKB}: {diagnosis.MKB.descr}: ({diagnosis.MKBEx}: {diagnosis.MKBEx.descr})/{diagnosis.type}/{diagnosis.character}/{diagnosis.stage}/{diagnosis.dispanser}/{diagnosis.result}<BR>
+{end:}
+<BR>
+цикл по визитам<BR>
+{for: visit in event.visits}
+  {visit.scene}/
+  {visit.date}/
+  {visit.type}/
+  {visit.person}/
+  {visit.isPrimary}/
+  {visit.finance}/
+  {visit.service}/
+  {visit.payStatus}<BR>  
+{end:}
+</p>
+
+</BODY> </HTML>

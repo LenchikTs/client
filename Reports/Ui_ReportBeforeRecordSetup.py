@@ -1,0 +1,172 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file '/home/lampa/Documents/svn/trunk/Reports/ReportBeforeRecordSetup.ui'
+#
+# Created by: PyQt4 UI code generator 4.12.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_ReportBeforeRecordSetup(object):
+    def setupUi(self, ReportBeforeRecordSetup):
+        ReportBeforeRecordSetup.setObjectName(_fromUtf8("ReportBeforeRecordSetup"))
+        ReportBeforeRecordSetup.setWindowModality(QtCore.Qt.ApplicationModal)
+        ReportBeforeRecordSetup.resize(437, 300)
+        ReportBeforeRecordSetup.setSizeGripEnabled(True)
+        self.gridLayout = QtGui.QGridLayout(ReportBeforeRecordSetup)
+        self.gridLayout.setMargin(4)
+        self.gridLayout.setSpacing(4)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.lblShowAttachment = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblShowAttachment.setObjectName(_fromUtf8("lblShowAttachment"))
+        self.gridLayout.addWidget(self.lblShowAttachment, 8, 0, 1, 2)
+        self.lblNumberType = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblNumberType.setObjectName(_fromUtf8("lblNumberType"))
+        self.gridLayout.addWidget(self.lblNumberType, 2, 0, 1, 2)
+        spacerItem = QtGui.QSpacerItem(21, 21, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem, 14, 1, 1, 1)
+        self.lblAccountingSystem = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblAccountingSystem.setObjectName(_fromUtf8("lblAccountingSystem"))
+        self.gridLayout.addWidget(self.lblAccountingSystem, 4, 0, 1, 2)
+        self.cmbListOnlyQueued = QtGui.QComboBox(ReportBeforeRecordSetup)
+        self.cmbListOnlyQueued.setObjectName(_fromUtf8("cmbListOnlyQueued"))
+        self.cmbListOnlyQueued.addItem(_fromUtf8(""))
+        self.cmbListOnlyQueued.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbListOnlyQueued, 11, 2, 1, 2)
+        self.lblShowBirthDate = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblShowBirthDate.setObjectName(_fromUtf8("lblShowBirthDate"))
+        self.gridLayout.addWidget(self.lblShowBirthDate, 6, 0, 1, 2)
+        self.lblListOnlyQueued = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblListOnlyQueued.setObjectName(_fromUtf8("lblListOnlyQueued"))
+        self.gridLayout.addWidget(self.lblListOnlyQueued, 11, 0, 1, 1)
+        self.lblEncodeName = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblEncodeName.setObjectName(_fromUtf8("lblEncodeName"))
+        self.gridLayout.addWidget(self.lblEncodeName, 5, 0, 1, 1)
+        self.chkAge = QtGui.QCheckBox(ReportBeforeRecordSetup)
+        self.chkAge.setText(_fromUtf8(""))
+        self.chkAge.setObjectName(_fromUtf8("chkAge"))
+        self.gridLayout.addWidget(self.chkAge, 7, 2, 1, 2)
+        self.buttonBox = QtGui.QDialogButtonBox(ReportBeforeRecordSetup)
+        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.gridLayout.addWidget(self.buttonBox, 15, 0, 1, 4)
+        self.lblShowTime = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblShowTime.setObjectName(_fromUtf8("lblShowTime"))
+        self.gridLayout.addWidget(self.lblShowTime, 3, 0, 1, 2)
+        self.cmbShowTime = QtGui.QComboBox(ReportBeforeRecordSetup)
+        self.cmbShowTime.setObjectName(_fromUtf8("cmbShowTime"))
+        self.cmbShowTime.addItem(_fromUtf8(""))
+        self.cmbShowTime.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbShowTime, 3, 2, 1, 2)
+        self.cmbFillNote = QtGui.QComboBox(ReportBeforeRecordSetup)
+        self.cmbFillNote.setObjectName(_fromUtf8("cmbFillNote"))
+        self.cmbFillNote.addItem(_fromUtf8(""))
+        self.cmbFillNote.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbFillNote, 9, 2, 1, 2)
+        self.lblFillNote = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblFillNote.setObjectName(_fromUtf8("lblFillNote"))
+        self.gridLayout.addWidget(self.lblFillNote, 9, 0, 1, 2)
+        self.cmbNumberType = QtGui.QComboBox(ReportBeforeRecordSetup)
+        self.cmbNumberType.setObjectName(_fromUtf8("cmbNumberType"))
+        self.cmbNumberType.addItem(_fromUtf8(""))
+        self.cmbNumberType.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbNumberType, 2, 2, 1, 2)
+        self.chkAllPeriods = QtGui.QCheckBox(ReportBeforeRecordSetup)
+        self.chkAllPeriods.setText(_fromUtf8(""))
+        self.chkAllPeriods.setObjectName(_fromUtf8("chkAllPeriods"))
+        self.gridLayout.addWidget(self.chkAllPeriods, 12, 2, 1, 2)
+        self.cmbEncodeName = QtGui.QComboBox(ReportBeforeRecordSetup)
+        self.cmbEncodeName.setObjectName(_fromUtf8("cmbEncodeName"))
+        self.cmbEncodeName.addItem(_fromUtf8(""))
+        self.cmbEncodeName.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbEncodeName, 5, 2, 1, 2)
+        self.lblAllPeriods = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblAllPeriods.setEnabled(True)
+        self.lblAllPeriods.setObjectName(_fromUtf8("lblAllPeriods"))
+        self.gridLayout.addWidget(self.lblAllPeriods, 12, 0, 1, 2)
+        self.cmbAccountingSystem = CRBComboBox(ReportBeforeRecordSetup)
+        self.cmbAccountingSystem.setObjectName(_fromUtf8("cmbAccountingSystem"))
+        self.gridLayout.addWidget(self.cmbAccountingSystem, 4, 2, 1, 2)
+        self.chkBirthDate = QtGui.QCheckBox(ReportBeforeRecordSetup)
+        self.chkBirthDate.setText(_fromUtf8(""))
+        self.chkBirthDate.setObjectName(_fromUtf8("chkBirthDate"))
+        self.gridLayout.addWidget(self.chkBirthDate, 6, 2, 1, 2)
+        self.lblShowAge = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblShowAge.setObjectName(_fromUtf8("lblShowAge"))
+        self.gridLayout.addWidget(self.lblShowAge, 7, 0, 1, 2)
+        self.chkAttachment = QtGui.QCheckBox(ReportBeforeRecordSetup)
+        self.chkAttachment.setText(_fromUtf8(""))
+        self.chkAttachment.setObjectName(_fromUtf8("chkAttachment"))
+        self.gridLayout.addWidget(self.chkAttachment, 8, 2, 1, 2)
+        self.chkAllPeriodsCombine = QtGui.QCheckBox(ReportBeforeRecordSetup)
+        self.chkAllPeriodsCombine.setText(_fromUtf8(""))
+        self.chkAllPeriodsCombine.setObjectName(_fromUtf8("chkAllPeriodsCombine"))
+        self.gridLayout.addWidget(self.chkAllPeriodsCombine, 13, 2, 1, 2)
+        self.lblAllPeriodsCombine = QtGui.QLabel(ReportBeforeRecordSetup)
+        self.lblAllPeriodsCombine.setEnabled(True)
+        self.lblAllPeriodsCombine.setObjectName(_fromUtf8("lblAllPeriodsCombine"))
+        self.gridLayout.addWidget(self.lblAllPeriodsCombine, 13, 0, 1, 2)
+
+        self.retranslateUi(ReportBeforeRecordSetup)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), ReportBeforeRecordSetup.accept)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), ReportBeforeRecordSetup.reject)
+        QtCore.QMetaObject.connectSlotsByName(ReportBeforeRecordSetup)
+        ReportBeforeRecordSetup.setTabOrder(self.cmbNumberType, self.cmbShowTime)
+        ReportBeforeRecordSetup.setTabOrder(self.cmbShowTime, self.cmbAccountingSystem)
+        ReportBeforeRecordSetup.setTabOrder(self.cmbAccountingSystem, self.cmbEncodeName)
+        ReportBeforeRecordSetup.setTabOrder(self.cmbEncodeName, self.cmbFillNote)
+        ReportBeforeRecordSetup.setTabOrder(self.cmbFillNote, self.cmbListOnlyQueued)
+        ReportBeforeRecordSetup.setTabOrder(self.cmbListOnlyQueued, self.chkAllPeriods)
+        ReportBeforeRecordSetup.setTabOrder(self.chkAllPeriods, self.buttonBox)
+
+    def retranslateUi(self, ReportBeforeRecordSetup):
+        ReportBeforeRecordSetup.setWindowTitle(_translate("ReportBeforeRecordSetup", "Список предварительной записи", None))
+        self.lblShowAttachment.setText(_translate("ReportBeforeRecordSetup", "Выводить прикрепление", None))
+        self.lblNumberType.setText(_translate("ReportBeforeRecordSetup", "Номер строки", None))
+        self.lblAccountingSystem.setText(_translate("ReportBeforeRecordSetup", "Идентификатор пациента", None))
+        self.cmbListOnlyQueued.setItemText(0, _translate("ReportBeforeRecordSetup", "все записи", None))
+        self.cmbListOnlyQueued.setItemText(1, _translate("ReportBeforeRecordSetup", "только занятые", None))
+        self.lblShowBirthDate.setText(_translate("ReportBeforeRecordSetup", "Выводить дату рождения", None))
+        self.lblListOnlyQueued.setText(_translate("ReportBeforeRecordSetup", "Включать в список", None))
+        self.lblEncodeName.setText(_translate("ReportBeforeRecordSetup", "ФИО пациента", None))
+        self.lblShowTime.setText(_translate("ReportBeforeRecordSetup", "Время", None))
+        self.cmbShowTime.setItemText(0, _translate("ReportBeforeRecordSetup", "не выводить", None))
+        self.cmbShowTime.setItemText(1, _translate("ReportBeforeRecordSetup", "выводить", None))
+        self.cmbFillNote.setItemText(0, _translate("ReportBeforeRecordSetup", "не заполнять", None))
+        self.cmbFillNote.setItemText(1, _translate("ReportBeforeRecordSetup", "жалобы", None))
+        self.lblFillNote.setText(_translate("ReportBeforeRecordSetup", "Примечание", None))
+        self.cmbNumberType.setItemText(0, _translate("ReportBeforeRecordSetup", "по порядку записей в отчёте", None))
+        self.cmbNumberType.setItemText(1, _translate("ReportBeforeRecordSetup", "порядковый номер талончика", None))
+        self.cmbEncodeName.setItemText(0, _translate("ReportBeforeRecordSetup", "не шифровать", None))
+        self.cmbEncodeName.setItemText(1, _translate("ReportBeforeRecordSetup", "шифровать", None))
+        self.lblAllPeriods.setText(_translate("ReportBeforeRecordSetup", "Выводить все периоды", None))
+        self.lblShowAge.setText(_translate("ReportBeforeRecordSetup", "Выводить возраст", None))
+        self.lblAllPeriodsCombine.setText(_translate("ReportBeforeRecordSetup", "Объединять периоды", None))
+
+from library.crbcombobox import CRBComboBox
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    ReportBeforeRecordSetup = QtGui.QDialog()
+    ui = Ui_ReportBeforeRecordSetup()
+    ui.setupUi(ReportBeforeRecordSetup)
+    ReportBeforeRecordSetup.show()
+    sys.exit(app.exec_())
+

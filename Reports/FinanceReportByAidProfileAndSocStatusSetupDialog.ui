@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FinanceReportByAidProfileAndSocStatusSetupDialog</class>
+ <widget class="QDialog" name="FinanceReportByAidProfileAndSocStatusSetupDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>419</width>
+    <height>363</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Финансовый отчет по профилям мед. помощи и соц. статусу</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="3" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbSocStatusClass"/>
+   </item>
+   <item row="4" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbSocStatusType"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblAgeFrom">
+     <property name="text">
+      <string notr="true">Возраст с</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QSpinBox" name="edtAgeFrom">
+     <property name="maximum">
+      <number>150</number>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbSex">
+     <item>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">М</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Ж</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblSocStatusClass">
+     <property name="text">
+      <string notr="true">Класс соц. статуса</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblSocStatusType">
+     <property name="text">
+      <string notr="true">Тип соц. статуса</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblDocumentType">
+     <property name="text">
+      <string notr="true">Тип документа (УДЛ)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QLabel" name="lblAgeTo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string notr="true">По</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3">
+    <widget class="QSpinBox" name="edtAgeTo">
+     <property name="maximum">
+      <number>150</number>
+     </property>
+     <property name="value">
+      <number>150</number>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblSex">
+     <property name="text">
+      <string notr="true">Пол</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="3">
+    <widget class="CDateEdit" name="edtEndDate"/>
+   </item>
+   <item row="8" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkDetailByClient">
+     <property name="text">
+      <string notr="true">Детализировать по пациенту</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbDocumentType"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string notr="true">Дата начала периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="3">
+    <widget class="CDateEdit" name="edtBegDate"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string notr="true">Дата окончания периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="4">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="QLabel" name="lblEventTypeList">
+     <property name="text">
+      <string notr="true">Не задано</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="btnEventTypeList">
+     <property name="text">
+      <string notr="true">Тип обращения</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <zorder>lblAgeTo</zorder>
+  <zorder>buttonBox</zorder>
+  <zorder>lblBegDate</zorder>
+  <zorder>lblEndDate</zorder>
+  <zorder>edtBegDate</zorder>
+  <zorder>edtEndDate</zorder>
+  <zorder>lblSocStatusClass</zorder>
+  <zorder>cmbSocStatusClass</zorder>
+  <zorder>lblSocStatusType</zorder>
+  <zorder>cmbSocStatusType</zorder>
+  <zorder>lblDocumentType</zorder>
+  <zorder>cmbDocumentType</zorder>
+  <zorder>lblSex</zorder>
+  <zorder>cmbSex</zorder>
+  <zorder>lblAgeFrom</zorder>
+  <zorder>edtAgeFrom</zorder>
+  <zorder>edtAgeTo</zorder>
+  <zorder>chkDetailByClient</zorder>
+  <zorder>verticalSpacer</zorder>
+  <zorder>lblEventTypeList</zorder>
+  <zorder>btnEventTypeList</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>btnEventTypeList</tabstop>
+  <tabstop>cmbSocStatusClass</tabstop>
+  <tabstop>cmbSocStatusType</tabstop>
+  <tabstop>cmbDocumentType</tabstop>
+  <tabstop>cmbSex</tabstop>
+  <tabstop>edtAgeFrom</tabstop>
+  <tabstop>edtAgeTo</tabstop>
+  <tabstop>chkDetailByClient</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>FinanceReportByAidProfileAndSocStatusSetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>FinanceReportByAidProfileAndSocStatusSetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

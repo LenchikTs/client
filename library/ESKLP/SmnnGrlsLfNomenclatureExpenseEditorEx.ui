@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SmnnGrlsLfNomenclatureExpenseEditorEx</class>
+ <widget class="QDialog" name="SmnnGrlsLfNomenclatureExpenseEditorEx">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>835</width>
+    <height>346</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Выбор МНН и Формы выпуска</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="3" column="1" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="edtFindSmnnName"/>
+   </item>
+   <item row="0" column="2">
+    <widget class="QCheckBox" name="chkOnlyExists">
+     <property name="text">
+      <string>Только в наличии</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblFindGrlsLfName">
+     <property name="text">
+      <string>Лекарственная форма</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="edtFindGrlsLfName"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblFindSmnnName">
+     <property name="text">
+      <string>МНН</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="CSortFilterProxyTableView" name="tblSmnn">
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CSortFilterProxyTableView</class>
+   <extends>QTableView</extends>
+   <header>library/SortFilterProxyTableView.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtFindSmnnName</tabstop>
+  <tabstop>chkOnlyExists</tabstop>
+  <tabstop>edtFindGrlsLfName</tabstop>
+  <tabstop>tblSmnn</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SmnnGrlsLfNomenclatureExpenseEditorEx</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SmnnGrlsLfNomenclatureExpenseEditorEx</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

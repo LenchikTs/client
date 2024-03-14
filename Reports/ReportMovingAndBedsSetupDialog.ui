@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReportMovingAndBedsSetupDialog</class>
+ <widget class="QDialog" name="ReportMovingAndBedsSetupDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>587</width>
+    <height>411</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>параметры отчёта</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="14" column="0" colspan="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkIsGroupingOS">
+     <property name="text">
+      <string>Группировка по подразделениям</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="0">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>129</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string>Дата начала</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="CDateEdit" name="edtBegDate">
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="QLabel" name="lblOrgStructureList">
+     <property name="text">
+      <string> ЛПУ</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkNoProfileBed">
+     <property name="text">
+      <string>Учитывать койки без профиля</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="CDateEdit" name="edtEndDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QCheckBox" name="chkFinance">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Тип финансирования</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QTimeEdit" name="edtTimeEdit"/>
+   </item>
+   <item row="1" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>56</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkIsPermanentBed">
+     <property name="text">
+      <string>Добавить внештатные койки в коечный фонд</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string>Текущий день</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QTimeEdit" name="edtBegTime"/>
+   </item>
+   <item row="8" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkNoPrintCaption">
+     <property name="text">
+      <string>Не печатать заголовок отчета</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1" colspan="3">
+    <widget class="CCheckableComboBox" name="cmbFinance">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkNoPrintFilterParameters">
+     <property name="text">
+      <string>Не печатать параметры фильтра</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="btnOrgStructureList">
+     <property name="text">
+      <string>Подразделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="3">
+    <widget class="QLabel" name="lblHospitalBedProfileList">
+     <property name="text">
+      <string> не задано</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="btnHospitalBedProfileList">
+     <property name="text">
+      <string>Профиль койки</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblSchedule">
+     <property name="text">
+      <string>Режим койки</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbSchedule">
+     <item>
+      <property name="text">
+       <string>Не учитывать</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Круглосуточные</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Не круглосуточные</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="12" column="0" colspan="4">
+    <widget class="QCheckBox" name="chkTableHeaderOnlyFirstPage">
+     <property name="text">
+      <string>Заголовок таблицы только на первом листе</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CCheckableComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Reports/Utils.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtBegTime</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>edtTimeEdit</tabstop>
+  <tabstop>btnOrgStructureList</tabstop>
+  <tabstop>btnHospitalBedProfileList</tabstop>
+  <tabstop>cmbSchedule</tabstop>
+  <tabstop>chkNoProfileBed</tabstop>
+  <tabstop>chkIsPermanentBed</tabstop>
+  <tabstop>chkNoPrintCaption</tabstop>
+  <tabstop>chkNoPrintFilterParameters</tabstop>
+  <tabstop>chkIsGroupingOS</tabstop>
+  <tabstop>chkFinance</tabstop>
+  <tabstop>cmbFinance</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ReportMovingAndBedsSetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>102</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ReportMovingAndBedsSetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

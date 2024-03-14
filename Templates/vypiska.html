@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    
+<html>
+<head>
+<!--Главный скрипт--> 
+{: namesdates = dict([])}
+{for: act in all_actions}
+	{if: not (namesdates.data.hasKey(act.code) and namesdates.data[act.code].endDate.date > act.endDate.date)}
+		{: namesdates.data[act.code] = act }
+	{end:}
+{end:}
+{: namesdates = namesdates.data.values()}
+{: num_actions = dialogs.dialMultiList(u"Выберите исследования", [nd.name + " - " + nd.endDate.date.toString("dd.MM.yyyy") for nd in namesdates], 2).getVar()}
+{: good_actions = [all_actions[i] for i in num_actions]}
+{: gistocits = [act for act in good_actions if act.group.code in (u'УП01.02', u'УП01.03')]}
+{: clindiags = [act for act in good_actions if act.group.code in (u'МРТ', u'УП01.04', u'УП01.05') or (act.group.group and act.group.group.code in (u'МРТ', u'УП01.04', u'УП01.05'))]}
+<!--Конец главного скрипта-->
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'Arial'; font-size:10pt; font-weight:400; font-style:normal;">
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td width=10% align=left><img src="blank/image/LOGO.JPG"></td>
+<td width=90% align=center><b>МИНИСТЕРСТВО ЗДРАВОХРАНЕНИЯ И СОЦИАЛЬНОГО РАЗВИТИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ <br><br>
+<big>{currentOrganisation.fullName} </big></b>
+<br>
+<b>{currentOrganisation.shortName}</b> <br>
+{currentOrganisation.address}<br>
+телефон {currentOrganisation.phone} Факс: (812) 596-8947. Эл.почта: oncl1@rion.spb.ru <br>
+www.niioncologii.ru <br>
+ИНН {currentOrganisation.INN} КПП {currentOrganisation.KPP} <br>
+<big><b>Выписка из амбулаторной карты<br></b></big>
+</td></tr>
+<tr><td colspan=2 width=100% align=left><b>ФИО пациента:</b>{client.fullName}</td></tr>
+<tr><td colspan=2><b>Диагноз: </b>{for: (i, action) in enumerate (event.actions)}
+{if: action.name==u"Эпикриз на госпитальную комиссию"}
+{:l = [x for x in action if x.value]} 
+{for: i, prop in enumerate(l)}
+{if: prop.name == u'Диагноз'}{prop.value :n}{end:}
+{end:} {end:} {end:}
+<b>МКБ - 10: </b>{for: diagnosis in event.diagnosises}
+{if: diagnosis.type.code == '1'}{diagnosis.MKB.code} - {diagnosis.MKB.descr}{end:}{end:}<br>
+<br>
+<b>Морфологическое подтверждение диагноза (цитология/гистология): </b>
+{for: act in gistocits}
+{act.name} морфология {act.morphologyMKB.code}<br>
+{end:}
+<br>
+<b>Результаты клинико-диагностических исследований (Rg, УЗИ, КТ, МРТ):  </b>
+{for: act in clindiags}
+{act.name} {act.endDate} № {act[u"№ исследования"]} заключение: <i>{act[u"Заключение"]}</i><br>
+{end:}
+<br>
+<b>Пациенту рекомендовано лечении в НИИ онкологии в рамках ВМП (СМП) </b>
+{for: (i, action) in enumerate (event.actions)}
+{if: action.name==u"Эпикриз на госпитальную комиссию"}
+{:l = [x for x in action if x.value]} 
+{for: i, prop in enumerate(l)}
+{if: prop.name == u'Рекомендации'}{prop.value :n}{end:}
+ {end:} {end:} {end:}
+</td></tr>
+Метод лечения: {for: (i, action) in enumerate (event.actions)}
+<tr><td>
+<i>
+{if: action.code==u"1-7"}
+{:l = [x for x in action if x.value]} 
+{for: i, prop in enumerate(l)}
+{if: prop.name == u'Метод лечения'}{prop.value :n}{end:}
+ {end:} {end:}{end:}</i> <br><br>
+<b>Специалист: (зав. профильного отделения)</b> {action.person if action else event.execPerson}<br>
+</td></tr>
+<tr><td colspan=2 width=30% align=left><b>Дата: </b>  {action.endDate.date.toString(u"dd MMMM yyyy г.") if action else event.execDate.date.toString(u"dd MMMM yyyy г.")}</td></tr> 
+</table>
+</body>
+</html>

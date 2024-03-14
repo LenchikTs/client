@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>{ setPageSize('A4') }{ setOrientation('P') }{ setLeftMargin(5.0) }{ setTopMargin(5.0) }{ setRightMargin(2.0) }{ setBottomMargin(2.0) }
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center">{: string = currentOrganisation.shortName + ', ' + currentOrganisation.OGRN}<u><font face="Courier">{ "_"*0 + string + "_"*(72-len(string)) }</font></u><br>
+(наименование учреждения здравоохранения, проводящего дополнительную<br>
+ диспансеризацию, код по ОГРН)</td>
+<td>Приложение №2<br>
+к приказу Министерства здравоохранения и социального развития<br>
+Российской Федерации<br>
+от                   №<br>
+Медицинская документация<br>
+Учетная форма № 131/у-ДД-09<br>
+Утверждена приказом Минздравсоцразвития России<br>
+  от              №</td></tr>
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:32"> </p></td></tr>
+
+<tr><td align="center"><b>КАРТА УЧЕТА ДОПОЛНИТЕЛЬНОЙ ДИСПАНСЕРИЗАЦИИ РАБОТАЮЩЕГО ГРАЖДАНИНА<br>
+медицинская карта амбулаторного больного №{: string = str(client.id)}<u><font face="Courier">{string + "_"*(8 - len(string)) }</font></u></b></td></tr>
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>1. Фамилия, имя, отчество {: string = client.fullName}<u><font face="Courier">{string + "_"*(90-len(string)) }</font></u></td></tr>
+<tr><td>2. Пол: М-1; Ж-2; <b>{client.sex}</b></td></tr>
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td width=30%>3. Номер страхового полиса ОМС</td><td width=70%><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td><big><font face="Courier">{client.policy.serial + ' ' + client.policy.number + '(' + client.policy.insurer.shortName + ')'}</font></big></td></tr>
+</table></td></tr></table></td></tr>
+<tr><td>4. Дата рождения (число, месяц, год) {: string = client.birthDate.date.toString(u"d MMMM yyyy г.")}<u><font face="Courier">{ string + "_"*(20-len(string)) }</font></u></td></tr>
+<tr><td>5. Адрес места жительства: {: string = client.locAddress.city}<u><font face="Courier">{ "_"*0 + string + "_"*(100-len(string)) }</font></u> город - 1, село - 2<br>
+{if: client.locAddress.KLADRCode[8:11] == '000'}{: string = '1'}{else:}{: string = '2'}{end:}<u><font face="Courier">{ "_" + string + "_" }</font></u>ул. {: string = client.locAddress.street}<u><font face="Courier">{string + "_"*(30 - len(string)) }</font></u>дом {: string = str(client.locAddress.number)}<u><font face="Courier">{ string + "_"*(4-len(string)) }</font></u>корп. {: string = str(client.locAddress.corpus)}<u><font face="Courier">{ string + "_"*(3-len(string)) }</font></u>кв. {: string = client.locAddress.flat}<u><font face="Courier">{string + "_"*(4 - len(string)) }</font></u>;, телефон {: string = client.phones}<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u></td></tr>
+<tr><td>6. Место работы {: string = client.work.shortName}<u><font face="Courier">{ string + "_"*(120-len(string)) }</font></u><br>
+телефон служебный ___________________________</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:15"> </p></td></tr>
+<tr><td>7. Организация бюджетная: {if: client.work.shortName != '' and client.work.OKFS.ownership == 1}<u>"да"-1</u>, "нет"-2{elif: client.work.shortName != ''}"да"-1, <u>"нет"-2</u>{else:}"да"-1, "нет"-2{end:} (нужное отметить)</td></tr>
+<tr><td>8. Профессия, должность  {: string = client.work.post}<u><font face="Courier">{ string + "_"*(120-len(string)) }</font></u></td></tr>
+<tr><td>9. Прикреплен в данном учреждении здравоохранения для: {if: client.permanentAttach and client.permanentAttach.org == currentOrganisation}<u>{end:}постоянного динамического наблюдения - 1{if: client.permanentAttach and client.permanentAttach.org == currentOrganisation}</u>{end:}; {if: (client.temporaryAttach and client.temporaryAttach.org == currentOrganisation and client.temporaryAttach.code == '5')}<u>{end:}дополнительной диспансеризации - 2{if: client.temporaryAttach and client.temporaryAttach.org == currentOrganisation and client.temporaryAttach.code == '5'}</u>{end:}; {if: client.temporaryAttach and client.temporaryAttach.org == currentOrganisation and client.temporaryAttach.code == '3'}<u>{end:}периодического медицинского осмотра - 3{if: client.temporaryAttach and client.temporaryAttach.org == currentOrganisation and client.temporaryAttach.code == '3'}</u>{end:}; {if: client.temporaryAttach and client.temporaryAttach.org == currentOrganisation and client.temporaryAttach.code == '4'}<u>{end:}дополнительного медицинского осмотра - 4{if: client.temporaryAttach and client.temporaryAttach.org == currentOrganisation and client.temporaryAttach.code == '4'}</u>{end:} (нужное отметить)</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:7"> </p></td></tr>
+
+<tr><td>10. Учреждение здравоохранения, к которому прикреплен гражданин для постоянного динамического наблюдения (наименование, юридический адрес)<br>
+{: string = client.permanentAttach.org.shortName if client.permanentAttach else ''}<u><font face="Courier">{string + "_"*(120 - len(string)) }</font></u><br>
+{: string = client.permanentAttach.org.address if client.permanentAttach else ''}<u><font face="Courier">{ "_"*0 + string + "_"*(120-len(string)) }</font></u></td></tr>
+<tr><td><b>11. Осмотры врачей-специалистов</b></td></tr>
+</table>
+</td></tr>
+
+<tr><td><!--{len(event.diagnosises)} -->
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+{: diagnostics = [None, None, None, None, None, None]}
+{: final=-1} <!--Номер заключительного диагноза -->
+{for: d in event.diagnosises}
+<!--<tr> <td>тип {d.type.code} </td> </tr> -->
+{if: d.type.code in ('1', '2') and d.speciality.name in (u'Терапевт', u'Общая практика')}
+	{: diagnostics[0] = d}
+	{if: d.type.code == '1'}{: final=0}{end:}
+{elif:  d.type.code in ('1', '2') and d.speciality.name == u'Акушер- гинеколог'}
+	{: diagnostics[1] = d}
+	{if: d.type.code == '1'}{: final=1}{end:}
+{elif: d.type.code in ('1', '2') and d.speciality.name == u'Невролог'}
+	{: diagnostics[2] = d}
+	{if: d.type.code == '1'}{: final=2}{end:}
+{elif:  d.type.code in ('1', '2') and d.speciality.name == u'Хирург'}
+	{: diagnostics[3] = d}
+	{if: d.type.code == '1'}{: final=3}{end:}
+{elif: d.type.code in ('1', '2') and  d.speciality.name == u'Офтальмолог'}
+	{: diagnostics[4] = d}
+	{if: d.type.code == '1'}{: final=4}{end:}
+{elif: d.type.code in ('1', '2')}
+	{: diagnostics[5] = d}
+	{if: d.type.code == '1'}{: final=5}{end:}
+{end:}
+{end:}
+<tr><td rowspan=3>Специальность<br>врача</td><td rowspan=3>№<br>с<br>т<br>р<br>о<br>к<br>и</td><td rowspan=3>Код<br>врача</td><td rowspan=3>да-<br>та<br><br>ос-<br>мо-<br>тра</td><td colspan=3 align="center">Заболевания (код по МКБ - 10)</td><td colspan=7 align="center">Результат ДД</td><td rowspan=3>Ф.И.О.<br>(подпись<br>врача)</td></tr>
+<tr><td rowspan=2>ранее<br>известное<br>хроническое</td><td rowspan=2>выявленное<br>во время<br>дополнительной<br>диспансеризации</td><td rowspan=2>в том<br>числе<br>на<br>поздней<br>стадии</td><td rowspan=2>пра-<br>кти-<br>чес-<br>ки<br><br>здо-<br>ров<br>(I гр.)</td><td rowspan=2>риск<br><br>раз-<br>ви-<br>тия<br><br>за-<br>бо-<br>ле-<br>ва-<br>ния<br>(II гр.)</td><td colspan=5 align="center">Нуждается в дополнительном лечении, обследовании</td></tr>
+<tr><td>амбула-<br>торном<br>(III гр.)</td><td>в том<br>числе,<br>заболе-<br>вания,<br>выяв-<br>ленные<br>при ДД</td><td>стацио-<br>нарном<br>(IV гр.)</td><td>В<br>оказании<br>высоко-<br>техноло-<br>гичной<br>медиц-<br>инской<br>помощи<br>(V гр.)</td><td>Санаторно-<br>курортном</td></tr>
+<!--Вот тут указываем ширину колонок: -->
+<tr><td width=13%>1</td><td width=3%>2</td><td width=6%>3</td><td width=5%>4</td><td width=7%>5</td><td width=8%>6</td><td width=5%>7</td><td width=3%>8</td><td width=4%>9</td><td width=6%>10</td><td width=7%>11</td><td width=7%>12</td><td width=7%>13</td><td width=7%>14</td><td width=7%>15</td></tr>
+{if: diagnostics[0]}
+<tr><td>{u'Терапевт' if diagnostics[0].speciality.name == u'Терапевт' else u'Врач общей практики'}</td><td>01</td><td>{diagnostics[0].person.code}</td><td>{diagnostics[0].endDate.date.toString("dd.MM.yy")}</td><td>{if: diagnostics[0].character.code in ('3','4')}{if: final==0}<b>{end:}{diagnostics[0].MKB}{if: final==0}</b>{end:}{end:}</td><td>{if: diagnostics[0].character.code in ('1','2')}{if: final==0}<b>{end:}{diagnostics[0].MKB}{if: final==0}</b>{end:}{end:}</td><td></td>{: hg = diagnostics[0].healthGroup.code}<td>{'+' if hg == '1' else '-'}</td><td>{'+' if hg=='2' else '-'}</td><td>{'+' if hg=='3' else '-'}</td><td>{'-'}</td><td>{'+' if hg=='4' else '-'}</td><td>{'+' if hg=='5' else '-'}</td><td>{'+' if diagnostics[0].sanatorium else '-'}</td><td>{diagnostics[0].person.shortName}</td></tr>
+{else:}
+<tr><td>Терапевт</td><td>01</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+{end:}
+{if: diagnostics[1]}
+<tr><td>Акушер-гинеколог</td><td>02</td><td>{diagnostics[1].person.code}</td><td>{diagnostics[1].endDate.date.toString("dd.MM.yy")}</td><td>{if: diagnostics[1].character.code in ('3','4')}{if: final==1}<b>{end:}{diagnostics[1].MKB}{if: final==1}</b>{end:}{end:}</td><td>{if: diagnostics[1].character.code in ('1','2')}{if: final==1}<b>{end:}{diagnostics[1].MKB}{if: final==1}</b>{end:}{end:}</td><td></td>{: hg = diagnostics[1].healthGroup.code}<td>{'+' if hg == '1' else '-'}</td><td>{'+' if hg=='2' else '-'}</td><td>{'+' if hg=='3' else '-'}</td><td>{'-'}</td><td>{'+' if hg=='4' else '-'}</td><td>{'+' if hg=='5' else '-'}</td><td>{'+' if diagnostics[1].sanatorium else '-'}</td><td>{diagnostics[1].person.shortName}</td></tr>
+{else:}
+<tr><td>Акушер-гинеколог</td><td>02</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+{end:}
+{if: diagnostics[2]}
+<tr><td>Невролог</td><td>03</td><td>{diagnostics[2].person.code}</td><td>{diagnostics[2].endDate.date.toString("dd.MM.yy")}</td><td>{if: diagnostics[2].character.code in ('3','4')}{if: final==2}<b>{end:}{diagnostics[2].MKB}{if: final==2}</b>{end:}{end:}</td><td>{if: diagnostics[2].character.code in ('1','2')}{if: final==2}<b>{end:}{diagnostics[2].MKB}{if: final==2}</b>{end:}{end:}</td><td></td>{: hg = diagnostics[2].healthGroup.code}<td>{'+' if hg == '1' else '-'}</td><td>{'+' if hg=='2' else '-'}</td><td>{'+' if hg=='3' else '-'}</td><td>{'-'}</td><td>{'+' if hg=='4' else '-'}</td><td>{'+' if hg=='5' else '-'}</td><td>{'+' if diagnostics[2].sanatorium else '-'}</td><td>{diagnostics[2].person.shortName}</td></tr>
+{else:}
+<tr><td>Невролог</td><td>03</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+{end:}
+{if: diagnostics[3]}
+<tr><td>Хирург</td><td>04</td><td>{diagnostics[3].person.code}</td><td>{diagnostics[3].endDate.date.toString("dd.MM.yy")}</td><td>{if: diagnostics[3].character.code in ('3','4')}{if: final==3}<b>{end:}{diagnostics[3].MKB}{if: final==3}</b>{end:}{end:}</td><td>{if: diagnostics[3].character.code in ('1','2')}{if: final==3}<b>{end:}{diagnostics[3].MKB}{if: final==3}</b>{end:}{end:}</td><td></td>{: hg = diagnostics[3].healthGroup.code}<td>{'+' if hg == '1' else '-'}</td><td>{'+' if hg=='2' else '-'}</td><td>{'+' if hg=='3' else '-'}</td><td>{'-'}</td><td>{'+' if hg=='4' else '-'}</td><td>{'+' if hg=='5' else '-'}</td><td>{'+' if diagnostics[3].sanatorium else '-'}</td><td>{diagnostics[3].person.shortName}</td></tr>
+{else:}
+<tr><td>Хирург</td><td>04</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+{end:}
+{if: diagnostics[4]}
+<tr><td>Офтальмолог</td><td>05</td><td>{diagnostics[4].person.code}</td><td>{diagnostics[4].endDate.date.toString("dd.MM.yy")}</td><td>{if: diagnostics[4].character.code in ('3','4')}{if: final==4}<b>{end:}{diagnostics[4].MKB}{if: final==4}</b>{end:}{end:}</td><td>{if: diagnostics[4].character.code in ('1','2')}{if: final==4}<b>{end:}{diagnostics[4].MKB}{if: final==4}</b>{end:}{end:}</td><td></td>{: hg = diagnostics[4].healthGroup.code}<td>{'+' if hg == '1' else '-'}</td><td>{'+' if hg=='2' else '-'}</td><td>{'+' if hg=='3' else '-'}</td><td>{'-'}</td><td>{'+' if hg=='4' else '-'}</td><td>{'+' if hg=='5' else '-'}</td><td>{'+' if diagnostics[4].sanatorium else '-'}</td><td>{diagnostics[4].person.shortName}</td></tr>
+{else:}
+<tr><td>Офтальмолог</td><td>05</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+{end:}
+{if: diagnostics[5]}
+<tr><td>Дополнительные<br>консультации<br>врачей-<br>специалистов<br>(вписать)<br></td><td>06</td><td>{diagnostics[5].person.code}</td><td>{diagnostics[5].endDate.date.toString("dd.MM.yy")}</td><td>{if: diagnostics[5].character.code in ('3','4')}{if: final==5}<b>{end:}{diagnostics[5].MKB}{if: final==5}</b>{end:}{end:}</td><td>{if: diagnostics[5].character.code in ('1','2')}{if: final==5}<b>{end:}{diagnostics[5].MKB}{if: final==5}</b>{end:}{end:}</td><td></td>{: hg = diagnostics[5].healthGroup.code}<td>{'+' if hg == '1' else '-'}</td><td>{'+' if hg=='2' else '-'}</td><td>{'+' if hg=='3' else '-'}</td><td>{'-'}</td><td>{'+' if hg=='4' else '-'}</td><td>{'+' if hg=='5' else '-'}</td><td>{'+' if diagnostics[5].sanatorium else '-'}</td><td>{diagnostics[5].person.shortName}</td></tr>
+{else:}
+<tr><td>Дополнительные<br>консультации<br>врачей-<br>специалистов<br>(вписать)<br></td><td>06</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+{end:}
+</table>
+</td></tr>
+</table>
+
+<!--НОВАЯ СТРАНИЦА-->
+<p style="page-break-after: always"></p>
+
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td width=360>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><table width=100%><tr><td><b>12. Лабораторные и функциональные исследования</b></td><td style="font-size:6px"><b>1</b></td></tr></table></td></tr>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td>Перечень исследований</td><td>№<br>строки</td><td>Дата<br>исследования</td><td>Дата получения<br>результата</td></tr>
+{for: (i,a) in enumerate(event.actions)}
+<tr><td>{a.name}</td><td align=right>{i+1}</td><td>{a.begDate.date.toString("dd.MM.yy")}</td><td>{a.endDate.date.toString("dd.MM.yy")}</td></tr>
+{end:}
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</table>
+</td></tr>
+</table>
+</td>
+
+<td width=30></td>
+
+<td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td><b>13. Рекомендации по индивидуальной программе профилактических<br>
+мероприятий</b><u><font face="Courier">_____________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:100"> </p></td></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+{: dispansers =  [d for d in event.diagnosises if d.dispanser.code=='2']}
+<tr><td><b>14. Взят под диспансерное наблюдение: {min([d.setDate for d in dispansers]) if len(dispansers) else u'нет       '}</b> диагноз (МКБ-10):</td></tr>
+<tr><td></td></tr>
+{for: d in dispansers}
+<tr><td><b>{d.MKB}</b> {d.MKB.descr}</td></tr>
+{end:}
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:42"> </p></td></tr>
+
+<tr><td><b>15. Диагноз (МКБ-10), установленный через 6 месяцев после ДД:</b><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:50"> </p></td></tr>
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td><b>16. Снят с диспансерного наблюдения в течение года по причине<br>(нужное отметить):</b></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:12"> </p></td></tr>
+
+<tr><td>выздоровление-1;  выбыл-2;   умер-3,</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:2"> </p></td></tr>
+
+<tr><td>в том числе в течение 6-ти месяцев после ДД-4.</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:2"> </p></td></tr>
+
+<tr><td>Дата завершения ДД <b>{event.execDate}</b></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:2"> </p></td></tr>
+
+<tr><td>Врач-терапевт участковый (врач общей практики (семейный врач), врач-<br>
+терапевт)</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:7"> </p></td></tr>
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><b>{event.execPerson.shortName}</b></td><td align="center">___________________________</td></tr>
+<tr><td align="center">(Фамилия, И., О.)</td><td align="center">(подпись)</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:32"> </p></td></tr>
+
+<tr><td colspan=3><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td width=10 style="font-size:6px">1</td><td>копии результатов исследований прилагаются для передачи в учреждение здравоохранения, осуществляющее динамическое наблюдение за гражданином</td></tr>
+</table></td></tr>
+</table>
+</body>
+</html>

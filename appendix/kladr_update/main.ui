@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>647</width>
+    <height>586</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Обновление КЛАДР</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout">
+    <property name="margin">
+     <number>9</number>
+    </property>
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <item row="1" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Имя сервера:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editServer">
+          <property name="text">
+           <string>localhost</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Имя пользователя:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editUser">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string>dbuser</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Пароль:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="editPassword">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Имя базы данных КЛАДР: kladr</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>Имя базы данных ЛПУ:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="editDatabase">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>s11</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="pushReverse">
+        <property name="text">
+         <string>Откат обновления</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushTest">
+        <property name="text">
+         <string>Проверить целостность БД</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushParseAddress">
+        <property name="text">
+         <string>Разбор адресов</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnClose">
+        <property name="text">
+         <string>Выйти</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="lineKLADRDir"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushKLADRDir">
+        <property name="text">
+         <string>Выбрать каталог...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushUpdateKLADR">
+        <property name="text">
+         <string>Обновить КЛАДР</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="lineOKATODir"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushOKATODir">
+        <property name="text">
+         <string>Выбрать каталог...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushUpdateOKATO">
+        <property name="text">
+         <string>Обновить ОКАТО</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="5" column="0">
+     <widget class="QTextBrowser" name="log"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>409</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushUpdateKLADR</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>updateKLADR</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushUpdateOKATO</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>updateOKATO</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushTest</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>test</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushReverse</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>rollback()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushParseAddress</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>parseAddresses()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>443</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

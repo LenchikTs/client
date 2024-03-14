@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+	
+{setPageSize('A4')}
+{setOrientation('Landscape')}
+{setMargins(5)}
+
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:7pt; font-weight:400; font-style:normal;">
+<table border="0"  cellpadding=10 cellspacing=0><tr>
+<!--Первая штуковина:-->
+<td width=50%>
+<table border="0"  cellpadding=0 cellspacing=0>
+<!--1-->
+<tr>
+<td style="text-align: left;" width=45%><table border="0" cellpadding=0 cellspacing=0>
+<tr><td colspan=3 style="font-size:5pt">Министерство&nbsp;здравоохранения<br>и социального развития<br>Российской Федерации<br></td></tr>
+<tr><td colspan=3 style="font-size:5pt"><font size=1>Лечебно-профилактическое&nbsp;учреждение:</font></td></tr>
+<tr><td width=25%>штамп</td>
+<td width=40%><table width=100% border="1" cellpadding=0 cellspacing=0><tr><td align="center"  style="font-size:8pt">{"41051"}</td></tr></table></td><td width=35%></td></tr>
+<tr><td colspan=3>код ОГРН</td></tr>
+<tr><td colspan=3><table border="1" cellpadding=0 cellspacing=0 width=100%><tr><td align="center"><font size=3>{currentOrganisation.OGRN}</font></td></tr></table></td></tr>
+</table></td>
+<td width=30% valign="top" align="center">{pdf417(p38test()):h}</td>
+<td width=35% valign="top" align="right"  style="font-size:5pt">УТВЕРЖДЕНА<br>
+приказом Министерства <br>
+здравоохранения и <br>
+социального развития <br>
+Российской Федерации <br>
+от 12 февраля  2007 г. №110<br>
+<br>
+Код формы <br>
+по ОКУД&nbsp;3108805<br>
+Форма № 148-1/y-06 (л)</td>
+</tr>
+
+<!--2-->
+<!--<tr>
+<td height=10 colspan=3 style="font-size:1pt"></td>
+</tr>-->
+
+<!--3-->
+<tr><td colspan=3><table border="0" cellpadding=2 cellspacing=0><tr>
+<td valign="bottom"><table border="0" cellpadding=0 cellspacing=0>
+<tr><td align="center">Код <br>категории<br> граждан</td><td width=10></td><td align="center">Код нозологической формы&nbsp;(по&nbsp;МКБ-10)</td><td width=10></td></tr>
+<tr><td><table border="1"  cellpadding=0 cellspacing=0  width=100%><tr><td align="center">{client.socStatuses[-1].code if len(client.socStatuses) else '' }</td></tr></table></td><td></td>
+<td><table border="1" cellpadding=0 cellspacing=0  width=100%><tr><td align="center">{event.diagnosises[0].MKB}</td></tr></table></td><td></td></tr>
+</table></td>
+<td><table border="1" cellpadding=0 cellspacing=0><tr>
+<td><table cellpadding=0 cellspacing=0><tr><td>Источник финансирования:</td></tr><tr><td></td></tr><tr><td align="center">{action[u'Источник финансирования'].value}</td></tr></table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td>% оплаты из <br>источника финансирования:</td></tr><tr><td align="center">{action[u'Оплата'].value}</td></tr></table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td>Рецепт действителен в течение:</td></tr><tr><td align="center">{action[u'Действителен в течение'].value}</td></tr></table></td>
+</tr></table></td>
+</tr></table></td></tr>
+
+<!--4-->
+<tr style="font-size:1px"><td colspan=3></td></tr>
+
+<!--5-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0 width=100%><tr>
+<td><table cellpadding=0 cellspacing=0  width=100%><tr>
+<td align="left"><font size=3><b>РЕЦЕПТ&nbsp;Серия&nbsp;{action[u'Серия'].value}&nbsp;№&nbsp;{action[u'Номер'].value}</b></font></td><td align="right" valign="bottom"><font size=3><b>от </b></font></td>
+</tr></table></td>
+<td><table border="1" cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><font size=3><b>{action.endDate}</b></font></td></tr>
+</table></td>
+</tr></table></td></tr>
+
+<!--6-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0  width=100%><tr>
+<td width=18% style="font-size:8pt">Ф.И.О. пациента</td>
+<td align="left"><font size=3>{client.lastName} {client.firstName} {client.patrName}</font></td>
+</tr>
+</table></td></tr>
+
+<!--7-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0  width=100%><tr>
+<td><table border="0"  cellpadding=0 cellspacing=0  width=100%><tr><td style="font-size:8pt">Дата рождения:</td></tr></table></td>
+<td><table border="1"  cellpadding=0 cellspacing=0  width=100%><tr><td align="center"><font size=3>{client.birthDate}</font></td></tr></table></td>
+<td><table border="0"  cellpadding=0 cellspacing=0  width=100%><tr><td align="center"><font size="3">СНИЛС</font></td></tr></table></td>
+<td><table border="1"  cellpadding=0 cellspacing=0  width=100%><tr><td align="center"><font size=3>{client.SNILS}</font></td></tr></table></td>
+</tr></table></td></tr>
+
+<!--8-->
+<!--<tr><td colspan=3><table cellpadding=0 cellspacing=0><tr>
+</tr></table></td></tr>-->
+
+<!--9-->
+<tr><td colspan=3><table cellpadding=4 cellspacing=0  width=100%><tr>
+<td><table border="0" cellpadding=0 cellspacing=0 width=100%><tr><td align="right"><font size=1>№ страхового<br>медицинского полиса ОМС:</font></td></tr></table></td>
+<td><table border="1" cellpadding=0 cellspacing=0 width=100%><tr><td><font size=3>{client.policy.serial} {client.policy.number}</font></td></tr></table></td>
+</tr></table></td></tr>
+
+<!--10-->
+<tr><td colspan=3 style="font-size:7pt">№ медицинской карты амбулаторного больного (история развития ребенка) <B><u>{client.id}</u></B></td></tr>
+<!--<tr style="font-size:5pt"></tr>-->
+
+<!--11-->
+<tr>
+<td colspan=3 style="font-size:8pt"><table cellpadding=0 cellspacing=0  width=100%><tr>
+<td width=5% style="font-size:8pt">Адрес: </td>
+<td align="left"><font size=3>{client.regAddress}</font><BR/></td>
+</tr>
+</table></td>
+</tr>
+
+<!--12-->
+<tr>
+<td colspan=3><small>Ф.И.О. врача (фельдшера): </small><font size=3>{action.person.longName}</font></td>
+</tr>
+
+<!--13-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0 width=100%>
+<tr style="font-size:1px;">
+<td width=50% height=1 style="font-size:4pt"></td><td width=2 height=1 style="font-size:4pt" bgcolor=#000000></td><td height=1 style="font-size:4pt" bgcolor=#000000></td>
+</tr><tr>
+<td width=50%><table cellpadding=-1 cellspacing=0 width=100%>
+<tr><td width=130><small>Код&nbsp;врача&nbsp;(фельдшера):</small></td><td width=21></td><td width=80><table border="1" cellpadding=0 cellspacing=0 width=100%><tr><td align="center"><font size=3>{action.person.regionalCode}</font></td></tr></table></td><td width=10></td></tr>
+<tr><td colspan=3><small><b>Выписано:</b></small></td></tr>
+<tr><td colspan=3><small>Rp:</small> {action[u'Выписано'].value.INPNameLat},{action[u'Выписано'].value.dosage} <br></td></tr>
+<tr> <td collspan=3><small>D.t.d. : в {action[u'Выписано'].value.form} </small></td></tr>
+<tr><td colspan=3><small>Дозировка: {action[u'Выписано'].value.dosage}</small></td></tr>
+<tr><td colspan=3><small>Количество единиц: {action[u'Количество единиц'].value}</small></td></tr>
+<tr><td colspan=3><small>Signa: {action[u'Signa'].value} <br></small></td></tr>
+<tr><td colspan=3><small>Подпись врача (фельдшера)<br>и личная печать врача (фельдшера)</small></td></tr>
+<tr style="font-size:5pt"></tr>
+<tr><td colspan=3>........................................................................</td></tr>
+<tr><td></td><td align="center">М.П.</td><td></td></tr>
+</table></td>
+<td width=2 bgcolor=#000000></td>
+<td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><i><font size=1>(заполняется специалистом аптечного учреждения)</font></i></td></tr>
+<tr><td><b><small>Отпущено по рецепту:</small></b></td></tr>
+<tr><td><small>Дата отпуска:</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+<tr><td><small>Код лекарственного<br>средства:</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+<tr><td><small>Торговое наименование</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+<tr><td><small>Количество</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+<tr><td><small>На общую сумму</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+</table></td>
+</tr>
+</table></td></tr>
+
+<!--14-->
+<tr style="font-size:8px"><td colspan=3></td></tr>
+<tr>
+<td colspan="3" align="center"><font size=1><i>---------------------------------------------------&nbsp;(линия&nbsp;отрыва)&nbsp;---------------------------------------------------</i></font></td>
+</tr>
+<tr style="font-size:8px"><td colspan=3></td></tr>
+
+<!--15-->
+<tr>
+<td align="center" colspan="3" rowspan="1"><small><b>
+Корешок РЕЦЕПТА Серия {action[u'Серия'].value} № {action[u'Номер'].value} от {action.endDate}</b></small></td>
+</tr>
+
+<!--16-->
+<tr><td colspan=3><small>Способ применения:</small></td></tr>
+
+<!--17-->
+<tr><td colspan=3><table align="center" cellpadding=0 cellspacing=0 width=100%>
+<tr><td valign="bottom"><font size=1>Продолжительность {action[u'Длительность'].value} дней</font></td><td><font size=1>Наименование лекарственного средства:</font></td></tr>
+<tr><td><font size=1>Количество приемов в день:</font></td><td><font size=1>{action[u'Выписано'].value.tradeName}</font></td></tr>
+<tr><td><font size=1>{action[u'Принимать'].value}</font></td><td><font size=1>............................................................................</font></td></tr>
+<tr><td><font size=1>На 1 прием: {action[u'На один прием'].value}   ед.</font></td><td valign="bottom"><font size=1>Дозировка: {action[u'Выписано'].value.dosage}</font></td></tr>
+</table></td></tr>
+
+<!--Конец-->
+</table>
+</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<td width=1px bgcolor=#000000></td>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Вторая штуковина в точности дублирует первую:-->
+<td width=50%>
+<table border="0"  cellpadding=0 cellspacing=0>
+<!--1-->
+<tr>
+<td style="text-align: left;" width=45%><table border="0" cellpadding=0 cellspacing=0>
+<tr><td colspan=3 style="font-size:5pt">Министерство&nbsp;здравоохранения<br>и социального развития<br>Российской Федерации<br></td></tr>
+<tr><td colspan=3 style="font-size:5pt"><font size=1>Лечебно-профилактическое&nbsp;учреждение:</font></td></tr>
+<tr><td width=25%>штамп</td>
+<td width=40%><table width=100% border="1" cellpadding=0 cellspacing=0><tr><td align="center"  style="font-size:8pt">{"41051"}</td></tr></table></td><td width=35%></td></tr>
+<tr><td colspan=3>код ОГРН</td></tr>
+<tr><td colspan=3><table border="1" cellpadding=0 cellspacing=0 width=100%><tr><td align="center"><font size=3>{currentOrganisation.OGRN}</font></td></tr></table></td></tr>
+</table></td>
+<td width=30% valign="top" align="center">{pdf417(p38test()):h}</td>
+<td width=35% valign="top" align="right"  style="font-size:5pt">УТВЕРЖДЕНА<br>
+приказом Министерства <br>
+здравоохранения и <br>
+социального развития <br>
+Российской Федерации <br>
+от 12 февраля  2007 г. №110<br>
+<br>
+Код формы <br>
+по ОКУД&nbsp;3108805<br>
+Форма № 148-1/y-06 (л)</td>
+</tr>
+
+<!--2-->
+<!--<tr>
+<td height=10 colspan=3 style="font-size:1pt"></td>
+</tr>-->
+
+<!--3-->
+<tr><td colspan=3><table border="0" cellpadding=2 cellspacing=0><tr>
+<td valign="bottom"><table border="0" cellpadding=0 cellspacing=0>
+<tr><td align="center">Код <br>категории<br> граждан</td><td width=10></td><td align="center">Код нозологической формы&nbsp;(по&nbsp;МКБ-10)</td><td width=10></td></tr>
+<tr><td><table border="1"  cellpadding=0 cellspacing=0  width=100%><tr><td align="center">{client.socStatuses[-1].code if len(client.socStatuses) else '' }</td></tr></table></td><td></td>
+<td><table border="1" cellpadding=0 cellspacing=0  width=100%><tr><td align="center">{event.diagnosises[0].MKB}</td></tr></table></td><td></td></tr>
+</table></td>
+<td><table border="1" cellpadding=0 cellspacing=0><tr>
+<td><table cellpadding=0 cellspacing=0><tr><td>Источник финансирования:</td></tr><tr><td></td></tr><tr><td align="center">{action[u'Источник финансирования'].value}</td></tr></table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td>% оплаты из <br>источника финансирования:</td></tr><tr><td align="center">{action[u'Оплата'].value}</td></tr></table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td>Рецепт действителен в течение:</td></tr><tr><td align="center">{action[u'Действителен в течение'].value}</td></tr></table></td>
+</tr></table></td>
+</tr></table></td></tr>
+
+<!--4-->
+<tr style="font-size:1px"><td colspan=3></td></tr>
+
+<!--5-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0 width=100%><tr>
+<td><table cellpadding=0 cellspacing=0  width=100%><tr>
+<td align="left"><font size=3><b>РЕЦЕПТ&nbsp;Серия&nbsp;{action[u'Серия'].value}&nbsp;№&nbsp;{action[u'Номер'].value}</b></font></td><td align="right" valign="bottom"><font size=3><b>от </b></font></td>
+</tr></table></td>
+<td><table border="1" cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><font size=3><b>{action.endDate}</b></font></td></tr>
+</table></td>
+</tr></table></td></tr>
+
+<!--6-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0  width=100%><tr>
+<td width=18% style="font-size:8pt">Ф.И.О. пациента</td>
+<td align="left"><font size=3>{client.lastName} {client.firstName} {client.patrName}</font></td>
+</tr>
+</table></td></tr>
+
+<!--7-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0  width=100%><tr>
+<td><table border="0"  cellpadding=0 cellspacing=0  width=100%><tr><td style="font-size:8pt">Дата рождения:</td></tr></table></td>
+<td><table border="1"  cellpadding=0 cellspacing=0  width=100%><tr><td align="center"><font size=3>{client.birthDate}</font></td></tr></table></td>
+<td><table border="0"  cellpadding=0 cellspacing=0  width=100%><tr><td align="center"><font size="3">СНИЛС</font></td></tr></table></td>
+<td><table border="1"  cellpadding=0 cellspacing=0  width=100%><tr><td align="center"><font size=3>{client.SNILS}</font></td></tr></table></td>
+</tr></table></td></tr>
+
+<!--8-->
+<!--<tr><td colspan=3><table cellpadding=0 cellspacing=0><tr>
+</tr></table></td></tr>-->
+
+<!--9-->
+<tr><td colspan=3><table cellpadding=4 cellspacing=0  width=100%><tr>
+<td><table border="0" cellpadding=0 cellspacing=0 width=100%><tr><td align="right"><font size=1>№ страхового<br>медицинского полиса ОМС:</font></td></tr></table></td>
+<td><table border="1" cellpadding=0 cellspacing=0 width=100%><tr><td><font size=3>{client.policy.serial} {client.policy.number}</font></td></tr></table></td>
+</tr></table></td></tr>
+
+<!--10-->
+<tr><td colspan=3 style="font-size:7pt">№ медицинской карты амбулаторного больного (история развития ребенка) <B><u>{client.id}</u></B></td></tr>
+<!--<tr style="font-size:5pt"></tr>-->
+
+<!--11-->
+<tr>
+<td colspan=3 style="font-size:8pt"><table cellpadding=0 cellspacing=0  width=100%><tr>
+<td width=5% style="font-size:8pt">Адрес: </td>
+<td align="left"><font size=3>{client.regAddress}</font><BR/></td>
+</tr>
+</table></td>
+</tr>
+
+<!--12-->
+<tr>
+<td colspan=3><small>Ф.И.О. врача (фельдшера): </small><font size=3>{action.person.longName}</font></td>
+</tr>
+
+<!--13-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0 width=100%>
+<tr style="font-size:1px;">
+<td width=50% height=1 style="font-size:4pt"></td><td width=2 height=1 style="font-size:4pt" bgcolor=#000000></td><td height=1 style="font-size:4pt" bgcolor=#000000></td>
+</tr><tr>
+<td width=50%><table cellpadding=-1 cellspacing=0 width=100%>
+<tr><td width=130><small>Код&nbsp;врача&nbsp;(фельдшера):</small></td><td width=21></td><td width=80><table border="1" cellpadding=0 cellspacing=0 width=100%><tr><td align="center"><font size=3>{action.person.regionalCode}</font></td></tr></table></td><td width=10></td></tr>
+<tr><td colspan=3><small><b>Выписано:</b></small></td></tr>
+<tr><td colspan=3><small>Rp:</small> {action[u'Выписано'].value.INPNameLat},{action[u'Выписано'].value.dosage} <br></td></tr>
+<tr> <td collspan=3><small>D.t.d. : в {action[u'Выписано'].value.form} </small></td></tr>
+<tr><td colspan=3><small>Дозировка: {action[u'Выписано'].value.dosage}</small></td></tr>
+<tr><td colspan=3><small>Количество единиц: {action[u'Количество единиц'].value}</small></td></tr>
+<tr><td colspan=3><small>Signa: {action[u'Signa'].value} <br></small></td></tr>
+<tr><td colspan=3><small>Подпись врача (фельдшера)<br>и личная печать врача (фельдшера)</small></td></tr>
+<tr style="font-size:5pt"></tr>
+<tr><td colspan=3>........................................................................</td></tr>
+<tr><td></td><td align="center">М.П.</td><td></td></tr>
+</table></td>
+<td width=2 bgcolor=#000000></td>
+<td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><i><font size=1>(заполняется специалистом аптечного учреждения)</font></i></td></tr>
+<tr><td><b><small>Отпущено по рецепту:</small></b></td></tr>
+<tr><td><small>Дата отпуска:</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+<tr><td><small>Код лекарственного<br>средства:</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+<tr><td><small>Торговое наименование</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+<tr><td><small>Количество</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+<tr><td><small>На общую сумму</small></td></tr>
+<tr><td>.........................................................................</td></tr>
+</table></td>
+</tr>
+</table></td></tr>
+
+<!--14-->
+<tr style="font-size:8px"><td colspan=3></td></tr>
+<tr>
+<td colspan="3" align="center"><font size=1><i>---------------------------------------------------&nbsp;(линия&nbsp;отрыва)&nbsp;---------------------------------------------------</i></font></td>
+</tr>
+<tr style="font-size:8px"><td colspan=3></td></tr>
+
+<!--15-->
+<tr>
+<td align="center" colspan="3" rowspan="1"><small><b>
+Корешок РЕЦЕПТА Серия {action[u'Серия'].value} № {action[u'Номер'].value} от {action.endDate}</b></small></td>
+</tr>
+
+<!--16-->
+<tr><td colspan=3><small>Способ применения:</small></td></tr>
+
+<!--17-->
+<tr><td colspan=3><table align="center" cellpadding=0 cellspacing=0 width=100%>
+<tr><td valign="bottom"><font size=1>Продолжительность {action[u'Длительность'].value} дней</font></td><td><font size=1>Наименование лекарственного средства:</font></td></tr>
+<tr><td><font size=1>Количество приемов в день:</font></td><td><font size=1>{action[u'Выписано'].value.tradeName}</font></td></tr>
+<tr><td><font size=1>{action[u'Принимать'].value}</font></td><td><font size=1>............................................................................</font></td></tr>
+<tr><td><font size=1>На 1 прием: {action[u'На один прием'].value}   ед.</font></td><td valign="bottom"><font size=1>Дозировка: {action[u'Выписано'].value.dosage}</font></td></tr>
+</table></td></tr>
+
+<!--Конец-->
+</table>
+</td>
+
+</tr></table>
+
+</body>
+</html>

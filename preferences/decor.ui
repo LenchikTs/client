@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>decorDialog</class>
+ <widget class="QDialog" name="decorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>646</width>
+    <height>494</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Внешний вид</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1">
+    <widget class="QComboBox" name="cmbStyle"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="QCheckBox" name="chkMaximizeMainWindow"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblStyle">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Стиль</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbStyle</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblMaximizeMainWindow">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Максимизировать</string>
+     </property>
+     <property name="buddy">
+      <cstring>chkMaximizeMainWindow</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblFullScreenMainWindow">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Полно&amp;экранный режим</string>
+     </property>
+     <property name="buddy">
+      <cstring>chkFullScreenMainWindow</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QCheckBox" name="chkStandartPalette"/>
+   </item>
+   <item row="9" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblStandartPalette">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Палитра из стиля</string>
+     </property>
+     <property name="buddy">
+      <cstring>chkStandartPalette</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QCheckBox" name="chkPropertyColor">
+     <property name="text">
+      <string>Цвет свойств, обязательных для заполнения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QCheckBox" name="chkFullScreenMainWindow"/>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="1">
+    <widget class="QPushButton" name="btnPropertyColor"/>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QGroupBox" name="chkUseCustomFont">
+     <property name="title">
+      <string>Свой шрифт</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblFont">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>&amp;Название</string>
+        </property>
+        <property name="buddy">
+         <cstring>cmbFont</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lblFontSize">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>&amp;Размер</string>
+        </property>
+        <property name="buddy">
+         <cstring>edtFontSize</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QFontComboBox" name="cmbFont"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="edtFontSize">
+        <property name="minimum">
+         <number>6</number>
+        </property>
+        <property name="maximum">
+         <number>24</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QCheckBox" name="chkPropertyColorTest">
+     <property name="text">
+      <string>Цвет свойств для референсных интервалов</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QPushButton" name="btnPropertyColorTest"/>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>cmbStyle</tabstop>
+  <tabstop>chkStandartPalette</tabstop>
+  <tabstop>chkMaximizeMainWindow</tabstop>
+  <tabstop>chkFullScreenMainWindow</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>decorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>207</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>212</x>
+     <y>167</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>decorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>206</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

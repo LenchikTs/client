@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    
+<html>
+<head>
+<!--Главный скрипт-->
+<!--Конец главного скрипта-->
+
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+Пациент: {client.fullName}<br>
+Дата рождения: {client.birthDate}<br>
+{if: client.permanentAttach}
+Прикрепление постоянное: с {client.permanentAttach.begDate} по {client.permanentAttach.endDate}<br>
+{end:}
+{if: client.temporaryAttach}
+Прикрепление временное: с {client.temporaryAttach.begDate} по {client.temporaryAttach.endDate}<br>
+{end:}
+
+Событие №{event.id}: тип {event.eventType} с {event.setDate}<br>
+
+Договор №{event.contract.number}: с {event.contract.begDate} по {event.contract.endDate}<br>
+Примечание к договору: {event.contract.note}
+
+<!--
+3. Договор (Event.Contract): Номер, дата, плательщик, примечание (Event.Contract.note)
+
+ -->
+</body>
+</html>

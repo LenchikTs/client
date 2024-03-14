@@ -1,0 +1,5 @@
+<HTML><BODY>
+код: {clientId}&nbsp;<FONT FACE="Code 3 de 9" SIZE=+3>*{clientId}*</FONT><BR/>
+ФИО: <B>{fullName}</B><BR/>
+ДР: <B>{birthDate}</B>(<B>{age}</B>),&nbsp;Пол: <B>{sex}</B>,&nbsp;СНИЛС:<B>{SNILS}</B>
+</BODY></HTML>

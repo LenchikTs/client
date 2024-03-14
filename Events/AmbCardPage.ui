@@ -1,0 +1,2645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AmbCardPage</class>
+ <widget class="QWidget" name="AmbCardPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>986</width>
+    <height>529</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0" colspan="5">
+    <widget class="QTabWidget" name="tabAmbCardContent">
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabAmbCardDiagnostics">
+      <attribute name="title">
+       <string>Диагнозы</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>980</width>
+            <height>480</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout">
+           <property name="margin">
+            <number>2</number>
+           </property>
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QGroupBox" name="frmAmbCardDiagnosticFilter">
+             <property name="title">
+              <string>Фильтр</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_4">
+              <item row="0" column="8" rowspan="2">
+               <widget class="QDialogButtonBox" name="cmdAmbCardDiagnosticsButtonBox">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="standardButtons">
+                 <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="CDateEdit" name="edtAmbCardDiagnosticsBegDate">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="CDateEdit" name="edtAmbCardDiagnosticsEndDate">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="CRBComboBox" name="cmbAmbCardDiagnosticsPurpose">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>120</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Назначение</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="5">
+               <widget class="CRBComboBox" name="cmbAmbCardDiagnosticsSpeciality">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>120</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Специальность</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="6">
+               <widget class="CPersonComboBoxEx" name="cmbAmbCardDiagnosticsPerson">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>120</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Врач</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="7">
+               <widget class="CRBComboBox" name="cmbHealthGroup">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Группа здоровья</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLabel" name="lblAmbCardDiagnosticEndDate">
+                <property name="text">
+                 <string>По</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="lblAmbCardDiagnosticBegDate">
+                <property name="text">
+                 <string>С</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QFrame" name="frmAmbCardDiagnostics">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="_3">
+              <property name="margin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QSplitter" name="splitterAmbCardDiagnostics">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <widget class="CTableView" name="tblAmbCardDiagnostics"/>
+                <widget class="QTabWidget" name="tabAmbCardDiagnosticDetails">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="tabAmbCardDiagnosticsEvent">
+                  <attribute name="title">
+                   <string>Обращение</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_1">
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QScrollArea" name="scrollArea">
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                     </property>
+                     <property name="widgetResizable">
+                      <bool>true</bool>
+                     </property>
+                     <widget class="QWidget" name="scrollAreaWidgetContents">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>970</width>
+                        <height>236</height>
+                       </rect>
+                      </property>
+                      <layout class="QGridLayout" name="_4">
+                       <property name="margin">
+                        <number>4</number>
+                       </property>
+                       <property name="spacing">
+                        <number>4</number>
+                       </property>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventOrg">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Место</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1" colspan="3">
+                        <widget class="QLabel" name="lblAmbCardEventOrgValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="4" colspan="2">
+                        <widget class="QLabel" name="lblAmbCardEventExtId">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="toolTip">
+                          <string>Внешний идентификатор</string>
+                         </property>
+                         <property name="text">
+                          <string>Номер документа</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="6">
+                        <widget class="QLabel" name="lblAmbCardEventExtIdValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventType">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Тип</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1" colspan="2">
+                        <widget class="QLabel" name="lblAmbCardEventTypeValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="3">
+                        <widget class="QLabel" name="lblAmbCardEventPrimary">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Первичный</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="4">
+                        <widget class="QCheckBox" name="chkAmbCardEventPrimary">
+                         <property name="enabled">
+                          <bool>false</bool>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="checkable">
+                          <bool>true</bool>
+                         </property>
+                         <property name="checked">
+                          <bool>false</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="5">
+                        <widget class="QLabel" name="lblAmbCardEventOrder">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Порядок</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="6">
+                        <widget class="QLabel" name="lblAmbCardEventOrderValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventSetDate">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Дата начала</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="1" colspan="2">
+                        <widget class="QLabel" name="lblAmbCardEventSetDateValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="3">
+                        <widget class="QLabel" name="lblAmbCardEventExecDate">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Дата выполнения</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="4" colspan="2">
+                        <widget class="QLabel" name="lblAmbCardEventExecDateValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="6">
+                        <spacer>
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>171</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventSetPerson">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Направил</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="1" colspan="2">
+                        <widget class="QLabel" name="lblAmbCardEventSetPersonValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="3">
+                        <widget class="QLabel" name="lblAmbCardEventExecPerson">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Выполнил</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="4" colspan="3">
+                        <widget class="QLabel" name="lblAmbCardEventExecPersonValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="4" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventNextDate">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Дата след. явки</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="4" column="1" colspan="2">
+                        <widget class="QLabel" name="lblAmbCardEventNextDateValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="4" column="3" colspan="4">
+                        <spacer>
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>421</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                       <item row="5" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventCreatePerson">
+                         <property name="text">
+                          <string>Создал</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="5" column="1" colspan="6">
+                        <widget class="QLabel" name="lblAmbCardEventCreatePersonValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventModifyPerson">
+                         <property name="text">
+                          <string>Изменил</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="1" colspan="6">
+                        <widget class="QLabel" name="lblAmbCardEventModifyPersonValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="7" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventDiag">
+                         <property name="text">
+                          <string>Диаг1</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="7" column="1">
+                        <widget class="QLabel" name="lblAmbCardEventDiagValue">
+                         <property name="minimumSize">
+                          <size>
+                           <width>20</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="7" column="2" colspan="5">
+                        <widget class="QLabel" name="lblAmbCardEventDiagName">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="8" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventDiagEx">
+                         <property name="text">
+                          <string>Диаг2</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="8" column="1">
+                        <widget class="QLabel" name="lblAmbCardEventDiagExValue">
+                         <property name="minimumSize">
+                          <size>
+                           <width>20</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="8" column="2" colspan="5">
+                        <widget class="QLabel" name="lblAmbCardEventDiagExName">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="9" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventResult">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>Результат</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="9" column="1" colspan="6">
+                        <widget class="QLabel" name="lblAmbCardEventResultValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="10" column="0">
+                        <widget class="QLabel" name="lblAmbCardEventPayStatus">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>pay status</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="10" column="1" colspan="6">
+                        <widget class="QLabel" name="lblAmbCardEventPayStatusValue">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Sunken</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="11" column="0">
+                        <spacer>
+                         <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>121</width>
+                           <height>91</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
+                     </widget>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="tabAmbCardDiagnosticsVisits">
+                  <attribute name="title">
+                   <string>Визиты</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="_5">
+                   <property name="margin">
+                    <number>4</number>
+                   </property>
+                   <property name="spacing">
+                    <number>4</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="CTableView" name="tblAmbCardDiagnosticsVisits"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="tabAmbCardDiagnosticsAccompDiagnostics">
+                  <attribute name="title">
+                   <string>Сопутствующие диагнозы</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="_6">
+                   <property name="margin">
+                    <number>4</number>
+                   </property>
+                   <property name="spacing">
+                    <number>4</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="CTableView" name="tblAmbCardDiagnosticsAccompDiagnostics"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="tabAmbCardtabAmbCardDiagnosticsActions">
+                  <attribute name="title">
+                   <string>Мероприятия</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="_7">
+                   <property name="margin">
+                    <number>4</number>
+                   </property>
+                   <property name="spacing">
+                    <number>4</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QSplitter" name="splitter_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <widget class="CTableView" name="tblAmbCardDiagnosticsActions"/>
+                     <widget class="CActionPropertiesTableView" name="tblAmbCardDiagnosticsActionProperties"/>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabAmbCardStatus">
+      <attribute name="title">
+       <string>Статус</string>
+      </attribute>
+      <layout class="QGridLayout" name="_8">
+       <property name="margin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="frmAmbCardStatusFilter">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Фильтр</string>
+         </property>
+         <layout class="QGridLayout" name="_9">
+          <property name="margin">
+           <number>2</number>
+          </property>
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblAmbCardStatusBegDate">
+            <property name="text">
+             <string>С</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="CDateEdit" name="edtAmbCardStatusBegDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="lblAmbCardStatusEndDate">
+            <property name="text">
+             <string>По</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="CDateEdit" name="edtAmbCardStatusEndDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="CActionTypeComboBox" name="cmbAmbCardStatusGroup">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Тип (группа?)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="edtAmbCardStatusOffice">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="maxLength">
+             <number>10</number>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="COrgStructureComboBox" name="cmbAmbCardStatusOrgStructure">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>16</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="8">
+           <widget class="QDialogButtonBox" name="cmdAmbCardStatusButtonBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="standardButtons">
+             <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frmAmbCardStatusAction">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="_10">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QSplitter" name="splitterAmbCardStatusAction">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <widget class="CRegistryActionsTableView" name="tblAmbCardStatusActions"/>
+            <widget class="CActionPropertiesTableView" name="tblAmbCardStatusActionProperties"/>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabAmbCardDiagnostic">
+      <attribute name="title">
+       <string>Диагностика</string>
+      </attribute>
+      <layout class="QGridLayout" name="_11">
+       <property name="margin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="frmAmbCardDiagnosticFilter_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Фильтр</string>
+         </property>
+         <layout class="QGridLayout" name="_12">
+          <property name="margin">
+           <number>2</number>
+          </property>
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblAmbCardDiagnosticBegDate_2">
+            <property name="text">
+             <string>С</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="CDateEdit" name="edtAmbCardDiagnosticBegDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="lblAmbCardDiagnosticEndDate_2">
+            <property name="text">
+             <string>По</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="CDateEdit" name="edtAmbCardDiagnosticEndDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="CActionTypeComboBox" name="cmbAmbCardDiagnosticGroup">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Тип (группа?)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="edtAmbCardDiagnosticOffice">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="maxLength">
+             <number>10</number>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="COrgStructureComboBox" name="cmbAmbCardDiagnosticOrgStructure">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>16</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="8">
+           <widget class="QDialogButtonBox" name="cmdAmbCardDiagnosticButtonBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="standardButtons">
+             <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frmAmbCardDiagnosticAction">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="_13">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QSplitter" name="splitterAmbCardDiagnosticAction">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <widget class="CRegistryActionsTableView" name="tblAmbCardDiagnosticActions"/>
+            <widget class="CActionPropertiesTableView" name="tblAmbCardDiagnosticActionProperties"/>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabAmbCardCure">
+      <attribute name="title">
+       <string>Лечение</string>
+      </attribute>
+      <layout class="QGridLayout" name="_14">
+       <property name="margin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="frmAmbCardCureFilter">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Фильтр</string>
+         </property>
+         <layout class="QGridLayout" name="_15">
+          <property name="margin">
+           <number>2</number>
+          </property>
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblAmbCardCureBegDate">
+            <property name="text">
+             <string>С</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="CDateEdit" name="edtAmbCardCureBegDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="lblAmbCardCureEndDate">
+            <property name="text">
+             <string>По</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="CDateEdit" name="edtAmbCardCureEndDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="CActionTypeComboBox" name="cmbAmbCardCureGroup">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Тип (группа?)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="edtAmbCardCureOffice">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="maxLength">
+             <number>10</number>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="COrgStructureComboBox" name="cmbAmbCardCureOrgStructure">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>16</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="8">
+           <widget class="QDialogButtonBox" name="cmdAmbCardCureButtonBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="standardButtons">
+             <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frmAmbCardCureAction">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="_16">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QSplitter" name="splitterAmbCardCureAction">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <widget class="CRegistryActionsTableView" name="tblAmbCardCureActions"/>
+            <widget class="CActionPropertiesTableView" name="tblAmbCardCureActionProperties"/>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabAmbCardMisc">
+      <attribute name="title">
+       <string>Мероприятия</string>
+      </attribute>
+      <layout class="QGridLayout" name="_17">
+       <property name="margin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="frmAmbCardMiscFilter">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Фильтр</string>
+         </property>
+         <layout class="QGridLayout" name="_18">
+          <property name="margin">
+           <number>2</number>
+          </property>
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblAmbCardMiscBegDate">
+            <property name="text">
+             <string>С</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="CDateEdit" name="edtAmbCardMiscBegDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="lblAmbCardMiscEndDate">
+            <property name="text">
+             <string>По</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="CDateEdit" name="edtAmbCardMiscEndDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="CActionTypeComboBox" name="cmbAmbCardMiscGroup">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Тип (группа?)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="edtAmbCardMiscOffice">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="maxLength">
+             <number>10</number>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="COrgStructureComboBox" name="cmbAmbCardMiscOrgStructure">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>16</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="8">
+           <widget class="QDialogButtonBox" name="cmdAmbCardMiscButtonBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="standardButtons">
+             <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frmAmbCardMiscAction">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="_19">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QSplitter" name="splitterAmbCardMiscAction">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <widget class="CRegistryActionsTableView" name="tblAmbCardMiscActions"/>
+            <widget class="CActionPropertiesTableView" name="tblAmbCardMiscActionProperties"/>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="CRadiationDosePage" name="tabRadiationDose">
+      <attribute name="title">
+       <string>ЭЭД</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabAmbCardVisit">
+      <attribute name="title">
+       <string>Визиты</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QScrollArea" name="scrollArea_3">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>770</width>
+            <height>240</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QGroupBox" name="groupBox">
+             <property name="title">
+              <string>Фильтр</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <property name="margin">
+               <number>2</number>
+              </property>
+              <item row="1" column="5">
+               <widget class="CRBComboBox" name="cmbAmbCardVisitScene"/>
+              </item>
+              <item row="1" column="3">
+               <widget class="CRBComboBox" name="cmbAmbCardVisitSpeciality"/>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLabel" name="lblAmbCardVisitOrgStructure">
+                <property name="text">
+                 <string>Подразделение</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="COrgStructureComboBox" name="cmbAmbCardVisitOrgStructure"/>
+              </item>
+              <item row="1" column="6">
+               <widget class="CRBComboBox" name="cmbAmbCardVisitEventType"/>
+              </item>
+              <item row="0" column="6">
+               <widget class="QLabel" name="lblAmbCardVisitEventType">
+                <property name="text">
+                 <string>Тип обращения</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="7">
+               <widget class="QLabel" name="lblAmbCardVisitService">
+                <property name="text">
+                 <string>Услуга</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="CPersonComboBoxEx" name="cmbAmbCardVisitPerson"/>
+              </item>
+              <item row="0" column="4">
+               <widget class="QLabel" name="lblAmbCardVisitPerson">
+                <property name="text">
+                 <string>Врач</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLabel" name="lblAmbCardVisitSpeciality">
+                <property name="text">
+                 <string>Специальность</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QWidget" name="widget" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="margin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="lblAmbCardVisitBegDate">
+                   <property name="text">
+                    <string>С</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CDateEdit" name="edtAmbCardVisitBegDate">
+                   <property name="calendarPopup">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="lblAmbCardVisitEndDate">
+                   <property name="text">
+                    <string>По</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CDateEdit" name="edtAmbCardVisitEndDate">
+                   <property name="calendarPopup">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="1" column="7">
+               <widget class="CRBComboBox" name="cmbAmbCardVisitService"/>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="lblAmbCardVisitDate">
+                <property name="text">
+                 <string>Дата</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <widget class="QLabel" name="lblAmbCardVisitScene">
+                <property name="text">
+                 <string>Место</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="8" rowspan="2">
+               <widget class="QDialogButtonBox" name="cmdAmbCardVisitButtonBox">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="standardButtons">
+                 <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSplitter" name="splitter">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <widget class="CTableView" name="tblAmbCardVisits"/>
+             <widget class="QWidget" name="wgtAmbCardVisitEvent" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QScrollArea" name="scrollArea_1">
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="widgetResizable">
+                  <bool>true</bool>
+                 </property>
+                 <widget class="QWidget" name="scrollAreaWidgetContents_1">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>735</width>
+                    <height>241</height>
+                   </rect>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_2">
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item row="8" column="2" colspan="4">
+                    <widget class="QLabel" name="lblAmbCardEventDiagExName_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="3" colspan="2">
+                    <widget class="QLabel" name="lblAmbCardEventExtId_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="toolTip">
+                      <string>Внешний идентификатор</string>
+                     </property>
+                     <property name="text">
+                      <string>Номер документа</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventType_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Тип</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLabel" name="lblAmbCardEventTypeValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="2">
+                    <widget class="QLabel" name="lblAmbCardEventPrimary_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Первичный</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="3">
+                    <widget class="QCheckBox" name="chkAmbCardEventPrimary_2">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="checkable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="checked">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventOrg_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Место</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="5">
+                    <spacer name="spacer">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>567</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventSetPerson_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Направил</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QLabel" name="lblAmbCardEventSetPersonValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="2">
+                    <widget class="QLabel" name="lblAmbCardEventExecPerson_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Выполнил</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="3" colspan="3">
+                    <widget class="QLabel" name="lblAmbCardEventExecPersonValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventNextDate_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Дата след. явки</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventCreatePerson_2">
+                     <property name="text">
+                      <string>Создал</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="1" colspan="5">
+                    <widget class="QLabel" name="lblAmbCardEventCreatePersonValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventModifyPerson_2">
+                     <property name="text">
+                      <string>Изменил</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="1" colspan="5">
+                    <widget class="QLabel" name="lblAmbCardEventModifyPersonValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1" colspan="2">
+                    <widget class="QLabel" name="lblAmbCardEventOrgValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="5">
+                    <widget class="QLabel" name="lblAmbCardEventExtIdValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="4">
+                    <widget class="QLabel" name="lblAmbCardEventOrder_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Порядок</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="5">
+                    <widget class="QLabel" name="lblAmbCardEventOrderValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventSetDate_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Дата начала</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1">
+                    <widget class="QLabel" name="lblAmbCardEventNextDateValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="2" colspan="4">
+                    <spacer name="spacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>836</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QLabel" name="lblAmbCardEventSetDateValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="7" column="2" colspan="4">
+                    <widget class="QLabel" name="lblAmbCardEventDiagName_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="2">
+                    <widget class="QLabel" name="lblAmbCardEventExecDate_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Дата выполнения</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="3" colspan="2">
+                    <widget class="QLabel" name="lblAmbCardEventExecDateValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="8" column="1">
+                    <widget class="QLabel" name="lblAmbCardEventDiagExValue_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>20</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="7" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventDiag_2">
+                     <property name="text">
+                      <string>Диаг1</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="7" column="1">
+                    <widget class="QLabel" name="lblAmbCardEventDiagValue_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>20</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="8" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventDiagEx_2">
+                     <property name="text">
+                      <string>Диаг2</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="9" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventResult_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Результат</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="9" column="1" colspan="5">
+                    <widget class="QLabel" name="lblAmbCardEventResultValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="10" column="0">
+                    <widget class="QLabel" name="lblAmbCardEventPayStatus_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>pay status</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="10" column="1" colspan="5">
+                    <widget class="QLabel" name="lblAmbCardEventPayStatusValue_2">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="11" column="0">
+                    <spacer name="verticalSpacer">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabAttachedFiles">
+      <attribute name="title">
+       <string>Файлы</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <property name="margin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="CAttachFilesTable" name="tblAmbCardAttachedFiles"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabAmbCardSurvey">
+      <attribute name="title">
+       <string>Опрос</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <property name="margin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="frmAmbCardSurveyFilter">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Фильтр</string>
+         </property>
+         <layout class="QGridLayout" name="_21">
+          <property name="margin">
+           <number>2</number>
+          </property>
+          <property name="spacing">
+           <number>2</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblAmbCardSurveyBegDate">
+            <property name="text">
+             <string>С</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="CDateEdit" name="edtAmbCardSurveyBegDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="lblAmbCardSurveyEndDate">
+            <property name="text">
+             <string>По</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="CDateEdit" name="edtAmbCardSurveyEndDate">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="CActionTypeComboBox" name="cmbAmbCardSurveyGroup">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Тип (группа?)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="edtAmbCardSurveyOffice">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="maxLength">
+             <number>10</number>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="COrgStructureComboBox" name="cmbAmbCardSurveyOrgStructure">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>16</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="8">
+           <widget class="QDialogButtonBox" name="cmdAmbCardSurveyButtonBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="standardButtons">
+             <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frmAmbCardSurveyAction">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="_22">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QSplitter" name="splitterAmbCardSurveyAction">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <widget class="CRegistryActionsTableView" name="tblAmbCardSurveyActions"/>
+            <widget class="CActionPropertiesTableView" name="tblAmbCardSurveyActionProperties"/>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabAmbCardMonitoring">
+      <attribute name="title">
+       <string>Мониторинг</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="CAmbCardMonitoringInDocTableView" name="tblAmbCardMonitoring"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="btnAmbCardJournal">
+     <property name="text">
+      <string>Дневник</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="btnAmbCardGraph">
+     <property name="text">
+      <string>График</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>719</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="btnAmbCardPrint">
+     <property name="text">
+      <string>Печать</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QPushButton" name="btnAmbCard">
+     <property name="text">
+      <string>Амбулаторная карта</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionPropertiesTableView</class>
+   <extends>QTableView</extends>
+   <header>Events/ActionPropertiesTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRegistryActionsTableView</class>
+   <extends>QTableView</extends>
+   <header>Registry/RegistryTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Events/ActionTypeComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRadiationDosePage</class>
+   <extends>QWidget</extends>
+   <header location="global">Events/RadiationDosePage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CAttachFilesTable</class>
+   <extends>QTableView</extends>
+   <header location="global">/library/Attach/AttachFilesTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAmbCardMonitoringInDocTableView</class>
+   <extends>QTableView</extends>
+   <header>Registry/AmbCardMonitoringInDocTableView.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabAmbCardContent</tabstop>
+  <tabstop>edtAmbCardDiagnosticsBegDate</tabstop>
+  <tabstop>edtAmbCardDiagnosticsEndDate</tabstop>
+  <tabstop>cmbAmbCardDiagnosticsPurpose</tabstop>
+  <tabstop>cmbAmbCardDiagnosticsSpeciality</tabstop>
+  <tabstop>cmbAmbCardDiagnosticsPerson</tabstop>
+  <tabstop>cmdAmbCardDiagnosticsButtonBox</tabstop>
+  <tabstop>tblAmbCardDiagnostics</tabstop>
+  <tabstop>tabAmbCardDiagnosticDetails</tabstop>
+  <tabstop>chkAmbCardEventPrimary</tabstop>
+  <tabstop>edtAmbCardStatusBegDate</tabstop>
+  <tabstop>edtAmbCardStatusEndDate</tabstop>
+  <tabstop>cmbAmbCardStatusGroup</tabstop>
+  <tabstop>edtAmbCardStatusOffice</tabstop>
+  <tabstop>cmbAmbCardStatusOrgStructure</tabstop>
+  <tabstop>cmdAmbCardStatusButtonBox</tabstop>
+  <tabstop>tblAmbCardStatusActions</tabstop>
+  <tabstop>tblAmbCardStatusActionProperties</tabstop>
+  <tabstop>edtAmbCardDiagnosticBegDate</tabstop>
+  <tabstop>edtAmbCardDiagnosticEndDate</tabstop>
+  <tabstop>cmbAmbCardDiagnosticGroup</tabstop>
+  <tabstop>edtAmbCardDiagnosticOffice</tabstop>
+  <tabstop>cmbAmbCardDiagnosticOrgStructure</tabstop>
+  <tabstop>cmdAmbCardDiagnosticButtonBox</tabstop>
+  <tabstop>tblAmbCardDiagnosticActions</tabstop>
+  <tabstop>tblAmbCardDiagnosticActionProperties</tabstop>
+  <tabstop>edtAmbCardCureBegDate</tabstop>
+  <tabstop>edtAmbCardCureEndDate</tabstop>
+  <tabstop>cmbAmbCardCureGroup</tabstop>
+  <tabstop>edtAmbCardCureOffice</tabstop>
+  <tabstop>cmbAmbCardCureOrgStructure</tabstop>
+  <tabstop>cmdAmbCardCureButtonBox</tabstop>
+  <tabstop>tblAmbCardCureActions</tabstop>
+  <tabstop>tblAmbCardCureActionProperties</tabstop>
+  <tabstop>edtAmbCardMiscBegDate</tabstop>
+  <tabstop>edtAmbCardMiscEndDate</tabstop>
+  <tabstop>cmbAmbCardMiscGroup</tabstop>
+  <tabstop>edtAmbCardMiscOffice</tabstop>
+  <tabstop>cmbAmbCardMiscOrgStructure</tabstop>
+  <tabstop>cmdAmbCardMiscButtonBox</tabstop>
+  <tabstop>tblAmbCardMiscActions</tabstop>
+  <tabstop>tblAmbCardMiscActionProperties</tabstop>
+  <tabstop>edtAmbCardVisitBegDate</tabstop>
+  <tabstop>edtAmbCardVisitEndDate</tabstop>
+  <tabstop>cmbAmbCardVisitOrgStructure</tabstop>
+  <tabstop>cmbAmbCardVisitSpeciality</tabstop>
+  <tabstop>cmbAmbCardVisitPerson</tabstop>
+  <tabstop>cmbAmbCardVisitScene</tabstop>
+  <tabstop>cmbAmbCardVisitEventType</tabstop>
+  <tabstop>cmbAmbCardVisitService</tabstop>
+  <tabstop>cmdAmbCardVisitButtonBox</tabstop>
+  <tabstop>tblAmbCardVisits</tabstop>
+  <tabstop>chkAmbCardEventPrimary_2</tabstop>
+  <tabstop>btnAmbCardPrint</tabstop>
+  <tabstop>btnAmbCardJournal</tabstop>
+  <tabstop>btnAmbCardGraph</tabstop>
+  <tabstop>tblAmbCardDiagnosticsActionProperties</tabstop>
+  <tabstop>tblAmbCardDiagnosticsActions</tabstop>
+  <tabstop>tblAmbCardDiagnosticsVisits</tabstop>
+  <tabstop>tblAmbCardDiagnosticsAccompDiagnostics</tabstop>
+  <tabstop>cmbHealthGroup</tabstop>
+  <tabstop>tblAmbCardAttachedFiles</tabstop>
+  <tabstop>edtAmbCardSurveyBegDate</tabstop>
+  <tabstop>edtAmbCardSurveyEndDate</tabstop>
+  <tabstop>cmbAmbCardSurveyGroup</tabstop>
+  <tabstop>edtAmbCardSurveyOffice</tabstop>
+  <tabstop>cmbAmbCardSurveyOrgStructure</tabstop>
+  <tabstop>cmdAmbCardSurveyButtonBox</tabstop>
+  <tabstop>tblAmbCardSurveyActions</tabstop>
+  <tabstop>tblAmbCardSurveyActionProperties</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

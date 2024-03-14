@@ -1,0 +1,1 @@
+c:\Python27\Scripts\pyinstaller --icon=icons\Icon2.ico --noconsole --add-data i18n;i18n --add-data icons;icons --add-binary ru_RU.aff;. --add-binary ru_RU.dic;. --add-binary x32/libwinpthread-1.dll;. --add-binary x32/hunspell.dll;. -n samson s11main.py --distpath out\dist32 --workpath out\build32 --noconfirm --clean

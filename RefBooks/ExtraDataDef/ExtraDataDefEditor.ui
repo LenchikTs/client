@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ItemEditorDialog</class>
+ <widget class="QDialog" name="ItemEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>587</width>
+    <height>383</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblName">
+     <property name="text">
+      <string>Наименование</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="edtName"/>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QTabWidget" name="tabMain">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabUploadCase">
+      <attribute name="title">
+       <string>Выгружать в случае</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="1" column="0">
+        <widget class="CInDocTableView" name="tblUploadCases">
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="chkUploadEnabled">
+         <property name="text">
+          <string>Выгрузка разрешена</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabUploadSource">
+      <attribute name="title">
+       <string>Выгружать из действия</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="1" column="0" colspan="2">
+        <widget class="QRadioButton" name="rbSourceIsActionFromSameEvent">
+         <property name="text">
+          <string>Выгружать из действия того же события что и направление</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QRadioButton" name="rbSourceIsAnyAction">
+         <property name="text">
+          <string>Выгружать из любого действия</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QRadioButton" name="rbSourceIsDirection">
+         <property name="text">
+          <string>Выгружать из направления</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="CInDocTableView" name="tblUploadActionTypes">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QLabel" name="lblSourceActionType">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Тип действия</string>
+         </property>
+         <property name="buddy">
+          <cstring>tblUploadActionTypes</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabElements">
+      <attribute name="title">
+       <string>Элементы</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="CInDocTableView" name="tblElements">
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="dragDropOverwriteMode">
+          <bool>false</bool>
+         </property>
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabDownload">
+      <attribute name="title">
+       <string>Загрузка</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="1" column="0">
+        <widget class="QRadioButton" name="rbDestIsSeparateAction">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Загружать в отдельное действие</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="CActionTypeComboBox" name="cmbDestActionType">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Тип действия 1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Тип действия 2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Тип действия 3</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Тип действия 4</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Тип действия 5</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QRadioButton" name="rbDestIsDirection">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Загружать в действие-направление</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="CInDocTableView" name="tblDownloadElements">
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CInDocTableView</class>
+   <extends>QTableView</extends>
+   <header>library/InDocTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Events/ActionTypeComboBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtName</tabstop>
+  <tabstop>tabMain</tabstop>
+  <tabstop>chkUploadEnabled</tabstop>
+  <tabstop>tblUploadCases</tabstop>
+  <tabstop>rbSourceIsDirection</tabstop>
+  <tabstop>rbSourceIsActionFromSameEvent</tabstop>
+  <tabstop>rbSourceIsAnyAction</tabstop>
+  <tabstop>tblUploadActionTypes</tabstop>
+  <tabstop>tblElements</tabstop>
+  <tabstop>rbDestIsDirection</tabstop>
+  <tabstop>rbDestIsSeparateAction</tabstop>
+  <tabstop>cmbDestActionType</tabstop>
+  <tabstop>tblDownloadElements</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkUploadEnabled</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>tblUploadCases</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>84</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ItemEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>448</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>587</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ItemEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>522</x>
+     <y>368</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>585</x>
+     <y>315</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbSourceIsDirection</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>tblUploadActionTypes</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>48</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbSourceIsDirection</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblSourceActionType</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>28</x>
+     <y>64</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>35</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbDestIsSeparateAction</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDestActionType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>84</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

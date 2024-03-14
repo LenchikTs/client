@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StockMotionNumberEditorDialog</class>
+ <widget class="QDialog" name="StockMotionNumberEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>333</width>
+    <height>170</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ChangeMe!</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblStockMotionType">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Тип накладной</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>103</width>
+       <height>16</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="edtName"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblCounter">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Счетчик</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblStockMotionType_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Наименование</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="edtCode"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="cmbStockMotionType">
+     <item>
+      <property name="text">
+       <string>Внутренняя накладная</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Инвентаризация</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Финансовая переброска</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Производство</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Списание на пациента</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Возврат от пациента</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Резервирование на пациента</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Утилизация</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Внутреннее потребление</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Требование</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Накладная от поставщика</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="CRBComboBox" name="cmbCounter"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblStockMotionType_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Код</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblOrgStructure">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Подразделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>StockMotionNumberEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>44</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>StockMotionNumberEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>44</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>{ setPageSize('A4') }{ setOrientation('P') }{ setLeftMargin(5.0) }{ setTopMargin(10.0) }{ setRightMargin(15.0) }{ setBottomMargin(10.0) }
+<meta name="qrichtext" content="1" />
+{: QDate = type(client.birthDate.date)}
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+<!--СТРАНИЦА 1-->
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align=right>Приложение к приказу Министерства здравоохранения<br>
+и социального развития Российской Федерации<br>
+от 31 января 2007 года №77<br>
+<br>
+Медицинская документация<br>
+Форма №088/у-06</td></tr>
+<tr><td align=center><big>Министерство здравоохранения и социального развития Российской Федерации</big></td></tr>
+<tr><td>{: string = currentOrganisation.shortName}<u><font face="Courier">{ "_"*(30-len(string)/2) + string + "_"*(30-(len(string)+1)/2) }</font></u></td></tr>
+<tr><td align=center><small>(наименование и адрес организации, оказывающей лечебно-профилактическую помощь)</small></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:2"> </p></td></tr>
+
+<tr><td align=center><big>НАПРАВЛЕНИЕ НА МЕДИКО-СОЦИАЛЬНУЮ ЭКСПЕРТИЗУ ОРГАНИЗАЦИЕЙ, ОКАЗЫВАЮЩЕЙ ЛЕЧЕБНО-<br>
+ПРОФИЛАКТИЧЕСКУЮ ПОМОЩЬ</big></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:2"> </p></td></tr>
+
+<tr><td>   Дата выдачи:  {: string = action.begDate.date.toString(u"dd MMMM yyyy г.")}<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:2"> </p></td></tr>
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>1. Фамилия, имя, отчество, гражданина, направляемого на медико-социальную экспертизу (далее - гражданина):<br>
+{: string = client.lastName + " " + client.firstName}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = client.patrName}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr><td>2. Дата рождения: {: string = client.birthDate.date.toString(u"dd MMMM yyyy г.")}<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u> 3. Пол: {: string = client.sex}<u><font face="Courier">{string + "_"*(15 - len(string)) }</font></u></td></tr>
+<tr><td>4. Фамилия, имя, отчество законного представителя гражданина (заполняется при наличии законного представителя):<br>
+{: string = action[u"ФИО законного представителя гражданина"].value}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr><td>5. Адрес места жительства гражданина (при отсутствии места жительства указывается адрес пребывания, фактического проживания на<br>
+территории Российской Федерации): <u><font face="Courier">_____________________________________________</font></u><br>{: address = client.regAddress if client.regAddress else client.locAddress}
+{: string = address.city}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = address.street}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = u"д. " + address.number + (u" корп. " + address.corpus if address.corpus else "") + (u" кв. " + address.flat if address.flat else "")}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{: invalid=0}
+{for: status in client.socStatuses}
+{if: status.code == '081'} {: invalid = 1}{elif:  status.code == '082'} {: invalid = 2}{elif:  status.code == '083'} {: invalid = 3}{elif:  status.code == '09' or status.code == '084'} {: invalid = 4}{end:}
+{end:}
+<td>6. {if: invalid==0}<u>{end:}Инвалидом не является{if: invalid==0}</u>{end:}, инвалид {if: invalid==1}<u>{end:}первой{if: invalid==1}</u>{end:}, {if: invalid==2}<u>{end:}второй{if: invalid==2}</u>{end:}, {if: invalid==3}<u>{end:}третьей{if: invalid==3}</u>{end:} группы, {if: invalid==4}<u>{end:}категория "ребёнок-инвалид"{if: invalid==4}</u>{end:} (нужное подчеркнуть)</td></tr>
+<tr><td>7. Степень ограничения способности к трудовой деятельности: {if: not event.isPrimary}{: string = action[u"Степень ограничения способности к трудовой деятельности"].value}{else:}{: string=""}{end:}<u><font face="Courier">{string + "_"*(30 - len(string)) }</font></u></td></tr>
+<tr><td align=right>(заполняется при повторном направлении)</td></tr>
+<tr><td>Степень утраты профессиональной трудоспособности в процентах: {if: not event.isPrimary}{: string = action[u"Степень утраты профессиональной трудоспособности в процентах"].value}{else:}{: string=""}{end:}<u><font face="Courier">{string + "_"*(30 - len(string)) }</font></u></td></tr>
+<tr><td align=right>(заполняется при повторном направлении)</td></tr>
+<tr><td>9. Направляется {if: event.isPrimary}<u>первично</u>, повторно{else:}первично, <u>повторно</u>{end:} (нужное подчеркнуть)</td></tr>
+<tr><td>10. Кем работает на момент направления на медико-социальную экспертизу:<br>
+{: string = client.work.post if client.work.post != '' else u'не работает'}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+(указать должность, профессию, специальность, квалификацию и стаж работы по указанной должности, профессии, специальности,<br>
+квалификации; в отношении не работающих граждан сделать запись: "не работает")</td></tr>
+<tr><td>11. Наименование и адрес организации, в которой работает гражданин: <u><font face="Courier">______________________________</font></u><br>
+{: string = client.work.shortName}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = client.work.address}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{:list = action[u"Условия и характер выполняемого труда"].value.split('\n')}<td>12. Условия и характер выполняемого труда: {: string = list[0][:40] if len(list) else ''}<u><font face="Courier">{string + "_"*(40 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{:list = action[u"Основная профессия (специальность)"].value.split('\n')}<td>13. Основная профессия (специальность): {: string = list[0][:45] if len(list) else ''}<u><font face="Courier">{string + "_"*(45 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{:list = action[u"Квалификация по основной профессии (класс, разряд, категория, звание)"].value.split('\n')}<td>14. Квалификация по основной профессии (класс, разряд, категория, звание): {: string = list[0][:30] if len(list) else ''}<u><font face="Courier">{string + "_"*(30 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list)>2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[3][:60] if len(list) >3 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{:list = action[u"Наименование и адрес образовательного учреждения"].value.split('\n')}<td>15. Наименование и адрес образовательного учреждения: {: string = list[0][:30] if len(list) else ''}<u><font face="Courier">{string + "_"*(30 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+</table>
+</td></tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p style="page-break-after: always"></p>
+<!-- СТРАНИЦА 2-->
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>{: string = list[3][:60] if len(list) > 3 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr><td>16. {if: action[u"Группа"].value != ''}<u>{end:}Группа{if: action[u"Группа"].value != ''}</u>{end:}, {if: action[u"Класс"].value != ''}<u>{end:}класс{if: action[u"Класс"].value != ''}</u>{end:}, {if: action[u"Курс"].value != ''}<u>{end:}курс{if: action[u"Курс"].value != ''}</u>{end:} (указываемое подчеркнуть): {: string = (action[u"Группа"].value + action[u"Класс"].value + action[u"Курс"].value)[:40]}<u><font face="Courier">{string + "_"*(40 - len(string)) }</font></u><br>
+{: string = (action[u"Группа"].value + action[u"Класс"].value + action[u"Курс"].value)[40:100]}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{: list = action[u"Профессия (специальность), для получения которой проводится обучение"].value.split('\n')}<td>17. Профессия (специальность), для получения которой проводится обучение:<br>
+{: string = list[0][:60] if len(list) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr><td>18. Наблюдается в организациях, оказывающих лечебно-профилактическую помощь, с {: string = str(action[u"Наблюдается в организациях с ... года"].value)}<u><font face="Courier">{string + "_"*(4 - len(string)) }</font></u> года.</td></tr>
+<tr>{: list = action[u"История заболевания"].value.split('\n')}<td>19. История заболевания (начало, развитие, течение, частота и длительность обострений, проведенные лечебно-оздоровительные и<br>
+ реабилитационные мероприятия и их эффективность):<br>
+{: string = list[0][:60] if len(list) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[3][:60] if len(list) > 3 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[4][:60] if len(list) > 4 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[5][:60] if len(list) > 5 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[6][:60] if len(list) > 6 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{: list = action[u"Анамнез жизни"].value.split('\n')}<td>20. Анамнез жизни (перечесляются перенесенные в прошлом заболевания, травмы, отравления, операции, заболевания, по которым<br>
+ отягощена наследственность, дополнительно в отношении ребенка указывается, как протекали беременность и роды у матери, сроки<br>
+формирования психомоторных навыков, самообслуживания, познавательно-игровой деятельности, навыков опрятности и ухода за<br>
+собой, как протекало раннее развития (по возрасту, с отставанием, с опережением):<br>
+{: string = list[0][:60] if len(list) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[3][:60] if len(list) > 3 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[4][:60] if len(list) > 4 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[5][:60] if len(list) > 5 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr><td align=center>(заполняется при первичном направлении)</td></tr>
+<tr><td>21. Частота и длительность временной нетрудоспособности (сведения за последние 12 месяцев):</td></tr>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+{: tempInvalids = event.getTempInvalidList(None, None)}
+<tr><td>№<!--{event.execDate.date.toString(u"dd MMMM yyyy г.")}{len(tempInvalids)}--></td><td>Дата (число, месяц, год) начала временной нетрудоспособности</td><td>Дата (число, месяц, год) окончания временной нетрудоспособности</td><td>Число дней (месяцев и дней) временной нетрудоспособности</td><td>Диагноз</td></tr>
+{for: i in xrange(len(tempInvalids))}
+<tr><td>{str(i+1)}</td><td>{str(tempInvalids[i].begDate)}</td><td>{str(tempInvalids[i].endDate)}</td><td>{str(tempInvalids[i].duration)}</td><td>{tempInvalids[i].MKB}</td></tr>
+{end:}
+</table>
+</td></tr></table>
+
+
+
+
+
+
+
+
+
+<p style="page-break-after: always"></p>
+<!--СТРАНИЦА 3-->
+
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr>{: list = action[u"Результаты проведенных мероприятий по медицинской реабилитации в соответствии с индивидуальной программой реабилитации инвалида"].value.split('\n')}<td>22. Результаты проведенных мероприятий по медицинской реабилитации в соответствии с индивидуальной программой реабилитации<br>
+ инвалида (заполняется при повторном направлении, указываются конкретные виды восстановительной терапии, реконструктивной<br>
+хирургии, санаторно-курортного лечения, технических средств медицинской реабилитации, в том числе, протезирования и ортезирова-<br>
+ния, а также сроки, в которые они были предоставлены; перечисляются функции организма, которые удалось компенсировать или<br>
+восстановить полностью или частично, либо делается отметка, что положительные результаты отсутствуют):<br>
+{: string = list[0][:60] if len(list) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[3][:60] if len(list) > 3 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[4][:60] if len(list) > 4 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[5][:60] if len(list) > 5 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[6][:60] if len(list) > 6 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+
+<tr><td>{: string = list[7][:60] if len(list) > 7 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{: list = action[u"Состояние гражданина при направлении на медико-социальную экспертизу"].value.split('\n')}<td>23. Состояние гражданина при направлении на медико-социальную экспертизу (указываются жалобы, данные осмотра лечащим врачом<br>
+ и врачами других специальностей):<br>
+{: string = list[0][:60] if len(list) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[3][:60] if len(list) > 3 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[4][:60] if len(list) > 4 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[5][:60] if len(list) > 5 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[6][:60] if len(list) > 6 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[7][:60] if len(list) > 7 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[8][:60] if len(list) > 8 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[9][:60] if len(list) > 9 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[10][:60] if len(list) > 10 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[11][:60] if len(list) > 11 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[12][:60] if len(list) > 12 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[13][:60] if len(list) > 13 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[14][:60] if len(list) > 14 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[15][:60] if len(list) > 15 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[16][:60] if len(list) > 16 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[17][:60] if len(list) > 17 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{: list = action[u"Результаты дополнительных методов исследования"].value.split('\n')}<td>24. Результаты дополнительных методов исследования (указываются результаты проведенных лабораторных, рентгенологических,<br>
+ эндоскопических, ультразвуковых, психологических, функциональных и других видов исследований):
+{: string = list[0][:60] if len(list) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[3][:60] if len(list) > 3 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[4][:60] if len(list) > 4 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[5][:60] if len(list) > 5 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[6][:60] if len(list) > 6 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[7][:60] if len(list) > 7 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[8][:60] if len(list) > 8 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[9][:60] if len(list) > 9 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[10][:60] if len(list) > 10 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[11][:60] if len(list) > 11 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[12][:60] if len(list) > 12 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[13][:60] if len(list) > 13 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[14][:60] if len(list) > 14 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{: mass = action[u"Масса тела"].value}{: rost = action[u"Рост"].value}<td>25. Масса тела (кг) {: string = str(mass)}<u><font face="Courier">{ "_"*(6 - len(string)) + string}</font></u> , рост (м) {: string = str(rost)}<u><font face="Courier">{ "_"*(6 - len(string)) + string}</font></u> , индекс массы тела{: string = str(mass/(rost*rost)) if rost != 0 else u"ошибка"}<u><font face="Courier">{ "_"*(6 - len(string)) + string}</font></u></td></tr>
+<tr><td>26. Оценка физического развития: {if: action[u"Оценка физического развития"].value == u'нормальное'}<u>{end:}нормальное {if: action[u"Оценка физического развития"].value == u'нормальное'}</u>{end:},  {if: action[u"Оценка физического развития"].value != u'нормальное'}<u>{end:}отклонение {if: action[u"Оценка физического развития"].value != u'нормальное'}</u>{end:} ( {if: action[u"Оценка физического развития"].value == u'дефицит массы тела'}<u>{end:}дефицит массы тела{if: action[u"Оценка физического развития"].value == u'дефицит массы тела'}</u>{end:}, {if: action[u"Оценка физического развития"].value == u'избыток массы тела'}<u>{end:}избыток массы тела{if: action[u"Оценка физического развития"].value == u'избыток массы тела'}</u>{end:}, {if: action[u"Оценка физического развития"].value == u'низкий рост'}<u>{end:}низкий рост{if: action[u"Оценка физического развития"].value == u'низкий рост'}</u>{end:}, {if: action[u"Оценка физического развития"].value == u'высокий рост'}<u>{end:}высокий рост{if: action[u"Оценка физического развития"].value == u'высокий рост'}</u>{end:})<br>
+ (нужное подчеркнуть)</td></tr>
+<tr><td>27. Оценка психофизиологической выносливости: {if: action[u"Оценка психофизиологической выносливости"].value == u'норма'}<u>норма</u>, отклонение{else:}норма, <u>отклонение</u>{end:} (нужное подчеркнуть).</td></tr>
+<tr><td>28. Оценка эмоциональной выносливости: {if: action[u"Оценка эмоциональной выносливости"].value == u'норма'}<u>норма</u>, отклонение{else:}норма, <u>отклонение</u>{end:} (нужное подчеркнуть).</td></tr>
+<tr><td>29. Диагноз при направлении на медико-социальную экспертизу:<br>
+а) код основного заболевания по МКБ: {: string = event.diagnosises[0].MKB.code if len(event.diagnosises) else ''}<u><font face="Courier">{string + "_"*(40 - len(string)) }</font></u><br>
+<u><font face="Courier">____________________________________________________________</font></u><br>
+б) основное заболевание: {: string = event.diagnosises[0].MKB.descr[:50] if len(event.diagnosises) else ''}<u><font face="Courier">{string + "_"*(50 - len(string)) }</font></u><br>
+{: string = event.diagnosises[0].MKB.descr[50:110] if len(event.diagnosises) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = event.diagnosises[0].MKB.descr[110:170] if len(event.diagnosises) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p style="page-break-after: always"></p>
+<!--СТРАНИЦА 4-->
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>в) сопутствующие заболевания: {: string = event.diagnosises[1].MKB.descr[:50] if len(event.diagnosises) > 1 else ''}<u><font face="Courier">{string + "_"*(50 - len(string)) }</font></u><br>
+{: string = event.diagnosises[1].MKB.descr[50:110] if len(event.diagnosises) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = event.diagnosises[1].MKB.descr[110:170] if len(event.diagnosises) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = event.diagnosises[1].MKB.descr[170:230] if len(event.diagnosises) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr><td>в**) осложнения: {: string = event.diagnosises[2].MKB.descr[:50] if len(event.diagnosises) > 2 else ''}<u><font face="Courier">{ "_"*0 + string + "_"*(50-len(string)) }</font></u><br>
+{: string = event.diagnosises[2].MKB.descr[50:110] if len(event.diagnosises) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = event.diagnosises[2].MKB.descr[110:170] if len(event.diagnosises) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = event.diagnosises[2].MKB.descr[170:230] if len(event.diagnosises) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = event.diagnosises[2].MKB.descr[230:290] if len(event.diagnosises) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr><td>30. Клинический прогноз: {if: action[u"Клинический прогноз"].value == u'благоприятный'}<u>{end:}благоприятный{if: action[u"Клинический прогноз"].value == u'благоприятный'}</u>{end:}, {if: action[u"Клинический прогноз"].value == u'относительно благоприятный'}<u>{end:}относительно благоприятный{if: action[u"Клинический прогноз"].value == u'относительно благоприятный'}</u>{end:}, {if: action[u"Клинический прогноз"].value == u'сомнительный (неопределенный)'}<u>{end:}сомнительный (неопределенный){if: action[u"Клинический прогноз"].value == u'сомнительный (неопределенный)'}</u>{end:}, {if: action[u"Клинический прогноз"].value == u'неблагоприятный'}<u>{end:}неблагоприятный{if: action[u"Клинический прогноз"].value == u'неблагоприятный'}</u>{end:} (нужное<br>
+ подчеркнуть).<u><font face="Courier">__________________________________________________</font></u></td></tr>
+<tr><td>31. Реабилитационный потенциал: {if: action[u"Реабилитационный потенциал"].value == u'высокий'}<u>{end:}высокий{if: action[u"Реабилитационный потенциал"].value == u'высокий'}</u>{end:}, {if: action[u"Реабилитационный потенциал"].value == u'удовлетворительный'}<u>{end:}удовлетворительный{if: action[u"Реабилитационный потенциал"].value == u'удовлетворительный'}</u>{end:}, {if: action[u"Реабилитационный потенциал"].value == u'низкий'}<u>{end:}низкий{if: action[u"Реабилитационный потенциал"].value == u'низкий'}</u>{end:} (нужное подчеркнуть).</td></tr>
+<tr><td>32. Реабилитационный прогноз: {if: action[u"Реабилитационный прогноз"].value == u'благоприятный'}<u>{end:}благоприятный{if: action[u"Реабилитационный прогноз"].value == u'благоприятный'}</u>{end:}, {if: action[u"Реабилитационный прогноз"].value == u'относительно благоприятный'}<u>{end:}относительно благоприятный{if: action[u"Реабилитационный прогноз"].value == u'относительно благоприятный'}</u>{end:}, {if: action[u"Реабилитационный прогноз"].value == u'сомнительный (неопределенный)'}<u>{end:}сомнительный (неопределенный){if: action[u"Реабилитационный прогноз"].value == u'сомнительный (неопределенный)'}</u>{end:}, {if: action[u"Реабилитационный прогноз"].value == u'неблагоприятный'}<u>{end:}неблагоприятный{if: action[u"Реабилитационный прогноз"].value == u'неблагоприятный'}</u>{end:}<br>
+ (нужное подчеркнуть).</td></tr>
+<tr>{: list = action[u"Цель направления на медико-социальную экспертизу"].value.split('\n')}<td>33. Цель направления на медико-социальную экспертизу (нужное подчеркнуть): {if: action[u"Цель направления на медико-социальную экспертизу"].value == u'для установления инвалидности'}<u>{end:}для установления инвалидности{if: action[u"Цель направления на медико-социальную экспертизу"].value == u'для установления инвалидности'}</u>{end:}, {if: action[u"Цель направления на медико-социальную экспертизу"].value == u'степени ограничения способности к трудовой деятельности'}<u>{end:}степени ограничения<br>
+ способности к трудовой деятельности{if: action[u"Цель направления на медико-социальную экспертизу"].value == u'степени ограничения способности к трудовой деятельности'}</u>{end:}, {if: action[u"Цель направления на медико-социальную экспертизу"].value == u'степени утраты профессиональной трудоспособности в процентах'}<u>{end:}степени утраты профессиональной трудоспособности в процентах{if: action[u"Цель направления на медико-социальную экспертизу"].value == u'степени утраты профессиональной трудоспособности в процентах'}</u>{end:}, {if: action[u"Цель направления на медико-социальную экспертизу"].value == u'для разработки (коррекции) индивидуальной программы реабилитации инвалида'}<u>{end:}для разработки (коррекции)<br>
+индивидуальной программы реабилитации инвалида (программы реабилитации пострадавшего в результате несчастного случая на<br>
+производстве и профессионального заболевания){if: action[u"Цель направления на медико-социальную экспертизу"].value == u'для разработки (коррекции) индивидуальной программы реабилитации инвалида'}</u>{end:}, для другого (указать):<br>
+{: string =  list[0][:60] if len(list) else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u></td></tr>
+<tr>{: list = action[u"Рекомендуемые мероприятия"].value.split('\n')}<td>34. Рекомендуемые мероприятия по медицинской реабилитации для формирования или коррекции индивидуальной программы реаби-<br>
+литации инвалида, программы реабилитации пострадавшего в результате несчастного случая на производстве и профессионального<br>
+заболевания:<br>
+{: string = list[0][:60] if len(list) else ''}<u><font face="Courier">{ "_"*0 + string + "_"*(60-len(string)) }</font></u><br>
+{: string = list[1][:60] if len(list) > 1 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[2][:60] if len(list) > 2 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[3][:60] if len(list) > 3 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[4][:60] if len(list) > 4 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[5][:60] if len(list) > 5 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[6][:60] if len(list) > 6 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+{: string = list[7][:60] if len(list) > 7 else ''}<u><font face="Courier">{string + "_"*(60 - len(string)) }</font></u><br>
+(указываются конкретные виды восстановительной терапии (включая лекарственное обеспечение при лечении заболевания, ставшего<br>
+причиной инвалидности), реконструктивной хирургии  (включая лекарственное обеспечение при лечении заболевания, ставшего причи-<br>
+ной инвалидности), технических средств медицинской реабилитации, в том числе протезирования и ортезирования, заключение о<br>
+санаторно-курортном лечении с предписанием профиля кратности, срока и сезона рекомендуемого лечения, о нуждаемости в специ-<br>
+альном медицинском уходе лиц, пострадавших в результате несчастных случаев на производстве и профессиональных заболеваний, о<br>
+нуждаемости в лекарственных средствах для лечения последствий несчастных случаев на производстве и ппрофессиональных заболева-<br>
+ний, другие виды медицинской реабилитации)</td></tr>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td width=45%>Председатель врачебной комиссии:</td><td width=20%>___________</td><td width=35%>{: string = action[u"Председатель врачебной комиссии"].value}<u><font face="Courier">{ "_"*(20 - len(string)) + string}</font></u></td></tr>
+<tr><td></td><td align = center>(подпись)</td><td align = center>(расшифровка подписи)</td></tr>
+<tr>{: list = action[u"Члены врачебной комиссии"].value.split('\n')}<td>Члены врачебной комиссии:</td><td></td><td>{: string = list[0][:20] if len(list) else ''}<u><font face="Courier">{ "_"*(20 - len(string)) + string}</font></u></td></tr>
+<tr><td></td><td align = center>(подпись)</td><td align = center>(расшифровка подписи)</td></tr>
+<tr><td></td><td align = center></td><td align = right>{list[1][:20] if len(list) > 1 else ''}</td></tr>
+<tr><td></td><td align = center>(подпись)</td><td align = center>(расшифровка подписи)</td></tr>
+<tr><td></td><td align = center></td><td align = right>{list[2][:20] if len(list) > 2 else ''}</td></tr>
+<tr><td></td><td align = center>(подпись)</td><td align = center>(расшифровка подписи)</td></tr>
+</table>
+</td></tr>
+<tr><td>М.П.</td></tr>
+<tr><td>Линия отреза</td></tr>
+<tr><td align=center>-----------------------------------------------</td></tr>
+</table>
+
+</body>
+</html>

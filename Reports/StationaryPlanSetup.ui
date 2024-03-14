@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StationaryPlanSetupDialog</class>
+ <widget class="QDialog" name="StationaryPlanSetupDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>459</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>параметры отчёта</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="8" column="0" colspan="2">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>129</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="btnHospitalBedProfileList">
+     <property name="text">
+      <string>Профиль койки</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkIsPermanentBed">
+     <property name="text">
+      <string>Добавить внештатные койки в коечный фонд</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1" colspan="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QTimeEdit" name="edtBegTime"/>
+   </item>
+   <item row="6" column="1" colspan="3">
+    <widget class="CCheckableComboBox" name="cmbFinance">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string>Конец периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>74</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="1">
+    <widget class="CDateEdit" name="edtBegDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QTimeEdit" name="edtEndTime"/>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbBedsSchedule">
+     <item>
+      <property name="text">
+       <string>не задано</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>круглосуточные</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>некруглосуточные</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string>Начало периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblBedsSchedule">
+     <property name="text">
+      <string>Режим койки</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="CDateEdit" name="edtEndDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="0">
+    <widget class="QCheckBox" name="chkFinance">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Тип финансирования</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="3">
+    <widget class="QLabel" name="lblHospitalBedProfileList">
+     <property name="text">
+      <string>  не задано</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="QLabel" name="lblOrgStructureList">
+     <property name="text">
+      <string>  ЛПУ</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="btnOrgStructureList">
+     <property name="text">
+      <string>Подразделение</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CCheckableComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Reports/Utils.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtBegTime</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>edtEndTime</tabstop>
+  <tabstop>btnOrgStructureList</tabstop>
+  <tabstop>btnHospitalBedProfileList</tabstop>
+  <tabstop>chkIsPermanentBed</tabstop>
+  <tabstop>cmbBedsSchedule</tabstop>
+  <tabstop>chkFinance</tabstop>
+  <tabstop>cmbFinance</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>StationaryPlanSetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>283</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>102</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>StationaryPlanSetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

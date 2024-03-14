@@ -1,0 +1,78 @@
+
+<HTML>
+{
+def transliterate(s):
+    tabGOST_R_52535_1_2006 = dict(
+        0x0410: u'A', # CYRILLIC CAPITAL LETTER A
+        0x0411: u'B', # CYRILLIC CAPITAL LETTER BE
+        0x0412: u'V', # CYRILLIC CAPITAL LETTER VE
+        0x0413: u'G', # CYRILLIC CAPITAL LETTER GHE
+        0x0414: u'D', # CYRILLIC CAPITAL LETTER DE
+        0x0415: u'E', # CYRILLIC CAPITAL LETTER IE
+        0x0401: u'E', # CYRILLIC CAPITAL LETTER IO
+        0x0416: u'ZH', # CYRILLIC CAPITAL LETTER ZHE
+        0x0417: u'Z', # CYRILLIC CAPITAL LETTER ZE
+        0x0418: u'I', # CYRILLIC CAPITAL LETTER I
+        0x0419: u'I', # CYRILLIC CAPITAL LETTER SHORT I
+        0x041a: u'K', # CYRILLIC CAPITAL LETTER KA
+        0x041b: u'L', # CYRILLIC CAPITAL LETTER EL
+        0x041c: u'M', # CYRILLIC CAPITAL LETTER EM
+        0x041d: u'N', # CYRILLIC CAPITAL LETTER EN
+        0x041e: u'O', # CYRILLIC CAPITAL LETTER O
+        0x041f: u'P', # CYRILLIC CAPITAL LETTER PE
+        0x0420: u'R', # CYRILLIC CAPITAL LETTER ER
+        0x0421: u'S', # CYRILLIC CAPITAL LETTER ES
+        0x0422: u'T', # CYRILLIC CAPITAL LETTER TE
+        0x0423: u'U', # CYRILLIC CAPITAL LETTER U
+        0x0424: u'F', # CYRILLIC CAPITAL LETTER EF
+        0x0425: u'KH', # CYRILLIC CAPITAL LETTER HA
+        0x0426: u'TC', # CYRILLIC CAPITAL LETTER TSE
+        0x0427: u'CH', # CYRILLIC CAPITAL LETTER CHE
+        0x0428: u'SH', # CYRILLIC CAPITAL LETTER SHA
+        0x0429: u'SHCH', # CYRILLIC CAPITAL LETTER SHCHA
+        0x042a: None, # CYRILLIC CAPITAL LETTER HARD SIGN
+        0x042b: u'Y', # CYRILLIC CAPITAL LETTER YERU
+        0x042c: None, # CYRILLIC CAPITAL LETTER SOFT SIGN
+        0x042d: u'E', # CYRILLIC CAPITAL LETTER E
+        0x042e: u'IU', # CYRILLIC CAPITAL LETTER YU
+        0x042f: u'IA' # CYRILLIC CAPITAL LETTER YA
+    )
+    return s.upper().translate(tabGOST_R_52535_1_2006) 
+}
+<BODY STYLE="font-family: Arial; font-size: 6pt; color: black">
+{setPageSize('A5')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+{if:len(client.socStatuses)}
+<TABLE BORDER=2><TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100><FONT SIZE=+1>
+À {client.socStatuses[-1].code}
+</TR></TD></FONT></TABLE>
+{end:}
+
+<FONT SIZE=+3>
+<B>
+{if: len(client.lastName)>1} 
+{client.lastName[0].upper()}
+{if: len(client.lastName)>=2}
+{if: (client.lastName[1].upper() in u'¿¡¬√ƒ≈®∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ')}
+{u'¿¡¬√ƒ≈®∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ'.index(client.lastName[1].upper())+1}
+ {end:}
+ {end:} 
+{end:}
+</B>
+</FONT>
+<br/>
+
+&nbsp; ÍÓ‰: <FONT SIZE=+1>{client.id}</FONT>&nbsp;<FONT FACE="Code 3 de 9" SIZE=+2>*{client.id}*</FONT> {currentOrganisation.shortName} <BR/>
+&nbsp; <B>{currentDate}</B> “¿ÀŒÕ ¿Ã¡”À¿“Œ–ÕŒ√Œ œ¿÷»≈Õ“¿<BR/>
+&nbsp; ‘»Œ: <FONT SIZE=+1><B>{client.fullName}</B></FONT><BR/>
+
+transliterate(client.fullName)}<BR/>
+
+&nbsp; ƒ–:  <B>{client.birthDate}</B> (<B>{client.age}</B>),&nbsp;œÓÎ: <B>{client.sex}</B>,&nbsp;—Õ»À—: <B>{client.SNILS}</B><BR/>
+&nbsp; <B>{client.document}</B>.<BR/> 
+&nbsp;œÓÎËÒ: <B>{client.policy}</B><BR/>
+&nbsp; –Â„.: <B>{client.regAddress}</B><BR/>
+&nbsp; œÓÊ.: <B>{client.locAddress}</B><BR/>
+&nbsp; “ÂÎ.: <B> {client.phones}</B>
+</BODY></HTML>

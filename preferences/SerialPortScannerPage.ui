@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>serialPortScannerPage</class>
+ <widget class="QWidget" name="serialPortScannerPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>559</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Подключение сканера</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblScanPort">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>130</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&amp;Порт</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtScanPort</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <spacer name="horizontalSpacer_8">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>84</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblScanBaudrate">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>130</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&amp;Скорость, бод</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbScanBaudrate</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtScanPort">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;для Windows:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;com&lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;{N}&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;для linux (обычно):&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;RS-232:&lt;span style=&quot; font-weight:600;&quot;&gt;/dev/ttyS&lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;{N}&lt;/span&gt; ,&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;USB: &lt;span style=&quot; font-weight:600;&quot;&gt;/dev/ttyUSB&lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;{N}&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="4">
+    <widget class="QCheckBox" name="chkScanEnable">
+     <property name="text">
+      <string>&amp;Включить поддержку сканера</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <spacer name="horizontalSpacer_10">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>84</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="cmbScanParity">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>None</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Odd</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Even</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <spacer name="horizontalSpacer_9">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>84</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="cmbScanBaudrate">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>2400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4800</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>19200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>38400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>57600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>115200</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblScanParity">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>130</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Бит &amp;чётности</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbScanParity</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblScanStopBits">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>130</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>С&amp;топ-битов</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbScanStopBits</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="cmbScanStopBits">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblScanFlowControl">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>130</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&amp;Управление потоком</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbScanFlowControl</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="2">
+    <widget class="QComboBox" name="cmbScanFlowControl">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Не использовать</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Аппаратное</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Программное</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="9" column="2">
+    <spacer name="horizontalSpacer_13">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>85</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkScanConnectionReport">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Сообщать о проблемах подключения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkScanParseReport">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Сообщать о проблемах распознавания</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkScanCorrectBackslashes">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Исправлять дублирование '\'</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QPushButton" name="btnScanTest">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Проверить</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <spacer name="verticalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>42</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="0" colspan="4">
+    <widget class="QCheckBox" name="chkScanPromobotEnable">
+     <property name="text">
+      <string>&amp;Включить поддержку сканера Promobot Scanner</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="lblScanPromobotUrl">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>130</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Адрес сканера</string>
+     </property>
+     <property name="buddy">
+      <cstring></cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtScanPromobotAddress">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;для Windows:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;com&lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;{N}&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;для linux (обычно):&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;RS-232:&lt;span style=&quot; font-weight:600;&quot;&gt;/dev/ttyS&lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;{N}&lt;/span&gt; ,&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;USB: &lt;span style=&quot; font-weight:600;&quot;&gt;/dev/ttyUSB&lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;{N}&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="3">
+    <spacer name="horizontalSpacer_11">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>84</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="3">
+    <spacer name="horizontalSpacer_12">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>84</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>chkScanEnable</tabstop>
+  <tabstop>edtScanPort</tabstop>
+  <tabstop>cmbScanBaudrate</tabstop>
+  <tabstop>cmbScanParity</tabstop>
+  <tabstop>cmbScanStopBits</tabstop>
+  <tabstop>cmbScanFlowControl</tabstop>
+  <tabstop>chkScanConnectionReport</tabstop>
+  <tabstop>chkScanCorrectBackslashes</tabstop>
+  <tabstop>chkScanParseReport</tabstop>
+  <tabstop>btnScanTest</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblScanPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>9</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblScanBaudrate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>19</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>18</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblScanParity</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>26</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>28</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblScanStopBits</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>36</x>
+     <y>12</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>40</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblScanFlowControl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>10</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>54</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtScanPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>141</x>
+     <y>10</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>143</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbScanBaudrate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>151</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>55</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbScanParity</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>161</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbScanStopBits</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>172</x>
+     <y>12</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbScanFlowControl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>14</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>185</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkScanCorrectBackslashes</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>196</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkScanConnectionReport</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>10</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>207</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkScanParseReport</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>218</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>btnScanTest</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>12</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>198</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanPromobotEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtScanPromobotAddress</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkScanPromobotEnable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblScanPromobotUrl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>68</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

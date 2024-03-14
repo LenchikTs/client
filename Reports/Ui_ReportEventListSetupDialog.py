@@ -1,0 +1,171 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'ReportEventListSetupDialog.ui'
+#
+# Created by: PyQt4 UI code generator 4.12.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_CReportEventListSetupDialog(object):
+    def setupUi(self, CReportEventListSetupDialog):
+        CReportEventListSetupDialog.setObjectName(_fromUtf8("CReportEventListSetupDialog"))
+        CReportEventListSetupDialog.resize(528, 423)
+        CReportEventListSetupDialog.setWindowTitle(_fromUtf8("Список обращений"))
+        self.gridLayout = QtGui.QGridLayout(CReportEventListSetupDialog)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.horizontalLayout = QtGui.QHBoxLayout()
+        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        self.cmbMKBFilter = QtGui.QComboBox(CReportEventListSetupDialog)
+        self.cmbMKBFilter.setObjectName(_fromUtf8("cmbMKBFilter"))
+        self.cmbMKBFilter.addItem(_fromUtf8(""))
+        self.cmbMKBFilter.setItemText(0, _fromUtf8("Игнор."))
+        self.cmbMKBFilter.addItem(_fromUtf8(""))
+        self.cmbMKBFilter.setItemText(1, _fromUtf8("Интервал"))
+        self.horizontalLayout.addWidget(self.cmbMKBFilter)
+        self.edtMKBFrom = QtGui.QLineEdit(CReportEventListSetupDialog)
+        self.edtMKBFrom.setEnabled(False)
+        self.edtMKBFrom.setInputMask(_fromUtf8("a00.00; "))
+        self.edtMKBFrom.setText(_fromUtf8("A."))
+        self.edtMKBFrom.setMaxLength(6)
+        self.edtMKBFrom.setObjectName(_fromUtf8("edtMKBFrom"))
+        self.horizontalLayout.addWidget(self.edtMKBFrom)
+        self.edtMKBTo = QtGui.QLineEdit(CReportEventListSetupDialog)
+        self.edtMKBTo.setEnabled(False)
+        self.edtMKBTo.setInputMask(_fromUtf8("a00.00; "))
+        self.edtMKBTo.setText(_fromUtf8("Z99.9"))
+        self.edtMKBTo.setMaxLength(6)
+        self.edtMKBTo.setObjectName(_fromUtf8("edtMKBTo"))
+        self.horizontalLayout.addWidget(self.edtMKBTo)
+        self.gridLayout.addLayout(self.horizontalLayout, 9, 1, 1, 1)
+        self.lblSpeciality = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblSpeciality.setText(_fromUtf8("Специальность"))
+        self.lblSpeciality.setObjectName(_fromUtf8("lblSpeciality"))
+        self.gridLayout.addWidget(self.lblSpeciality, 5, 0, 1, 1)
+        self.lblOrgStructure = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblOrgStructure.setText(_fromUtf8("Подразделение"))
+        self.lblOrgStructure.setObjectName(_fromUtf8("lblOrgStructure"))
+        self.gridLayout.addWidget(self.lblOrgStructure, 4, 0, 1, 1)
+        self.cmbSpeciality = CRBComboBox(CReportEventListSetupDialog)
+        self.cmbSpeciality.setObjectName(_fromUtf8("cmbSpeciality"))
+        self.gridLayout.addWidget(self.cmbSpeciality, 5, 1, 1, 1)
+        self.cmbVisitType = CRBComboBox(CReportEventListSetupDialog)
+        self.cmbVisitType.setEnabled(False)
+        self.cmbVisitType.setObjectName(_fromUtf8("cmbVisitType"))
+        self.gridLayout.addWidget(self.cmbVisitType, 12, 1, 1, 1)
+        self.lblEndDate = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblEndDate.setText(_fromUtf8("Дата окончания периода"))
+        self.lblEndDate.setObjectName(_fromUtf8("lblEndDate"))
+        self.gridLayout.addWidget(self.lblEndDate, 1, 0, 1, 1)
+        self.buttonBox = QtGui.QDialogButtonBox(CReportEventListSetupDialog)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.gridLayout.addWidget(self.buttonBox, 15, 0, 1, 2)
+        self.lblBegDate = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblBegDate.setText(_fromUtf8("Дата начала периода"))
+        self.lblBegDate.setObjectName(_fromUtf8("lblBegDate"))
+        self.gridLayout.addWidget(self.lblBegDate, 0, 0, 1, 1)
+        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem, 14, 0, 1, 1)
+        self.lblPerson = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblPerson.setText(_fromUtf8("Ответственный за событие"))
+        self.lblPerson.setObjectName(_fromUtf8("lblPerson"))
+        self.gridLayout.addWidget(self.lblPerson, 6, 0, 1, 1)
+        self.chkDetailByVisits = QtGui.QCheckBox(CReportEventListSetupDialog)
+        self.chkDetailByVisits.setText(_fromUtf8("Детализировать по визитам"))
+        self.chkDetailByVisits.setObjectName(_fromUtf8("chkDetailByVisits"))
+        self.gridLayout.addWidget(self.chkDetailByVisits, 11, 0, 1, 1)
+        self.lblMKB = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblMKB.setText(_fromUtf8("Коды диагнозов по МКБ"))
+        self.lblMKB.setObjectName(_fromUtf8("lblMKB"))
+        self.gridLayout.addWidget(self.lblMKB, 9, 0, 1, 1)
+        self.lblVisitType = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblVisitType.setEnabled(False)
+        self.lblVisitType.setText(_fromUtf8("Тип визита"))
+        self.lblVisitType.setObjectName(_fromUtf8("lblVisitType"))
+        self.gridLayout.addWidget(self.lblVisitType, 12, 0, 1, 1)
+        self.cmbEventType = CRBComboBox(CReportEventListSetupDialog)
+        self.cmbEventType.setObjectName(_fromUtf8("cmbEventType"))
+        self.gridLayout.addWidget(self.cmbEventType, 2, 1, 1, 1)
+        self.cmbOrgStructure = COrgStructureComboBox(CReportEventListSetupDialog)
+        self.cmbOrgStructure.setObjectName(_fromUtf8("cmbOrgStructure"))
+        self.gridLayout.addWidget(self.cmbOrgStructure, 4, 1, 1, 1)
+        self.cmbPerson = CPersonComboBoxEx(CReportEventListSetupDialog)
+        self.cmbPerson.setObjectName(_fromUtf8("cmbPerson"))
+        self.gridLayout.addWidget(self.cmbPerson, 6, 1, 1, 1)
+        self.lblVisitPerson = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblVisitPerson.setEnabled(False)
+        self.lblVisitPerson.setText(_fromUtf8("Врач визита"))
+        self.lblVisitPerson.setObjectName(_fromUtf8("lblVisitPerson"))
+        self.gridLayout.addWidget(self.lblVisitPerson, 13, 0, 1, 1)
+        self.lblEventType = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblEventType.setText(_fromUtf8("Тип события"))
+        self.lblEventType.setObjectName(_fromUtf8("lblEventType"))
+        self.gridLayout.addWidget(self.lblEventType, 2, 0, 1, 1)
+        self.edtBegDate = CDateEdit(CReportEventListSetupDialog)
+        self.edtBegDate.setObjectName(_fromUtf8("edtBegDate"))
+        self.gridLayout.addWidget(self.edtBegDate, 0, 1, 1, 1)
+        self.edtEndDate = CDateEdit(CReportEventListSetupDialog)
+        self.edtEndDate.setObjectName(_fromUtf8("edtEndDate"))
+        self.gridLayout.addWidget(self.edtEndDate, 1, 1, 1, 1)
+        self.cmbVisitPerson = CPersonComboBoxEx(CReportEventListSetupDialog)
+        self.cmbVisitPerson.setEnabled(False)
+        self.cmbVisitPerson.setObjectName(_fromUtf8("cmbVisitPerson"))
+        self.gridLayout.addWidget(self.cmbVisitPerson, 13, 1, 1, 1)
+        self.lblEventStatus = QtGui.QLabel(CReportEventListSetupDialog)
+        self.lblEventStatus.setText(_fromUtf8("Статус обращения"))
+        self.lblEventStatus.setObjectName(_fromUtf8("lblEventStatus"))
+        self.gridLayout.addWidget(self.lblEventStatus, 3, 0, 1, 1)
+        self.cmbEventStatus = QtGui.QComboBox(CReportEventListSetupDialog)
+        self.cmbEventStatus.setObjectName(_fromUtf8("cmbEventStatus"))
+        self.cmbEventStatus.addItem(_fromUtf8(""))
+        self.cmbEventStatus.setItemText(0, _fromUtf8("Все"))
+        self.cmbEventStatus.addItem(_fromUtf8(""))
+        self.cmbEventStatus.setItemText(1, _fromUtf8("Только открытые"))
+        self.cmbEventStatus.addItem(_fromUtf8(""))
+        self.cmbEventStatus.setItemText(2, _fromUtf8("Только закрытые"))
+        self.gridLayout.addWidget(self.cmbEventStatus, 3, 1, 1, 1)
+
+        self.retranslateUi(CReportEventListSetupDialog)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), CReportEventListSetupDialog.accept)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), CReportEventListSetupDialog.reject)
+        QtCore.QObject.connect(self.chkDetailByVisits, QtCore.SIGNAL(_fromUtf8("clicked(bool)")), self.lblVisitType.setEnabled)
+        QtCore.QObject.connect(self.chkDetailByVisits, QtCore.SIGNAL(_fromUtf8("clicked(bool)")), self.lblVisitPerson.setEnabled)
+        QtCore.QObject.connect(self.chkDetailByVisits, QtCore.SIGNAL(_fromUtf8("clicked(bool)")), self.cmbVisitType.setEnabled)
+        QtCore.QObject.connect(self.chkDetailByVisits, QtCore.SIGNAL(_fromUtf8("clicked(bool)")), self.cmbVisitPerson.setEnabled)
+        QtCore.QMetaObject.connectSlotsByName(CReportEventListSetupDialog)
+        CReportEventListSetupDialog.setTabOrder(self.edtBegDate, self.edtEndDate)
+        CReportEventListSetupDialog.setTabOrder(self.edtEndDate, self.cmbEventType)
+        CReportEventListSetupDialog.setTabOrder(self.cmbEventType, self.cmbOrgStructure)
+        CReportEventListSetupDialog.setTabOrder(self.cmbOrgStructure, self.cmbSpeciality)
+        CReportEventListSetupDialog.setTabOrder(self.cmbSpeciality, self.cmbPerson)
+        CReportEventListSetupDialog.setTabOrder(self.cmbPerson, self.cmbMKBFilter)
+        CReportEventListSetupDialog.setTabOrder(self.cmbMKBFilter, self.edtMKBFrom)
+        CReportEventListSetupDialog.setTabOrder(self.edtMKBFrom, self.edtMKBTo)
+        CReportEventListSetupDialog.setTabOrder(self.edtMKBTo, self.chkDetailByVisits)
+        CReportEventListSetupDialog.setTabOrder(self.chkDetailByVisits, self.cmbVisitType)
+        CReportEventListSetupDialog.setTabOrder(self.cmbVisitType, self.cmbVisitPerson)
+        CReportEventListSetupDialog.setTabOrder(self.cmbVisitPerson, self.buttonBox)
+
+    def retranslateUi(self, CReportEventListSetupDialog):
+        pass
+
+from Orgs.OrgStructComboBoxes import COrgStructureComboBox
+from Orgs.PersonComboBoxEx import CPersonComboBoxEx
+from library.DateEdit import CDateEdit
+from library.crbcombobox import CRBComboBox

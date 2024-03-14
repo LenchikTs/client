@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoadTemplateDialog</class>
+ <widget class="QDialog" name="LoadTemplateDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>949</width>
+    <height>402</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Выберите шаблон</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblMesInfo">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="5">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QWidget" name="pnlWidgets" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblDeposit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblSelectedCount">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Количество выбранных</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblFindByCode">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>| Поиск по коду или наименованию</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="edtFindByCode">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="5">
+    <widget class="QWidget" name="pnlFilter" native="true">
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="cmbClass">
+        <item>
+         <property name="text">
+          <string>Не задано</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Статус</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Диагностика</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Лечение</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Прочие мероприятия</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblClass">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Класс</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLineEdit" name="edtFindFilter">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QCheckBox" name="chkFindFilter">
+     <property name="text">
+      <string>Фильтр</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="5">
+    <widget class="QSplitter" name="splitter_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QWidget" name="pnlSelectedActionTypes" native="true">
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QWidget" name="pnlSelectedActionTypes_2" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblSelectedActionTypes">
+            <property name="text">
+             <string>Назначить</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="CCheckedActionsTableView" name="tblSelectedActionTypes"/>
+          </item>
+         </layout>
+         <zorder>tblSelectedActionTypes</zorder>
+         <zorder>lblSelectedActionTypes</zorder>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pnlActionTypes" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QSplitter" name="splitter">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <widget class="QTabWidget" name="tabWgtActionTypes">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tabActionTypesTemplates">
+           <attribute name="title">
+            <string>Шаблоны</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="0" column="3">
+             <widget class="QLineEdit" name="edtFindTemplates"/>
+            </item>
+            <item row="1" column="1" colspan="3">
+             <widget class="CTableView" name="tblTemplates"/>
+            </item>
+            <item row="0" column="1" colspan="2">
+             <widget class="QPushButton" name="btnFindTemplates">
+              <property name="text">
+               <string>Поиск</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="CTableView" name="tblActionTypes"/>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QPushButton" name="btnUpdateTemplate">
+     <property name="text">
+      <string>Обновить шаблон</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <zorder>chkFindFilter</zorder>
+  <zorder>buttonBox</zorder>
+  <zorder>lblMesInfo</zorder>
+  <zorder>splitter_2</zorder>
+  <zorder>pnlWidgets</zorder>
+  <zorder>line</zorder>
+  <zorder>edtFindFilter</zorder>
+  <zorder>pnlFilter</zorder>
+  <zorder>btnUpdateTemplate</zorder>
+ </widget>
+ <layoutdefault spacing="4" margin="4"/>
+ <customwidgets>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CCheckedActionsTableView</class>
+   <extends>QTableView</extends>
+   <header>Events/ActionsSelectorSelectedTable.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tblSelectedActionTypes</tabstop>
+  <tabstop>tabWgtActionTypes</tabstop>
+  <tabstop>btnFindTemplates</tabstop>
+  <tabstop>edtFindTemplates</tabstop>
+  <tabstop>tblTemplates</tabstop>
+  <tabstop>tblActionTypes</tabstop>
+  <tabstop>edtFindByCode</tabstop>
+  <tabstop>chkFindFilter</tabstop>
+  <tabstop>edtFindFilter</tabstop>
+  <tabstop>btnUpdateTemplate</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>cmbClass</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>LoadTemplateDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>846</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>LoadTemplateDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>846</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>486</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFindFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFindFilter</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>334</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>840</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFindFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFindByCode</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>334</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>480</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,155 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'D:\Samson\UP_s11\client_test\Registry\ClientSearchDialog.ui'
+#
+# Created: Fri Oct 19 08:29:31 2018
+#      by: PyQt4 UI code generator 4.11.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_ClientSearchDialog(object):
+    def setupUi(self, ClientSearchDialog):
+        ClientSearchDialog.setObjectName(_fromUtf8("ClientSearchDialog"))
+        ClientSearchDialog.resize(1000, 700)
+        self.verticalLayout_2 = QtGui.QVBoxLayout(ClientSearchDialog)
+        self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
+        self.horizontalLayout = QtGui.QHBoxLayout()
+        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        self.verticalLayout_3 = QtGui.QVBoxLayout()
+        self.verticalLayout_3.setObjectName(_fromUtf8("verticalLayout_3"))
+        self.lblAddInfo = QtGui.QLabel(ClientSearchDialog)
+        self.lblAddInfo.setObjectName(_fromUtf8("lblAddInfo"))
+        self.verticalLayout_3.addWidget(self.lblAddInfo)
+        self.txtAddInfo = QtGui.QTextBrowser(ClientSearchDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(1)
+        sizePolicy.setHeightForWidth(self.txtAddInfo.sizePolicy().hasHeightForWidth())
+        self.txtAddInfo.setSizePolicy(sizePolicy)
+        self.txtAddInfo.setObjectName(_fromUtf8("txtAddInfo"))
+        self.verticalLayout_3.addWidget(self.txtAddInfo)
+        self.tblClients = CTableView(ClientSearchDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(2)
+        sizePolicy.setHeightForWidth(self.tblClients.sizePolicy().hasHeightForWidth())
+        self.tblClients.setSizePolicy(sizePolicy)
+        self.tblClients.setObjectName(_fromUtf8("tblClients"))
+        self.verticalLayout_3.addWidget(self.tblClients)
+        self.lblClientsCount = QtGui.QLabel(ClientSearchDialog)
+        self.lblClientsCount.setObjectName(_fromUtf8("lblClientsCount"))
+        self.verticalLayout_3.addWidget(self.lblClientsCount)
+        self.horizontalLayout.addLayout(self.verticalLayout_3)
+        self.groupBox = QtGui.QGroupBox(ClientSearchDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy)
+        self.groupBox.setObjectName(_fromUtf8("groupBox"))
+        self.gridLayout = QtGui.QGridLayout(self.groupBox)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.chkFilterLastName = QtGui.QCheckBox(self.groupBox)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.chkFilterLastName.sizePolicy().hasHeightForWidth())
+        self.chkFilterLastName.setSizePolicy(sizePolicy)
+        self.chkFilterLastName.setMaximumSize(QtCore.QSize(16777215, 14))
+        self.chkFilterLastName.setObjectName(_fromUtf8("chkFilterLastName"))
+        self.gridLayout.addWidget(self.chkFilterLastName, 0, 0, 1, 2)
+        self.edtFilterLastName = QtGui.QLineEdit(self.groupBox)
+        self.edtFilterLastName.setEnabled(False)
+        self.edtFilterLastName.setObjectName(_fromUtf8("edtFilterLastName"))
+        self.gridLayout.addWidget(self.edtFilterLastName, 1, 0, 1, 2)
+        self.chkFilterFirstName = QtGui.QCheckBox(self.groupBox)
+        self.chkFilterFirstName.setMaximumSize(QtCore.QSize(16777215, 14))
+        self.chkFilterFirstName.setObjectName(_fromUtf8("chkFilterFirstName"))
+        self.gridLayout.addWidget(self.chkFilterFirstName, 2, 0, 1, 2)
+        self.chkFilterPatrName = QtGui.QCheckBox(self.groupBox)
+        self.chkFilterPatrName.setMaximumSize(QtCore.QSize(16777215, 14))
+        self.chkFilterPatrName.setObjectName(_fromUtf8("chkFilterPatrName"))
+        self.gridLayout.addWidget(self.chkFilterPatrName, 4, 0, 1, 2)
+        self.edtFilterPatrName = QtGui.QLineEdit(self.groupBox)
+        self.edtFilterPatrName.setEnabled(False)
+        self.edtFilterPatrName.setObjectName(_fromUtf8("edtFilterPatrName"))
+        self.gridLayout.addWidget(self.edtFilterPatrName, 5, 0, 1, 2)
+        self.filterButtonBox = QtGui.QDialogButtonBox(self.groupBox)
+        self.filterButtonBox.setStandardButtons(QtGui.QDialogButtonBox.Apply|QtGui.QDialogButtonBox.Reset)
+        self.filterButtonBox.setObjectName(_fromUtf8("filterButtonBox"))
+        self.gridLayout.addWidget(self.filterButtonBox, 9, 0, 1, 2)
+        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem, 10, 0, 1, 1)
+        self.edtFilterFirstName = QtGui.QLineEdit(self.groupBox)
+        self.edtFilterFirstName.setEnabled(False)
+        self.edtFilterFirstName.setObjectName(_fromUtf8("edtFilterFirstName"))
+        self.gridLayout.addWidget(self.edtFilterFirstName, 3, 0, 1, 2)
+        self.chkFilterBirthDate = QtGui.QCheckBox(self.groupBox)
+        self.chkFilterBirthDate.setObjectName(_fromUtf8("chkFilterBirthDate"))
+        self.gridLayout.addWidget(self.chkFilterBirthDate, 6, 0, 1, 1)
+        self.edtFilterBirthDate = QtGui.QDateEdit(self.groupBox)
+        self.edtFilterBirthDate.setCalendarPopup(True)
+        self.edtFilterBirthDate.setObjectName(_fromUtf8("edtFilterBirthDate"))
+        self.gridLayout.addWidget(self.edtFilterBirthDate, 6, 1, 1, 1)
+        self.chkFilterBirthDateEnd = QtGui.QCheckBox(self.groupBox)
+        self.chkFilterBirthDateEnd.setEnabled(False)
+        self.chkFilterBirthDateEnd.setObjectName(_fromUtf8("chkFilterBirthDateEnd"))
+        self.gridLayout.addWidget(self.chkFilterBirthDateEnd, 7, 0, 1, 1)
+        self.edtFilterBirthDateEnd = QtGui.QDateEdit(self.groupBox)
+        self.edtFilterBirthDateEnd.setEnabled(False)
+        self.edtFilterBirthDateEnd.setButtonSymbols(QtGui.QAbstractSpinBox.UpDownArrows)
+        self.edtFilterBirthDateEnd.setAccelerated(False)
+        self.edtFilterBirthDateEnd.setCalendarPopup(True)
+        self.edtFilterBirthDateEnd.setObjectName(_fromUtf8("edtFilterBirthDateEnd"))
+        self.gridLayout.addWidget(self.edtFilterBirthDateEnd, 7, 1, 1, 1)
+        self.chkFilterSex = QtGui.QCheckBox(self.groupBox)
+        self.chkFilterSex.setObjectName(_fromUtf8("chkFilterSex"))
+        self.gridLayout.addWidget(self.chkFilterSex, 8, 0, 1, 1)
+        self.cmbFilterSex = QtGui.QComboBox(self.groupBox)
+        self.cmbFilterSex.setObjectName(_fromUtf8("cmbFilterSex"))
+        self.cmbFilterSex.addItem(_fromUtf8(""))
+        self.cmbFilterSex.setItemText(0, _fromUtf8(""))
+        self.cmbFilterSex.addItem(_fromUtf8(""))
+        self.cmbFilterSex.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbFilterSex, 8, 1, 1, 1)
+        self.horizontalLayout.addWidget(self.groupBox)
+        self.verticalLayout_2.addLayout(self.horizontalLayout)
+        self.buttonBox = QtGui.QDialogButtonBox(ClientSearchDialog)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.verticalLayout_2.addWidget(self.buttonBox)
+
+        self.retranslateUi(ClientSearchDialog)
+        QtCore.QMetaObject.connectSlotsByName(ClientSearchDialog)
+
+    def retranslateUi(self, ClientSearchDialog):
+        ClientSearchDialog.setWindowTitle(_translate("ClientSearchDialog", "Поиск пациента", None))
+        self.lblAddInfo.setText(_translate("ClientSearchDialog", "Дополнительная информация:", None))
+        self.lblClientsCount.setText(_translate("ClientSearchDialog", "Список пуст", None))
+        self.groupBox.setTitle(_translate("ClientSearchDialog", "Фильтр", None))
+        self.chkFilterLastName.setText(_translate("ClientSearchDialog", "Фамилия", None))
+        self.chkFilterFirstName.setText(_translate("ClientSearchDialog", "Имя", None))
+        self.chkFilterPatrName.setText(_translate("ClientSearchDialog", "Отчество", None))
+        self.chkFilterBirthDate.setText(_translate("ClientSearchDialog", "Дата рождения", None))
+        self.chkFilterBirthDateEnd.setText(_translate("ClientSearchDialog", "по", None))
+        self.chkFilterSex.setText(_translate("ClientSearchDialog", "Пол", None))
+        self.cmbFilterSex.setItemText(1, _translate("ClientSearchDialog", "М", None))
+        self.cmbFilterSex.setItemText(2, _translate("ClientSearchDialog", "Ж", None))
+
+from library.TableView import CTableView

@@ -1,0 +1,1 @@
+c:\Python27\Scripts\pyinstaller appendix\mes\main.py --icon=icons\Icon2.ico --add-data i18n;i18n -n browserMES --distpath out\dist32 --workpath out\build32 --noconfirm --noconsole --paths appendix\mes

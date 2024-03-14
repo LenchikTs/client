@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>723</width>
+    <height>521</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="1" column="0">
+    <widget class="QCheckBox" name="chkPropertyName">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Наименование. Исходное свойство</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="edtSourcePropertyName">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblSourceTypeName">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Исходный тип свойства</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="cmbSourceTypeName"/>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="lblTargetTypeName">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Итоговый тип свойства</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QComboBox" name="cmbTargetTypeName"/>
+   </item>
+   <item row="5" column="0" colspan="4">
+    <widget class="QTextEdit" name="edtLog">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QPushButton" name="btnDataAnalysis">
+     <property name="text">
+      <string>Анализ данных</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QPushButton" name="btnStart">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Старт</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3">
+    <widget class="QPushButton" name="btnReset">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Очистить</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="lblTargetPropertyName">
+     <property name="text">
+      <string>Итоговое свойство</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLineEdit" name="edtTargetPropertyName">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QCheckBox" name="chkActionType">
+     <property name="text">
+      <string>Тип действия</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="CActionTypeComboBox" name="cmbActionType">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QCheckBox" name="chkDeleteSource">
+     <property name="text">
+      <string>Удалять исходные свойства</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QCheckBox" name="chkFullReport">
+     <property name="text">
+      <string>Полная отчетность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QCheckBox" name="chkDeletingAutoStart">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Автоматически начать удаление свойств</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="4">
+    <widget class="CProgressBar" name="_progressBar">
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CActionTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Events/ActionTypeComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CProgressBar</class>
+   <extends>QProgressBar</extends>
+   <header>library/ProgressBar.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>chkActionType</tabstop>
+  <tabstop>cmbActionType</tabstop>
+  <tabstop>chkPropertyName</tabstop>
+  <tabstop>edtSourcePropertyName</tabstop>
+  <tabstop>edtTargetPropertyName</tabstop>
+  <tabstop>cmbSourceTypeName</tabstop>
+  <tabstop>cmbTargetTypeName</tabstop>
+  <tabstop>chkDeleteSource</tabstop>
+  <tabstop>chkDeletingAutoStart</tabstop>
+  <tabstop>chkFullReport</tabstop>
+  <tabstop>edtLog</tabstop>
+  <tabstop>btnDataAnalysis</tabstop>
+  <tabstop>btnStart</tabstop>
+  <tabstop>btnReset</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkPropertyName</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtSourcePropertyName</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>57</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkPropertyName</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtTargetPropertyName</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>694</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkActionType</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbActionType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDeleteSource</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkDeletingAutoStart</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>179</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>301</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

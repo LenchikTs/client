@@ -1,0 +1,686 @@
+<!-- Данная отчетная форма формируется из события с формой ввода f025(контекст печати). Минимальная ревизия 14828 -->
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+<p align="left"> <font size="-1"> 
+{currentOrganisation.shortName}<BR/>
+{currentOrganisation.address}</p>
+<BR/>
+<FONT FACE="Code 3 de 9" SIZE=+10>*{client.id}*</FONT>
+</TD>
+<TD> 
+<p align="right"> <font size="-1">Медицинская документация<BR/>
+Учетная форма N 025-1/у<BR/>
+Утверждена приказом Минздрава России<BR/>
+от 15 декабря 2014 г. N 834н
+</TD>
+</TR>
+</TABLE>
+
+
+
+<p align="center">
+ТАЛОН ПАЦИЕНТА, ПОЛУЧАЮЩЕГО МЕДИЦИНСКУЮ ПОМОЩЬ<BR/>
+В АМБУЛАТОРНЫХ УСЛОВИЯХ, N <u><b>{event.id}</u></b>
+</p>
+
+
+
+
+<p align="left">
+
+
+
+
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD width="30%"> 
+1. Дата открытия талона:<b>{event.setDate.date.toString("dd.MM.yy")}</b> <BR/>
+
+2. Код категории льготы: <b>
+
+{if:len(client.socStatuses)}
+  {for: s in client.socStatuses}
+
+         {s.code},
+		 
+       {end:}   
+   {end:}
+</b>
+
+
+<BR/>
+
+
+3. Действует до: 
+<b>
+{if:len(client.socStatuses)}
+  {for: s in client.socStatuses}
+
+         {s.endDate}
+		 
+       {end:}   
+   {end:}
+</b>
+<BR/>
+
+4. Страховой полис ОМС: <b>{client.policy.serial + ' ' + client.policy.number}</b><BR/>
+5. СМО: <b>{client.policy.insurer.title}</b><BR/>
+6. СНИЛС:<b>{client.SNILS}</b><BR/>
+7. Фамилия:<b>{client.lastName}</b><BR/>
+8. Имя:<b>{client.firstName}</b><BR/>
+9. Отчество:<b>{client.patrName}</b><BR/>
+10. Пол: <b>{client.sex}</b><BR/>
+11. Дата рождения: <b> {client.birthDate}</b>
+</TD>
+<TD> 
+12. Документ, удостоверяющий личность: <b>{client.document.type}</b>  серия: <b>{client.document.serial}</b>  N: <b>{client.document.number}</b><BR/>
+13. Место регистрации:  <b>{client.regAddress}</b> тел.: <b>{client.phones}</b><BR/>
+14. Местность:
+
+{:incity = (str(client.locAddress.KLADRCode)[8:11] == '000')}
+{if: incity}<u><b>1 - город</u></b>; 2 - сел
+{else:}1 - город; <b><u>2 - сел</u></b>{end:}
+<BR/>
+
+15.Занятость: <b>{client.work}</b>
+
+<BR/>
+16. Место работы, должность{:age = client.birthDate.date.daysTo(currentDate.date)}{:age=age/365}
+
+{if: len(client.age)}{: k=age}
+
+{if: k <= 7}
+(для детей: <b><u>дошкольник</b></u>- организован(в занятости есть школа), неорганизован(в занятости нет ничего); школьник)
+{end:} 
+
+{if: k > 7 and k <= 14}
+(для детей: дошкольник- организован(в занятости есть школа), неорганизован(в занятости нет ничего); <b><u>школьник</b></u>)
+{end:} 
+
+{if: k > 14}
+(для детей: дошкольник- организован(в занятости есть школа), неорганизован(в занятости нет ничего); школьник)
+{end:} 
+
+{end:}
+
+
+<BR/>
+
+17.Инвалидность: установлена впервые - 1, повторно - 2 <BR/>
+
+
+18.Группа инвалидности: 
+
+{if: len(client.socStatuses)}{: socCode=(s.code)}{else:}{: socCode='0'}{end:}
+
+{if: socCode == '081'}<u><b>{end:}I - 1{if: socCode == '081'}</u></b>{end:}, 
+{if: socCode == '082'}<u><b>{end:}II - 2{if: socCode == '082'}</u></b>{end:}, 
+{if: socCode == '083'}<u><b>{end:}III - 3{if: socCode == '083'}</u></b>{end:} 
+<BR/>
+
+19. Инвалид с детства:
+{:socCode=0}
+{if: len(client.socStatuses)}
+
+{for: socStat in client.socStatuses}
+ {if: socStat.code == '09' or socStat.code == '084'}
+ {:socCode = socCode+1}
+ {end:}
+{end:}
+{end:}
+
+{if: socCode>0}<u><b>{end:}да - 1{if: socCode >0}</u></b>{end:},
+{if: socCode ==0}<u><b>{end:}нет - 2{if: socCode ==0}</u></b>{end:} 
+</b>
+
+<BR/>
+
+
+20.Оказываемая медицинская помощь:  <u><b>{event.eventType.medicalAidKind} </b></u>
+<BR/>
+
+21. Место обращения (посещения):
+{: vs = event.visits[-1].scene.code}
+{if: vs=='1'}<u><b>{end:}1 - поликлиника{if: vs=='1'}</u></b>{end:},     
+{if: vs=='2'}<u><b>{end:}2 - на дому{if: vs=='2'}</u></b>{end:},     
+{if: vs=='3'}<u><b>{end:}3 - центр здоровья{if: vs=='3'}</u></b>{end:},     
+{if: vs=='4'}<u><b>{end:}4 - иные медицинские организации {if: vs=='4'}</u></b>{end:}.     
+
+
+</TD>
+</TR>
+</TABLE>
+
+
+
+
+
+
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+
+<TR>
+<TD> 
+
+
+Обращение (цель): 
+
+{:flag=0}
+{for: diag in event.diagnosises}
+	{if: str(diag.MKB)[0]==u'Z'}
+	{:flag=1}
+	{end:}
+{end:}
+
+{if: flag==1}
+по заболеванию (коды A00 - T98) - 1, <u><b>с профилактической целью (коды Z00 - Z99) - 2</b></u>
+{else:}
+<u><b>по заболеванию (коды A00 - T98) - 1</b></u>, с профилактической целью (коды Z00 - Z99) - 2
+{end:}
+
+</TD>
+</TR>
+<TR>
+<TD>
+
+Обращение (законченный случай лечения):
+{if: event.execDate} <u><b>да - 1</b></u>; нет - 2 {else:} да - 1;<u><b> нет - 2</b></u> {end:}
+
+<BR/>
+
+Обращение:
+{: A = event.isPrimary}
+{if: A==1}<u><b>1 - первичное</u></b>{end:}
+{if: A==2}<u><b>2 - повторное</u></b>{end:}
+{if: A==3}<u><b>3 - активное посещение</u></b>{end:}
+{if: A==4}<u><b>4 - перевозка</u></b>{end:}
+
+
+<BR/>
+
+Результат обращения:
+{for: xxx in event.diagnosises}
+	{if: xxx.type.code==u'2'}
+	<u><b>{xxx.result}</u></b>
+	{end:}
+{end:}
+</TD>
+</TR>
+<TR>
+<TD>
+
+
+
+Оплата за счет:
+{: vs = event.eventType.finance.code}
+{if: vs=='1'}<u><b>{end:}1 - ОМС{if: vs=='1'}</u></b>{end:},     
+{if: vs=='2'}<u><b>{end:}2 - Бюджет{if: vs=='2'}</u></b>{end:},     
+{if: vs=='3'}<u><b>{end:}3 - Личные средства{if: vs=='3'}</u></b>{end:},     
+{if: vs=='4'}<u><b>{end:}4 - ДМС{if: vs=='4'}</u></b>{end:},
+{if: vs=='5'}<u><b>{end:}5 - Иные источники, разрешенные законодательством{if: vs=='5'}</u></b>{end:}.          
+
+</TD>
+</TR>
+</TABLE>
+
+
+
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+ПОСЕЩЕНИЯ:
+<u><b>
+{event.eventType.purpose} 
+</u></b>
+</TD>
+</TR>
+</TABLE>
+
+
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR> 
+<TD> 
+Даты посещений
+</TD>
+<TD> 
+Врач
+</TD>
+<TD> 
+Специальность
+</TD>
+<TD> 
+Место
+</TD>
+</TR>
+
+{for: x in event.visits}
+<TR> 
+<TD> 
+<u><b>
+{x.date}
+</u></b>
+</TD>
+<TD> 
+<u><b>
+
+	{x.person.shortName}
+
+</u></b>
+</TD>
+<TD> 
+<u><b>
+
+	{x.person.speciality}
+
+</u></b>
+</TD>
+<TD> 
+<u><b>
+
+	{x.scene}
+
+</u></b>
+</TD>
+</TR>{end:}
+</TABLE>
+
+
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+Диагноз заключительный
+</TD> 
+<TD> 
+МКБ
+</TD> 
+<TD> 
+Характер заболевания
+</TD> 
+<TD> 
+Диспансерное наблюдение
+</TD>
+<TD> 
+Травма
+</TD>
+</TR>
+<TR>
+<TD> 
+{for: xxx in event.diagnosises}
+	{if: xxx.type.code==u'2'}
+	<u><b>{xxx.MKB.descr}</u></b>
+	{end:}
+{end:}
+</TD> 
+<TD> 
+{for: xxx in event.diagnosises}
+	{if: xxx.type.code==u'2'}
+	<u><b>{xxx.MKB}</u></b>
+	{end:}
+{end:}
+</TD> 
+<TD> 
+{for: xxx in event.diagnosises}
+	{if: xxx.type.code==u'2'}
+	<u><b>{xxx.character.name}</u></b>
+	{end:}
+{end:}
+</TD> 
+<TD> 
+{for: xxx in event.diagnosises}
+	{if: xxx.type.code==u'2'}
+	<u><b>{xxx.dispanser}</u></b>
+	{end:}
+{end:}
+</TD>
+<TD> 
+
+
+
+{for: xxx in event.diagnosises}
+{if: xxx.type.code==u'2'}
+<u><b>{xxx.traumaType.code}-{xxx.traumaType.name}</u></b>
+{end:}
+{end:}
+
+</TD>
+</TR>
+</TABLE>
+
+
+{:qwer=0}
+{for: xxx in event.diagnosises}
+	{if: xxx.type.code!=u'2'}
+		{:qwer+=1}
+	{end:}
+{end:}
+{if: qwer>=1}
+<BR/>
+<BR/>
+Сопутствующие заболевания(код по МКБ-10)
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+Тип
+</TD>
+<TD> 
+Диагноз
+</TD> 
+<TD> 
+Характер
+</TD>
+<TD> 
+Врач
+</TD>
+<TD> 
+Специальность
+</TD>
+</TR>
+<b><u>
+{for: xxx in event.diagnosises}
+	{if: xxx.type.code!=u'2'}
+<TR>
+<TD> 
+<b><u>
+{xxx.type.name}
+</b></u>
+</TD>
+<TD> 
+<b><u>
+{xxx.MKB}
+</b></u>
+</TD> 
+<TD> 
+<b><u>
+{xxx.character.name}
+</b></u>
+</TD>
+<TD> 
+<b><u>
+{event.execPerson.shortName}
+</b></u>
+</TD>
+<TD>
+<b><u>
+{event.execPerson.speciality}</b></u>
+</b></u>
+</TD>
+</TR>
+{end:}
+{end:}
+</TABLE>
+{end:}
+<BR/><BR/>
+
+{:qwer=0}
+{for: xxx in event.actions}
+	{if: xxx.serviceType==4}
+		{:qwer+=1}
+	{end:}
+{end:}
+{if: qwer>=1}
+ОПЕРАЦИИ
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+Дата выполнения
+</TD>
+<TD> 
+Код
+</TD>
+<TD> 
+Название
+</TD>
+<TD> 
+Исполнитель, специальность.
+</TD>
+</TR>
+{for: xxx in event.actions}
+{if: xxx.serviceType==4}
+<TR>
+<TD> 
+	<u><b>{xxx.begDate}</u></b>
+</TD> 
+<TD> 
+	<u><b>{xxx.code}</u></b>
+</TD>
+<TD> 
+	<u><b>{xxx.name}</u></b>
+</TD>
+<TD> 
+	<u><b>{xxx.person}</u></b>
+</TD>
+</TR>
+{end:}	
+{end:}
+</TABLE>
+{end:}
+
+
+
+{:qwer=0}
+{for: xxx in event.actions}
+	{if: xxx.serviceType==3}
+		{:qwer+=1}
+	{end:}
+{end:}
+{if: qwer>=1}
+ПРОЦЕДУРЫ/МАНИПУЛЯЦИИ
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+Дата выполнения
+</TD>
+<TD> 
+Код
+</TD>
+<TD> 
+Название
+</TD>
+<TD> 
+Исполнитель, специальность.
+</TD>
+</TR>
+{for: xxx in event.actions}
+{if: xxx.serviceType==3}
+<TR>
+<TD> 
+	<u><b>{xxx.begDate}</u></b>
+</TD> 
+<TD> 
+	<u><b>{xxx.code}</u></b>
+</TD>
+<TD> 
+	<u><b>{xxx.name}</u></b>
+</TD>
+<TD> 
+	<u><b>{xxx.person}</u></b>
+</TD>
+</TR>
+{end:}	
+{end:}
+</TABLE>
+{end:}
+
+
+{:qwer=0}
+{for: xxx in event.actions}
+	{if: xxx.serviceType==5}
+		{:qwer+=1}
+	{end:}
+{end:}
+{if: qwer>=1}
+ИССЛЕДОВАНИЯ
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+Дата выполнения
+</TD>
+<TD> 
+Код
+</TD>
+<TD> 
+Название
+</TD>
+<TD> 
+Исполнитель, специальность.
+</TD>
+</TR>
+{for: xxx in event.actions}
+{if: xxx.serviceType==5}
+<TR>
+<TD> 
+	<u><b>{xxx.begDate}</u></b>
+</TD> 
+<TD> 
+	<u><b>{xxx.code}</u></b>
+</TD>
+<TD> 
+	<u><b>{xxx.name}</u></b>
+</TD>
+<TD> 
+	<u><b>{xxx.person}</u></b>
+</TD>
+</TR>
+{end:}	
+{end:}
+</TABLE>
+{end:}
+
+
+<BR/>
+Рецепты на лекарственные препараты
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+Дата
+</TD>
+<TD> 
+Рецепт(серия)
+</TD>
+<TD> 
+Рецепт(номер)
+</TD>
+<TD> 
+Лекарственный препарат
+</TD>
+<TD> 
+льгота(%)
+</TD>
+<TD> 
+Лек.форма
+</TD>
+<TD> 
+Доза
+</TD>
+<TD> 
+Кол-во
+</TD>
+<TD> 
+код МКБ-10
+</TD>
+<TD> 
+Код Врача
+</TD>
+</TR>
+<TR>
+<TD> 
+</TD> 
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+</TR>
+<TR>
+<TD> 
+</TD> 
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+</TR>
+<TR>
+<TD> 
+</TD> 
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+<TD> 
+</TD>
+</TR>
+</TABLE>
+
+<BR/>
+
+<TABLE BORDER=1 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD> 
+
+Документ о временной нетрудоспособности: 
+
+{if: tempInvalid.doctype.code==1}листок нетрудоспособности - 1, <b><u>справка - 2.</b></u> {else:}<b><u>листок нетрудоспособности - 1</b></u>, справка - 2. {end:}
+
+<BR/>
+Повод выдачи: <b><u>{tempInvalid.reason}</b></u>
+
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 10pt; color: black">
+<TR>
+<TD width="30%"> 
+Дата выдачи: <b><u>{if: tempInvalid.prev}{tempInvalid.prev.begDate}{else:}{tempInvalid.begDate}{end:}</b></u>
+<BR/>
+Даты продления:<b><u>{if: tempInvalid.prev}{tempInvalid.prev.endDate}{end:}</b></u>
+</TD>
+<TD> 
+Дата закрытия документа о временной нетрудоспособности:<b><u>{tempInvalid.endDate}</b></u>
+<BR/>
+Дата закрытия талона:<b><u>{event.execDate}</b></u>
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>
+<BR/>
+<BR/>
+Врач (ФИО, специальность):<b><u>{event.execPerson}</b></u>                    _____________________________Подпись

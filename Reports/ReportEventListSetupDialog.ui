@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CReportEventListSetupDialog</class>
+ <widget class="QDialog" name="CReportEventListSetupDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>528</width>
+    <height>423</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Список обращений</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="9" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QComboBox" name="cmbMKBFilter">
+       <item>
+        <property name="text">
+         <string notr="true">Игнор.</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">Интервал</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtMKBFrom">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="inputMask">
+        <string notr="true">a00.00; </string>
+       </property>
+       <property name="text">
+        <string notr="true">A.</string>
+       </property>
+       <property name="maxLength">
+        <number>6</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtMKBTo">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="inputMask">
+        <string notr="true">a00.00; </string>
+       </property>
+       <property name="text">
+        <string notr="true">Z99.9</string>
+       </property>
+       <property name="maxLength">
+        <number>6</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblSpeciality">
+     <property name="text">
+      <string notr="true">Специальность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblOrgStructure">
+     <property name="text">
+      <string notr="true">Подразделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="CRBComboBox" name="cmbSpeciality"/>
+   </item>
+   <item row="12" column="1">
+    <widget class="CRBComboBox" name="cmbVisitType">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string notr="true">Дата окончания периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string notr="true">Дата начала периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblPerson">
+     <property name="text">
+      <string notr="true">Ответственный за событие</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QCheckBox" name="chkDetailByVisits">
+     <property name="text">
+      <string notr="true">Детализировать по визитам</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="lblMKB">
+     <property name="text">
+      <string notr="true">Коды диагнозов по МКБ</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="lblVisitType">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string notr="true">Тип визита</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="CRBComboBox" name="cmbEventType"/>
+   </item>
+   <item row="4" column="1">
+    <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+   </item>
+   <item row="6" column="1">
+    <widget class="CPersonComboBoxEx" name="cmbPerson"/>
+   </item>
+   <item row="13" column="0">
+    <widget class="QLabel" name="lblVisitPerson">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string notr="true">Врач визита</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblEventType">
+     <property name="text">
+      <string notr="true">Тип события</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="CDateEdit" name="edtBegDate"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="CDateEdit" name="edtEndDate"/>
+   </item>
+   <item row="13" column="1">
+    <widget class="CPersonComboBoxEx" name="cmbVisitPerson">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblEventStatus">
+     <property name="text">
+      <string notr="true">Статус обращения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="cmbEventStatus">
+     <item>
+      <property name="text">
+       <string notr="true">Все</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Только открытые</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Только закрытые</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>cmbEventType</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>cmbSpeciality</tabstop>
+  <tabstop>cmbPerson</tabstop>
+  <tabstop>cmbMKBFilter</tabstop>
+  <tabstop>edtMKBFrom</tabstop>
+  <tabstop>edtMKBTo</tabstop>
+  <tabstop>chkDetailByVisits</tabstop>
+  <tabstop>cmbVisitType</tabstop>
+  <tabstop>cmbVisitPerson</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>CReportEventListSetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>CReportEventListSetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDetailByVisits</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lblVisitType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>242</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>267</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDetailByVisits</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lblVisitPerson</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>242</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDetailByVisits</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>cmbVisitType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>242</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDetailByVisits</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>cmbVisitPerson</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>242</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

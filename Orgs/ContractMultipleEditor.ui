@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ContractMultipleEditorDialog</class>
+ <widget class="QDialog" name="ContractMultipleEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>574</width>
+    <height>255</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Дата</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblPriceList">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Прайс-лист</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblRecipient">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Получатель</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbRecipient</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblPayer">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Плательщик</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbPayer</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="4">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>48</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string>Период с</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="CDateEdit" name="edtBegDate"/>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string>по</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="CDateEdit" name="edtEndDate"/>
+   </item>
+   <item row="1" column="4">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1" colspan="4">
+    <widget class="CPriceListComboBoxEx" name="cmbPriceList"/>
+   </item>
+   <item row="3" column="1" colspan="4">
+    <widget class="COrgComboBox" name="cmbRecipient"/>
+   </item>
+   <item row="4" column="1" colspan="4">
+    <widget class="COrgComboBox" name="cmbPayer"/>
+   </item>
+   <item row="0" column="1" colspan="3">
+    <widget class="CDateEdit" name="edtDate"/>
+   </item>
+   <item row="6" column="0" colspan="5">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgComboBox</class>
+   <extends>QComboBox</extends>
+   <header>OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPriceListComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>PriceListComboBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ContractMultipleEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>277</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ContractMultipleEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>266</x>
+     <y>210</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>266</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

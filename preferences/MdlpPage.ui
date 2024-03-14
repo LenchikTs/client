@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mdlpPage</class>
+ <widget class="QWidget" name="mdlpPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>497</width>
+    <height>203</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Интеграция с МДЛП</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="1" column="1">
+    <widget class="QCheckBox" name="chkMdlpEnabled">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="edtMdlpUrl">
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;в терминах МДЛП это &lt;span style=&quot; font-family:'monospace';&quot;&gt;&amp;lt;endpoint&amp;gt;/&amp;lt;version&amp;gt;/&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'monospace';&quot;&gt;«Песочница»    https://api.sb.mdlp.crpt.ru&lt;/span&gt;&lt;span style=&quot; font-family:'monospace';&quot;&gt;/api/v1/&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'monospace';&quot;&gt;«Промышленный» https://api.mdlp.crpt.ru&lt;/span&gt;&lt;span style=&quot; font-family:'monospace';&quot;&gt;/api/v1/&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>https://api.sb.mdlp.crpt.ru/api/v1/</string>
+     </property>
+     <property name="maxLength">
+      <number>128</number>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QCheckBox" name="chkMdlpStunnel">
+     <property name="text">
+      <string>Использовать stunnel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtMdlpStunnelUrl">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Для случая, когда ОС не позволяет напрямую использовать https c ГОСТ-овской криптографией&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string>http://localhost</string>
+     </property>
+     <property name="maxLength">
+      <number>64</number>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="2">
+    <widget class="QCheckBox" name="chkMdlpNotificationMode">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtMdlpClientId">
+     <property name="font">
+      <font>
+       <family>Monospace</family>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Для получения идентификатора и секретного кода (ключа) нужно зарегистрировать учётную систему в личном кабинете участника МДЛП (Администрирование&amp;nbsp;→&amp;nbsp;Учётные&amp;nbsp;системы, см.Руководство пользователя личного кабинета, п.&amp;nbsp;4.11.3 «Добавление, удаление учетной системы»)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="inputMask">
+      <string>HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH; </string>
+     </property>
+     <property name="text">
+      <string>----</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="1">
+    <widget class="QPushButton" name="btnMdlpTest">
+     <property name="text">
+      <string>Проверить соединение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblMdlpClientId">
+     <property name="text">
+      <string>Идентификатор клиента</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtMdlpClientId</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblMdlpClientSecret">
+     <property name="text">
+      <string>Секретный код (ключ)</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtMdlpClientSecret</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtMdlpClientSecret">
+     <property name="font">
+      <font>
+       <family>Monospace</family>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Для получения идентификатора и секретного кода (ключа) нужно зарегистрировать учётную систему в личном кабинете участника МДЛП (Администрирование&amp;nbsp;→&amp;nbsp;Учётные&amp;nbsp;системы, см.Руководство пользователя личного кабинета, п.&amp;nbsp;4.11.3 «Добавление, удаление учетной системы»)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="inputMask">
+      <string>HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH; </string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblMdlpUrl">
+     <property name="text">
+      <string>URL сервиса МДЛП</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtMdlpUrl</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblMdlpEnabled">
+     <property name="text">
+      <string>Использование МДЛП разрешено</string>
+     </property>
+     <property name="buddy">
+      <cstring>chkMdlpEnabled</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblMdlpNotificationMode">
+     <property name="text">
+      <string>Уведомительный режим</string>
+     </property>
+     <property name="buddy">
+      <cstring>chkMdlpNotificationMode</cstring>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>chkMdlpEnabled</tabstop>
+  <tabstop>edtMdlpUrl</tabstop>
+  <tabstop>edtMdlpClientId</tabstop>
+  <tabstop>edtMdlpClientSecret</tabstop>
+  <tabstop>chkMdlpStunnel</tabstop>
+  <tabstop>edtMdlpStunnelUrl</tabstop>
+  <tabstop>chkMdlpNotificationMode</tabstop>
+  <tabstop>btnMdlpTest</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

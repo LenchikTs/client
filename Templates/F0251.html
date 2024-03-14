@@ -1,0 +1,132 @@
+<HTML><BODY>
+{setPageSize('A4')}
+{setOrientation('P')}
+{setLeftMargin(5)}
+{setTopMargin(5)}
+{setBottomMargin(5)}
+{setRightMargin(5)}
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 7pt; color: black">
+<TR><TD align="left"   COLSPAN=3>Министерство здравоохранения и социального развития РФ</TD>
+    <TD align="right"  COLSPAN=2>Медицинская документация</TD></TR>
+<TR><TD align="right"  COLSPAN=5><B>Форма N 025/12у</B></TD></TR>
+<TR><TD align="left"   COLSPAN=2><B><u><BIG>{currentOrganisation.shortName}</BIG></u></B></TD>
+    <TD align="right"  COLSPAN=3><FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT></TD></TR>
+<TR><TD align="left"   COLSPAN=2><B><i>Отделение профилактики</i></B></TD>
+    <TD align="right"  COLSPAN=3>
+    {if:len(client.socStatuses)}
+    <TABLE BORDER=3>
+    <TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100><FONT SIZE=+1>
+      Л {client.socStatuses[-1].code}
+    </FONT></TD></TR></TABLE>
+   {end:}
+</TD></TR>
+<TR><TD COLSPAN=5> </TD></TR>
+<TR><TD align="center"  COLSPAN=5 STYLE="font-family: Arial; font-size: 11pt; color: black"><B>КАРТА УЧЕТА ДОПОЛНИТЕЛЬНОЙ ДИСПАНСЕРИЗАЦИИ РАБОТАЮЩЕГО ГРАЖДАНИНА</B></TD></TR>
+<TR><TD align="center"  COLSPAN=5 STYLE="font-family: Arial; font-size: 8pt; color: black">(МЕДИЦИНСКАЯ КАРТА АМБУЛАТОРНОГО БОЛЬНОГО № <FONT SIZE=+1><B><i><u>{client.id}</u></i></B></FONT>)</TD></TR>
+</TABLE><BR/>
+<HR>                
+<P STYLE="font-family: Arial; font-size: 16pt; color: black">
+<CENTER><B>{client.fullName}</B></CENTER>
+</P>
+<HR>
+<P STYLE="font-family: Arial; font-size: 8pt; color: black">
+СНИЛС:<B><BIG>{client.SNILS}</BIG></B> Дата рождения: <B><BIG>{client.birthDate}<BIG></B>(<B>{client.age}</B>) Пол: <B><BIG>{client.sex}<BIG></B><BR/>
+Документ: <B>{client.document}</B><BR/>
+Полис:<B>{client.policy}</B><BR/>
+Адрес регистрации:<B>{client.regAddress}</B><BR/>
+Адрес проживания: <B>{client.locAddress}</B><BR/>
+Тел:<B>{client.phones}</B><BR/>
+Место работы:<B> {client.work.shortName} </B><BR/>
+должность:<B> {client.work.post} </B><BR/>
+ОКВЕД:<B> {client.work.OKVED} </B><BR/>
+
+{if:client.temporaryAttach}
+Прикреплен к {client.temporaryAttach.org} для {client.temporaryAttach.name}<BR/>
+{else:}
+Прикреплен в данном учреждении для: постоянного динамического наблюдения-1, доп.дисп-ции-2,периодического мед.осмотра-3,
+доп.мед.осмотра-4<BR/>
+{end:}
+{if:client.permanentAttach}
+Учреждение здравоохранения, к которому прикреплен для постоянного динамического наблюдения:
+{client.permanentAttach.org} ({client.permanentAttach.name}) <BR/>
+{else:}
+Учреждение здравоохранения, к которому прикреплен для постоянного динамического наблюдения:_______________________________<BR/>
+{end:}
+
+</P>
+
+{if: present('diagnostics') or True}
+<P>Осмотры врачей-специалистов</P>
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="2" STYLE="font-family: Arial; font-size: 6pt; color: black">
+    <TR> <TH> №             </TH> 
+         <TH> Тип           </TH>
+         <TH> Специальность </TH>
+         <TH> Врач          </TH>
+         <TH> Назначен      </TH>
+         <TH> Выполнен      </TH>
+         <TH> ГрЗд          </TH>
+         <TH> Код МКБ       </TH>
+         <TH> Х             </TH>
+         <TH> С             </TH>
+         <TH> ДН            </TH>
+         <TH> СКЛ           </TH>
+         <TH> Госп.         </TH>
+         <TH> Результат     </TH>
+    </TR>
+
+    {for: i, diagnostic in enumerate(diagnostics) }
+    <TR> <TD> {i+1} </TD> 
+         <TD> {diagnostic.type}        </TD>
+         <TD> {diagnostic.speciality}  </TD>
+         <TD> {diagnostic.person}      </TD>
+         <TD> {diagnostic.setDate}     </TD>
+         <TD> {diagnostic.endDate}     </TD>
+         <TD> {diagnostic.healthGroup} </TD>
+         <TD> {diagnostic.MKB}         </TD>
+         <TD> {diagnostic.character if diagnostic.character != '0' else ''} </TD>
+         <TD> {diagnostic.stage}       </TD>
+         <TD> {diagnostic.dispanser}   </TD>
+         <TD> {diagnostic.sanatorium}  </TD>
+         <TD> {diagnostic.hospital}    </TD>
+         <TD> {diagnostic.result}      </TD>
+    </TR>
+    {end:}
+</TABLE>
+{end:}
+<p STYLE="font-family: Arial; font-size: 6pt; color: black">
+Тип: З-заключительный,О-основной,С-сопутствующий
+Характер (Х): 1-острое,2-впервые выявленое хроническое,3-ранее известное хроническое,4-обстрение хронического<BR/>
+Стадия (С):1-ранняя,2-поздняя,3-ремиссия.4-реконвалесцент</BR>
+ДН: 1-состоит,2-взят,3-снят,4-снят-по выздоравлению,5-снят всвязи со смертью,6-взят повторно,7-нуждается<BR/>
+СКЛ: 1-требуется,2-направлен,3-пролечен. Госп.: 1-требуется,2-направлен,3-пролечен<BR/>
+</p>
+
+{if: present('actions') or True}
+<P>Лабораторные и функциональные исследования</P>
+
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="2" STYLE="font-family: Arial; font-size: 8pt; color: black">
+    <TR> <TH> №             </TH> 
+         <TH> Наименование  </TH>
+         <TH> Назначено     </TH>
+         <TH> Начато        </TH>
+         <TH> Окончено      </TH>
+         <TH> Исполнитель   </TH>
+    </TR>
+
+    {for: i, action in enumerate(actions) }
+    <TR> <TD> {i+1} </TD> 
+         <TD> {action.type}          </TD>
+         <TD> {action.directionDate} </TD>
+         <TD> {action.begDate}       </TD>
+         <TD> {action.endDate}       </TD>
+         <TD> {action.person}        </TD>
+    </TR>
+    {end:}
+</TABLE>
+{end:}
+
+
+Дата заверщения ДД <B>{execDate}</B><BR/>
+Врач, ответственный за проведение ДД <B>{execPerson.name}</B>
+</BODY></HTML>
+

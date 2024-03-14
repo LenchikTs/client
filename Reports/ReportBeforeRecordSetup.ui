@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReportBeforeRecordSetup</class>
+ <widget class="QDialog" name="ReportBeforeRecordSetup">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>437</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Список предварительной записи</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="8" column="0" colspan="2">
+    <widget class="QLabel" name="lblShowAttachment">
+     <property name="text">
+      <string>Выводить прикрепление</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLabel" name="lblNumberType">
+     <property name="text">
+      <string>Номер строки</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="1">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>21</width>
+       <height>21</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QLabel" name="lblAccountingSystem">
+     <property name="text">
+      <string>Идентификатор пациента</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="2" colspan="2">
+    <widget class="QComboBox" name="cmbListOnlyQueued">
+     <item>
+      <property name="text">
+       <string>все записи</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>только занятые</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QLabel" name="lblShowBirthDate">
+     <property name="text">
+      <string>Выводить дату рождения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="lblListOnlyQueued">
+     <property name="text">
+      <string>Включать в список</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblEncodeName">
+     <property name="text">
+      <string>ФИО пациента</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2" colspan="2">
+    <widget class="QCheckBox" name="chkAge">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="0" colspan="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QLabel" name="lblShowTime">
+     <property name="text">
+      <string>Время</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2" colspan="2">
+    <widget class="QComboBox" name="cmbShowTime">
+     <item>
+      <property name="text">
+       <string>не выводить</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>выводить</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="9" column="2" colspan="2">
+    <widget class="QComboBox" name="cmbFillNote">
+     <item>
+      <property name="text">
+       <string>не заполнять</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>жалобы</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="2">
+    <widget class="QLabel" name="lblFillNote">
+     <property name="text">
+      <string>Примечание</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="2">
+    <widget class="QComboBox" name="cmbNumberType">
+     <item>
+      <property name="text">
+       <string>по порядку записей в отчёте</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>порядковый номер талончика</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="12" column="2" colspan="2">
+    <widget class="QCheckBox" name="chkAllPeriods">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2" colspan="2">
+    <widget class="QComboBox" name="cmbEncodeName">
+     <item>
+      <property name="text">
+       <string>не шифровать</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>шифровать</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="12" column="0" colspan="2">
+    <widget class="QLabel" name="lblAllPeriods">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Выводить все периоды</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2" colspan="2">
+    <widget class="CRBComboBox" name="cmbAccountingSystem"/>
+   </item>
+   <item row="6" column="2" colspan="2">
+    <widget class="QCheckBox" name="chkBirthDate">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QLabel" name="lblShowAge">
+     <property name="text">
+      <string>Выводить возраст</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2" colspan="2">
+    <widget class="QCheckBox" name="chkAttachment">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="2" colspan="2">
+    <widget class="QCheckBox" name="chkAllPeriodsCombine">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="0" colspan="2">
+    <widget class="QLabel" name="lblAllPeriodsCombine">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Объединять периоды</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cmbNumberType</tabstop>
+  <tabstop>cmbShowTime</tabstop>
+  <tabstop>cmbAccountingSystem</tabstop>
+  <tabstop>cmbEncodeName</tabstop>
+  <tabstop>cmbFillNote</tabstop>
+  <tabstop>cmbListOnlyQueued</tabstop>
+  <tabstop>chkAllPeriods</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ReportBeforeRecordSetup</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>198</x>
+     <y>284</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>181</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ReportBeforeRecordSetup</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>284</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>181</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>627</width>
+    <height>693</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Загрузка тарифов для Ростовской области</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabFKSG">
+       <attribute name="title">
+        <string>Тарифы ФКСГ</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Импорт тарифов</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="2" column="1" colspan="2">
+            <widget class="CRBComboBox" name="cmbFKSGUnit"/>
+           </item>
+           <item row="3" column="1" colspan="2">
+            <widget class="CDateEdit" name="edtFKSGDATE_IN"/>
+           </item>
+           <item row="4" column="1" colspan="2">
+            <widget class="CRBComboBox" name="cmbFKSGEventType"/>
+           </item>
+           <item row="5" column="1" colspan="2">
+            <widget class="QComboBox" name="cmbFKSGTariffType"/>
+           </item>
+           <item row="7" column="0" colspan="3">
+            <widget class="QPushButton" name="btnFKSGImport">
+             <property name="text">
+              <string>Импорт</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="edtFKSGTARIF"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblFKSGDATE_IN">
+             <property name="text">
+              <string>DATE_IN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblFKSGTARIF">
+             <property name="text">
+              <string>Выбор файла KSGTARIF.dbf</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="lblFKSGEventType">
+             <property name="text">
+              <string>Тип события</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblFKSGUnit">
+             <property name="text">
+              <string>Единица уч. мед. помощи</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="lblFKSGTariffType">
+             <property name="text">
+              <string>Тарифицируется</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnFKSGSelectDBF">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblFKSGXml">
+             <property name="text">
+              <string>Выбор файла FKSG.xml</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="edtFKSGXml"/>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="btnFKSGSelectXml">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Закрыть тарифы</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="3" column="1">
+            <widget class="QComboBox" name="cmbFKSGTariffTypeClose"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblFKSGCloseEventType">
+             <property name="text">
+              <string>Тип события</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblFKSGTariffTypeClose">
+             <property name="text">
+              <string>Тарифицируется</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="lblFKSGPeriodBeg">
+               <property name="text">
+                <string>Период с</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CDateEdit" name="edtFKSGPeriodBeg"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblFKSGPeriodEnd">
+               <property name="text">
+                <string>по</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CDateEdit" name="edtFKSGPeriodEnd"/>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="1">
+            <widget class="CRBComboBox" name="cmbFKSGEventTypeClose"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblFKSGEndDate">
+             <property name="text">
+              <string>Установить дату закрытия</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="CDateEdit" name="edtFKSGEndDate"/>
+           </item>
+           <item row="5" column="0" colspan="2">
+            <widget class="QPushButton" name="btnFKSGClose">
+             <property name="text">
+              <string>Закрыть тарифы</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabVMP">
+       <attribute name="title">
+        <string>Тарифы ВМП</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Импорт тарифов</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblVMPTariffType">
+             <property name="text">
+              <string>Тарифицируется</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnVMPSelectDBF">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="edtVMPSTACTAR"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblVMPSTACTAR">
+             <property name="text">
+              <string>Выбор файла STACTAR.dbf</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblVMPUnit">
+             <property name="text">
+              <string>Единица уч. мед. помощи</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="2">
+            <widget class="CRBComboBox" name="cmbVMPUnit"/>
+           </item>
+           <item row="2" column="1" colspan="2">
+            <widget class="CRBComboBox" name="cmbVMPEventType"/>
+           </item>
+           <item row="5" column="0" colspan="3">
+            <widget class="QPushButton" name="btnVMPImport">
+             <property name="text">
+              <string>Импорт</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1" colspan="2">
+            <widget class="QComboBox" name="cmbVMPTariffType"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblVMPEventType">
+             <property name="text">
+              <string>Тип события</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Закрыть недействующие тарифы</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblVMPTariffTypeClose">
+             <property name="text">
+              <string>Тарифицируется</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblVMPEventTypeClose">
+             <property name="text">
+              <string>Тип события</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="cmbVMPTariffTypeClose"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblVMPEndDate">
+             <property name="text">
+              <string>Установить дату закрытия</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="CDateEdit" name="edtVMPEndDate"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="CRBComboBox" name="cmbVMPEventTypeClose"/>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="lblVMPPeriodBeg">
+               <property name="text">
+                <string>Период с</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CDateEdit" name="edtVMPPerionBeg"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblVMPPerionEnd">
+               <property name="text">
+                <string>по</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CDateEdit" name="edtVMPPerionEnd"/>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="0" colspan="2">
+            <widget class="QPushButton" name="btnVMPClose">
+             <property name="text">
+              <string>Закрыть тарифы</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabAPP">
+       <attribute name="title">
+        <string>Тарифы АПП</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>Импорт тарифов</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="3" column="1" colspan="2">
+            <widget class="QComboBox" name="cmbAppTariffType"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblAppEventType">
+             <property name="text">
+              <string>Тип события</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblAPPPOLIKTAR">
+             <property name="text">
+              <string>Выбор файла POLIKTAR.dbf</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblAppUnit">
+             <property name="text">
+              <string>Единица уч. мед. помощи</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="2">
+            <widget class="CRBComboBox" name="cmbAppUnit"/>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnAppSelectPOLIKTAR">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0" colspan="3">
+            <widget class="QPushButton" name="btnAppImport">
+             <property name="text">
+              <string>Импорт</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1" colspan="2">
+            <widget class="CRBComboBox" name="cmbAppEventType"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblAppTariffType">
+             <property name="text">
+              <string>Тарифицируется</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="edtAPPPOLIKTAR"/>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string>Закрыть недействующие тарифы</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="2" column="1">
+            <widget class="CRBComboBox" name="cmbAppEventTypeClose"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblAppEndDate">
+             <property name="text">
+              <string>Установить дату закрытия</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="CDateEdit" name="edtAppEndDate"/>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="cmbAppTariffTypeClose"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblAppEventTypeClose">
+             <property name="text">
+              <string>Тип события</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="lblAppPeriodBeg">
+               <property name="text">
+                <string>Период с</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CDateEdit" name="edtAppPeriodBeg"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblAppPeriodEnd">
+               <property name="text">
+                <string>по</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CDateEdit" name="edtAppPeriodEnd"/>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="0" colspan="2">
+            <widget class="QPushButton" name="btnAppClose">
+             <property name="text">
+              <string>Закрыть тарифы</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblAppTariffTypeClose">
+             <property name="text">
+              <string>Тарифицируется</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QTextBrowser" name="log"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

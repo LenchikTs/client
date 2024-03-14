@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ClientMedicalExemptionEditor</class>
+ <widget class="QDialog" name="ClientMedicalExemptionEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>441</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="6" column="0" colspan="2">
+    <widget class="QLabel" name="lblMedicalExemptionReason">
+     <property name="text">
+      <string>Причина медотвода</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMedicalExemptionType</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2" colspan="2">
+    <widget class="CRBComboBox" name="cmbMedicalExemptionReason"/>
+   </item>
+   <item row="7" column="0" colspan="4">
+    <widget class="CInDocTableView" name="tblMedicalExemptionInfections"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Дата начала</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtDate</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2" colspan="2">
+    <widget class="CRBComboBox" name="cmbMedicalExemptionType"/>
+   </item>
+   <item row="0" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>236</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblMKB">
+     <property name="text">
+      <string>Диагноз</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMKB</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblPerson">
+     <property name="text">
+      <string>Врач</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbPerson</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblMedicalExemptionType">
+     <property name="text">
+      <string>Тип медотвода</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMedicalExemptionType</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>236</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="2">
+    <widget class="CDateEdit" name="edtEndDate"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string>Дата окончания</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtEndDate</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="2">
+    <widget class="CPersonComboBoxEx" name="cmbPerson"/>
+   </item>
+   <item row="1" column="2" colspan="2">
+    <widget class="CICDCodeEditEx" name="cmbMKB"/>
+   </item>
+   <item row="0" column="2">
+    <widget class="CDateEdit" name="edtDate"/>
+   </item>
+   <item row="8" column="0" colspan="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CInDocTableView</class>
+   <extends>QTableView</extends>
+   <header>library/InDocTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CICDCodeEditEx</class>
+   <extends>QComboBox</extends>
+   <header>library/ICDCodeEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtDate</tabstop>
+  <tabstop>cmbMKB</tabstop>
+  <tabstop>cmbPerson</tabstop>
+  <tabstop>tblMedicalExemptionInfections</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ClientMedicalExemptionEditor</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ClientMedicalExemptionEditor</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

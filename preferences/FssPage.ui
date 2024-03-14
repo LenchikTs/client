@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fssPage</class>
+ <widget class="QWidget" name="fssPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>489</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Доступ к сервису СФР</string>
+  </property>
+  <property name="toolTip">
+   <string>Настройки доступа к сервисам СФР</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblProxyLogin">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>&amp;Сертификат СФР</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtProxyLogin</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3">
+    <widget class="QLineEdit" name="edtProxyPassword">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="edtProxyAddress">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QLabel" name="lblProxyPort">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>&amp;порт</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtProxyPort</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="edtProxyLogin">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QSpinBox" name="edtProxyPort">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+     <property name="maximum">
+      <number>65535</number>
+     </property>
+     <property name="value">
+      <number>3128</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblServiceUrl">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>130</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&amp;URL сервиса ЭЛН</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtServiceUrl</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="CCertComboBox" name="cmbFssCert">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QLabel" name="lblProxyPassword">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>па&amp;роль</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtProxyPassword</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <spacer name="verticalSpacertCryptography">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>129</width>
+       <height>218</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" colspan="4">
+    <widget class="QCheckBox" name="chkUseProxy">
+     <property name="text">
+      <string>Использовать прокси-&amp;сервер</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="4">
+    <widget class="QCheckBox" name="chkUseEncryption">
+     <property name="text">
+      <string>Использовать &amp;шифрование сообщений</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblFssCert">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>&amp;Сертификат СФР</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbFssCert</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="3">
+    <widget class="QLineEdit" name="edtServiceUrl"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblProxyAddress">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>&amp;Адрес сервера</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtProxyAddress</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="4">
+    <widget class="QCheckBox" name="chkProxyUseAuth">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Прокси-сервер требует ау&amp;тентификацию</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CCertComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">library/CertComboBox</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtServiceUrl</tabstop>
+  <tabstop>chkUseEncryption</tabstop>
+  <tabstop>cmbFssCert</tabstop>
+  <tabstop>chkUseProxy</tabstop>
+  <tabstop>edtProxyAddress</tabstop>
+  <tabstop>edtProxyPort</tabstop>
+  <tabstop>chkProxyUseAuth</tabstop>
+  <tabstop>edtProxyLogin</tabstop>
+  <tabstop>edtProxyPassword</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkUseEncryption</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblFssCert</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>26</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUseEncryption</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFssCert</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

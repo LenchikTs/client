@@ -1,0 +1,160 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'D:\Samson\UP_s11\client_vipisnoy\RefBooks\TempInvalidResult\RBTempInvalidResultEditor.ui'
+#
+# Created: Thu Sep 24 15:27:24 2020
+#      by: PyQt4 UI code generator 4.11.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_ItemEditorDialog(object):
+    def setupUi(self, ItemEditorDialog):
+        ItemEditorDialog.setObjectName(_fromUtf8("ItemEditorDialog"))
+        ItemEditorDialog.resize(383, 195)
+        ItemEditorDialog.setSizeGripEnabled(True)
+        self.gridLayout_3 = QtGui.QGridLayout(ItemEditorDialog)
+        self.gridLayout_3.setMargin(4)
+        self.gridLayout_3.setSpacing(4)
+        self.gridLayout_3.setObjectName(_fromUtf8("gridLayout_3"))
+        self.tabWidget = QtGui.QTabWidget(ItemEditorDialog)
+        self.tabWidget.setObjectName(_fromUtf8("tabWidget"))
+        self.tabMain = QtGui.QWidget()
+        self.tabMain.setObjectName(_fromUtf8("tabMain"))
+        self.gridLayout_2 = QtGui.QGridLayout(self.tabMain)
+        self.gridLayout_2.setMargin(4)
+        self.gridLayout_2.setSpacing(4)
+        self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
+        self.lblType = QtGui.QLabel(self.tabMain)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblType.sizePolicy().hasHeightForWidth())
+        self.lblType.setSizePolicy(sizePolicy)
+        self.lblType.setObjectName(_fromUtf8("lblType"))
+        self.gridLayout_2.addWidget(self.lblType, 0, 0, 1, 1)
+        self.cmbType = QtGui.QComboBox(self.tabMain)
+        self.cmbType.setObjectName(_fromUtf8("cmbType"))
+        self.gridLayout_2.addWidget(self.cmbType, 0, 1, 1, 1)
+        self.lblCode = QtGui.QLabel(self.tabMain)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblCode.sizePolicy().hasHeightForWidth())
+        self.lblCode.setSizePolicy(sizePolicy)
+        self.lblCode.setObjectName(_fromUtf8("lblCode"))
+        self.gridLayout_2.addWidget(self.lblCode, 1, 0, 1, 1)
+        self.edtCode = QtGui.QLineEdit(self.tabMain)
+        self.edtCode.setObjectName(_fromUtf8("edtCode"))
+        self.gridLayout_2.addWidget(self.edtCode, 1, 1, 1, 1)
+        self.lblName = QtGui.QLabel(self.tabMain)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblName.sizePolicy().hasHeightForWidth())
+        self.lblName.setSizePolicy(sizePolicy)
+        self.lblName.setObjectName(_fromUtf8("lblName"))
+        self.gridLayout_2.addWidget(self.lblName, 2, 0, 1, 1)
+        self.edtName = QtGui.QLineEdit(self.tabMain)
+        self.edtName.setObjectName(_fromUtf8("edtName"))
+        self.gridLayout_2.addWidget(self.edtName, 2, 1, 1, 1)
+        self.lblState = QtGui.QLabel(self.tabMain)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblState.sizePolicy().hasHeightForWidth())
+        self.lblState.setSizePolicy(sizePolicy)
+        self.lblState.setObjectName(_fromUtf8("lblState"))
+        self.gridLayout_2.addWidget(self.lblState, 3, 0, 1, 1)
+        self.cmbState = CTempInvalidStateComboBox(self.tabMain)
+        self.cmbState.setObjectName(_fromUtf8("cmbState"))
+        self.gridLayout_2.addWidget(self.cmbState, 3, 1, 1, 1)
+        self.lblDecision = QtGui.QLabel(self.tabMain)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblDecision.sizePolicy().hasHeightForWidth())
+        self.lblDecision.setSizePolicy(sizePolicy)
+        self.lblDecision.setObjectName(_fromUtf8("lblDecision"))
+        self.gridLayout_2.addWidget(self.lblDecision, 4, 0, 1, 1)
+        self.cmbDecision = QtGui.QComboBox(self.tabMain)
+        self.cmbDecision.setObjectName(_fromUtf8("cmbDecision"))
+        self.cmbDecision.addItem(_fromUtf8(""))
+        self.cmbDecision.setItemText(0, _fromUtf8(""))
+        self.cmbDecision.addItem(_fromUtf8(""))
+        self.cmbDecision.addItem(_fromUtf8(""))
+        self.cmbDecision.addItem(_fromUtf8(""))
+        self.cmbDecision.addItem(_fromUtf8(""))
+        self.cmbDecision.addItem(_fromUtf8(""))
+        self.cmbDecision.addItem(_fromUtf8(""))
+        self.gridLayout_2.addWidget(self.cmbDecision, 4, 1, 1, 1)
+        spacerItem = QtGui.QSpacerItem(100, 3, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout_2.addItem(spacerItem, 5, 0, 1, 1)
+        self.tabWidget.addTab(self.tabMain, _fromUtf8(""))
+        self.tabIdentification = QtGui.QWidget()
+        self.tabIdentification.setObjectName(_fromUtf8("tabIdentification"))
+        self.gridLayout = QtGui.QGridLayout(self.tabIdentification)
+        self.gridLayout.setMargin(4)
+        self.gridLayout.setSpacing(4)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.tblIdentification = CInDocTableView(self.tabIdentification)
+        self.tblIdentification.setObjectName(_fromUtf8("tblIdentification"))
+        self.gridLayout.addWidget(self.tblIdentification, 0, 0, 1, 1)
+        self.tabWidget.addTab(self.tabIdentification, _fromUtf8(""))
+        self.gridLayout_3.addWidget(self.tabWidget, 0, 0, 1, 1)
+        self.buttonBox = QtGui.QDialogButtonBox(ItemEditorDialog)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.gridLayout_3.addWidget(self.buttonBox, 1, 0, 1, 1)
+        self.lblType.setBuddy(self.cmbType)
+        self.lblCode.setBuddy(self.edtCode)
+        self.lblName.setBuddy(self.edtName)
+        self.lblState.setBuddy(self.cmbState)
+        self.lblDecision.setBuddy(self.cmbDecision)
+
+        self.retranslateUi(ItemEditorDialog)
+        self.tabWidget.setCurrentIndex(0)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), ItemEditorDialog.accept)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), ItemEditorDialog.reject)
+        QtCore.QMetaObject.connectSlotsByName(ItemEditorDialog)
+        ItemEditorDialog.setTabOrder(self.tabWidget, self.cmbType)
+        ItemEditorDialog.setTabOrder(self.cmbType, self.edtCode)
+        ItemEditorDialog.setTabOrder(self.edtCode, self.edtName)
+        ItemEditorDialog.setTabOrder(self.edtName, self.cmbState)
+        ItemEditorDialog.setTabOrder(self.cmbState, self.cmbDecision)
+        ItemEditorDialog.setTabOrder(self.cmbDecision, self.tblIdentification)
+        ItemEditorDialog.setTabOrder(self.tblIdentification, self.buttonBox)
+
+    def retranslateUi(self, ItemEditorDialog):
+        ItemEditorDialog.setWindowTitle(_translate("ItemEditorDialog", "ChangeMe!", None))
+        self.lblType.setText(_translate("ItemEditorDialog", "К&ласс", None))
+        self.lblCode.setText(_translate("ItemEditorDialog", "&Код", None))
+        self.lblName.setText(_translate("ItemEditorDialog", "&Наименование", None))
+        self.lblState.setText(_translate("ItemEditorDialog", "&Состояние", None))
+        self.lblDecision.setText(_translate("ItemEditorDialog", "&Решение", None))
+        self.cmbDecision.setItemText(1, _translate("ItemEditorDialog", "Направление на КЭК", None))
+        self.cmbDecision.setItemText(2, _translate("ItemEditorDialog", "Решение КЭК", None))
+        self.cmbDecision.setItemText(3, _translate("ItemEditorDialog", "Направление на МСЭ", None))
+        self.cmbDecision.setItemText(4, _translate("ItemEditorDialog", "Решение МСЭ", None))
+        self.cmbDecision.setItemText(5, _translate("ItemEditorDialog", "Госпитализация", None))
+        self.cmbDecision.setItemText(6, _translate("ItemEditorDialog", "Сан.кур.лечение", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabMain), _translate("ItemEditorDialog", "&Основная информация", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabIdentification), _translate("ItemEditorDialog", "&Идентификация", None))
+
+from RefBooks.TempInvalidState import CTempInvalidStateComboBox
+from library.InDocTable import CInDocTableView

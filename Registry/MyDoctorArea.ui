@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyDoctorArea</class>
+ <widget class="QWidget" name="MyDoctorArea">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>834</width>
+    <height>438</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Мой врачебный участок</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,0,0">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblMyAreas">
+       <property name="text">
+        <string>Мой участок:</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblOrgStructure">
+         <property name="text">
+          <string>Подразделение</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbOrgStructure</cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CAreaComboBox" name="cmbOrgStructure">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QComboBox::AdjustToContents</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblDate">
+         <property name="text">
+          <string>дата</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDateEdit" name="edtDate"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnApply">
+         <property name="text">
+          <string>Применить</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="btnNotifications">
+         <property name="text">
+          <string>Уведомления</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnDoctorPortal">
+         <property name="text">
+          <string>Портал врача</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnAmbulatoryCard">
+         <property name="text">
+          <string>Амбулаторная карта</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_Radio" stretch="0">
+     <item>
+      <widget class="QGroupBox" name="groupBox_Observed">
+       <property name="title">
+        <string>Взяты на ДН:</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QRadioButton" name="chkMyObserved">
+          <property name="text">
+           <string>Мной</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="chkOrgStrObserved">
+          <property name="text">
+           <string>Врачами моего подразделения</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="chkSpecObserved">
+          <property name="text">
+           <string>Врачами моей специальности</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QSplitter" name="splitter_5">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="handleWidth">
+      <number>2</number>
+     </property>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="lblEmergency">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Вызовы НМП</string>
+          </property>
+          <property name="buddy">
+           <cstring>tblEmergencyCalls</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CInDocTableView" name="tblEmergencyCalls"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="lblAmbulance">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Вызовы СМП</string>
+          </property>
+          <property name="buddy">
+           <cstring>tblAmbulanceCalls</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CInDocTableView" name="tblAmbulanceCalls"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="lblOpenedTempInvalidDocuments">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Открытые листы нетрудоспособности</string>
+          </property>
+          <property name="buddy">
+           <cstring>tblOpenedTempInvalidDocuments</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CInDocTableView" name="tblOpenedTempInvalidDocuments"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QLabel" name="lblForCloseTempInvalidDocuments">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Листы нетрудоспособности ожидают закрытия</string>
+          </property>
+          <property name="buddy">
+           <cstring>tblForCloseTempInvalidDocuments</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CInDocTableView" name="tblForCloseTempInvalidDocuments"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QLabel" name="lblDeaths">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Умершие</string>
+          </property>
+          <property name="buddy">
+           <cstring>tblDeaths</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CInDocTableView" name="tblDeaths"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLabel" name="lblLeavedStationary">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Выписаны из стационара</string>
+          </property>
+          <property name="buddy">
+           <cstring>tblLeavedStationary</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CInDocTableView" name="tblLeavedStationary"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QLabel" name="lblDispansAbsent">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Д-учет, не явившиеся</string>
+          </property>
+          <property name="buddy">
+           <cstring>tblDispansAbsent</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CInDocTableView" name="tblDispansAbsent"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QLabel" name="lblBadTest">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Анализы с превышением</string>
+          </property>
+          <property name="buddy">
+           <cstring>tblBadTest</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CInDocTableView" name="tblBadTest"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CInDocTableView</class>
+   <extends>QTableView</extends>
+   <header>library/InDocTable</header>
+  </customwidget>
+  <customwidget>
+   <class>CAreaComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

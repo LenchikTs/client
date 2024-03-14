@@ -1,0 +1,28 @@
+<HTML><BODY>
+{setPageSize('A4')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0">
+<TR><TD align="left"   COLSPAN=3>Министерство здравоохранения и социального развития РФ</TD>
+    <TD align="right"  COLSPAN=2>Медицинская документация</TD></TR>
+<TR><TD align="right"  COLSPAN=5>Форма N 025/у-04</TD></B></TR>
+<TR><TD align="left"   COLSPAN=1><B><u>СПб ГУЗ Поликлиника № 51</u></B></TD>
+    <TD align="right"  COLSPAN=4><FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT></TD></TR>
+<TR><TH align="right"  COLSPAN=5>
+    <TABLE BORDER=3>
+    <TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100><FONT SIZE=+3>
+     {if:len(client.socStatuses)}
+      Л {client.socStatuses[-1].code}
+     {end:}
+    </TR></TD></FONT></TABLE>
+</TH></TR>
+<TR><TH COLSPAN=5><BIG>МЕДИЦИНСКАЯ КАРТА АМБУЛАТОРНОГО БОЛЬНОГО № <FONT SIZE=+3><B><i>{client.id}</i></B></FONT></BIG></TH></TR>
+</TABLE>
+<HR>                
+Ф: <B>{client.lastName}</B><BR/>
+И: <B>{client.firstName}</B><BR/>
+О: <B>{client.patrName}</B><BR/>
+ДР:  <B>{client.birthDate}</B>(<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС:<B>{client.SNILS}</B><BR/>
+
+</BODY></HTML>
+

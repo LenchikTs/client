@@ -1,0 +1,138 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file '/home/natkuch/s11/RefBooks/RBBlanksEditor.ui'
+#
+# Created: Thu Oct 16 16:59:24 2014
+#      by: PyQt4 UI code generator 4.8.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    _fromUtf8 = lambda s: s
+
+class Ui_ItemEditorDialog(object):
+    def setupUi(self, ItemEditorDialog):
+        ItemEditorDialog.setObjectName(_fromUtf8("ItemEditorDialog"))
+        ItemEditorDialog.resize(320, 196)
+        ItemEditorDialog.setSizeGripEnabled(True)
+        self.gridLayout = QtGui.QGridLayout(ItemEditorDialog)
+        self.gridLayout.setMargin(4)
+        self.gridLayout.setSpacing(4)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.lblCheckingNumber = QtGui.QLabel(ItemEditorDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblCheckingNumber.sizePolicy().hasHeightForWidth())
+        self.lblCheckingNumber.setSizePolicy(sizePolicy)
+        self.lblCheckingNumber.setObjectName(_fromUtf8("lblCheckingNumber"))
+        self.gridLayout.addWidget(self.lblCheckingNumber, 3, 0, 1, 1)
+        self.buttonBox = QtGui.QDialogButtonBox(ItemEditorDialog)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.gridLayout.addWidget(self.buttonBox, 7, 1, 1, 1)
+        self.lblCheckingSerial = QtGui.QLabel(ItemEditorDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblCheckingSerial.sizePolicy().hasHeightForWidth())
+        self.lblCheckingSerial.setSizePolicy(sizePolicy)
+        self.lblCheckingSerial.setObjectName(_fromUtf8("lblCheckingSerial"))
+        self.gridLayout.addWidget(self.lblCheckingSerial, 2, 0, 1, 1)
+        self.edtName = QtGui.QLineEdit(ItemEditorDialog)
+        self.edtName.setObjectName(_fromUtf8("edtName"))
+        self.gridLayout.addWidget(self.edtName, 1, 1, 1, 1)
+        self.lblCode = QtGui.QLabel(ItemEditorDialog)
+        self.lblCode.setObjectName(_fromUtf8("lblCode"))
+        self.gridLayout.addWidget(self.lblCode, 0, 0, 1, 1)
+        self.cmbCheckingAmount = QtGui.QComboBox(ItemEditorDialog)
+        self.cmbCheckingAmount.setObjectName(_fromUtf8("cmbCheckingAmount"))
+        self.cmbCheckingAmount.addItem(_fromUtf8(""))
+        self.cmbCheckingAmount.addItem(_fromUtf8(""))
+        self.cmbCheckingAmount.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbCheckingAmount, 4, 1, 1, 1)
+        self.lblName = QtGui.QLabel(ItemEditorDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblName.sizePolicy().hasHeightForWidth())
+        self.lblName.setSizePolicy(sizePolicy)
+        self.lblName.setObjectName(_fromUtf8("lblName"))
+        self.gridLayout.addWidget(self.lblName, 1, 0, 1, 1)
+        self.cmbCheckingSerial = QtGui.QComboBox(ItemEditorDialog)
+        self.cmbCheckingSerial.setObjectName(_fromUtf8("cmbCheckingSerial"))
+        self.cmbCheckingSerial.addItem(_fromUtf8(""))
+        self.cmbCheckingSerial.addItem(_fromUtf8(""))
+        self.cmbCheckingSerial.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbCheckingSerial, 2, 1, 1, 1)
+        self.edtCode = QtGui.QLineEdit(ItemEditorDialog)
+        self.edtCode.setObjectName(_fromUtf8("edtCode"))
+        self.gridLayout.addWidget(self.edtCode, 0, 1, 1, 1)
+        self.lblCheckingAmount = QtGui.QLabel(ItemEditorDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblCheckingAmount.sizePolicy().hasHeightForWidth())
+        self.lblCheckingAmount.setSizePolicy(sizePolicy)
+        self.lblCheckingAmount.setObjectName(_fromUtf8("lblCheckingAmount"))
+        self.gridLayout.addWidget(self.lblCheckingAmount, 4, 0, 1, 1)
+        self.cmbCheckingNumber = QtGui.QComboBox(ItemEditorDialog)
+        self.cmbCheckingNumber.setObjectName(_fromUtf8("cmbCheckingNumber"))
+        self.cmbCheckingNumber.addItem(_fromUtf8(""))
+        self.cmbCheckingNumber.addItem(_fromUtf8(""))
+        self.cmbCheckingNumber.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbCheckingNumber, 3, 1, 1, 1)
+        spacerItem = QtGui.QSpacerItem(0, 0, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem, 6, 1, 1, 1)
+        self.lblCheckSumLen = QtGui.QLabel(ItemEditorDialog)
+        self.lblCheckSumLen.setObjectName(_fromUtf8("lblCheckSumLen"))
+        self.gridLayout.addWidget(self.lblCheckSumLen, 5, 0, 1, 1)
+        self.edtCheckSumLen = QtGui.QSpinBox(ItemEditorDialog)
+        self.edtCheckSumLen.setMinimum(-9)
+        self.edtCheckSumLen.setMaximum(9)
+        self.edtCheckSumLen.setObjectName(_fromUtf8("edtCheckSumLen"))
+        self.gridLayout.addWidget(self.edtCheckSumLen, 5, 1, 1, 1)
+        self.lblCheckingNumber.setBuddy(self.cmbCheckingNumber)
+        self.lblCheckingSerial.setBuddy(self.cmbCheckingSerial)
+        self.lblCode.setBuddy(self.edtCode)
+        self.lblName.setBuddy(self.edtName)
+        self.lblCheckingAmount.setBuddy(self.cmbCheckingAmount)
+
+        self.retranslateUi(ItemEditorDialog)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), ItemEditorDialog.accept)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), ItemEditorDialog.reject)
+        QtCore.QMetaObject.connectSlotsByName(ItemEditorDialog)
+        ItemEditorDialog.setTabOrder(self.edtCode, self.edtName)
+
+    def retranslateUi(self, ItemEditorDialog):
+        ItemEditorDialog.setWindowTitle(QtGui.QApplication.translate("ItemEditorDialog", "ChangeMe!", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblCheckingNumber.setText(QtGui.QApplication.translate("ItemEditorDialog", "Контроль но&мера", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblCheckingSerial.setText(QtGui.QApplication.translate("ItemEditorDialog", "Контроль &серии", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblCode.setText(QtGui.QApplication.translate("ItemEditorDialog", "&Код", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingAmount.setItemText(0, QtGui.QApplication.translate("ItemEditorDialog", "нет", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingAmount.setItemText(1, QtGui.QApplication.translate("ItemEditorDialog", "мягко", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingAmount.setItemText(2, QtGui.QApplication.translate("ItemEditorDialog", "жестко", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblName.setText(QtGui.QApplication.translate("ItemEditorDialog", "&Наименование", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingSerial.setItemText(0, QtGui.QApplication.translate("ItemEditorDialog", "нет", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingSerial.setItemText(1, QtGui.QApplication.translate("ItemEditorDialog", "мягко", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingSerial.setItemText(2, QtGui.QApplication.translate("ItemEditorDialog", "жестко", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblCheckingAmount.setText(QtGui.QApplication.translate("ItemEditorDialog", "Контроль &количества", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingNumber.setItemText(0, QtGui.QApplication.translate("ItemEditorDialog", "нет", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingNumber.setItemText(1, QtGui.QApplication.translate("ItemEditorDialog", "мягко", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmbCheckingNumber.setItemText(2, QtGui.QApplication.translate("ItemEditorDialog", "жестко", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblCheckSumLen.setText(QtGui.QApplication.translate("ItemEditorDialog", "Длина контрольной суммы", None, QtGui.QApplication.UnicodeUTF8))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    ItemEditorDialog = QtGui.QDialog()
+    ui = Ui_ItemEditorDialog()
+    ui.setupUi(ItemEditorDialog)
+    ItemEditorDialog.show()
+    sys.exit(app.exec_())
+

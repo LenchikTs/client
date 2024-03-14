@@ -1,0 +1,2226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GroupActionTypeEditorDialog</class>
+ <widget class="QDialog" name="GroupActionTypeEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>712</width>
+    <height>811</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Основная информация</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="chkAge">
+         <property name="text">
+          <string>Возраст</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="1" colspan="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="CDateEdit" name="edtBegDate">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="displayFormat">
+            <string>dd.MM.yyyy</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblActionTypeValidTo">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string> по </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDateEdit" name="endEndDate">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="displayFormat">
+            <string>dd.MM.yyyy</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="chkSex">
+         <property name="text">
+          <string>Пол</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="4">
+        <widget class="QFrame" name="horizontalFrame">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QComboBox" name="cmbBegAgeUnit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string/>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Д</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Н</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>М</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Г</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="edtBegAgeCount">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="inputMask">
+             <string>000; </string>
+            </property>
+            <property name="maxLength">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblAgeSep">
+            <property name="text">
+             <string>по</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmbEndAgeUnit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string/>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Д</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Н</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>М</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Г</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="edtEndAgeCount">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="inputMask">
+             <string>000; </string>
+            </property>
+            <property name="maxLength">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="20" column="0">
+        <widget class="QCheckBox" name="chkExposeDateSelector">
+         <property name="text">
+          <string>В счёт включать по дате</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="0">
+        <widget class="QCheckBox" name="chkActionTypeValidFrom">
+         <property name="text">
+          <string>Действует</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0">
+        <widget class="QCheckBox" name="chkContext">
+         <property name="text">
+          <string>Контекст печати</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="1" colspan="3">
+        <widget class="QSpinBox" name="edtMaxOccursInEvent">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>0 - нет ограничения</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QCheckBox" name="chkChkShowInForm">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkShowInForm">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Разрешается выбор в формах ввода событий</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QCheckBox" name="chkChkShowTime">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkShowTime">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Показывать в интерфейсе время назначения/начала/окончания</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="16" column="1" colspan="4">
+        <widget class="QLineEdit" name="edtContext">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="maxLength">
+          <number>64</number>
+         </property>
+        </widget>
+       </item>
+       <item row="20" column="1" colspan="4">
+        <widget class="QComboBox" name="cmbExposeDateSelector">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Окончания мероприятия</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Начала мероприятия</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Назначения мероприятия</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Взятитя биоматериала</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QCheckBox" name="chkChkShowBegDate">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkShowBegDate">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Показывать в интерфейсе дату начала действия</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="21" column="0">
+        <widget class="QCheckBox" name="chkNeedAttachFile">
+         <property name="text">
+          <string>Требует прикрепления файла</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <widget class="QCheckBox" name="chkPreferable">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkIsPreferable">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Является предпочитаемым(-ой)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="8" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="statusLayout">
+         <item>
+          <widget class="QCheckBox" name="chkChkEditStatus">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkEditStatus">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Редактировать состояние</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbSex">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>М</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ж</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QCheckBox" name="chkAssistant">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkHasAssistant">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Требуется ввод ассистента</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="19" column="0">
+        <widget class="QCheckBox" name="chkServiceType">
+         <property name="text">
+          <string>Вид услуги</string>
+         </property>
+        </widget>
+       </item>
+       <item row="19" column="1" colspan="4">
+        <widget class="CActionServiceTypeComboBox" name="cmbServiceType">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QCheckBox" name="chkChkRequiredCoordination">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkRequiredCoordination">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Требует обязательного согласования</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="18" column="0">
+        <widget class="QCheckBox" name="chkMaxOccursInEvent">
+         <property name="text">
+          <string>Макс. количество в событии</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="duplicationLayout">
+         <item>
+          <widget class="QCheckBox" name="chkChkDuplication">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkDuplication">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Разрешить дублирование</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="11" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="execPersLayout">
+         <item>
+          <widget class="QCheckBox" name="chkChkEditExecPers">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkEditExecPers">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Редактировать исполнителя</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="10" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="endDateLayout">
+         <item>
+          <widget class="QCheckBox" name="chkChkEditEndDate">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkEditEndDate">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Редактировать дату выполнения</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="9" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="begDateLayout">
+         <item>
+          <widget class="QCheckBox" name="chkChkEditBegDate">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkEditBegDate">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Редактировать дату начала</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="12" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="noteLayout">
+         <item>
+          <widget class="QCheckBox" name="chkChkEditNote">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkEditNote">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Редактировать примечание</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="14" column="0" colspan="5">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QCheckBox" name="chkChkIgnoreVisibleRights">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkIgnoreVisibleRights">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Игнорировать права видимости действий из событий</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="22" column="0" colspan="5">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="21" column="1" colspan="4">
+        <widget class="QComboBox" name="cmbNeedAttachFile">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>не требовать</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>требовать по Исполнителю</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>требовать по Назначившему</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Умолчания</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="1" colspan="2">
+        <widget class="CActionStatusComboBox" name="cmbDefaultStatus">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbDefaultBegDate">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не определено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Текущая дата</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата начала события</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата окончания события</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата окончания действия</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Номерок на работу</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QCheckBox" name="chkIsMorphologyRequired">
+         <property name="text">
+          <string>Заполнение «морфологии»</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="1">
+        <widget class="QCheckBox" name="chkAddVisit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Добавление визита</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0">
+        <widget class="QCheckBox" name="chkAddVisitGroup">
+         <property name="text">
+          <string>Добавлять визит</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="2">
+        <widget class="CRBComboBox" name="cmbAddVisitScene">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Место</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="chkDefaultExecPerson">
+         <property name="text">
+          <string>Исполнитель по умолчанию</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbDefaultPersonInEditor">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не определено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Не заполняется</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Назначивший действие</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ответственный за событие</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Пользователь</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Пользователь мед.работник</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbDefaultDirectionDate">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не определено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата начала события</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Текущая дата</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Синхронизация по дате выполнения</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="10" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbDefaultMKB">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не используется</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>По заключительному</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>По диагнозу назначившего действие</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Синхронизировать с заключительным</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Синхронизировать с диагнозом назначившего действие</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Вводится непосредственно</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Синхронизировать с предварительным диагнозом</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="chkDefaultPersonInEvent">
+         <property name="text">
+          <string>Исполнитель в событии</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbDefaultPersonInEvent">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не определено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Не заполняется</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Назначивший действие</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ответственный за событие</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Пользователь</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Пользователь мед.работник</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Пользователь завершивший действие</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QCheckBox" name="chkExecPersonRequired">
+         <property name="text">
+          <string>Контроль исполнителей</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="chkDefaultSetPersonInEvent">
+         <property name="text">
+          <string>Назначивший в событии</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="1">
+        <widget class="QLabel" name="lblAddVisitType">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Тип</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="2">
+        <widget class="CRBComboBox" name="cmbAddVisitType">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Тип</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="15" column="1" colspan="2">
+        <widget class="QLineEdit" name="edtOffice">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="chkDefaultDirectionDate">
+         <property name="text">
+          <string>Дата назначения</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QCheckBox" name="chkDefaultOrg">
+         <property name="text">
+          <string>Организация по умолчанию</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QCheckBox" name="chkDefaultMKB">
+         <property name="text">
+          <string>МКБ и морфология по умолчанию</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="chkDefaultStatus">
+         <property name="text">
+          <string>С&amp;остояние</string>
+         </property>
+        </widget>
+       </item>
+       <item row="19" column="0" colspan="3">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbDefaultPlannedEndDate">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не определено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Следующий день от даты назначения</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Следующий рабочий день от даты назначения</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата талона на Работу</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата начала + количество</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата начала + длительность</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbDefaultEndDate">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не определено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Текущая дата</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата начала события</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата окончания события</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Дата начала действия</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Синхронизация по дате начала действия</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="1" colspan="2">
+        <widget class="CPersonComboBoxEx" name="cmbDefaultExecPerson">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QCheckBox" name="chkDefaultPersonInEditor">
+         <property name="text">
+          <string>Исполнитель в отд.редакторе</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="chkDefaultEndDate">
+         <property name="text">
+          <string>&amp;Дата окончания</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="chkDefaultPlannedEndDate">
+         <property name="text">
+          <string>Планируемая дата выполнения</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1" colspan="2">
+        <widget class="CPolyclinicComboBox" name="cmbDefaultOrg">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbIsMorphologyRequired">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не проверяется</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Мягкий контроль</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Жесткий контроль</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="15" column="0">
+        <widget class="QCheckBox" name="chkOffice">
+         <property name="text">
+          <string>Кабине&amp;т</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="1" colspan="2">
+        <widget class="QSpinBox" name="edtAmount">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="chkDefaultBegDate">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Дата начала</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0">
+        <widget class="QCheckBox" name="chkAmount">
+         <property name="text">
+          <string>Ко&amp;личество</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbExecPersonRequired">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не проверяется</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Мягкий контроль</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Жёсткий контроль</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbDefaultSetPersonInEvent">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не определено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ответственный за событие</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Исполнитель действия</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="18" column="0" colspan="3">
+        <widget class="QGroupBox" name="grpPropertiesFields">
+         <property name="title">
+          <string>Настройка визуализации колонок свойств в редакторе Действия</string>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <property name="margin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QCheckBox" name="chkPropertyAssignedVisible">
+            <property name="text">
+             <string>Колонка «назначено»</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="chkPropertyUnitVisible">
+            <property name="text">
+             <string>Колонка «единица измерения»</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="chkPropertyNormVisible">
+            <property name="text">
+             <string>Колонка «норма»</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="chkPropertyEvaluationVisible">
+            <property name="text">
+             <string>Колонка «оценка»</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QCheckBox" name="chkMKBRequired">
+         <property name="text">
+          <string>Требовать заполнение МКБ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1" colspan="2">
+        <widget class="QComboBox" name="cmbMKBRequired">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>Не проверяется</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Мягкий контроль</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Жёсткий контроль</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+      <zorder>chkDefaultStatus</zorder>
+      <zorder>cmbDefaultStatus</zorder>
+      <zorder>chkDefaultDirectionDate</zorder>
+      <zorder>cmbDefaultDirectionDate</zorder>
+      <zorder>chkDefaultPlannedEndDate</zorder>
+      <zorder>cmbDefaultPlannedEndDate</zorder>
+      <zorder>chkDefaultBegDate</zorder>
+      <zorder>cmbDefaultBegDate</zorder>
+      <zorder>chkDefaultEndDate</zorder>
+      <zorder>cmbDefaultEndDate</zorder>
+      <zorder>chkDefaultExecPerson</zorder>
+      <zorder>cmbDefaultExecPerson</zorder>
+      <zorder>chkDefaultPersonInEvent</zorder>
+      <zorder>cmbDefaultPersonInEvent</zorder>
+      <zorder>chkDefaultPersonInEditor</zorder>
+      <zorder>cmbDefaultPersonInEditor</zorder>
+      <zorder>chkDefaultMKB</zorder>
+      <zorder>cmbDefaultMKB</zorder>
+      <zorder>chkIsMorphologyRequired</zorder>
+      <zorder>cmbIsMorphologyRequired</zorder>
+      <zorder>chkDefaultOrg</zorder>
+      <zorder>cmbDefaultOrg</zorder>
+      <zorder>chkAmount</zorder>
+      <zorder>edtAmount</zorder>
+      <zorder>chkOffice</zorder>
+      <zorder>edtOffice</zorder>
+      <zorder>chkAddVisitGroup</zorder>
+      <zorder>chkAddVisit</zorder>
+      <zorder>cmbAddVisitScene</zorder>
+      <zorder>lblAddVisitType</zorder>
+      <zorder>cmbAddVisitType</zorder>
+      <zorder>grpPropertiesFields</zorder>
+      <zorder>verticalSpacer</zorder>
+      <zorder>chkExecPersonRequired</zorder>
+      <zorder>cmbExecPersonRequired</zorder>
+      <zorder>chkDefaultSetPersonInEvent</zorder>
+      <zorder>cmbDefaultSetPersonInEvent</zorder>
+      <zorder>chkMKBRequired</zorder>
+      <zorder>cmbMKBRequired</zorder>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CPolyclinicComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionStatusComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Events/ActionStatus.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionServiceTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Events/ActionServiceType.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>endEndDate</tabstop>
+  <tabstop>chkPropertyAssignedVisible</tabstop>
+  <tabstop>chkPropertyUnitVisible</tabstop>
+  <tabstop>chkPropertyNormVisible</tabstop>
+  <tabstop>chkPropertyEvaluationVisible</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>GroupActionTypeEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>912</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>GroupActionTypeEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>912</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkSex</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbSex</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkContext</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtContext</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>210</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkMaxOccursInEvent</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtMaxOccursInEvent</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>281</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultStatus</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultStatus</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>357</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>548</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultPlannedEndDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultPlannedEndDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>417</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultEndDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultEndDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>88</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>475</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultDirectionDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultDirectionDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>386</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>388</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultExecPerson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultExecPerson</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>502</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>548</x>
+     <y>504</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultPersonInEvent</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultPersonInEvent</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>531</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>533</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultPersonInEditor</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultPersonInEditor</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>183</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>562</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultMKB</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultMKB</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>589</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>591</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkIsMorphologyRequired</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbIsMorphologyRequired</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>618</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>620</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultOrg</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultOrg</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>104</x>
+     <y>647</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>548</x>
+     <y>649</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAmount</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtAmount</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>281</x>
+     <y>677</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkOffice</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtOffice</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>455</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>735</x>
+     <y>677</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkShowInForm</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkShowInForm</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>21</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>196</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAssistant</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkHasAssistant</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>16</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>147</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkPreferable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkIsPreferable</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>21</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>189</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkShowTime</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkShowTime</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>16</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>100</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkRequiredCoordination</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkRequiredCoordination</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>16</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkServiceType</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbServiceType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>292</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>545</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkExposeDateSelector</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbExposeDateSelector</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>321</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>653</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultBegDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultBegDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>444</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkActionTypeValidFrom</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtBegDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>267</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkActionTypeValidFrom</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblActionTypeValidTo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>353</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkActionTypeValidFrom</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>endEndDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>61</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAddVisit</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbAddVisitScene</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>334</x>
+     <y>704</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>691</x>
+     <y>706</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAddVisit</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbAddVisitType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>344</x>
+     <y>704</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>544</x>
+     <y>735</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAddVisitGroup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkAddVisit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>692</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>692</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAddVisit</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblAddVisitType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>358</x>
+     <y>695</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>262</x>
+     <y>726</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAge</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>horizontalFrame</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>494</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkShowBegDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkShowBegDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkEditStatus</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkEditStatus</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkEditEndDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkEditEndDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>269</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkEditExecPers</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkEditExecPers</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkEditNote</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkEditNote</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>319</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkDuplication</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkDuplication</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkIgnoreVisibleRights</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkIgnoreVisibleRights</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>369</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>369</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkExecPersonRequired</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbExecPersonRequired</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>467</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkDefaultSetPersonInEvent</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDefaultSetPersonInEvent</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>31</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>75</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkChkEditBegDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chkEditBegDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>269</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkNeedAttachFile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbNeedAttachFile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>576</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>445</x>
+     <y>576</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

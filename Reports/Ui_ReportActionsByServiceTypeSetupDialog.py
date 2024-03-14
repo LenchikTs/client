@@ -1,0 +1,162 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'D:\PROJECTS\samson\UP_s11\client_test\Reports\ReportActionsByServiceTypeSetupDialog.ui'
+#
+# Created by: PyQt4 UI code generator 4.11.4
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_ReportActionsByServiceTypeSetupDialog(object):
+    def setupUi(self, ReportActionsByServiceTypeSetupDialog):
+        ReportActionsByServiceTypeSetupDialog.setObjectName(_fromUtf8("ReportActionsByServiceTypeSetupDialog"))
+        ReportActionsByServiceTypeSetupDialog.resize(530, 279)
+        self.gridLayout = QtGui.QGridLayout(ReportActionsByServiceTypeSetupDialog)
+        self.gridLayout.setMargin(4)
+        self.gridLayout.setSpacing(4)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.lblEndDateConfirmation = QtGui.QLabel(ReportActionsByServiceTypeSetupDialog)
+        self.lblEndDateConfirmation.setEnabled(False)
+        self.lblEndDateConfirmation.setObjectName(_fromUtf8("lblEndDateConfirmation"))
+        self.gridLayout.addWidget(self.lblEndDateConfirmation, 8, 0, 1, 1)
+        self.lblOrgStructure = QtGui.QLabel(ReportActionsByServiceTypeSetupDialog)
+        self.lblOrgStructure.setObjectName(_fromUtf8("lblOrgStructure"))
+        self.gridLayout.addWidget(self.lblOrgStructure, 3, 0, 1, 1)
+        self.lblBegDateConfirmation = QtGui.QLabel(ReportActionsByServiceTypeSetupDialog)
+        self.lblBegDateConfirmation.setEnabled(False)
+        self.lblBegDateConfirmation.setObjectName(_fromUtf8("lblBegDateConfirmation"))
+        self.gridLayout.addWidget(self.lblBegDateConfirmation, 7, 0, 1, 1)
+        self.cmbFinance = CRBComboBox(ReportActionsByServiceTypeSetupDialog)
+        self.cmbFinance.setObjectName(_fromUtf8("cmbFinance"))
+        self.gridLayout.addWidget(self.cmbFinance, 4, 1, 1, 2)
+        self.lblFinance = QtGui.QLabel(ReportActionsByServiceTypeSetupDialog)
+        self.lblFinance.setObjectName(_fromUtf8("lblFinance"))
+        self.gridLayout.addWidget(self.lblFinance, 4, 0, 1, 1)
+        self.edtConfirmationBegDate = CDateEdit(ReportActionsByServiceTypeSetupDialog)
+        self.edtConfirmationBegDate.setEnabled(False)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.edtConfirmationBegDate.sizePolicy().hasHeightForWidth())
+        self.edtConfirmationBegDate.setSizePolicy(sizePolicy)
+        self.edtConfirmationBegDate.setObjectName(_fromUtf8("edtConfirmationBegDate"))
+        self.gridLayout.addWidget(self.edtConfirmationBegDate, 7, 1, 1, 1)
+        self.buttonBox = QtGui.QDialogButtonBox(ReportActionsByServiceTypeSetupDialog)
+        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.gridLayout.addWidget(self.buttonBox, 10, 0, 1, 3)
+        self.edtConfirmationEndDate = CDateEdit(ReportActionsByServiceTypeSetupDialog)
+        self.edtConfirmationEndDate.setEnabled(False)
+        self.edtConfirmationEndDate.setObjectName(_fromUtf8("edtConfirmationEndDate"))
+        self.gridLayout.addWidget(self.edtConfirmationEndDate, 8, 1, 1, 1)
+        self.chkConfirmation = QtGui.QCheckBox(ReportActionsByServiceTypeSetupDialog)
+        self.chkConfirmation.setObjectName(_fromUtf8("chkConfirmation"))
+        self.gridLayout.addWidget(self.chkConfirmation, 5, 0, 1, 1)
+        self.lblEndDate = QtGui.QLabel(ReportActionsByServiceTypeSetupDialog)
+        self.lblEndDate.setObjectName(_fromUtf8("lblEndDate"))
+        self.gridLayout.addWidget(self.lblEndDate, 1, 0, 1, 1)
+        self.edtEndDate = CDateEdit(ReportActionsByServiceTypeSetupDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.edtEndDate.sizePolicy().hasHeightForWidth())
+        self.edtEndDate.setSizePolicy(sizePolicy)
+        self.edtEndDate.setCalendarPopup(True)
+        self.edtEndDate.setObjectName(_fromUtf8("edtEndDate"))
+        self.gridLayout.addWidget(self.edtEndDate, 1, 1, 1, 2)
+        self.lblBegDate = QtGui.QLabel(ReportActionsByServiceTypeSetupDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblBegDate.sizePolicy().hasHeightForWidth())
+        self.lblBegDate.setSizePolicy(sizePolicy)
+        self.lblBegDate.setObjectName(_fromUtf8("lblBegDate"))
+        self.gridLayout.addWidget(self.lblBegDate, 0, 0, 1, 1)
+        self.lblConfirmationType = QtGui.QLabel(ReportActionsByServiceTypeSetupDialog)
+        self.lblConfirmationType.setEnabled(False)
+        self.lblConfirmationType.setObjectName(_fromUtf8("lblConfirmationType"))
+        self.gridLayout.addWidget(self.lblConfirmationType, 6, 0, 1, 1)
+        self.cmbConfirmationType = QtGui.QComboBox(ReportActionsByServiceTypeSetupDialog)
+        self.cmbConfirmationType.setEnabled(False)
+        self.cmbConfirmationType.setObjectName(_fromUtf8("cmbConfirmationType"))
+        self.cmbConfirmationType.addItem(_fromUtf8(""))
+        self.cmbConfirmationType.addItem(_fromUtf8(""))
+        self.cmbConfirmationType.addItem(_fromUtf8(""))
+        self.cmbConfirmationType.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbConfirmationType, 6, 1, 1, 2)
+        self.cmbOrgStructure = COrgStructureComboBox(ReportActionsByServiceTypeSetupDialog)
+        self.cmbOrgStructure.setObjectName(_fromUtf8("cmbOrgStructure"))
+        self.gridLayout.addWidget(self.cmbOrgStructure, 3, 1, 1, 2)
+        self.edtBegDate = CDateEdit(ReportActionsByServiceTypeSetupDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.edtBegDate.sizePolicy().hasHeightForWidth())
+        self.edtBegDate.setSizePolicy(sizePolicy)
+        self.edtBegDate.setCalendarPopup(True)
+        self.edtBegDate.setObjectName(_fromUtf8("edtBegDate"))
+        self.gridLayout.addWidget(self.edtBegDate, 0, 1, 1, 2)
+        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem, 9, 2, 1, 1)
+        self.lblEventType = QtGui.QLabel(ReportActionsByServiceTypeSetupDialog)
+        self.lblEventType.setObjectName(_fromUtf8("lblEventType"))
+        self.gridLayout.addWidget(self.lblEventType, 2, 0, 1, 1)
+        self.cmbEventType = CRBComboBox(ReportActionsByServiceTypeSetupDialog)
+        self.cmbEventType.setObjectName(_fromUtf8("cmbEventType"))
+        self.gridLayout.addWidget(self.cmbEventType, 2, 1, 1, 2)
+        self.lblOrgStructure.setBuddy(self.cmbOrgStructure)
+        self.lblEndDate.setBuddy(self.edtEndDate)
+        self.lblBegDate.setBuddy(self.edtBegDate)
+
+        self.retranslateUi(ReportActionsByServiceTypeSetupDialog)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), ReportActionsByServiceTypeSetupDialog.accept)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), ReportActionsByServiceTypeSetupDialog.reject)
+        QtCore.QObject.connect(self.chkConfirmation, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), self.cmbConfirmationType.setEnabled)
+        QtCore.QObject.connect(self.chkConfirmation, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), self.edtConfirmationBegDate.setEnabled)
+        QtCore.QObject.connect(self.chkConfirmation, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), self.edtConfirmationEndDate.setEnabled)
+        QtCore.QMetaObject.connectSlotsByName(ReportActionsByServiceTypeSetupDialog)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.edtBegDate, self.edtEndDate)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.edtEndDate, self.cmbEventType)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.cmbEventType, self.cmbOrgStructure)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.cmbOrgStructure, self.cmbFinance)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.cmbFinance, self.chkConfirmation)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.chkConfirmation, self.cmbConfirmationType)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.cmbConfirmationType, self.edtConfirmationBegDate)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.edtConfirmationBegDate, self.edtConfirmationEndDate)
+        ReportActionsByServiceTypeSetupDialog.setTabOrder(self.edtConfirmationEndDate, self.buttonBox)
+
+    def retranslateUi(self, ReportActionsByServiceTypeSetupDialog):
+        ReportActionsByServiceTypeSetupDialog.setWindowTitle(_translate("ReportActionsByServiceTypeSetupDialog", "Dialog", None))
+        self.lblEndDateConfirmation.setText(_translate("ReportActionsByServiceTypeSetupDialog", "Окончание периода подтверждения:", None))
+        self.lblOrgStructure.setText(_translate("ReportActionsByServiceTypeSetupDialog", "&Подразделение", None))
+        self.lblBegDateConfirmation.setText(_translate("ReportActionsByServiceTypeSetupDialog", "Начало периода подтверждения:", None))
+        self.lblFinance.setText(_translate("ReportActionsByServiceTypeSetupDialog", "Тип финансирования", None))
+        self.chkConfirmation.setText(_translate("ReportActionsByServiceTypeSetupDialog", "Подтверждение оплаты", None))
+        self.lblEndDate.setText(_translate("ReportActionsByServiceTypeSetupDialog", "Дата &окончания периода", None))
+        self.lblBegDate.setText(_translate("ReportActionsByServiceTypeSetupDialog", "Дата &начала периода", None))
+        self.lblConfirmationType.setText(_translate("ReportActionsByServiceTypeSetupDialog", "Тип подтверждения:", None))
+        self.cmbConfirmationType.setItemText(0, _translate("ReportActionsByServiceTypeSetupDialog", "не выставлено", None))
+        self.cmbConfirmationType.setItemText(1, _translate("ReportActionsByServiceTypeSetupDialog", "выставлено", None))
+        self.cmbConfirmationType.setItemText(2, _translate("ReportActionsByServiceTypeSetupDialog", "оплачено", None))
+        self.cmbConfirmationType.setItemText(3, _translate("ReportActionsByServiceTypeSetupDialog", "отказано", None))
+        self.lblEventType.setText(_translate("ReportActionsByServiceTypeSetupDialog", "Тип события", None))
+
+from Orgs.OrgStructComboBoxes import COrgStructureComboBox
+from library.DateEdit import CDateEdit
+from library.crbcombobox import CRBComboBox

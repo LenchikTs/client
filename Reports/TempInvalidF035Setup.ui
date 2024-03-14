@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TempInvalidF035Dialog</class>
+ <widget class="QDialog" name="TempInvalidF035Dialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>496</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>параметры отчёта</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertExpertiseTypeMC">
+     <property name="text">
+      <string>Тип экспертизы</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExecDateMC">
+     <property name="text">
+      <string>Период Экпертизы</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_17">
+     <item>
+      <widget class="CDateEdit" name="edtFilterBegExecDateMC">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="displayFormat">
+        <string notr="true">dd.MM.yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CDateEdit" name="edtFilterEndExecDateMC">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="displayFormat">
+        <string>dd.MM.yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>33</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertSetPersonMC">
+     <property name="text">
+      <string>Назначивший</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertOrgStructMC">
+     <property name="text">
+      <string>Подразделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertSpecialityMC">
+     <property name="text">
+      <string>Специальность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertClosedMC">
+     <property name="text">
+      <string>Состояние</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertExpertiseCharacterMC">
+     <property name="text">
+      <string>Характеристика экспертизы</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertExpertiseKindMC">
+     <property name="text">
+      <string>Вид экспертизы</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="2">
+    <widget class="QCheckBox" name="ghkFilterExpertExpertiseObjectMC">
+     <property name="text">
+      <string>Предмет экспертизы</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertExpertiseArgumentMC">
+     <property name="text">
+      <string>Обоснование</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0" colspan="2">
+    <widget class="QLabel" name="lblCntUser">
+     <property name="text">
+      <string>Номер строки с</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="2">
+    <widget class="QSpinBox" name="edtCntUser">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>999999999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="16" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>8</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="2" colspan="2">
+    <widget class="CRBMultivalueComboBox" name="cmbFilterExpertExpertiseTypeMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="2">
+    <widget class="CPersonComboBoxEx" name="cmbExpertIdMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2" colspan="2">
+    <widget class="CPersonComboBoxEx" name="cmbFilterExpertSetPersonMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2" colspan="2">
+    <widget class="COrgStructureComboBox" name="cmbFilterExpertOrgStructMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2" colspan="2">
+    <widget class="CRBComboBox" name="cmbFilterExpertSpecialityMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="CICDCodeEdit" name="edtFilterExpertBegMKBMC">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="inputMask">
+        <string>a00.00; </string>
+       </property>
+       <property name="text">
+        <string>A.</string>
+       </property>
+       <property name="maxLength">
+        <number>6</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CICDCodeEdit" name="edtFilterExpertEndMKBMC">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="inputMask">
+        <string>a00.00; </string>
+       </property>
+       <property name="text">
+        <string>Z99.9</string>
+       </property>
+       <property name="maxLength">
+        <number>6</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>41</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="7" column="2" colspan="2">
+    <widget class="CActionStatusComboBox" name="cmbFilterExpertClosedMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2" colspan="2">
+    <widget class="CRBComboBox" name="cmbFilterExpertExpertiseCharacterMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="2" colspan="2">
+    <widget class="CRBComboBox" name="cmbFilterExpertExpertiseKindMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2" colspan="2">
+    <widget class="CRBComboBox" name="cmbFilterExpertExpertiseObjectMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="2" colspan="2">
+    <widget class="CRBComboBox" name="cmbFilterExpertExpertiseArgumentMC">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="2" colspan="2">
+    <widget class="QCheckBox" name="chkRegAddress">
+     <property name="text">
+      <string>Адрес пациента</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="2" colspan="2">
+    <widget class="QCheckBox" name="chkNumberPolicy">
+     <property name="text">
+      <string>Номер полиса</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="2" colspan="2">
+    <widget class="QCheckBox" name="chkClientId">
+     <property name="text">
+      <string>Номер амбулаторной карты</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0" colspan="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkFilterExpertMKBMC">
+     <property name="text">
+      <string>Диагноз</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkExpertIdMC">
+     <property name="text">
+      <string>Эксперт</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CICDCodeEdit</class>
+   <extends>QLineEdit</extends>
+   <header>library/ICDCodeEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBMultivalueComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/MultivalueComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionStatusComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Events/ActionStatus.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>chkFilterExpertExpertiseTypeMC</tabstop>
+  <tabstop>cmbFilterExpertExpertiseTypeMC</tabstop>
+  <tabstop>chkFilterExecDateMC</tabstop>
+  <tabstop>edtFilterBegExecDateMC</tabstop>
+  <tabstop>edtFilterEndExecDateMC</tabstop>
+  <tabstop>chkExpertIdMC</tabstop>
+  <tabstop>cmbExpertIdMC</tabstop>
+  <tabstop>chkFilterExpertSetPersonMC</tabstop>
+  <tabstop>cmbFilterExpertSetPersonMC</tabstop>
+  <tabstop>chkFilterExpertOrgStructMC</tabstop>
+  <tabstop>cmbFilterExpertOrgStructMC</tabstop>
+  <tabstop>chkFilterExpertSpecialityMC</tabstop>
+  <tabstop>cmbFilterExpertSpecialityMC</tabstop>
+  <tabstop>chkFilterExpertMKBMC</tabstop>
+  <tabstop>edtFilterExpertBegMKBMC</tabstop>
+  <tabstop>edtFilterExpertEndMKBMC</tabstop>
+  <tabstop>chkFilterExpertClosedMC</tabstop>
+  <tabstop>cmbFilterExpertClosedMC</tabstop>
+  <tabstop>chkFilterExpertExpertiseCharacterMC</tabstop>
+  <tabstop>cmbFilterExpertExpertiseCharacterMC</tabstop>
+  <tabstop>chkFilterExpertExpertiseKindMC</tabstop>
+  <tabstop>cmbFilterExpertExpertiseKindMC</tabstop>
+  <tabstop>ghkFilterExpertExpertiseObjectMC</tabstop>
+  <tabstop>cmbFilterExpertExpertiseObjectMC</tabstop>
+  <tabstop>chkFilterExpertExpertiseArgumentMC</tabstop>
+  <tabstop>cmbFilterExpertExpertiseArgumentMC</tabstop>
+  <tabstop>edtCntUser</tabstop>
+  <tabstop>chkRegAddress</tabstop>
+  <tabstop>chkNumberPolicy</tabstop>
+  <tabstop>chkClientId</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>TempInvalidF035Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>491</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>TempInvalidF035Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>282</x>
+     <y>491</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertExpertiseTypeMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertExpertiseTypeMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>33</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>17</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExecDateMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFilterBegExecDateMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>243</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExecDateMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFilterEndExecDateMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>358</x>
+     <y>47</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkExpertIdMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbExpertIdMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>227</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertSetPersonMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertSetPersonMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>261</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertOrgStructMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertOrgStructMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>96</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertSpecialityMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertSpecialityMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>159</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>168</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertMKBMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFilterExpertBegMKBMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertMKBMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFilterExpertEndMKBMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertClosedMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertClosedMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>277</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertExpertiseCharacterMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertExpertiseCharacterMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertExpertiseKindMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertExpertiseKindMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>275</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ghkFilterExpertExpertiseObjectMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertExpertiseObjectMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>41</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>257</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterExpertExpertiseArgumentMC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterExpertExpertiseArgumentMC</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>84</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>302</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

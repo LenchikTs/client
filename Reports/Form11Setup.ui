@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form11SetupDialog</class>
+ <widget class="QDialog" name="Form11SetupDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>545</width>
+    <height>237</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>параметры отчёта</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="7" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbTypeDN">
+     <item>
+      <property name="text">
+       <string>событиям</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>контингентам в карте</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbForResult">
+     <item>
+      <property name="text">
+       <string>лабораторного анализа</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>обследования в карте</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+   </item>
+   <item row="1" column="2">
+    <widget class="QTimeEdit" name="edtTimeEdit"/>
+   </item>
+   <item row="0" column="2">
+    <widget class="QTimeEdit" name="edtBegTime"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblOrgStructure">
+     <property name="text">
+      <string>&amp;Подразделение</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbOrgStructure</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="CDateEdit" name="edtBegDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string>Дата начала периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string>Дата окончания периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1">
+    <widget class="CDateEdit" name="edtEndDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblAddressType">
+     <property name="text">
+      <string>Адрес</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbAddressType">
+     <item>
+      <property name="text">
+       <string>По регистрации</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>По проживанию</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblForResult">
+     <property name="text">
+      <string>По результату</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbForResult</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblTypeDN">
+     <property name="text">
+      <string>ДН по</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbTypeDN</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>129</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkOnlyContingent">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>только по контингентам</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtBegTime</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>edtTimeEdit</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>cmbAddressType</tabstop>
+  <tabstop>cmbForResult</tabstop>
+  <tabstop>cmbTypeDN</tabstop>
+  <tabstop>chkOnlyContingent</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Form11SetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>102</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Form11SetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

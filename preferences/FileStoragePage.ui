@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fileStoragePage</class>
+ <widget class="QWidget" name="fileStoragePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>411</width>
+    <height>124</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Файловое хранилище</string>
+  </property>
+  <property name="toolTip">
+   <string>Хранение прикреплённых файлов</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblWebDAVUrl">
+     <property name="text">
+      <string>&amp;URL сервиса WebDAV</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtWebDAVUrl</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="edtWebDAVUrl">
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если это поле пусто, то используется глобальная настройка WebDAV.&lt;/p&gt;&lt;p&gt;Возможно указание имени сервера в символическом виде, типа &lt;span style=&quot; font-weight:600;&quot;&gt;http://${dbServerName}/sabre&lt;/span&gt;&lt;/p&gt;&lt;p&gt;При этом вместо &lt;span style=&quot; font-weight:600;&quot;&gt;${dbServerName}&lt;/span&gt; должно подставиться имя (или IP адрес) сервера базы данных.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkSaveWithSignatures">
+     <property name="text">
+      <string>Сохранять файл подписи при сохранении файла</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>edtWebDAVUrl</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

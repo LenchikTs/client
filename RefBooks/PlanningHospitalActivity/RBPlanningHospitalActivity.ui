@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RBPlanningHospitalActivityDialog</class>
+ <widget class="QDialog" name="RBPlanningHospitalActivityDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>614</width>
+    <height>606</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Планирование стационарной деятельности</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="2">
+    <widget class="QPushButton" name="btnFill">
+     <property name="text">
+      <string>Сгенерировать список подразделений</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" colspan="4">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>351</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="2" colspan="5">
+    <widget class="CRBComboBox" name="cmbHospitalBedProfile">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="7">
+    <widget class="CInDocTableViewTabMod" name="tblItems"/>
+   </item>
+   <item row="4" column="0" colspan="4">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Всего:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkProfilBed">
+     <property name="text">
+      <string>Профиль койки</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QCheckBox" name="chkYear">
+     <property name="text">
+      <string>Год</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="6">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QDateEdit" name="edtYear">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="displayFormat">
+      <string>yyyy</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="5">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2" colspan="5">
+    <widget class="COrgStructureHospitalBedsComboBox" name="cmbOrgStructure">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkOrgStructure">
+     <property name="text">
+      <string>Подразделение</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureHospitalBedsComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CInDocTableViewTabMod</class>
+   <extends>QTableView</extends>
+   <header>RefBooks/Utils.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>chkYear</tabstop>
+  <tabstop>edtYear</tabstop>
+  <tabstop>chkOrgStructure</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>chkProfilBed</tabstop>
+  <tabstop>cmbHospitalBedProfile</tabstop>
+  <tabstop>tblItems</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>RBPlanningHospitalActivityDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>604</x>
+     <y>596</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>RBPlanningHospitalActivityDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>604</x>
+     <y>596</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkYear</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>btnFill</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>154</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

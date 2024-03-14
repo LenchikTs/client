@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NotifyDialog</class>
+ <widget class="QDialog" name="NotifyDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>478</width>
+    <height>220</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Правило оповещения</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="8" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="bbxNotify">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblNotificationRule">
+     <property name="text">
+      <string>Правило</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="CNotificationRuleComboBox" name="cmbNotificationRule">
+     <item>
+      <property name="text">
+       <string>подтверждение записи</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>напоминание</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>отмена записи</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>103</width>
+       <height>16</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QPlainTextEdit" name="edtMessage"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblMessage">
+     <property name="toolTip">
+      <string>Будет подставлено в шаблон как {message}</string>
+     </property>
+     <property name="text">
+      <string>Сообщение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Пример</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QPlainTextEdit" name="edtMsgExample">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CNotificationRuleComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Notifications/Utils.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>bbxNotify</sender>
+   <signal>accepted()</signal>
+   <receiver>NotifyDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bbxNotify</sender>
+   <signal>rejected()</signal>
+   <receiver>NotifyDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

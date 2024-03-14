@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><b><big>{currentOrganisation.shortName}</big></b></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+<tr><td align="center"><b><font size=4>АНАЛИЗ КАЛА НА ДИСБАКТЕРИОЗ КИШЕЧНИКА</font></b></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+<tr><td align="center">№{: string = u"..."}<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u> от {action.endDate.date.toString("\"dd\" MMMM yyyy")} г. Возраст {: string = client.age}<u><font face="Courier">{string + "_"*(15 - len(string)) }</font></u></td></tr>
+
+<tr><td align="center">{: string = client.fullName}<u><font face="Courier">{string + "_"*(75 - len(string)) }</font></u></td></tr>
+<tr><td align="center"><i><small>фамилия, имя, отчество</small></i></td></tr>
+
+<tr><td align="center">
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td rowspan=2 align="center">Наименование микроорганизмов</td><td colspan=2 align=center>Кол-во микроорганизмов в 1:</td></tr>
+<tr>						<td align=center>норма</td><td align=center>найдено</td></tr>
+<tr><td>Бифидобактерии</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>Лактобактерии</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>Общее кол-во кишечных палочек<br>
+из них:</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>  - со сниженной ферментативной активностью</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>  - лактозонегативные</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>  - сахаропозитивные</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>  - гемолизирующие</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>  - микробы рода Протея</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>  - другие условно-патогенные энтеробактерии</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>Энтерококки</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>Стафилококки золотистые</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>Стафилококки эпидермальные</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>  - сапрофитные</td><td align="center"></td><td align="center"><b></b></td></tr>
+<tr><td>Дрожжеподобные грибы</td><td align="center"></td><td align="center"><b></b></td></tr>
+</table>
+</td></tr>
+
+<tr><td align="center"></td></tr>
+
+<tr><td align="center"><b>Чувствительность выделенных организмов к фагам:</b></td></tr>
+
+<tr><td align="center"><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td></td><td>Фирма производитель</td></tr>
+<tr><td>Возбудитель</td><td></td></tr>
+</table></td><td align="center">г. Н. Новгород</td><td align="center">Г. Пермь<br>(в т.ч. секстафаг)</td><td align="center">г. Уфа</td><td align="center">Другие<br>производители</td></tr>
+<tr><td>Золотистый стафилококк</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Клебсиелла</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>   пневмонии</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>   озены</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>   риносклеромы</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Гемолизирующие формы</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>М/о рода Протея</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td></tr>
+</table>
+
+<!--НОВАЯ СТРАНИЦА-->
+<p style="page-break-after: always"></p>
+
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Выделенный возбудитель: </td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:5"> </p></td></tr>
+
+<tr><td align="center"><b><font size="3">Антибиотикограмма</font></b></td></tr>
+<tr><td>S - чувствителен<br>
+R - устойчив<br>
+i - умеренно устойчив</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:5"> </p></td></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td></td><td>S</td><td>R</td><td>i</td></tr>
+<tr><td>цефазолин</td><td></td><td></td><td></td></tr>
+<tr><td>цефотаксим</td><td></td><td></td><td></td></tr>
+<tr><td>гентамицим</td><td></td><td></td><td></td></tr>
+<tr><td>амоксиклав</td><td></td><td></td><td></td></tr>
+<tr><td>канамицин</td><td></td><td></td><td></td></tr>
+<tr><td>ципрофлоксацин</td><td></td><td></td><td></td></tr>
+<tr><td>азитромицин</td><td></td><td></td><td></td></tr>
+<tr><td>фурагин</td><td></td><td></td><td></td></tr>
+<tr><td>фурадонин</td><td></td><td></td><td></td></tr>
+<tr><td>фуразолидон</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</table></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+<tr><td>Заключение: <u><font face="Courier">_____________________________________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________________________________________________</font></u><br>
+<u><font face="Courier">____________________________________________________________________________________________________</font></u></td></tr>
+<tr><td align="right"><i><b>Подпись: <font face="Courier">______________________________</font></b></i></td></tr>
+<tr><td align="right">Дата: <big> {action.endDate.date.toString("\"dd\" MMMM yyyy")}</big> г.</td></tr>
+</table>
+</body>
+</html>

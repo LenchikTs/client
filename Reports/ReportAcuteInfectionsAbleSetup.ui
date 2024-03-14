@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReportAcuteInfectionsAbleSetupDialog</class>
+ <widget class="QDialog" name="ReportAcuteInfectionsAbleSetupDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>466</width>
+    <height>867</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>параметры отчёта</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="9" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbPersonPost">
+     <item>
+      <property name="text">
+       <string>Не задано</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Врачи</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Средний медицинский персонал</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbEventPurpose"/>
+   </item>
+   <item row="11" column="1" colspan="3">
+    <widget class="QFrame" name="frmAge">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </layout>
+    </widget>
+   </item>
+   <item row="15" column="0">
+    <widget class="QLabel" name="lblArea">
+     <property name="text">
+      <string>Те&amp;рритория</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbArea</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="25" column="1" colspan="3">
+    <widget class="CStreetComboBox" name="cmbFilterAddressStreet">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="1" colspan="3">
+    <widget class="QFrame" name="frmMKB">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout">
+      <property name="horizontalSpacing">
+       <number>4</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QComboBox" name="cmbMKBFilter">
+        <item>
+         <property name="text">
+          <string>Игнор.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Интервал</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="CICDCodeEdit" name="edtMKBFrom">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="inputMask">
+         <string>a00.00; </string>
+        </property>
+        <property name="text">
+         <string>A.</string>
+        </property>
+        <property name="maxLength">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="CICDCodeEdit" name="edtMKBTo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="inputMask">
+         <string>a00.00; </string>
+        </property>
+        <property name="text">
+         <string>Z99.9</string>
+        </property>
+        <property name="maxLength">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <spacer>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbSpeciality"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblEventType">
+     <property name="text">
+      <string>Тип обращения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="1" colspan="3">
+    <widget class="QFrame" name="frmMKBEx">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="_2">
+      <property name="horizontalSpacing">
+       <number>4</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QComboBox" name="cmbMKBExFilter">
+        <item>
+         <property name="text">
+          <string>Игнор.</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Интервал</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="CICDCodeEdit" name="edtMKBExFrom">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="inputMask">
+         <string>a00.00; </string>
+        </property>
+        <property name="text">
+         <string>A.</string>
+        </property>
+        <property name="maxLength">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="CICDCodeEdit" name="edtMKBExTo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="inputMask">
+         <string>a00.00; </string>
+        </property>
+        <property name="text">
+         <string>Z99.9</string>
+        </property>
+        <property name="maxLength">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <spacer>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblOrgStructure">
+     <property name="text">
+      <string>Подразделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="28" column="0">
+    <widget class="QLabel" name="lblEventTypeDD">
+     <property name="text">
+      <string>Тип обращения для ДД</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbEventTypeDD</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1" colspan="3">
+    <widget class="CPersonComboBoxEx" name="cmbPerson">
+     <item>
+      <property name="text">
+       <string>Врач</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+   </item>
+   <item row="19" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkOnlyFirstTime">
+     <property name="toolTip">
+      <string>Значение может отличаться от значения &quot;впервые&quot; ф.12</string>
+     </property>
+     <property name="text">
+      <string>Зарегистрированные в период впервые</string>
+     </property>
+    </widget>
+   </item>
+   <item row="23" column="0">
+    <widget class="QCheckBox" name="chkFilterAddress">
+     <property name="text">
+      <string>Адрес</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="3">
+    <widget class="QLabel" name="lblOrgStructureList">
+     <property name="text">
+      <string>Не задано</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="20" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkNotNullTraumaType">
+     <property name="text">
+      <string>Тип травмы указан</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2" colspan="2">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>21</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="lblPersonPost">
+     <property name="text">
+      <string>Тип персонала</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>91</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="CDateEdit" name="edtEndDate">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="lblSocStatusClass">
+     <property name="text">
+      <string>Класс соц.статуса</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbSocStatusClass</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0">
+    <widget class="QLabel" name="lblMKBEx">
+     <property name="text">
+      <string>В сочетании с</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMKBExFilter</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="32" column="0" colspan="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="0">
+    <widget class="QLabel" name="lblMKB">
+     <property name="text">
+      <string>Коды диагнозов по &amp;МКБ</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMKBFilter</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="24" column="1" colspan="3">
+    <widget class="CKLADRComboBox" name="cmbFilterAddressCity">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lblPerson">
+     <property name="text">
+      <string>&amp;Врач</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbPerson</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="1" colspan="3">
+    <widget class="COrgStructureComboBox" name="cmbArea">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="21" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkRegisteredInPeriod">
+     <property name="text">
+      <string>Зарегистрированные в период</string>
+     </property>
+    </widget>
+   </item>
+   <item row="28" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbEventTypeDD"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string>Дата &amp;окончания периода</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtEndDate</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="23" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbFilterAddressType">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>Регистрации</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Проживания</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="CDateEdit" name="edtBegDate">
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="0">
+    <widget class="QLabel" name="lblSocStatusType">
+     <property name="text">
+      <string>Тип соц.статуса</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbSocStatusType</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="31" column="0">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>129</width>
+       <height>131</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbEventType"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblEventPurpose">
+     <property name="text">
+      <string>&amp;Назначение обращения</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbEventPurpose</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1">
+    <widget class="QComboBox" name="cmbSex">
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>М</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ж</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="14" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkArea">
+     <property name="text">
+      <string>Учитывать адрес</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="3">
+    <widget class="QLabel" name="lblEventTypeList">
+     <property name="text">
+      <string>Не задано</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string>Дата &amp;начала периода</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtBegDate</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="22" column="0">
+    <widget class="QLabel" name="lblLocality">
+     <property name="text">
+      <string>Местность</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbLocality</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QPushButton" name="btnOrgStructureList">
+     <property name="text">
+      <string>Подразделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1" colspan="3">
+    <widget class="CSocStatusComboBox" name="cmbSocStatusClass"/>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="lblSex">
+     <property name="text">
+      <string>По&amp;л</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbSex</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="22" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbLocality">
+     <item>
+      <property name="text">
+       <string>Не учитывать</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Городские жители</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Сельские жители</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="29" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbFilterAddressOrgStructureType">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Регистрация</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Проживание</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Регистрация или проживание</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Прикрепление</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Регистрация или прикрепление</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Проживание или прикрепление</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Регистрация, проживание или прикрепление</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="13" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbSocStatusType"/>
+   </item>
+   <item row="18" column="1" colspan="3">
+    <widget class="QCheckBox" name="chkAccountAccomp">
+     <property name="text">
+      <string>Учитывать сопутствующие</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>91</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="26" column="1" colspan="3">
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblFilterAddressHouse">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Дом</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>edtFilterAddressHouse</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtFilterAddressHouse">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblFilterAddressCorpus">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Корп</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>edtFilterAddressCorpus</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtFilterAddressCorpus">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblFilterAddressFlat">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Кв</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>edtFilterAddressFlat</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtFilterAddressFlat">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblSpeciality">
+     <property name="text">
+      <string>Специальность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="btnEventTypeList">
+     <property name="text">
+      <string>Тип обращения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="30" column="1" colspan="3">
+    <widget class="COrgStructureComboBox" name="cmbFilterAddressOrgStructure">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="29" column="0">
+    <widget class="QCheckBox" name="chkFilterAddressOrgStructure">
+     <property name="text">
+      <string>По участку</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CKLADRComboBox</class>
+   <extends>QComboBox</extends>
+   <header>KLADR/kladrComboxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CICDCodeEdit</class>
+   <extends>QLineEdit</extends>
+   <header>library/ICDCodeEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CStreetComboBox</class>
+   <extends>QComboBox</extends>
+   <header>KLADR/kladrComboxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CSocStatusComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Registry/SocStatusComboBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>cmbEventPurpose</tabstop>
+  <tabstop>cmbEventType</tabstop>
+  <tabstop>btnEventTypeList</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>btnOrgStructureList</tabstop>
+  <tabstop>cmbPerson</tabstop>
+  <tabstop>cmbPersonPost</tabstop>
+  <tabstop>cmbSex</tabstop>
+  <tabstop>cmbSpeciality</tabstop>
+  <tabstop>cmbSocStatusClass</tabstop>
+  <tabstop>cmbSocStatusType</tabstop>
+  <tabstop>chkArea</tabstop>
+  <tabstop>cmbArea</tabstop>
+  <tabstop>cmbMKBFilter</tabstop>
+  <tabstop>edtMKBFrom</tabstop>
+  <tabstop>edtMKBTo</tabstop>
+  <tabstop>cmbMKBExFilter</tabstop>
+  <tabstop>edtMKBExFrom</tabstop>
+  <tabstop>edtMKBExTo</tabstop>
+  <tabstop>chkAccountAccomp</tabstop>
+  <tabstop>chkOnlyFirstTime</tabstop>
+  <tabstop>chkNotNullTraumaType</tabstop>
+  <tabstop>chkRegisteredInPeriod</tabstop>
+  <tabstop>cmbLocality</tabstop>
+  <tabstop>chkFilterAddress</tabstop>
+  <tabstop>cmbFilterAddressType</tabstop>
+  <tabstop>cmbFilterAddressCity</tabstop>
+  <tabstop>cmbFilterAddressStreet</tabstop>
+  <tabstop>edtFilterAddressHouse</tabstop>
+  <tabstop>edtFilterAddressCorpus</tabstop>
+  <tabstop>edtFilterAddressFlat</tabstop>
+  <tabstop>cmbEventTypeDD</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ReportAcuteInfectionsAbleSetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>841</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>70</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ReportAcuteInfectionsAbleSetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>841</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>269</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkArea</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbArea</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>424</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterAddressType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>616</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterAddressCity</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>387</x>
+     <y>643</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterAddressStreet</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>670</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFilterAddressHouse</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>246</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFilterAddressCorpus</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtFilterAddressFlat</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>423</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblFilterAddressHouse</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblFilterAddressCorpus</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>290</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblFilterAddressFlat</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>615</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>698</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddressOrgStructure</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterAddressOrgStructureType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>72</x>
+     <y>748</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>191</x>
+     <y>738</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkFilterAddressOrgStructure</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbFilterAddressOrgStructure</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>71</x>
+     <y>742</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>240</x>
+     <y>764</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

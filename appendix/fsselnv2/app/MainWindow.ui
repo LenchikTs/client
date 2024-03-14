@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CMainWindow</class>
+ <widget class="QMainWindow" name="CMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>558</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Самсон-СФР-ЭЛН</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../s11main.qrc">
+    <normaloff>:/icons/Icon2.png</normaloff>:/icons/Icon2.png</iconset>
+  </property>
+  <widget class="CMdiArea" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>551</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPreferences">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <addaction name="actConnection"/>
+    <addaction name="separator"/>
+    <addaction name="actAppPreferences"/>
+    <addaction name="actDecor"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Сессия</string>
+    </property>
+    <addaction name="actLogin"/>
+    <addaction name="actLogout"/>
+    <addaction name="separator"/>
+    <addaction name="actQuit"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="actAbout"/>
+    <addaction name="actAboutQt"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuPreferences"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actLogin">
+   <property name="text">
+    <string>Подключиться к базе данных</string>
+   </property>
+  </action>
+  <action name="actQuit">
+   <property name="text">
+    <string>Закрыть программу</string>
+   </property>
+  </action>
+  <action name="actLogout">
+   <property name="text">
+    <string>Отключиться от базы данных</string>
+   </property>
+  </action>
+  <action name="actConnection">
+   <property name="text">
+    <string>База данных</string>
+   </property>
+  </action>
+  <action name="actDecor">
+   <property name="text">
+    <string>Внешний вид</string>
+   </property>
+  </action>
+  <action name="actAppPreferences">
+   <property name="text">
+    <string>Умолчания</string>
+   </property>
+  </action>
+  <action name="actAbout">
+   <property name="text">
+    <string>О програме</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actAboutQt">
+   <property name="text">
+    <string>O Qt</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutQtRole</enum>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CMdiArea</class>
+   <extends>QWidget</extends>
+   <header>library/MdiArea.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../../s11main.qrc"/>
+ </resources>
+ <connections/>
+</ui>

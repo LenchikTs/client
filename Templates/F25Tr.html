@@ -1,0 +1,24 @@
+<HTML><BODY>
+{setPageSize('A4')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+
+<HR>
+<CENTER>КАРТОЧКА ТРАВМAТИКА № {cardNo}</CENTER>
+<HR>
+код: {client.id}&nbsp;<FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT><BR/>
+ФИО: <B>{client.fullName}</B><BR/>
+ДР:  <B>{client.birthDate}</B>(<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС:<B>{client.SNILS}</B><BR/>
+Док: <B>{client.document}</B><BR/>
+Полис:<B>{client.policy}</B><BR/>
+Рег:<B>{client.regAddress}</B><BR/>
+Прож:<B>{client.locAddress}</B><BR/>
+Занятость:<B>{client.work}</B><BR/>
+Тел:<B>{client.phones}</B><BR/>
+<HR>
+Врач: <B>{person.fullName}</B>(<B>{person.specialityName}</B>)<BR>
+порядок поступления: <B>{order}</B><BR>
+Тип травмы: <B>{traumaType}</B><BR>
+Диагноз: <B>{MKB}</B>(<B>{MKBName}</B>)<BR>
+обстоятельства: <B>{MKBEx}</B>(<B>{MKBExName}</B>)<BR>
+</BODY></HTML>

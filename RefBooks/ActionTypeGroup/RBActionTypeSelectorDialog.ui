@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ActionTypeSelectorDialog</class>
+ <widget class="QDialog" name="ActionTypeSelectorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1019</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <item>
+        <widget class="CTreeView" name="treeItems">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::ExpandingFieldsGrow</enum>
+         </property>
+         <property name="labelAlignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lblService">
+           <property name="text">
+            <string>Профиль оплаты</string>
+           </property>
+           <property name="buddy">
+            <cstring>cmbService</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="CRBComboBox" name="cmbService">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lblQuotaType">
+           <property name="text">
+            <string>Вид квоты</string>
+           </property>
+           <property name="buddy">
+            <cstring>cmbQuotaType</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="CRBComboBox" name="cmbQuotaType">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lblTissueType">
+           <property name="text">
+            <string>Тип биоматериала</string>
+           </property>
+           <property name="buddy">
+            <cstring>cmbTissueType</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="CRBComboBox" name="cmbTissueType">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lblServiceType">
+           <property name="text">
+            <string>Вид услуги</string>
+           </property>
+           <property name="buddy">
+            <cstring>cmbServiceType</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="CActionServiceTypeComboBox" name="cmbServiceType">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lblIsPreferable">
+           <property name="text">
+            <string>Является предпочитаемым(-ой)</string>
+           </property>
+           <property name="buddy">
+            <cstring>cmbIsPreferable</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="CComboBoxWithKeyEventHandler" name="cmbIsPreferable">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <item>
+            <property name="text">
+             <string>не определено</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>да</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>нет</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lblShowInForm">
+           <property name="text">
+            <string>Разрешается выбор в формах ввода событий</string>
+           </property>
+           <property name="buddy">
+            <cstring>cmbShowInForm</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="CComboBoxWithKeyEventHandler" name="cmbShowInForm">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <item>
+            <property name="text">
+             <string>не определено</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>да</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>нет</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0" colspan="3">
+        <widget class="CTableView" name="tblItems"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblCountRows">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="lblCountSelectedRows">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMaximumSize</enum>
+       </property>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Выбранные:</string>
+         </property>
+         <property name="buddy">
+          <cstring>itemSelectBox</cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CTableView" name="itemSelectBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnFind">
+       <property name="text">
+        <string>Поиск</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAddItemToSelectBox">
+       <property name="text">
+        <string>Выбрать</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnRemoveItemFromSelectBox">
+       <property name="text">
+        <string>Удалить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSelect">
+       <property name="text">
+        <string>Добавить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnFilter">
+       <property name="text">
+        <string>Фильтр</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnEdit">
+       <property name="text">
+        <string>Правка F4</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnNew">
+       <property name="text">
+        <string>Вставка F9</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+  <zorder>splitter</zorder>
+  <zorder></zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTreeView</class>
+   <extends>QTreeView</extends>
+   <header>library/TreeView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionServiceTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Events/ActionServiceType.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CComboBoxWithKeyEventHandler</class>
+   <extends>QComboBox</extends>
+   <header>RefBooks/ActionTypeGroup/ComboBoxWithEventHandler.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>treeItems</tabstop>
+  <tabstop>cmbService</tabstop>
+  <tabstop>cmbQuotaType</tabstop>
+  <tabstop>cmbTissueType</tabstop>
+  <tabstop>cmbServiceType</tabstop>
+  <tabstop>cmbIsPreferable</tabstop>
+  <tabstop>cmbShowInForm</tabstop>
+  <tabstop>tblItems</tabstop>
+  <tabstop>itemSelectBox</tabstop>
+  <tabstop>btnAddItemToSelectBox</tabstop>
+  <tabstop>btnSelect</tabstop>
+  <tabstop>btnFilter</tabstop>
+  <tabstop>btnEdit</tabstop>
+  <tabstop>btnNew</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

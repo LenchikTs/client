@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+{setPageSize("A5")}
+{setOrientation("P")}
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center">{currentOrganisation.shortName}<br>
+{currentOrgStructure.name}<br>
+</td> <td></td></tr>
+
+<tr><td colspan=2 align="center"><b>Общий анализ мочи</b></td></tr>
+
+<tr><td colspan=2 align="left">          Дата забора материала "<u>{ action.begDate.date.toString("dd") }</u>"{: string = action.begDate.date.toString("MMMM")}<u><font face="Courier">{ "_"*(5-len(string)/2) + string + "_"*(5-(len(string)+1)/2) }</font></u> 200<u>{ str(action.begDate.date.year - 2000) }</u> г.</td></tr>
+
+<tr><td colspan=2>Пациент {: string = client.shortName}<u><font face="Courier">{string + "_"*(30 - len(string)) }</font></u>  Возраст {: string = client.age}<u><font face="Courier">{ string + "_"*(10-len(string)) }</font></u></td></tr>
+
+<tr><td colspan=2>Договор № {: string = event.contract.number}<u><font face="Courier">{string + "_"*(10 - len(string)) }</font></u> Лечащий врач {: string = action.setPerson }<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u></td></tr>
+
+<tr><td colspan=2>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td>Показатель</td><td>Результат</td><td>Единицы</td></tr>
+<tr><td colspan=3 align="center"><b>Физико-химические свойства</b></td></tr>
+<tr><td>Количество</td><td>{str(action[u"Количество"])}</td><td>литр</td></tr>
+<tr><td>Цвет</td><td>{action[u"Цвет"]}</td><td></td></tr>
+<tr><td>Прозрачность</td><td>{action[u"Прозрачность"]}</td><td></td></tr>
+<tr><td>Относительная плотность</td><td>{action[u"Относительная плотность"]}</td><td></td></tr>
+<tr><td>Реакция</td><td>{str(action[u"pH"])}</td><td></td></tr>
+<tr><td>Белок</td><td>{str(action[u"Белок"])}</td><td>грамм/литр</td></tr>
+<tr><td>Глюкоза</td><td>{str(action[u"Глюкоза"])}</td><td>миллимоль/литр</td></tr>
+<tr><td colspan=3 align="center"><b>Микроскопия осадка</b></td></tr>
+<tr><td>Эпителий</td><td></td><td></td></tr>
+<tr><td>- плоский</td><td>{action[u"Плоский эпителий"]}</td><td></td></tr>
+<tr><td>- переходный</td><td>{action[u"Переходный эпителий"]}</td><td></td></tr>
+<tr><td>- почечный</td><td>{action[u"Почечный эпителий"]}</td><td></td></tr>
+<tr><td>Лейкоциты</td><td>{action[u"Лейкоциты"]}</td><td></td></tr>
+<tr><td>Эритроциты</td><td></td><td></td></tr>
+<tr><td>- неизмененные</td><td>{action[u"Неизмененные эритроциты"]}</td><td></td></tr>
+<tr><td>- измененные</td><td>{action[u"Измененые эритроциты"]}</td><td></td></tr>
+<tr><td>Цилиндры</td><td></td><td></td></tr>
+<tr><td>- гиалиновые</td><td>{action[u"Гиалиновые цилиндры"]}</td><td></td></tr>
+<tr><td>- зернистые</td><td>{action[u"Зернистые цилиндры"]}</td><td></td></tr>
+<tr><td>- восковидные</td><td>{action[u"Восковидные цилиндры"]}</td><td></td></tr>
+<tr><td>- эпителиальные</td><td>{action[u"Эпителиальные цилиндры"]}</td><td></td></tr>
+<tr><td>- лейкоцитарные</td><td>{action[u"Лейкоцитарные цилиндры"]}</td><td></td></tr>
+<tr><td>- эритроцитарные</td><td>{action[u"Эритроцитарные цилиндры"]}</td><td></td></tr>
+<tr><td>- пигментные</td><td>{action[u"Пигментные цилиндры"]}</td><td></td></tr>
+<tr><td>Слизь</td><td>{action[u"Слизь"]}</td><td></td></tr>
+<tr><td>Соли</td><td>{action[u"Соли"]}</td><td></td></tr>
+<tr><td>Бактерии</td><td>{action[u"Бактерии"]}</td><td></td></tr>
+</table>
+</td></tr>
+
+<tr><td colspan=2>М.П.</td></tr>
+
+<tr><td colspan=2>Дата "<u>{ action.endDate.date.toString("dd") }</u>"{: string = action.endDate.date.toString("MMMM")}<u><font face="Courier">{ "_"*(5-len(string)/2) + string + "_"*(5-(len(string)+1)/2) }</font></u> 200<u>{ str(action.endDate.date.year - 2000) }</u> г.  <b><i>Врач</i></b> <font face="Courier">_______________</font></td></tr>
+</table>
+</body>
+</html>

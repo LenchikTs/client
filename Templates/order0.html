@@ -1,0 +1,26 @@
+<HTML>
+<BODY STYLE="font-family: Arial; font-size: 6pt; color: black">
+{setPageSize('A5')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+
+{if:len(client.socStatuses)}
+<TABLE BORDER=2><TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100><FONT SIZE=+1>
+Л {client.socStatuses[-1].code}
+</FONT></TD></TR></TABLE>
+{end:}
+&nbsp; код: <FONT SIZE=+1>{client.id}</FONT>&nbsp;<FONT FACE="Code 3 de 9" SIZE=+2>*{client.id}*</FONT> {currentOrganisation.shortName} <BR/>
+&nbsp; <B>{currentDate}</B>ТАЛОН АМБУЛАТОРНОГО ПАЦИЕНТА<BR/>
+&nbsp; ФИО: <FONT SIZE=+1><B>{client.fullName}</B></FONT><BR/>
+&nbsp; ДР:  <B>{client.birthDate}</B> (<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС: <B>{client.SNILS}</B><BR/>
+&nbsp; <B>{client.document}</B>.<BR/> 
+&nbsp;Полис: <B>{client.policy}</B><BR/>
+&nbsp; Рег.: <B>{client.regAddress}</B><BR/>
+&nbsp; Прож.: <B>{client.locAddress}</B><BR/>
+&nbsp; Тел.: <B> {client.phones}</B>
+<p STYLE="font-family: Arial; font-size: 7pt; color: black">
+&nbsp; <u>{visit.type}</u><BR/>
+&nbsp; <B>{person.fullName}</B> (<B>{person.specialityName}</B>) прием <B>{visit.timeRange}</B><BR/>
+&nbsp; явиться <B>{visit.date}</B> в кабинет № <B>{visit.office}</B>. Время: <B>{visit.time}, #{visit.num}</B>
+</p>
+</BODY></HTML>

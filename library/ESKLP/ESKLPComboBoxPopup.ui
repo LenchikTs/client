@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ESKLPComboBoxPopup</class>
+ <widget class="QWidget" name="ESKLPComboBoxPopup">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1050</width>
+    <height>374</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>ЕСКЛП</string>
+  </property>
+  <layout class="QGridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::South</enum>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tabResult">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <attribute name="title">
+       <string>Результат поиска</string>
+      </attribute>
+      <layout class="QVBoxLayout">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="CTableView" name="tblESKLP"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabSearch">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <attribute name="title">
+       <string>&amp;Поиск</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <item row="0" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPCode"/>
+       </item>
+       <item row="1" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPMnn_norm_name"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblESKLPMnn_norm_name">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Нормализованное описание (исходное) МНН</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtESKLPMnn_norm_name</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblESKLPCode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Код каталога для позиции КЛП</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtESKLPCode</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPLf_norm_name"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lblESKLPLf_norm_name">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Нормализованное название (исходное) лекарственной формы</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPDosage_norm_name"/>
+       </item>
+       <item row="4" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPTrade_name"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblESKLPDosage_norm_name">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Нормализованное описание (исходное) дозировки</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtESKLPDosage_norm_name</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="lblESKLPTrade_name">
+         <property name="text">
+          <string>Торговое наименование</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="lblESKLPPack1_name">
+         <property name="text">
+          <string>Название первичной упаковки</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPPack1_name"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="lblESKLPPack2_name">
+         <property name="text">
+          <string>Название потребительской упаковки</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtESKLPPack2_name</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPPack2_name"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="lblESKLPNum_reg">
+         <property name="text">
+          <string>Номер регистрационного удостоверения лекарственного препарата</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPNum_reg"/>
+       </item>
+       <item row="8" column="2" colspan="3">
+        <widget class="QLineEdit" name="edtESKLPManufacturer"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="lblESKLPManufacturer">
+         <property name="text">
+          <string>Название производителя лекарственного препарата</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <layout class="QHBoxLayout" name="layoutBegDate">
+         <item>
+          <widget class="QCheckBox" name="chkBegDateWithBeg">
+           <property name="text">
+            <string>С</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDateEdit" name="edtBegDate">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkBegDateWithEnd">
+           <property name="text">
+            <string>по</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDateEdit" name="edtBegDate_2">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="11" column="2">
+        <widget class="QLineEdit" name="edtESKLP_GTIN">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <layout class="QHBoxLayout" name="layoutEndDate">
+         <item>
+          <widget class="QCheckBox" name="chkEndDateWithBeg">
+           <property name="text">
+            <string>С</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDateEdit" name="edtEndDate">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkEndDateWithEnd">
+           <property name="text">
+            <string>по</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDateEdit" name="edtEndDate_2">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="13" column="4">
+        <widget class="QDialogButtonBox" name="buttonBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="standardButtons">
+          <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="3">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="lblBegDateRecord">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Дата начала действия записи</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="lblEndDateRecord">
+         <property name="text">
+          <string>Дата окончания действия записи</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QCheckBox" name="chkESKLP_GTIN">
+         <property name="text">
+          <string>GTIN</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>edtESKLPCode</tabstop>
+  <tabstop>edtESKLPMnn_norm_name</tabstop>
+  <tabstop>edtESKLPDosage_norm_name</tabstop>
+  <tabstop>edtESKLPLf_norm_name</tabstop>
+  <tabstop>edtESKLPTrade_name</tabstop>
+  <tabstop>edtESKLPPack1_name</tabstop>
+  <tabstop>edtESKLPPack2_name</tabstop>
+  <tabstop>edtESKLPNum_reg</tabstop>
+  <tabstop>edtESKLPManufacturer</tabstop>
+  <tabstop>chkBegDateWithBeg</tabstop>
+  <tabstop>chkBegDateWithEnd</tabstop>
+  <tabstop>chkEndDateWithBeg</tabstop>
+  <tabstop>chkEndDateWithEnd</tabstop>
+  <tabstop>edtESKLP_GTIN</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>edtEndDate_2</tabstop>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>edtBegDate_2</tabstop>
+  <tabstop>tblESKLP</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkESKLP_GTIN</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtESKLP_GTIN</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>180</x>
+     <y>307</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>510</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

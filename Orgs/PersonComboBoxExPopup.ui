@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PersonComboBoxExPopup</class>
+ <widget class="QWidget" name="PersonComboBoxExPopup">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>326</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="tabPosition">
+      <enum>QTabWidget::South</enum>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabList">
+      <attribute name="title">
+       <string>Результат поиска</string>
+      </attribute>
+      <layout class="QVBoxLayout">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="CTableView" name="tblPerson"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabSearch">
+      <attribute name="title">
+       <string>&amp;Поиск</string>
+      </attribute>
+      <layout class="QGridLayout">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblOrgStructure">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Подразделение</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbOrgStructure</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" colspan="2">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>231</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="lblSpeciality">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Специальность</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbSpeciality</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="lblActivity">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Вид деятельности</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbActivity</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>141</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="11" column="2">
+        <widget class="QDialogButtonBox" name="buttonBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="standardButtons">
+          <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+         </property>
+         <property name="centerButtons">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbSpeciality"/>
+       </item>
+       <item row="5" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbActivity"/>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="COrgComboBox" name="cmbOrganisation"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblOrganisation">
+         <property name="text">
+          <string>&amp;ЛПУ</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbOrganisation</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="2">
+        <widget class="QCheckBox" name="chkDeallocatedPerson">
+         <property name="text">
+          <string>Уволенные/Заблокированные</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblPost">
+         <property name="text">
+          <string>&amp;Должность</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbPost</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbPost"/>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QCheckBox" name="chkSpeciality">
+         <property name="text">
+          <string>Учитывать специальность</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" colspan="2">
+        <widget class="QCheckBox" name="chkOnlyDoctors">
+         <property name="text">
+          <string>Учитывать только врачебные должности</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbTariffCategory"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="lblTariffCategory">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Тарифная категория</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbTariffCategory</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgComboBox</class>
+   <extends>QComboBox</extends>
+   <header>OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>tblPerson</tabstop>
+  <tabstop>cmbOrganisation</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>cmbPost</tabstop>
+  <tabstop>chkSpeciality</tabstop>
+  <tabstop>cmbSpeciality</tabstop>
+  <tabstop>cmbActivity</tabstop>
+  <tabstop>cmbTariffCategory</tabstop>
+  <tabstop>chkDeallocatedPerson</tabstop>
+  <tabstop>chkOnlyDoctors</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

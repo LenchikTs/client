@@ -1,0 +1,162 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'FinanceReportByAidProfileAndSocStatusSetupDialog.ui'
+#
+# Created by: PyQt4 UI code generator 4.12.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_FinanceReportByAidProfileAndSocStatusSetupDialog(object):
+    def setupUi(self, FinanceReportByAidProfileAndSocStatusSetupDialog):
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setObjectName(_fromUtf8("FinanceReportByAidProfileAndSocStatusSetupDialog"))
+        FinanceReportByAidProfileAndSocStatusSetupDialog.resize(419, 363)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setWindowTitle(_fromUtf8("Финансовый отчет по профилям мед. помощи и соц. статусу"))
+        self.gridLayout = QtGui.QGridLayout(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.cmbSocStatusClass = CRBComboBox(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.cmbSocStatusClass.setObjectName(_fromUtf8("cmbSocStatusClass"))
+        self.gridLayout.addWidget(self.cmbSocStatusClass, 3, 1, 1, 3)
+        self.cmbSocStatusType = CRBComboBox(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.cmbSocStatusType.setObjectName(_fromUtf8("cmbSocStatusType"))
+        self.gridLayout.addWidget(self.cmbSocStatusType, 4, 1, 1, 3)
+        self.lblAgeFrom = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.lblAgeFrom.setText(_fromUtf8("Возраст с"))
+        self.lblAgeFrom.setObjectName(_fromUtf8("lblAgeFrom"))
+        self.gridLayout.addWidget(self.lblAgeFrom, 7, 0, 1, 1)
+        self.edtAgeFrom = QtGui.QSpinBox(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.edtAgeFrom.setMaximum(150)
+        self.edtAgeFrom.setObjectName(_fromUtf8("edtAgeFrom"))
+        self.gridLayout.addWidget(self.edtAgeFrom, 7, 1, 1, 1)
+        self.cmbSex = QtGui.QComboBox(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.cmbSex.setObjectName(_fromUtf8("cmbSex"))
+        self.cmbSex.addItem(_fromUtf8(""))
+        self.cmbSex.setItemText(0, _fromUtf8(""))
+        self.cmbSex.addItem(_fromUtf8(""))
+        self.cmbSex.setItemText(1, _fromUtf8("М"))
+        self.cmbSex.addItem(_fromUtf8(""))
+        self.cmbSex.setItemText(2, _fromUtf8("Ж"))
+        self.gridLayout.addWidget(self.cmbSex, 6, 1, 1, 3)
+        self.lblSocStatusClass = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.lblSocStatusClass.setText(_fromUtf8("Класс соц. статуса"))
+        self.lblSocStatusClass.setObjectName(_fromUtf8("lblSocStatusClass"))
+        self.gridLayout.addWidget(self.lblSocStatusClass, 3, 0, 1, 1)
+        self.lblSocStatusType = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.lblSocStatusType.setText(_fromUtf8("Тип соц. статуса"))
+        self.lblSocStatusType.setObjectName(_fromUtf8("lblSocStatusType"))
+        self.gridLayout.addWidget(self.lblSocStatusType, 4, 0, 1, 1)
+        self.lblDocumentType = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.lblDocumentType.setText(_fromUtf8("Тип документа (УДЛ)"))
+        self.lblDocumentType.setObjectName(_fromUtf8("lblDocumentType"))
+        self.gridLayout.addWidget(self.lblDocumentType, 5, 0, 1, 1)
+        self.lblAgeTo = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lblAgeTo.sizePolicy().hasHeightForWidth())
+        self.lblAgeTo.setSizePolicy(sizePolicy)
+        self.lblAgeTo.setText(_fromUtf8("По"))
+        self.lblAgeTo.setObjectName(_fromUtf8("lblAgeTo"))
+        self.gridLayout.addWidget(self.lblAgeTo, 7, 2, 1, 1)
+        self.edtAgeTo = QtGui.QSpinBox(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.edtAgeTo.setMaximum(150)
+        self.edtAgeTo.setProperty("value", 150)
+        self.edtAgeTo.setObjectName(_fromUtf8("edtAgeTo"))
+        self.gridLayout.addWidget(self.edtAgeTo, 7, 3, 1, 1)
+        self.lblSex = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.lblSex.setText(_fromUtf8("Пол"))
+        self.lblSex.setObjectName(_fromUtf8("lblSex"))
+        self.gridLayout.addWidget(self.lblSex, 6, 0, 1, 1)
+        self.buttonBox = QtGui.QDialogButtonBox(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.gridLayout.addWidget(self.buttonBox, 10, 0, 1, 4)
+        self.edtEndDate = CDateEdit(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.edtEndDate.setObjectName(_fromUtf8("edtEndDate"))
+        self.gridLayout.addWidget(self.edtEndDate, 1, 1, 1, 3)
+        self.chkDetailByClient = QtGui.QCheckBox(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.chkDetailByClient.setText(_fromUtf8("Детализировать по пациенту"))
+        self.chkDetailByClient.setObjectName(_fromUtf8("chkDetailByClient"))
+        self.gridLayout.addWidget(self.chkDetailByClient, 8, 1, 1, 3)
+        self.cmbDocumentType = CRBComboBox(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.cmbDocumentType.setObjectName(_fromUtf8("cmbDocumentType"))
+        self.gridLayout.addWidget(self.cmbDocumentType, 5, 1, 1, 3)
+        self.lblBegDate = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.lblBegDate.setText(_fromUtf8("Дата начала периода"))
+        self.lblBegDate.setObjectName(_fromUtf8("lblBegDate"))
+        self.gridLayout.addWidget(self.lblBegDate, 0, 0, 1, 1)
+        self.edtBegDate = CDateEdit(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.edtBegDate.setObjectName(_fromUtf8("edtBegDate"))
+        self.gridLayout.addWidget(self.edtBegDate, 0, 1, 1, 3)
+        self.lblEndDate = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.lblEndDate.setText(_fromUtf8("Дата окончания периода"))
+        self.lblEndDate.setObjectName(_fromUtf8("lblEndDate"))
+        self.gridLayout.addWidget(self.lblEndDate, 1, 0, 1, 1)
+        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem, 9, 0, 1, 4)
+        self.lblEventTypeList = QtGui.QLabel(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.lblEventTypeList.setText(_fromUtf8("Не задано"))
+        self.lblEventTypeList.setWordWrap(True)
+        self.lblEventTypeList.setObjectName(_fromUtf8("lblEventTypeList"))
+        self.gridLayout.addWidget(self.lblEventTypeList, 2, 1, 1, 3)
+        self.btnEventTypeList = QtGui.QPushButton(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        self.btnEventTypeList.setText(_fromUtf8("Тип обращения"))
+        self.btnEventTypeList.setObjectName(_fromUtf8("btnEventTypeList"))
+        self.gridLayout.addWidget(self.btnEventTypeList, 2, 0, 1, 1)
+        self.lblAgeTo.raise_()
+        self.buttonBox.raise_()
+        self.lblBegDate.raise_()
+        self.lblEndDate.raise_()
+        self.edtBegDate.raise_()
+        self.edtEndDate.raise_()
+        self.lblSocStatusClass.raise_()
+        self.cmbSocStatusClass.raise_()
+        self.lblSocStatusType.raise_()
+        self.cmbSocStatusType.raise_()
+        self.lblDocumentType.raise_()
+        self.cmbDocumentType.raise_()
+        self.lblSex.raise_()
+        self.cmbSex.raise_()
+        self.lblAgeFrom.raise_()
+        self.edtAgeFrom.raise_()
+        self.edtAgeTo.raise_()
+        self.chkDetailByClient.raise_()
+        self.lblEventTypeList.raise_()
+        self.btnEventTypeList.raise_()
+
+        self.retranslateUi(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), FinanceReportByAidProfileAndSocStatusSetupDialog.accept)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), FinanceReportByAidProfileAndSocStatusSetupDialog.reject)
+        QtCore.QMetaObject.connectSlotsByName(FinanceReportByAidProfileAndSocStatusSetupDialog)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.edtBegDate, self.edtEndDate)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.edtEndDate, self.btnEventTypeList)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.btnEventTypeList, self.cmbSocStatusClass)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.cmbSocStatusClass, self.cmbSocStatusType)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.cmbSocStatusType, self.cmbDocumentType)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.cmbDocumentType, self.cmbSex)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.cmbSex, self.edtAgeFrom)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.edtAgeFrom, self.edtAgeTo)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.edtAgeTo, self.chkDetailByClient)
+        FinanceReportByAidProfileAndSocStatusSetupDialog.setTabOrder(self.chkDetailByClient, self.buttonBox)
+
+    def retranslateUi(self, FinanceReportByAidProfileAndSocStatusSetupDialog):
+        pass
+
+from library.DateEdit import CDateEdit
+from library.crbcombobox import CRBComboBox

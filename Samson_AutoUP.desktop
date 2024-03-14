@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Samson_AutoUP
+Name[ru]=САМСОН
+Icon=/opt/client/icons/s11.png
+Exec=/opt/client/update_samson.sh
+Path=/opt/client/
+Terminal=false
+StartupNotify=false

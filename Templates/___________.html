@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+{setPageSize("A5")}
+{setOrientation("P")}
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center">{currentOrganisation.shortName}<br>
+{currentOrgStructure.name}<br>
+</td> <td></td></tr>
+
+<tr><td colspan=2 align="center"><b>Копрограмма</b></td></tr>
+
+<tr><td colspan=2>          Дата забора материала "<u>{ action.begDate.date.toString("dd") }</u>"{: string = action.begDate.date.toString("MMMM")}<u><font face="Courier">{ "_"*(5-len(string)/2) + string + "_"*(5-(len(string)+1)/2) }</font></u> 200<u>{ str(action.begDate.date.year - 2000) }</u> г.</td></tr>
+
+<tr><td colspan=2>Пациент {: string = client.shortName}<u><font face="Courier">{string + "_"*(30 - len(string)) }</font></u>  Возраст {: string = client.age}<u><font face="Courier">{ string + "_"*(10-len(string)) }</font></u></td></tr>
+
+<tr><td colspan=2>Договор № {: string = event.contract.number}<u><font face="Courier">{string + "_"*(10 - len(string)) }</font></u> Лечащий врач {: string = action.setPerson}<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u></td></tr>
+
+<tr><td colspan=2>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td>Показатель</td><td>Результат</td><td>Единицы</td></tr>
+<tr><td colspan=3 align="center"><b>Физико-химические свойства</b></td></tr>
+<tr><td>Количество</td><td>{action[u"Количество"]}</td><td></td></tr>
+<tr><td>Консистенция</td><td>{action[u"Консистенция"]}</td><td></td></tr>
+<tr><td>Форма</td><td>{action[u"Форма"]}</td><td></td></tr>
+<tr><td>Запах</td><td>{action[u"Запах"]}</td><td></td></tr>
+<tr><td>Цвет</td><td>{action[u"Цвет"]}</td><td></td></tr>
+<tr><td>Реакция</td><td>str({action[u"pH"]})</td><td></td></tr>
+<tr><td>Кровь</td><td></td><td></td></tr>
+<tr><td>Слизь</td><td>{action[u"Слизь"]}</td><td></td></tr>
+<tr><td>Остатки непереваренной пищи</td><td>{action[u"Остатки непереваренной пищи"]}</td><td></td></tr>
+<tr><td colspan=3 align="center"><b>Микроскопическое исследование</b></td></tr>
+<tr><td>Мышечные волокна</td><td></td><td></td></tr>
+<tr><td> - с исчерченностью</td><td>{action[u"Мышечные волокна с исчерченностью"]}</td><td></td></tr>
+<tr><td> - без исчерченности</td><td>{action[u"Мышечные волокна без исчерченности"]}</td><td></td></tr>
+<tr><td>Соединительная ткань</td><td>{action[u"Соединительная ткань"]}</td><td></td></tr>
+<tr><td>Жир нейтральный</td><td>{action[u"Нейтральный жир"]}</td><td></td></tr>
+<tr><td>Жирные кислоты</td><td>{action[u"Жирные кислоты"]}</td><td></td></tr>
+<tr><td>Мыла</td><td>{action[u"Мыла (соли жирных кислот)"]}</td><td></td></tr>
+<tr><td>Растительная клетчатка</td><td>{action[u"Растительная клетчатка"]}</td><td></td></tr>
+<tr><td>Крахмал</td><td>{action[u"Крахмал (внутри- и внеклеточный)"]}</td><td></td></tr>
+<tr><td>Йодофильная флора</td><td>{action[u"Микрофлора (иодофильная)"]}</td><td></td></tr>
+<tr><td>Кристаллы</td><td>{action[u"Кристаллы"]}</td><td></td></tr>
+<tr><td>Слизь</td><td>{action[u"Слизь"]}</td><td></td></tr>
+<tr><td>Эпителий</td><td>{action[u"Эпителий цилиндрический"]}</td><td></td></tr>
+<tr><td>Лейкоциты</td><td>{action[u"Лейкоциты"]}</td><td></td></tr>
+<tr><td>Эритроциты</td><td>{action[u"Эритроциты"]}</td><td></td></tr>
+<tr><td>Простейшие</td><td>{action[u"Простейшие"]}</td><td></td></tr>
+<tr><td>Яйца глистов</td><td>{action[u"Гельминты (яйца и личинки)"]}</td><td></td></tr>
+<tr><td>Дрожжевые грибы</td><td>{action[u"Дрожжевые грибы"]}</td><td></td></tr>
+<tr><td>Реакция на скрытую кровь</td><td>{action[u"Реакция на скрытую кровь"]}</td><td></td></tr>
+</table>
+</td></tr>
+
+<tr><td colspan=2>М.П.</td></tr>
+
+<tr><td colspan=2>Дата "<u>{ action.endDate.date.toString("dd") }</u>"{: string = action.endDate.date.toString("MMMM")}<u><font face="Courier">{ "_"*(5-len(string)/2) + string + "_"*(5-(len(string)+1)/2) }</font></u> 200<u>{ str(action.endDate.date.year - 2000) }</u> г.  <b><i>Врач</i></b> <font face="Courier">_______________</font></td></tr>
+</table>
+
+</body>
+</html>

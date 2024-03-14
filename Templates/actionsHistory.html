@@ -1,0 +1,120 @@
+
+<HTML><BODY>
+{setPageSize('A4')}
+{setOrientation('P')}
+{setLeftMargin(5)}
+{setTopMargin(5)}
+{setBottomMargin(5)}
+{setRightMargin(5)}
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 7pt; color: black">
+<TR><TD align="left"   COLSPAN=3>Министерство здравоохранения и социального развития РФ</TD>
+    <TD align="right"  COLSPAN=2>Медицинская документация</TD></TR>
+<TR><TD align="right"  COLSPAN=5><B>Форма N 25/у</B></TD></TR>
+<TR><TD align="left"   COLSPAN=2><B><u><BIG>{currentOrganisation.shortName}</BIG></u></B></TD>
+    <TD align="right"  COLSPAN=3><FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT></TD></TR>
+<TR><TD align="left"   COLSPAN=2>{if: len(currentPerson.speciality.name)}<B><i>Отделение: {currentPerson.orgStructure.name}</i></B>{end:}</TD>
+    <TD align="right"  COLSPAN=3>
+</TD></TR>
+<TR><TD COLSPAN=5> </TD></TR>
+<TR><TD align="center"  COLSPAN=5 STYLE="font-family: Arial; font-size: 11pt; color: black"><B>ВЫПИСКА ИЗ МЕДИЦИНСКОЙ КАРТЫ № </B><FONT SIZE=+1><B><i><u>{client.id}</u></i></B></FONT></TD></TR>
+</TABLE>
+
+<HR>  
+             
+<P STYLE="font-family: Arial; font-size: 16pt; color: black">
+<CENTER><B>{client.fullName}</B></CENTER>
+</P>
+<HR>
+<P STYLE="font-family: Arial; font-size: 8pt; color: black">
+Дата рождения: <B>{client.birthDate}</B>(<B>{client.age}</B>) Пол: <B>{client.sex}</B>СНИЛС:<B>{client.SNILS}</B>  <BR/>
+Документ: <B>{client.document}</B>  <BR/>
+Полис:<B>{client.policy}</B><BR/>
+Адрес регистрации:<B>{client.regAddress}</B><BR/>
+Адрес проживания: <B>{client.locAddress}</B><BR/>
+Тел:<B>{client.phones}</B><BR/>
+Группа крови: <b>{client.bloodType}</b><br>
+Аллергии:{for: allergy in client.allergies}
+<b>{allergy.name}</b> (степень - <b>{(u"неизвестно", u"малая", u"средняя", u"высокая", u"строгая")[allergy.power]}</b>); 
+{end:}<br>
+Лекарственные непереносимости: {for: intolerance in client.intolerances}
+<b>{intolerance.name}</b> (степень - <b>{(u"неизвестно", u"малая", u"средняя", u"высокая", u"строгая")[intolerance.power]}</b>); 
+{end:}<br>
+{if: len(client.permanentAttach.org.fullName)}Прикреплен: <b>{client.permanentAttach.org.fullName}</b> c {client.permanentAttach.begDate.date.toString("dd.MM.yyyy")}<br>{end:}
+{if: len(client.temporaryAttach.org.fullName)}Временно прикреплен: <b>{client.temporaryAttach.org.fullName}</b> c {client.temporaryAttach.begDate.date.toString("dd.MM.yyyy")}<br>{end:}
+Занятость: {if: len(client.work.shortName)}<b>{client.work.shortName}</b>, должность: <b>{client.work.post}</b>{end:}<br>
+Соц. статусы: {for: socStatus in client.socStatuses}
+{socStatus.classes[0]}: <b>{socStatus.name}</b>; 
+{end:}<!--Соц. статусы: те, которые подтверждены текущими документами!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --><br>
+{if:client.work.hurts}
+Вредность и факторы: 
+{ for: i, hurt in enumerate(client.work.hurts)}
+<b>{hurt.name}</b> (стаж - <b>{hurt.stage}</b>); 
+{end:}<br>
+{end:}
+</P>
+
+
+<table border=0 width=100%>
+
+
+{if: len(diagnosises)}<tr><td align=center colspan=2><big><b>Лист уточнённых диагнозов:</b></big></td></tr>{end:}
+
+{if: len([x for x in diagnosises if (x.type.code == '2' and x.character.code in ['2','3','4'])])}<tr><td colspan=2><big><b>Хронические заболевания:</b></big></td></tr>{end:}
+{for: diagnosis in reversed(sorted([x for x in diagnosises if (x.type.code == '2' and x.character.code in ['2','3','4'])], key=lambda item: item.setDate.date))} <!--только основные??? -->
+<tr><td width=15%><b>{diagnosis.MKB}{if: diagnosis.MKBEx}+{diagnosis.MKBEx.code}{end:}</b></td><td><b>{diagnosis.MKB.descr}{if: diagnosis.MKBEx} ({diagnosis.MKBEx.descr}){end:}</b> {if: len(str(diagnosis.setDate))} с {diagnosis.setDate}{end:} {if: len(diagnosis.dispanser.name)}диспансер: <b>{diagnosis.dispanser.name}</b>{end:} {if: len(diagnosis.traumaType.name)}травма: <b>{diagnosis.traumaType.name}</b>{end:}</td></tr>
+{end:}
+
+{if: len([x for x in diagnosises if x.type.code == '2' and x.character.code == '1'])}<tr><td colspan=2><big><b>Острые заболевания:</b></big></td></tr>{end:}
+{for: diagnosis in reversed(sorted([x for x in diagnosises if x.type.code == '2' and x.character.code == '1'], key = lambda item: item.setDate.date))}
+<tr><td><big><i><b>{diagnosis.MKB}{if: diagnosis.MKBEx}+{diagnosis.MKBEx.code}{end:}</b></i></big></td><td><i><b>{diagnosis.MKB.descr}{if: diagnosis.MKBEx} ({diagnosis.MKBEx.descr}){end:}</b></i> {if: len(str(diagnosis.setDate))} с {diagnosis.setDate}{end:}{if: len(str(diagnosis.endDate))} по {diagnosis.endDate}{end:}</td></tr>
+{end:}
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+
+
+<!-- <tr><td align=center colspan=2><big><b>Мероприятия:</b></big></td></tr>  -->
+
+
+<tr><td colspan=3><!--Мероприятия -->
+<table cellpadding=0 cellspacing=0 width=100%>
+{for: act in sorted([x for x in actions], key = lambda item: item.begDate.date)}
+<!--определяем текущий лист нетрудоспособности, если он есть -->
+{: currentTI = None}
+{for: TI in tempInvalids}
+ {if: TI.begDate.date <= act.endDate.date and TI.endDate.date >= act.endDate.date}{: currentTI = TI}{end:}
+{end:}
+<!--определяем текущий визит, если он есть -->
+{: currentVisit = None}
+{for: visit in act.event.visits}
+ {if: visit.date.date == act.endDate.date}{: currentVisit = visit}{end:}
+{end:}
+{: visitPlace = ('', u'в поликлинике', u'на дому', u'актив на дому',u'на выезде')[int(currentVisit.scene.code)] if currentVisit else ''}
+<!--<tr><td>Статус: <b>{if: act.status == 0}начато{elif: act.status == 1}ожидание{elif: act.status == 2}закончено{elif: act.status == 3}отменено{end:}</b></td></tr> -->
+<tr><td><b><BIG>{act.endDate.date.toString("dd.MM.yyyy")}</BIG></b> <b>{act.name}</b> врач: <b>{act.person.longName} {act.person.speciality.name} {act.person.orgStructure.name}</b> {visitPlace}</td></tr>
+<tr><td>
+{for: (i, prop) in enumerate([x for x in act if unicode(x.value) != ''])}
+<b>{prop.name}</b>:<i> {unicode(prop.value)} {if: prop.name == u'трудоспособность' and currentTI}л/н № {currentTI.serial} {currentTI.number} с {currentTI.begDate} по {currentTI.endDate}{end:}</i>;{end:}</td></tr>
+<!--<tr><td><b>{act.endDate.date.toString("dd.MM.yyyy")}</b>
+{if: act.showTime}, время окончания: <b>{act.endDate.time.toString("hh.mm")}</b>{end:} выполнил: <b>{act.person.longName}</b></td></tr> -->
+
+<tr style="font-size:1px"><td> <p style="margin-top:7"> </p></td></tr>
+
+{end:}
+</table></td></tr>
+
+
+
+{if: len(tempInvalids)}<tr><td align=center colspan=2><big><b>Временная утрата трудоспособности:</b></big></td></tr>{end:}
+
+{for: tempInvalid in reversed(sorted(tempInvalids, key=lambda item: item.begDate.date))}
+<tr><td colspan=3><b>{tempInvalid.MKB}</b> ({tempInvalid.reason.name}) c <b>{tempInvalid.begDate}</b> по <b>{tempInvalid.endDate}</b> серия <b>{tempInvalid.serial}</b> номер <b>{tempInvalid.number}</b> - <b>{(u'Открыт', u'Закрыт', u'Продлён', u'Передан')[tempInvalid.closed]}</b></td></tr>
+{end:}
+
+<tr style="font-size:1px"><td> <p style="margin-top:15"> </p></td></tr>
+
+<tr><td align=center>{currentDate}</td><td align=center>{if: len(currentPerson.speciality.name)}{currentPerson.post}_______________ <i>/{currentPerson.shortName}/</i>{end:}</td></tr>
+</table>
+
+</body>
+</html>

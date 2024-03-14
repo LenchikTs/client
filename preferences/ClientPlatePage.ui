@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>clientPlatePage</class>
+ <widget class="QWidget" name="clientPlatePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>651</width>
+    <height>592</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Сведения о пациенте</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>4</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="rightMargin">
+    <number>4</number>
+   </property>
+   <property name="bottomMargin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="4" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QComboBox" name="cmbShowingInInfoBlockSocStatus">
+     <item>
+      <property name="text">
+       <string>Код</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Наименование</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Наименование и код</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblShowingInInfoBlockSocStatus">
+     <property name="text">
+      <string>Отображать &amp;Социальный статус пациента как</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbShowingInInfoBlockSocStatus</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblTFAccountingSystemId">
+     <property name="text">
+      <string>Отображать идентификатор &amp;ТФОМС по справочнику</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbTFAccountingSystemId</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbTFAccountingSystemId"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblShowingAttach">
+     <property name="text">
+      <string>Отображать закрытое прикрепление</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="2">
+    <widget class="QComboBox" name="cmbShowingAttach">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Да</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">library/crbcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cmbShowingInInfoBlockSocStatus</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

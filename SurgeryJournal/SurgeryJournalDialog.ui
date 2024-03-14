@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SurgeryJournalDialog</class>
+ <widget class="QDialog" name="SurgeryJournalDialog">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>761</width>
+    <height>622</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>761</width>
+    <height>622</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Журнал операций</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QTabWidget" name="tabSurgeryJournal">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabJournal">
+      <attribute name="title">
+       <string>Журнал</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblPeriodJournal">
+         <property name="text">
+          <string>Период</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="CDateEdit" name="edtEndDateJournal">
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="12">
+        <widget class="CTableView" name="tblJournal"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="CDateEdit" name="edtBegDateJournal">
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="11">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="10">
+        <widget class="CActionStatusComboBox" name="cmbActionStatusJournal">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="CPersonComboBoxEx" name="cmbPersonJournal">
+         <item>
+          <property name="text">
+           <string>Врач</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblPersonJournal">
+         <property name="text">
+          <string>&amp;Врач</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbPersonJournal</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="lblMKBJournal">
+         <property name="text">
+          <string>Коды диагнозов по &amp;МКБ</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbMKBFilterJournal</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="lblOrgStructureJournal">
+         <property name="text">
+          <string>Подразделение</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QComboBox" name="cmbMKBFilterJournal">
+         <item>
+          <property name="text">
+           <string>Игнор.</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Интервал</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <widget class="CICDCodeEdit" name="edtMKBToJournal">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="inputMask">
+          <string>a00.00; </string>
+         </property>
+         <property name="text">
+          <string>Z99.9</string>
+         </property>
+         <property name="maxLength">
+          <number>6</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="CICDCodeEdit" name="edtMKBFromJournal">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="inputMask">
+          <string>a00.00; </string>
+         </property>
+         <property name="text">
+          <string>A.</string>
+         </property>
+         <property name="maxLength">
+          <number>6</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="7" colspan="3">
+        <widget class="QLabel" name="lblActionStatusJournal">
+         <property name="text">
+          <string>Состояние</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="8" colspan="4">
+        <widget class="CActionTypeComboBoxEx" name="cmbActionTypeJournal">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="7">
+        <widget class="QLabel" name="lblActionTypeJournal">
+         <property name="text">
+          <string>&amp;Мероприятие</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbActionTypeJournal</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4" colspan="3">
+        <widget class="COrgStructureComboBox" name="cmbOrgStructureJournal"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabCanceled">
+      <attribute name="title">
+       <string>Отмена</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblPeriodCanceled">
+         <property name="text">
+          <string>Период</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="CDateEdit" name="edtBegDateCanceled">
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QComboBox" name="cmbMKBFilterCanceled">
+         <item>
+          <property name="text">
+           <string>Игнор.</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Интервал</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="10">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="2">
+        <widget class="CDateEdit" name="edtEndDateCanceled">
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="lblMKBCanceled">
+         <property name="text">
+          <string>Коды диагнозов по &amp;МКБ</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbMKBFilterJournal</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="8">
+        <widget class="QCheckBox" name="chkActionStatusCanceled">
+         <property name="text">
+          <string>Отмена</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="9">
+        <widget class="QCheckBox" name="chkActionStatusRefused">
+         <property name="text">
+          <string>Отказ</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="7">
+        <widget class="CICDCodeEdit" name="edtMKBToCanceled">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="inputMask">
+          <string>a00.00; </string>
+         </property>
+         <property name="text">
+          <string>Z99.9</string>
+         </property>
+         <property name="maxLength">
+          <number>6</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <widget class="CICDCodeEdit" name="edtMKBFromCanceled">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="inputMask">
+          <string>a00.00; </string>
+         </property>
+         <property name="text">
+          <string>A.</string>
+         </property>
+         <property name="maxLength">
+          <number>6</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblPersonCanceled">
+         <property name="text">
+          <string>&amp;Врач</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbPersonJournal</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="11">
+        <widget class="CTableView" name="tblCanceled"/>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="CPersonComboBoxEx" name="cmbPersonCanceled">
+         <item>
+          <property name="text">
+           <string>Врач</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="8" colspan="3">
+        <widget class="CActionTypeComboBoxEx" name="cmbActionTypeCanceled">
+         <property name="sizeAdjustPolicy">
+          <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="7">
+        <widget class="QLabel" name="lblActionTypeCanceled">
+         <property name="text">
+          <string>&amp;Мероприятие</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbActionTypeJournal</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5" colspan="2">
+        <widget class="COrgStructureComboBox" name="cmbOrgStructureCanceled"/>
+       </item>
+       <item row="1" column="3" colspan="2">
+        <widget class="QLabel" name="lblOrgStructureCanceled">
+         <property name="text">
+          <string>Подразделение</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabPlan">
+      <attribute name="title">
+       <string>План</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblPeriodPlan">
+         <property name="text">
+          <string>Период</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="CDateEdit" name="edtBegDatePlan">
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="CDateEdit" name="edtEndDatePlan">
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="lblActionStatusPlan">
+         <property name="text">
+          <string>Состояние</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="CActionStatusComboBox" name="cmbActionStatusPlan">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="6">
+        <widget class="CTableView" name="tblPlan"/>
+       </item>
+       <item row="0" column="5">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblCountRecordList">
+     <property name="text">
+      <string>Количество записей        0</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CICDCodeEdit</class>
+   <extends>QLineEdit</extends>
+   <header>library/ICDCodeEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionTypeComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Events/ActionTypeComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionStatusComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Events/ActionStatus.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabSurgeryJournal</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>edtBegDateJournal</tabstop>
+  <tabstop>tblJournal</tabstop>
+  <tabstop>cmbMKBFilterJournal</tabstop>
+  <tabstop>edtEndDateJournal</tabstop>
+  <tabstop>edtMKBFromJournal</tabstop>
+  <tabstop>edtMKBToJournal</tabstop>
+  <tabstop>cmbPersonJournal</tabstop>
+  <tabstop>cmbOrgStructureJournal</tabstop>
+  <tabstop>cmbActionStatusJournal</tabstop>
+  <tabstop>cmbActionTypeJournal</tabstop>
+  <tabstop>edtBegDateCanceled</tabstop>
+  <tabstop>edtEndDateCanceled</tabstop>
+  <tabstop>cmbMKBFilterCanceled</tabstop>
+  <tabstop>edtMKBFromCanceled</tabstop>
+  <tabstop>edtMKBToCanceled</tabstop>
+  <tabstop>chkActionStatusCanceled</tabstop>
+  <tabstop>chkActionStatusRefused</tabstop>
+  <tabstop>cmbPersonCanceled</tabstop>
+  <tabstop>cmbOrgStructureCanceled</tabstop>
+  <tabstop>cmbActionTypeCanceled</tabstop>
+  <tabstop>tblCanceled</tabstop>
+  <tabstop>edtBegDatePlan</tabstop>
+  <tabstop>edtEndDatePlan</tabstop>
+  <tabstop>cmbActionStatusPlan</tabstop>
+  <tabstop>tblPlan</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SurgeryJournalDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SurgeryJournalDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

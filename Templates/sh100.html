@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	{setPageSize('A5')}
+	{setOrientation('P')}
+	{setLeftMargin(20)}
+	{setTopMargin(5)}
+	{setBottomMargin(5)} 
+	{setRightMargin(5)}
+</head>
+	<body style="font-size: 8px;">
+    {:uslugaPrice = 0}
+    {if: event.mes}
+				{:event.mes.service.prepareTariff(event.contract.id)}
+				{:execDate = event.execDate.date if event.execDate.date else currentDate.date}
+				{:duration = event.setDate.date.daysTo(execDate)}
+				{:price = event.mes.service.tariff.getPrice(duration if duration else 1, execDate, event)}
+				{if: price}
+					{:uslugaPrice += price}
+				{end:}
+			{end:}
+			{if: len(event.actions)}
+					{for: action in event.actions}
+						{if: action.service}
+							{:action.service.prepareTariff(event.contract.id)}
+                            {:execDate = action.endDate.date if action.endDate.date else currentDate.date}
+							{:price = action.service.tariff.getPrice(action.amount, execDate, event)}
+							{if: price}
+								{:uslugaPrice += price}
+							{end:}
+						{end:}
+					{end:} 
+				{end:}
+			 {if: len(event.visits)}
+				{for: visit in event.visits}
+					{if: visit.service}
+						{:visit.service.prepareTariff(event.contract.id)}
+                        {:execDate = visit.date.date if visit.date.date else currentDate.date}
+						{:price = visit.service.tariff.getPrice(1, execDate, event)}
+						{if: price}
+							{:uslugaPrice += price}
+						{end:}
+					{end:}
+				{end:}
+			{end:}
+            <center>
+                <b>КОРЕШОК</b>
+                <br>
+                <b>К СПРАВКЕ №<span style="white-space: nowrap; border-bottom: solid 1px">{event.id}</span></b>
+                <br>
+                <b>О СТОИМОСТИ МЕДИЦИНСКОЙ ПОМОЩИ,</b>
+                <br>
+                <b>ОКАЗАННОЙ ЗАСТРАХОВАННОМУ ПО ОМС ЛИЦУ</b>
+                <br>
+            </center>
+            <table>
+                <tr>
+                    <td width="50%">
+                        Ф.И.О. застрахованного лица <span style="white-space: nowrap; border-bottom: solid 1px">{event.client.fullName}</span>
+                    </td>
+                    <td>
+                        № <span style="border-bottom: solid 1px">{client.policy.serial} {client.policy.number}</span> полиса ОМС
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        № медицинской карты <span style="border-bottom: solid 1px">{client.id}</span>
+                    </td>
+                    <td>
+                        Стоимость медицинской помощи 
+                        <br /><span style="border-bottom: solid 1px">{uslugaPrice}</span> руб.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Период оказания медицинской помощи с <span style="border-bottom: solid 1px">{event.setDate}</span>
+                        по <span style="border-bottom: solid 1px">{if: event.execDate} {event.execDate} {else:} ____.____.20__г.{end:}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Подпись лица, выдавшего справку ____________
+                    </td>
+                    <td>
+                        Дата выдачи справки <span style="border-bottom: solid 1px">{currentDate}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Печать МО или штамп
+                    </td>
+                    <td>
+                        Подпись застрахованного лица или его законного представителя ___________
+                    </td>
+                </tr>
+            </table>
+
+            <center>
+                <hr style="margin-bottom: 0; padding-bottom: 0; border:none; border-bottom: 1px dashed" width="100%" />
+                <span style="margin-top: 0; padding-top: 0; text-align: center; font-size: smaller">линия отрыва</span>
+                <br />
+                <br />{currentOrganisation}
+                <hr style="margin: 0; border:none; border-bottom: solid 1px;" /><span style="font-size: smaller">(наименование учреждения, выдавшего справку)</span>
+                <br />{currentOrganisation.address}
+                <hr style="margin: 0; border:none; border-bottom: solid 1px;" /><span style="font-size: smaller">(адрес учреждения)</span>
+                <br />
+                <br />
+                <b>СПРАВКА №<span style="white-space: nowrap; border-bottom: solid 1px">{event.id}</span></b>
+                <br />
+                <b>О СТОИМОСТИ МЕДИЦИНСКОЙ ПОМОЩИ,</b>
+                <br />
+                <b>ОКАЗАННОЙ ЗАСТРАХОВАННОМУ ПО ОМС ЛИЦУ</b>
+            </center><span style="margin-right: 50px; float: right; border-bottom: solid 1px">{currentDate}</span>
+            <br />
+            <br /><label for="shortFIO" style="float: left">Выдана (Ф.И.О.)</label><span id="shortFIO" style="margin-left: 20px">{event.client.fullName}</span>
+            <hr style="margin: 0; margin-left: 90px; border:none; border-bottom: solid 1px;" />
+            <center><span style="font-size: smaller; margin-left: 40px">(указывается Ф.И.О. застрахованного лица или его законного представителя)</span>
+            </center>
+            <br /><label for="fullFIO">в том, что (Ф.И.О.)</label><span id="fullFIO" style="margin-left: 20px">{event.client.fullName}</span>
+            <hr style="margin: 0; margin-left: 100px; border:none; border-bottom: solid 1px;" />
+            <br />
+            в период с <span style="border-bottom: solid 1px">{event.setDate}</span>
+            по <span style="border-bottom: solid 1px">{if: event.execDate} {event.execDate} {else:} ____.____.20__г.{end:}</span>
+
+            <br />
+            <br />оказаны медицинские услуги: <br />
+			{if: event.mes}
+				{:event.mes.service.prepareTariff(event.contract.id)}
+				{:execDate = event.execDate.date if event.execDate.date else currentDate.date}
+				{:duration = event.setDate.date.daysTo(execDate)}
+				{:price = event.mes.service.tariff.getPrice(duration if duration else 1, execDate, event)}
+				{if: price}
+					{event.mes.code} {event.mes.name} {price}<br />
+				{end:}
+			{end:}
+			{if: len(event.actions)}
+					{for: action in event.actions}
+						{if: action.service}
+							{:action.service.prepareTariff(event.contract.id)}
+                            {:execDate = action.endDate.date if action.endDate.date else currentDate.date}
+							{:price = action.service.tariff.getPrice(action.amount, execDate, event)}
+							{if: price}
+								{action.service.infis} {action.service.name} {price} <br />
+							{end:}
+						{end:}
+					{end:} 
+				{end:}
+			 {if: len(event.visits)}
+				{for: visit in event.visits}
+					{if: visit.service}
+						{:visit.service.prepareTariff(event.contract.id)}
+                        {:execDate = visit.date.date if visit.date.date else currentDate.date}
+						{:price = visit.service.tariff.getPrice(1, execDate, event)}
+						{if: price}
+							{visit.service.infis} {visit.service.name} {price} <br />
+						{end:}
+					{end:}
+				{end:}
+			{end:}
+            <br />
+            <br />
+            Стоимость медицинских услуг составила <span style="border-bottom: solid 1px">{uslugaPrice}</span> руб.
+            <br />
+            <br />
+			{amountToWords(uslugaPrice)} руб.
+            <center><span style="font-size: smaller">(сумма прописью)</span></center>
+            <br /><table style="white-space: nowrap; margin: 0px; padding: 0px; width: 100%">
+<tbody>
+<tr>
+<td>
+                    <div align="center">Сотрудник МО</div></td>
+<td></td>
+<td>
+                    <div align="center"><span style="">{currentPerson.shortName}</span></div></td>
+</tr>
+<tr>
+<td></td>
+<td>
+                    <hr style="border:none; border-bottom: solid 1px; margin: 0px; padding: 0px" /></td>
+<td>
+                    <hr style="border:none; border-bottom: solid 1px; margin: 0px; padding: 0px" /></td>
+</tr>
+<tr>
+<td></td>
+<td>
+                    <div align="center"><span style="font-size: smaller">подпись</span></div></td>
+<td>
+                    <div align="center"><span style="font-size: smaller">ФИО сотрудника, выдавшего справку</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+            <br />
+            <br />Печать МО
+            <br />
+            <br /><span style="float: bottom; font-weight: bold">Внимание! Настоящая справка носит уведомительный характер, не является документом, подтверждающим прием денежных средств, и не является основанием для определения размера ущерба при обращении в судебные органы. </span>
+            <br /><span style="float: bottom; font-weight: bold">Указанная стоимость оплате за счет личных средств застрахованного лица не подлежит.</span></body>
+</html>

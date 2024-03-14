@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mo="http://www.fss.ru/integration/types/eln/mo/v01" xmlns:fs="http://www.fss.ru/integration/ws/fault/v01" xmlns="http://www.fss.ru/integration/ws/eln/mo/v01" name="FileOperationsLnService" targetNamespace="http://www.fss.ru/integration/ws/eln/mo/v01">
+  <wsdl:import location="Faults.wsdl" namespace="http://www.fss.ru/integration/ws/fault/v01">
+    </wsdl:import>
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mo="http://www.fss.ru/integration/types/eln/mo/v01" xmlns:fs="http://www.fss.ru/integration/ws/fault/v01" xmlns="http://www.fss.ru/integration/ws/eln/mo/v01">
+            
+  <xs:import namespace="http://www.fss.ru/integration/types/eln/mo/v01" schemaLocation="FileOperationsLnMo.xsd"/>
+        
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="PrParseFilelnlpuResponse">
+    <wsdl:part element="mo:prParseFilelnlpuResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetNewLNNumRangeResponse">
+    <wsdl:part element="mo:getNewLNNumRangeResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetNewLNNumResponse">
+    <wsdl:part element="mo:getNewLNNumResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetNewLNNumRequest">
+    <wsdl:part element="mo:getNewLNNumRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLNListByDateRequest">
+    <wsdl:part element="mo:getLNListByDateRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DisableLnResponse">
+    <wsdl:part element="mo:disableLnResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetExistingLNNumRangeRequest">
+    <wsdl:part element="mo:getExistingLNNumRangeRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PrParseFileNumberslpuResponse">
+    <wsdl:part element="mo:prParseFileNumberslpuResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLNDataRequest">
+    <wsdl:part element="mo:getLNDataRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetExistingLNNumRangeResponse">
+    <wsdl:part element="mo:getExistingLNNumRangeResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLNDataResponse">
+    <wsdl:part element="mo:getLNDataResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PrParseFileNumberslpuRequest">
+    <wsdl:part element="mo:prParseFileNumberslpuRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DisableLnRequest">
+    <wsdl:part element="mo:disableLnRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLNListByDateResponse">
+    <wsdl:part element="mo:getLNListByDateResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PrParseFilelnlpuRequest">
+    <wsdl:part element="mo:prParseFilelnlpuRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetNewLNNumRangeRequest">
+    <wsdl:part element="mo:getNewLNNumRangeRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLNListBySnilsRequest">
+    <wsdl:part element="mo:getLNListBySnilsRequest" name="request">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLNListBySnilsResponse">
+    <wsdl:part element="mo:getLNListBySnilsResponse" name="response">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FileOperationsLnService">
+    <wsdl:operation name="PrParseFilelnlpu">
+<wsdl:documentation>Отправка данных ЭЛН</wsdl:documentation>
+      <wsdl:input message="PrParseFilelnlpuRequest" name="prParseFilelnlpuRequest">
+    </wsdl:input>
+      <wsdl:output message="PrParseFilelnlpuResponse" name="prParseFilelnlpuResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrParseFileNumberslpu">
+<wsdl:documentation>Возврат неиспользованных номеров ЭЛН</wsdl:documentation>
+      <wsdl:input message="PrParseFileNumberslpuRequest" name="prParseFileNumberslpuRequest">
+    </wsdl:input>
+      <wsdl:output message="PrParseFileNumberslpuResponse" name="prParseFileNumberslpuResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLNListByDate">
+<wsdl:documentation>Запрос ЭЛН по дате</wsdl:documentation>
+      <wsdl:input message="GetLNListByDateRequest" name="getLNListByDateRequest">
+    </wsdl:input>
+      <wsdl:output message="GetLNListByDateResponse" name="getLNListByDateResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLNListBySnils">
+<wsdl:documentation>Запрос ЭЛН по снилс</wsdl:documentation>
+      <wsdl:input message="GetLNListBySnilsRequest" name="getLNListBySnilsRequest">
+    </wsdl:input>
+      <wsdl:output message="GetLNListBySnilsResponse" name="getLNListBySnilsResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingLNNumRange">
+<wsdl:documentation>Запрос ранее выданных номеров ЭЛН</wsdl:documentation>
+      <wsdl:input message="GetExistingLNNumRangeRequest" name="getExistingLNNumRangeRequest">
+    </wsdl:input>
+      <wsdl:output message="GetExistingLNNumRangeResponse" name="getExistingLNNumRangeResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewLNNum">
+<wsdl:documentation>Запрос номера ЭЛН</wsdl:documentation>
+      <wsdl:input message="GetNewLNNumRequest" name="getNewLNNumRequest">
+    </wsdl:input>
+      <wsdl:output message="GetNewLNNumResponse" name="getNewLNNumResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewLNNumRange">
+<wsdl:documentation>Запрос перечня номеров ЭЛН</wsdl:documentation>
+      <wsdl:input message="GetNewLNNumRangeRequest" name="getNewLNNumRangeRequest">
+    </wsdl:input>
+      <wsdl:output message="GetNewLNNumRangeResponse" name="getNewLNNumRangeResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLNData">
+<wsdl:documentation>Запрос данных ЭЛН</wsdl:documentation>
+      <wsdl:input message="GetLNDataRequest" name="getLNDataRequest">
+    </wsdl:input>
+      <wsdl:output message="GetLNDataResponse" name="getLNDataResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisableLn">
+<wsdl:documentation>Запрос на аннулирование ЭЛН</wsdl:documentation>
+      <wsdl:input message="DisableLnRequest" name="disableLnRequest">
+    </wsdl:input>
+      <wsdl:output message="DisableLnResponse" name="disableLnResponse">
+    </wsdl:output>
+      <wsdl:fault message="fs:InternalException" name="internalException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileOperationsLnBinding" type="FileOperationsLnService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PrParseFilelnlpu">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/prParseFilelnlpu/v01" style="document"/>
+      <wsdl:input name="prParseFilelnlpuRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="prParseFilelnlpuResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrParseFileNumberslpu">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/parseFileNumberslpu/v01" style="document"/>
+      <wsdl:input name="prParseFileNumberslpuRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="prParseFileNumberslpuResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLNListByDate">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/getLNListByDate/v01" style="document"/>
+      <wsdl:input name="getLNListByDateRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLNListByDateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLNListBySnils">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/getLNListBySnils/v01" style="document"/>
+      <wsdl:input name="getLNListBySnilsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLNListBySnilsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingLNNumRange">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/getExistingLNNumRange/v01" style="document"/>
+      <wsdl:input name="getExistingLNNumRangeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getExistingLNNumRangeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewLNNum">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/getNewLNNum/v01" style="document"/>
+      <wsdl:input name="getNewLNNumRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNewLNNumResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewLNNumRange">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/getNewLNNumRange/v01" style="document"/>
+      <wsdl:input name="getNewLNNumRangeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNewLNNumRangeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLNData">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/getLNData/v01" style="document"/>
+      <wsdl:input name="getLNDataRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLNDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisableLn">
+      <soap:operation soapAction="http://www.fss.ru/integration/ws/eln/mo/disableLn/v01" style="document"/>
+      <wsdl:input name="disableLnRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="disableLnResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="internalException">
+        <soap:fault name="internalException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileOperationsLnService">
+    <wsdl:port binding="FileOperationsLnBinding" name="FileOperationsLnPort">
+      <soap:address location="https://docs-test.fss.ru/WSLnV20_2/FileOperationsLnService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+	
+{setPageSize('A5')}
+{setOrientation('P')}
+{setMargins(5)}
+
+{: QDate = type(client.birthDate.date)}
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:7pt; font-weight:400; font-style:normal;">
+
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Министерство&nbsp;здравоохранения<br>
+и социального развития<br>
+Российской Федерации<br>
+Наименование  (штамп)<br>
+учреждения</td><td>Код формы по ОКУД 3108805<br>
+Медицинская документация<br>
+Форма № 148-1/у-88<br>
+Утверждена Приказом<br>
+Министерства здравоохранения<br>
+и социального развития<br>
+Российской Федерации<br>
+от 12 февраля 2007 г. № 110</td></tr>
+
+<tr><td colspan=2>{currentOrganisation.shortName}</td></tr>
+<tr><td colspan=2>------------------------------------------------------------------</td><td></td></tr>
+
+<tr><td></td><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Серия</td><td><table width=100% border="1"><tr><td>{action[u'Серия'].value}</td></tr></table></td><td>№</td><td><table width=100% border="1"><tr><td>{action[u'Номер'].value}</td></tr></table></td></tr></table></td></tr>
+
+<tr><td><b>РЕЦЕПТ {action[u'Номер'].value}</b></td><td><b> "{: string = action.endDate.date.day()}<u><font face="Courier">{string + "_"*(2 - len(string)) }</font></u>"{: string = action.endDate.date.toString("MMMM")}<u><font face="Courier">{string + "_"*(8 - len(string)) }</font></u> 200{action.endDate.date.year()-2000} г.</b></td></tr>
+
+<tr><td colspan=2 align="center"><b>(дата выписки рецепта)</b></td></tr>
+
+<tr><td colspan=2 align="center"><b>{if: client.birthDate.date.addYears(18) > QDate.now()}взрослый, <u>детский</u>{else:}<u>взрослый</u>, детский{end:} - нужное подчеркнуть)</b></td></tr>
+
+<tr><td colspan=2><b>{: string = client.lastName}<u><font face="Courier">{string + "_"*(55 - len(string)) }</font></u></b></td></tr>
+
+<tr><td colspan=2><b>Ф.И.О. больного</b></td></tr>
+
+<tr><td>{: string = client.firstName + " " + client.patrName}<u><font face="Courier">{string + "_"*(55 - len(string)) }</font></u></td><td></td></tr>
+
+<tr><td colspan=2 align="center"><b>(полностью)</b></td></tr>
+
+<tr><td colspan=2><b>Возраст {: string = client.age}<u><font face="Courier">{string + "_"*(47 - len(string)) }</font></u></b> </td></tr>
+
+<tr><td colspan=2><b>Адрес или № медицинской карты амбулаторного больного ____</b></td></tr>
+
+<tr><td colspan=2><b>{: string = client.regAddress.street + u" д." + client.regAddress.number + ((u" корп." + client.regAddress.corpus) if len(client.regAddress.corpus) else "") + " кв." + client.regAddress.flat}<u><font face="Courier">{string + "_"*(55 - len(string)) }</font></u></b></td></tr>
+
+<tr><td colspan=2><b>Ф. И. О. врача {: string = action.person.longName}<u><font face="Courier">{string + "_"*(42 - len(string)) }</font></u></b></td></tr>
+
+<tr><td colspan=2 align="center"><b>(полностью)</b></td></tr>
+
+<tr><td colspan=2><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td><b>Руб.             коп.             Rp    {action[u'Выписано'].value.INPNameLat}</b></td></tr>
+<tr><td><b>D.t.d. : в {action[u'Выписано'].value.form}</b></td></tr>
+<tr><td>..........................................................................................................................</td></tr>
+<tr><td><b>Дозировка: {action[u'Выписано'].value.dosage}</b></td></tr>
+<tr><td>..........................................................................................................................</td></tr>
+<tr><td><b>Количество единиц: {action[u'Количество единиц'].value}</b></td></tr>
+<tr><td>..........................................................................................................................</td></tr>
+<tr><td><b>Signa: {action[u'Signa'].value}</b></td></tr>
+<tr><td>-------------------------------------------------------------------------------------------------</td></tr>
+</table></td></tr>
+
+<tr><td>подпись и личная печать<br>
+врача</td><td align="center">М.П.</td></tr>
+
+<tr><td colspan=2 align="center">Рецепт действителен в течение {if: action[u'Действителен в течение'] == u'10 дней'}10 дней, <s>1 месяца</s>{else:}<s>10 дней</s>, 1 месяца{end:} (ненужное зачеркнуть)</td></tr>
+<tr><td></td><td align="right">СОГЛАСОВАНО<br>
+РУКОВОДИТЕЛЬ (ЗАМЕСТИТЕЛЬ<br>
+РУКОВОДИТЕЛЯ) ФСКН России<br>
+12.02.2007</td></tr>
+</table>
+</body>
+</html>

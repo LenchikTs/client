@@ -1,0 +1,151 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'D:\PROJECTS\samson\UP_s11\client_test\Registry\SMPDockContent.ui'
+#
+# Created by: PyQt4 UI code generator 4.11.4
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName(_fromUtf8("Form"))
+        Form.resize(547, 645)
+        self.verticalLayout = QtGui.QVBoxLayout(Form)
+        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+        self.gridLayout_2 = QtGui.QGridLayout()
+        self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
+        self.lblOrganisation = QtGui.QLabel(Form)
+        self.lblOrganisation.setObjectName(_fromUtf8("lblOrganisation"))
+        self.gridLayout_2.addWidget(self.lblOrganisation, 0, 0, 1, 1)
+        spacerItem = QtGui.QSpacerItem(20, 0, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem, 4, 0, 1, 1)
+        self.chb03 = QtGui.QCheckBox(Form)
+        self.chb03.setChecked(True)
+        self.chb03.setObjectName(_fromUtf8("chb03"))
+        self.gridLayout_2.addWidget(self.chb03, 3, 0, 1, 1)
+        self.chbEventType = QtGui.QCheckBox(Form)
+        self.chbEventType.setObjectName(_fromUtf8("chbEventType"))
+        self.gridLayout_2.addWidget(self.chbEventType, 1, 0, 1, 1)
+        self.chbNMP = QtGui.QCheckBox(Form)
+        self.chbNMP.setChecked(True)
+        self.chbNMP.setObjectName(_fromUtf8("chbNMP"))
+        self.gridLayout_2.addWidget(self.chbNMP, 2, 0, 1, 1)
+        self.cmbEventType = QtGui.QComboBox(Form)
+        self.cmbEventType.setEnabled(False)
+        self.cmbEventType.setSizeAdjustPolicy(QtGui.QComboBox.AdjustToContents)
+        self.cmbEventType.setMinimumContentsLength(1)
+        self.cmbEventType.setObjectName(_fromUtf8("cmbEventType"))
+        self.gridLayout_2.addWidget(self.cmbEventType, 1, 1, 1, 1)
+        self.cmbOrganisation = QtGui.QComboBox(Form)
+        self.cmbOrganisation.setSizeAdjustPolicy(QtGui.QComboBox.AdjustToContents)
+        self.cmbOrganisation.setMinimumContentsLength(1)
+        self.cmbOrganisation.setObjectName(_fromUtf8("cmbOrganisation"))
+        self.gridLayout_2.addWidget(self.cmbOrganisation, 0, 1, 1, 1)
+        self.lblNewEvents = QtGui.QLabel(Form)
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        self.lblNewEvents.setPalette(palette)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lblNewEvents.setFont(font)
+        self.lblNewEvents.setObjectName(_fromUtf8("lblNewEvents"))
+        self.gridLayout_2.addWidget(self.lblNewEvents, 5, 0, 1, 2)
+        self.btnRefresh = QtGui.QPushButton(Form)
+        self.btnRefresh.setObjectName(_fromUtf8("btnRefresh"))
+        self.gridLayout_2.addWidget(self.btnRefresh, 6, 0, 1, 2)
+        self.btnUpdEvent = QtGui.QPushButton(Form)
+        self.btnUpdEvent.setEnabled(False)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btnUpdEvent.sizePolicy().hasHeightForWidth())
+        self.btnUpdEvent.setSizePolicy(sizePolicy)
+        self.btnUpdEvent.setObjectName(_fromUtf8("btnUpdEvent"))
+        self.gridLayout_2.addWidget(self.btnUpdEvent, 7, 0, 1, 2)
+        self.btnAddEvent = QtGui.QPushButton(Form)
+        self.btnAddEvent.setEnabled(False)
+        self.btnAddEvent.setObjectName(_fromUtf8("btnAddEvent"))
+        self.gridLayout_2.addWidget(self.btnAddEvent, 8, 0, 1, 2)
+        self.calDate = QtGui.QCalendarWidget(Form)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.calDate.sizePolicy().hasHeightForWidth())
+        self.calDate.setSizePolicy(sizePolicy)
+        self.calDate.setFirstDayOfWeek(QtCore.Qt.Monday)
+        self.calDate.setGridVisible(True)
+        self.calDate.setVerticalHeaderFormat(QtGui.QCalendarWidget.NoVerticalHeader)
+        self.calDate.setObjectName(_fromUtf8("calDate"))
+        self.gridLayout_2.addWidget(self.calDate, 0, 2, 9, 1)
+        self.verticalLayout.addLayout(self.gridLayout_2)
+        self.splitter = QtGui.QSplitter(Form)
+        self.splitter.setOrientation(QtCore.Qt.Vertical)
+        self.splitter.setObjectName(_fromUtf8("splitter"))
+        self.tblCallInfo = CTableView(self.splitter)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.tblCallInfo.sizePolicy().hasHeightForWidth())
+        self.tblCallInfo.setSizePolicy(sizePolicy)
+        self.tblCallInfo.setObjectName(_fromUtf8("tblCallInfo"))
+        self.txtCallInfo = QtGui.QTextEdit(self.splitter)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.txtCallInfo.sizePolicy().hasHeightForWidth())
+        self.txtCallInfo.setSizePolicy(sizePolicy)
+        self.txtCallInfo.setReadOnly(True)
+        self.txtCallInfo.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextSelectableByMouse)
+        self.txtCallInfo.setObjectName(_fromUtf8("txtCallInfo"))
+        self.verticalLayout.addWidget(self.splitter)
+        self.horizontalLayout = QtGui.QHBoxLayout()
+        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem1)
+        self.btnPrintCallInfo = QtGui.QPushButton(Form)
+        self.btnPrintCallInfo.setObjectName(_fromUtf8("btnPrintCallInfo"))
+        self.horizontalLayout.addWidget(self.btnPrintCallInfo)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(_translate("Form", "Form", None))
+        self.lblOrganisation.setText(_translate("Form", "Организация", None))
+        self.chb03.setText(_translate("Form", "03", None))
+        self.chbEventType.setText(_translate("Form", "Статус вызова", None))
+        self.chbNMP.setText(_translate("Form", "НМП", None))
+        self.lblNewEvents.setText(_translate("Form", "Новые вызовы СМП", None))
+        self.btnRefresh.setText(_translate("Form", "Обновить", None))
+        self.btnUpdEvent.setText(_translate("Form", "Отправить подтверждение", None))
+        self.btnAddEvent.setText(_translate("Form", "Результат вызова", None))
+        self.btnPrintCallInfo.setText(_translate("Form", "Печать", None))
+
+from library.TableView import CTableView

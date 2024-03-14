@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NotificationRuleEditorDialog</class>
+ <widget class="QDialog" name="NotificationRuleEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>513</width>
+    <height>798</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Правило оповещения</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="lblClass">
+     <property name="text">
+      <string>Класс</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QComboBox" name="cmbType">
+     <item>
+      <property name="text">
+       <string>расписание</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>картотека</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>действие</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QLabel" name="lblMultiplicity">
+     <property name="text">
+      <string>Кратность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QSpinBox" name="edtMultiplicity">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="CRBComboBox" name="cmbActionType">
+     <property name="whatsThis">
+      <string>результат осмотра</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLabel" name="lblType">
+     <property name="text">
+      <string>Тип</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QLabel" name="lblTerm">
+     <property name="text">
+      <string>Срок</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QComboBox" name="cmbClass">
+     <item>
+      <property name="text">
+       <string>ручной</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>автоматический</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QComboBox" name="cmbCondition">
+     <item>
+      <property name="text">
+       <string>подтверждение записи</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>напоминание</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>отмена записи</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>опрос</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>отправка результата</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QLabel" name="lblActionType">
+     <property name="text">
+      <string>Тип действия</string>
+     </property>
+    </widget>
+   </item>
+   <item row="19" column="0" colspan="2">
+    <widget class="QLabel" name="lblTemplate">
+     <property name="text">
+      <string>Шаблон</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QSpinBox" name="edtTerm">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QComboBox" name="cmbAppointmentType"/>
+   </item>
+   <item row="9" column="0" colspan="3">
+    <widget class="QCheckBox" name="chkIsRestricted">
+     <property name="text">
+      <string>Обрабатывать только при наличии прав</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="0" colspan="2">
+    <widget class="QLabel" name="lblAttachedFile">
+     <property name="text">
+      <string>Прикрепление файла</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="2">
+    <widget class="QComboBox" name="cmbAttachedFile">
+     <item>
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Да</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <widget class="QLabel" name="lblAppointmentType">
+     <property name="text">
+      <string>Тип приёма</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0" colspan="2">
+    <widget class="QLabel" name="lblKind">
+     <property name="text">
+      <string>Вид</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="0" colspan="3">
+    <widget class="CInDocTableView" name="tblNotificationKind"/>
+   </item>
+   <item row="20" column="0" colspan="3">
+    <widget class="QTextEdit" name="edtTemplate"/>
+   </item>
+   <item row="21" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="22" column="0" colspan="2">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>103</width>
+       <height>16</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLineEdit" name="edtName"/>
+   </item>
+   <item row="14" column="0" colspan="2">
+    <widget class="QLabel" name="lblReceivingActionType">
+     <property name="text">
+      <string>Тип действия для подтверждения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="lblName">
+     <property name="text">
+      <string>Наименование</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QLabel" name="lblCondition">
+     <property name="text">
+      <string>Условие</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QLabel" name="lblExpiration">
+     <property name="text">
+      <string>Период отправки опроса</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QSpinBox" name="edtExpiration">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="3">
+    <widget class="QCheckBox" name="chkIgnoreToday">
+     <property name="text">
+      <string>Ограничение отправки при записи на текущий день</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0" colspan="3">
+    <widget class="QCheckBox" name="chkAllowConfirm">
+     <property name="text">
+      <string>Разрешено ручное подтверждение оповещения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0" rowspan="2" colspan="2">
+    <widget class="QCheckBox" name="chkTransferred">
+     <property name="text">
+      <string>Передавать в мед. карту</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="2">
+    <widget class="CActionTypeComboBox" name="cmbReceivingActionType"/>
+   </item>
+   <item row="15" column="0" colspan="2">
+    <widget class="QLabel" name="lblObsDescr">
+     <property name="text">
+      <string>Описание свойства действия</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="2">
+    <widget class="QLineEdit" name="edtObsDescr"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CInDocTableView</class>
+   <extends>QTableView</extends>
+   <header>library/InDocTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Events/ActionTypeComboBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>NotificationRuleEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>NotificationRuleEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

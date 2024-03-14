@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=FSS-ELN-v2
+Name[ru]=ФСС-ЭЛН
+Comment=
+Icon=/opt/client/icons/s11.png
+Exec=python2 /opt/client/appendix/fsselnv2/main.py
+Path=/opt/client/appendix/fsselnv2
+Terminal=false
+StartupNotify=false

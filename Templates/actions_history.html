@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+
+<!--<center><h1>Медицинская карта пациента</h1></center> -->
+
+<table border=0 width=100%>
+
+<tr><td colspan=2><!--Пациент -->
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Ф.И.О.: <b><big>{client.fullName}</big></b></td></tr>
+<tr><td>Пол: <b>{client.sex}</b></td></tr>
+<tr><td>Дата рождения: <b>{client.birthDate}</b></td></tr>
+<tr><td>Документ, удостоверяющий личность: <b>{client.document.type + u" серия " + client.document.serial + u" номер " + client.document.number}</b></td></tr>
+<tr><td>Адрес регистрации: <b>{client.regAddress.town + u", " + client.regAddress.street + u", д." + client.regAddress.number + u", корп." + client.regAddress.corpus + u", кв. " + client.regAddress.flat }</b></td></tr>
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+<tr><td align=center><big><b>Мероприятия:</b></big></td></tr>
+<tr><td colspan=3><!--Мероприятия -->
+<table cellpadding=0 cellspacing=0 width=100%>
+{for: act in sorted([x for x in actions], key = lambda item: item.begDate.date)}
+<tr><td align="center"><b>{act.name}</b></td></tr>
+<tr><td>Статус: <b>{if: act.status == 0}начато{elif: act.status == 1}ожидание{elif: act.status == 2}закончено{elif: act.status == 3}отменено{end:}</b></td></tr>
+<tr><td>Дата начала: <b>{act.begDate.date.toString("dd.MM.yyyy")}</b></td></tr>
+{if: act.showTime}
+<tr><td>Время начала: <b>{act.begDate.time.toString("hh.mm")}</b></td></tr>
+{end:}
+<tr><td>Дата окончания: <b>{act.endDate.date.toString("dd.MM.yyyy")}</b></td></tr>
+{if: act.showTime}
+<tr><td>Время окончания: <b>{act.endDate.time.toString("hh.mm")}</b></td></tr>
+{end:}
+<tr><td>Назначил: <b>{act.setPerson.longName}</b></td></tr>
+<tr><td>Выполнил: <b>{act.person.longName}</b></td></tr>
+<tr><td><table cellpadding=0 cellspacing=0 border=1 width=100%>
+{for: (i, prop) in enumerate([x for x in act if unicode(x.value) != ''])}
+<tr><td width=25>{str(i+1)+"."}</td><td>{prop.name}</td><td>{unicode(prop.value)}</td></tr>
+{end:}
+</table></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:7"> </p></td></tr>
+
+{end:}
+</table>
+</td></tr>
+</table>
+</body>
+</html>

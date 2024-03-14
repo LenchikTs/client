@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" 
+	 xmlns:cc="http://creativecommons.org/ns#" 
+	 xmlns:svg="http://www.w3.org/2000/svg" 
+	 xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns="http://www.w3.org/2000/svg" 
+	 xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 x="0px" 
+	 y="0px" 
+	 width="359.285px"
+	 height="359.285px" 
+	 viewBox="0 0 359.285 359.285" 
+	 enable-background="new 0 0 359.285 359.285" 
+	 xml:space="preserve">
+	 
+  <defs
+     id="defs4">
+		<radialGradient 
+		  id="path2985_1_" 
+		  cx="572.5599" 
+		  cy="-233.3591" 
+		  r="179.6425" 
+		  gradientTransform="matrix(1 0 0 -1 -335.417 10.4313)" 
+		  gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#009CD4"/>
+	</radialGradient>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+ 
+<g id="layer1" transform="translate(-111.78571,-135.57648)">
+		<path id="path2985" fill="url(#path2985_1_)" stroke="#02A2CC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="
+		M468.573,315.219c0,97.833-79.312,177.143-177.145,177.143s-177.144-79.31-177.144-177.143l0,0
+		c0-97.833,79.311-177.143,177.144-177.143S468.573,217.386,468.573,315.219L468.573,315.219z"/>
+</g>
+</svg>

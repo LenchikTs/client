@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StationaryPatientsCompositionSetupDialog</class>
+ <widget class="QDialog" name="StationaryPatientsCompositionSetupDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>471</width>
+    <height>303</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>параметры отчёта</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="2" colspan="5">
+    <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+   </item>
+   <item row="8" column="3">
+    <widget class="QLabel" name="lblAgeTo">
+     <property name="text">
+      <string>по</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="5" colspan="2">
+    <widget class="QLabel" name="lblAgeYears">
+     <property name="text">
+      <string>лет</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QLabel" name="lblGroupMKB">
+     <property name="text">
+      <string>Группировать диагнозы</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2" colspan="5">
+    <widget class="QComboBox" name="cmbGroupMKB">
+     <item>
+      <property name="text">
+       <string>не группировать</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>группировать по рубрикам</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>группировать по блокам</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>группировать по классам</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="8" column="4">
+    <widget class="QSpinBox" name="edtAgeTo">
+     <property name="maximum">
+      <number>150</number>
+     </property>
+     <property name="value">
+      <number>150</number>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QCheckBox" name="chkPerson">
+     <property name="text">
+      <string>Врач</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="3">
+    <widget class="CDateEdit" name="edtEndDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2" colspan="5">
+    <widget class="QComboBox" name="cmbSelectType">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>ответственному за действие</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ответственному за событие</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string>Дата &amp;окончания периода</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtEndDate</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2" colspan="4">
+    <widget class="QLineEdit" name="edtMKBFrom">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="inputMask">
+      <string>&gt;A&lt;00.00; </string>
+     </property>
+     <property name="text">
+      <string>A00.00</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lblAge">
+     <property name="text">
+      <string>Возраст с</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="6">
+    <widget class="QLineEdit" name="edtMKBTo">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="inputMask">
+      <string>&gt;A&lt;00.00; </string>
+     </property>
+     <property name="text">
+      <string>Z99.99</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QSpinBox" name="edtAgeFrom">
+     <property name="maximum">
+      <number>150</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="3">
+    <widget class="CDateEdit" name="edtBegDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLabel" name="lblOrgStructure">
+     <property name="text">
+      <string>&amp;Подразделение</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbOrgStructure</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="6">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>101</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="6">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>101</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLabel" name="lblHospitalBedProfileList">
+     <property name="text">
+      <string> не задано</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string>Дата &amp;начала периода</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtBegDate</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>21</width>
+       <height>21</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QLabel" name="lblSelectType">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Выбор по врачу</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkMKBFilter">
+     <property name="text">
+      <string>Диапазон диагнозов</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QPushButton" name="btnHospitalBedProfileList">
+     <property name="text">
+      <string>Профиль койки</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2" colspan="5">
+    <widget class="CPersonComboBoxEx" name="cmbPerson">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>btnHospitalBedProfileList</tabstop>
+  <tabstop>cmbPerson</tabstop>
+  <tabstop>cmbGroupMKB</tabstop>
+  <tabstop>edtMKBFrom</tabstop>
+  <tabstop>chkMKBFilter</tabstop>
+  <tabstop>edtMKBTo</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>StationaryPatientsCompositionSetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>198</x>
+     <y>267</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>StationaryPatientsCompositionSetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>267</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkMKBFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtMKBFrom</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkMKBFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtMKBTo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>466</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkPerson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbPerson</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkPerson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbSelectType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>45</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkPerson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblSelectType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>30</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>28</x>
+     <y>133</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

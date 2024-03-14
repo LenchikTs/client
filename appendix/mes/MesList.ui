@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1175</width>
+    <height>772</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Редактор</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabMESCSGWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tabMES">
+           <attribute name="title">
+            <string>Список МЭС</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="QSplitter" name="splitter_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <widget class="QTextBrowser" name="textInfo">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>260</height>
+                </size>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+              </widget>
+              <widget class="QGroupBox" name="groupBox_2">
+               <property name="title">
+                <string/>
+               </property>
+               <property name="flat">
+                <bool>true</bool>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <item>
+                 <widget class="CMesListTableView" name="mesView">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>500</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::StrongFocus</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lblCount">
+                  <property name="text">
+                   <string>В списке 0 записей</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QTabWidget" name="tabWidget">
+               <property name="tabPosition">
+                <enum>QTabWidget::North</enum>
+               </property>
+               <property name="tabShape">
+                <enum>QTabWidget::Rounded</enum>
+               </property>
+               <property name="currentIndex">
+                <number>0</number>
+               </property>
+               <property name="elideMode">
+                <enum>Qt::ElideNone</enum>
+               </property>
+               <widget class="QWidget" name="tabMKB">
+                <attribute name="title">
+                 <string>МКБ</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <widget class="CTableView" name="tableMKB">
+                   <property name="focusPolicy">
+                    <enum>Qt::StrongFocus</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tabServices">
+                <attribute name="title">
+                 <string>Услуги</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <item>
+                  <widget class="CTableView" name="tableServices"/>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tabVisits">
+                <attribute name="title">
+                 <string>Визиты</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_5">
+                 <item>
+                  <widget class="QTableView" name="tableVisits"/>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tabEquipment">
+                <attribute name="title">
+                 <string>Оборудование</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <widget class="QTableView" name="tableEquipment"/>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tabMedicament">
+                <attribute name="title">
+                 <string>Медикаменты</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <item>
+                  <widget class="QTableView" name="tableMedicament"/>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tabBlood">
+                <attribute name="title">
+                 <string>Препараты крови</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <item>
+                  <widget class="QTableView" name="tableBlood"/>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tabNutrient">
+                <attribute name="title">
+                 <string>Питательные средства</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QTableView" name="tableNutrient"/>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tabLimitedBySexAge">
+                <attribute name="title">
+                 <string>Ограничение по полу и возрасту</string>
+                </attribute>
+                <layout class="QGridLayout" name="gridLayout">
+                 <item row="0" column="0">
+                  <widget class="QTableView" name="tableLimitedBySexAge"/>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabCSG">
+           <attribute name="title">
+            <string>Список КСГ</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QSplitter" name="splitter_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <widget class="QTextBrowser" name="txtCSGBrowser"/>
+              <widget class="QWidget" name="layoutWidget">
+               <layout class="QGridLayout" name="gridLayout_4">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="CCSGListTableView" name="tblCSGList"/>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="lblCountCSG">
+                  <property name="text">
+                   <string>В списке 0 записей</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QTabWidget" name="tabSubCSG">
+               <property name="currentIndex">
+                <number>0</number>
+               </property>
+               <widget class="QWidget" name="tabCSGDiagnosis">
+                <attribute name="title">
+                 <string>МКБ</string>
+                </attribute>
+                <layout class="QGridLayout" name="gridLayout_7">
+                 <item row="0" column="0">
+                  <widget class="CTableView" name="tblCSGDiagnosis"/>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tabCSGService">
+                <attribute name="title">
+                 <string>Услуги</string>
+                </attribute>
+                <layout class="QGridLayout" name="gridLayout_8">
+                 <item row="0" column="0">
+                  <widget class="CTableView" name="tblCSGService"/>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnEdit">
+            <property name="text">
+             <string>Редактировать (F4)</string>
+            </property>
+            <property name="shortcut">
+             <string>F4</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnPrint">
+            <property name="text">
+             <string>Печать (F6)</string>
+            </property>
+            <property name="shortcut">
+             <string>F6</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnFind">
+            <property name="text">
+             <string>Поиск (F7)</string>
+            </property>
+            <property name="shortcut">
+             <string>F7</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnAdd">
+            <property name="text">
+             <string>Добавить (F9)</string>
+            </property>
+            <property name="shortcut">
+             <string>F9</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupFilter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string>Фильтр</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QCheckBox" name="checkGroup">
+          <property name="text">
+           <string>Группа:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CRBComboBox" name="cmbGroup">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkCode">
+          <property name="text">
+           <string>Код начинается с:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="edtCode">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkName">
+          <property name="text">
+           <string>Имя содержит:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="edtName">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkMKB">
+          <property name="text">
+           <string>Код МКБ начинается с:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="edtMKB">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkMKBEx">
+          <property name="text">
+           <string>Доп.код МКБ начинается с:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="edtMKBEx">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QRadioButton" name="rbActiveAll">
+               <property name="text">
+                <string>все</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rbActive">
+               <property name="text">
+                <string>активные</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rbNotActive">
+               <property name="text">
+                <string>неактивные</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_4">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QRadioButton" name="rbInternalAll">
+               <property name="text">
+                <string>все</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rbInternal">
+               <property name="text">
+                <string>внутренние</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rbExternal">
+               <property name="text">
+                <string>внешние</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnClear">
+            <property name="text">
+             <string>Сбросить</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnUpdate">
+            <property name="text">
+             <string>Применить</string>
+            </property>
+            <property name="shortcut">
+             <string>Return</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1175</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Помощь</string>
+    </property>
+    <addaction name="action_about"/>
+    <addaction name="action_Qt"/>
+   </widget>
+   <widget class="QMenu" name="menuReference">
+    <property name="title">
+     <string>Справочники</string>
+    </property>
+    <addaction name="action_rbMesGroup"/>
+    <addaction name="actMesKSG"/>
+    <addaction name="action_rbVisitType"/>
+    <addaction name="action_rbBloodPreparation"/>
+    <addaction name="action_rbBloodPreparationType"/>
+    <addaction name="action_rbEquipment"/>
+    <addaction name="action_rbEquipmentGroup"/>
+    <addaction name="action_rbMedicament"/>
+    <addaction name="action_rbMedicamentDosageForm"/>
+    <addaction name="action_rbMedicamentGroup"/>
+    <addaction name="action_rbNutrient"/>
+    <addaction name="action_rbNutrientGroup"/>
+    <addaction name="action_rbService"/>
+    <addaction name="action_rbServiceGroup"/>
+    <addaction name="action_rbSpeciality"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <addaction name="action_connection"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Действия</string>
+    </property>
+    <addaction name="action_connect"/>
+    <addaction name="action_disconnect"/>
+    <addaction name="action_add"/>
+    <addaction name="action_edit"/>
+    <addaction name="action_find"/>
+    <addaction name="action_print"/>
+    <addaction name="action_exit"/>
+   </widget>
+   <widget class="QMenu" name="menuExchange">
+    <property name="title">
+     <string>Обмен</string>
+    </property>
+    <addaction name="actImportXML"/>
+    <addaction name="actExportXML"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuReference"/>
+   <addaction name="menuExchange"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>проверочка</string>
+   </property>
+  </action>
+  <action name="action_connection">
+   <property name="text">
+    <string>Соединение с БД</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="action_connect">
+   <property name="text">
+    <string>Подключиться к БД</string>
+   </property>
+  </action>
+  <action name="action_add">
+   <property name="text">
+    <string>Новый МЭС</string>
+   </property>
+  </action>
+  <action name="action_edit">
+   <property name="text">
+    <string>Редактировать</string>
+   </property>
+  </action>
+  <action name="action_find">
+   <property name="text">
+    <string>Поиск</string>
+   </property>
+  </action>
+  <action name="action_print">
+   <property name="text">
+    <string>Печать</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="action_Qt">
+   <property name="text">
+    <string>О Qt</string>
+   </property>
+  </action>
+  <action name="action_rbVisitType">
+   <property name="text">
+    <string>Типы визитов</string>
+   </property>
+  </action>
+  <action name="action_rbBloodPreparation">
+   <property name="text">
+    <string>Препараты крови</string>
+   </property>
+  </action>
+  <action name="action_rbBloodPreparationType">
+   <property name="text">
+    <string>Типы препаратов крови</string>
+   </property>
+  </action>
+  <action name="action_rbEquipment">
+   <property name="text">
+    <string>Типы оборудования</string>
+   </property>
+  </action>
+  <action name="action_rbEquipmentGroup">
+   <property name="text">
+    <string>Группы типов оборудования</string>
+   </property>
+  </action>
+  <action name="action_rbMedicamentDosageForm">
+   <property name="text">
+    <string>Лекарственные формы</string>
+   </property>
+  </action>
+  <action name="action_rbMedicamentGroup">
+   <property name="text">
+    <string>Фармацевтические группы</string>
+   </property>
+  </action>
+  <action name="action_rbMesGroup">
+   <property name="text">
+    <string>Группы МЭС</string>
+   </property>
+  </action>
+  <action name="action_rbNutrientGroup">
+   <property name="text">
+    <string>Группы питательных средств</string>
+   </property>
+  </action>
+  <action name="action_rbServiceGroup">
+   <property name="text">
+    <string>Группы услуг</string>
+   </property>
+  </action>
+  <action name="action_rbMedicament">
+   <property name="text">
+    <string>Медикаменты</string>
+   </property>
+  </action>
+  <action name="action_rbNutrient">
+   <property name="text">
+    <string>Питательные средства</string>
+   </property>
+  </action>
+  <action name="action_rbService">
+   <property name="text">
+    <string>Услуги</string>
+   </property>
+  </action>
+  <action name="action_rbSpeciality">
+   <property name="text">
+    <string>Специальности</string>
+   </property>
+  </action>
+  <action name="actImportXML">
+   <property name="text">
+    <string>Импорт из XML</string>
+   </property>
+  </action>
+  <action name="actExportXML">
+   <property name="text">
+    <string>Экспорт в XML</string>
+   </property>
+  </action>
+  <action name="actMesKSG">
+   <property name="text">
+    <string>КСГ</string>
+   </property>
+  </action>
+  <action name="action_disconnect">
+   <property name="text">
+    <string>Отключиться от БД</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CMesListTableView</class>
+   <extends>QTableView</extends>
+   <header>appendix/mes/MesListTableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CCSGListTableView</class>
+   <extends>QTableView</extends>
+   <header>appendix/mes/CSGListTableView.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabMESCSGWidget</tabstop>
+  <tabstop>mesView</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>tableMKB</tabstop>
+  <tabstop>tableServices</tabstop>
+  <tabstop>tableVisits</tabstop>
+  <tabstop>tableEquipment</tabstop>
+  <tabstop>tableMedicament</tabstop>
+  <tabstop>tableBlood</tabstop>
+  <tabstop>tableNutrient</tabstop>
+  <tabstop>tableLimitedBySexAge</tabstop>
+  <tabstop>txtCSGBrowser</tabstop>
+  <tabstop>tblCSGList</tabstop>
+  <tabstop>tabSubCSG</tabstop>
+  <tabstop>tblCSGDiagnosis</tabstop>
+  <tabstop>tblCSGService</tabstop>
+  <tabstop>btnEdit</tabstop>
+  <tabstop>btnPrint</tabstop>
+  <tabstop>btnFind</tabstop>
+  <tabstop>btnAdd</tabstop>
+  <tabstop>checkGroup</tabstop>
+  <tabstop>cmbGroup</tabstop>
+  <tabstop>checkCode</tabstop>
+  <tabstop>edtCode</tabstop>
+  <tabstop>checkName</tabstop>
+  <tabstop>edtName</tabstop>
+  <tabstop>checkMKB</tabstop>
+  <tabstop>edtMKB</tabstop>
+  <tabstop>checkMKBEx</tabstop>
+  <tabstop>edtMKBEx</tabstop>
+  <tabstop>rbActiveAll</tabstop>
+  <tabstop>rbActive</tabstop>
+  <tabstop>rbNotActive</tabstop>
+  <tabstop>rbInternalAll</tabstop>
+  <tabstop>rbInternal</tabstop>
+  <tabstop>rbExternal</tabstop>
+  <tabstop>btnClear</tabstop>
+  <tabstop>btnUpdate</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>action_exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>551</x>
+     <y>474</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkGroup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbGroup</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>786</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>786</x>
+     <y>106</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkCode</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtCode</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>786</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkName</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtName</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>786</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>786</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkMKB</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtMKB</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>786</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>786</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkMKBEx</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtMKBEx</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>664</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

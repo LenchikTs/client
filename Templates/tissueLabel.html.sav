@@ -1,0 +1,12 @@
+<HTML>
+ <BODY>
+   {:setPageSize('29x19')}
+   {:setOrientation('P')}
+   {:setMargins(0)}
+    <TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 7pt; color: black">
+      <TR><TD ALIGN="left" STYLE="white-space:pre; font-family:code 128; font-size:25pt;">{code128('%08d'%(number))}</TD></TR>
+      <TR><TD ALIGN="left">{serial}#{'%08d'%(number)}</TD></TR>
+   </TABLE>
+ </BODY>
+</HTML> 
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>{ setPageSize('A4') }{ setOrientation('L') }{ setLeftMargin(10.0) }{ setTopMargin(10.0) }{ setRightMargin(5.0) }{ setBottomMargin(5.0) }
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td width=25%>№ {: string = str(action[u"номер вызова"].value)}<u><font face="Courier">{ "_"*0 + string + "_"*(10-len(string)) }</font></u> вызова</td><td width=50%><b><big>КАРТА ВЫЗОВА СКОРОЙ МЕДИЦИНСКОЙ ПОМОЩИ</big></b></td><td width=25%><b>{: string = action[u"район"].value}<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u> района</b></td></tr>
+<tr><td colspan=3>Дата {: string = action.begDate.date.toString()}<u><font face="Courier">{string + "_"*(11 - len(string)) }</font></u>время приема {: string = str(action[u"время приема"].value)}<u><font face="Courier">{ string + "_"*(10-len(string)) }</font></u> передачи {: string = str(action[u"время передачи"].value)}<u><font face="Courier">{string + "_"*(10 - len(string)) }</font></u>прибытия  {: string = str(action[u"время прибытия"].value)}<u><font face="Courier">{string + "_"*(10 - len(string)) }</font></u>окончания вызова {: string = str(action[u"время окончания вызова"].value)}<u><font face="Courier">{string + "_"*(10 - len(string)) }</font></u> П-ка № {: string = str(action[u"поликлиника №"].value)}<u><font face="Courier">{ "_"*1 + string + "_"*(5-len(string)) }</font></u></td></tr>
+<tr><td colspan=3>Адрес {: string = action[u"адрес"].value}<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u>телефон {: string = action[u"телефон"].value}<u><font face="Courier">{string + "_"*(15 - len(string)) }</font></u>повод {: string = action[u"повод"].value}<u><font face="Courier">{string + "_"*(10 - len(string)) }</font></u>ф.и.о. {: string = client.lastName}<u><font face="Courier">{string + "_"*(20 - len(string)) }</font></u>возраст {: string = client.age}<u><font face="Courier">{string + "_"*(5 - len(string)) }</font></u></td></tr>
+<tr><td><b>ОБЪЕКТИВНЫЕ ДАННЫЕ</b></td><td colspan=2>{client.firstName + ' ' + client.patrName}</td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr>
+<td width=17%><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td>Общее состояние</td></tr>
+{: value=action[u"общее состояние"].value }
+<tr><td>{if: value==u"удовлетворительное"}<u><b>{end:}удовлетворительное{if: value==u"удовлетворительное"}</b></u>{end:}<br>
+{if: value==u"средней тяжести"}<u><b>{end:}средней тяжести{if: value==u"средней тяжести"}</b></u>{end:}<br>
+{if: value==u"тяжелое"}<u><b>{end:}тяжелое{if: value==u"тяжелое"}</b></u>{end:}<br>
+{if: value==u"крайне тяжелое"}<u><b>{end:}крайне тяжелое{if: value==u"крайне тяжелое"}</b></u>{end:}<br>
+{if: value==u"преагональное"}<u><b>{end:}преагональное{if: value==u"преагональное"}</b></u>{end:}<br>
+{if: value==u"агональное"}<u><b>{end:}агональное{if: value==u"агональное"}</b></u>{end:}<br>
+{if: value==u"клиническая смерть"}<u><b>{end:}клиническая смерть{if: value==u"клиническая смерть"}</b></u>{end:}</td></tr>
+<tr><td>Сознание</td></tr>
+{: value=action[u"сознание"].value }
+<tr><td>{if: value==u"ясное"}<u><b>{end:}ясное{if: value==u"ясное"}</b></u>{end:}<br>
+{if: value==u"спутанное"}<u><b>{end:}спутанное{if: value==u"спутанное"}</b></u>{end:}<br>
+{if: value==u"отсутствует"}<u><b>{end:}отсутствует{if: value==u"отсутствует"}</b></u>{end:}</td></tr>
+<tr><td>Рефлексы</td></tr>
+{: value=action[u"рефлексы"].value }
+<tr><td>{if: value==u"сухожильные"}<u><b>{end:}сухожильные{if: value==u"сухожильные"}</b></u>{end:}<br>
+{if: value==u"патологические"}<u><b>{end:}патологические{if: value==u"патологические"}</b></u>{end:}</td></tr>
+<tr><td>Зрачки</td></tr>
+{: value=action[u"зрачки"].value }
+<tr><td>{if: value==u"нормальные"}<u><b>{end:}нормальные{if: value==u"нормальные"}</b></u>{end:}<br>
+{if: value==u"сужены"}<u><b>{end:}сужены{if: value==u"сужены"}</b></u>{end:}<br>
+{if: value==u"расширены"}<u><b>{end:}расширены{if: value==u"расширены"}</b></u>{end:}<br>
+{if: value==u"макс. расширены"}<u><b>{end:}макс. расширены{if: value==u"макс. расширены"}</b></u>{end:}<br>
+{if: value==u"анизокория"}<u><b>{end:}анизокория{if: value==u"анизокория"}</b></u>{end:}<br>
+р-ция на свет {if: action[u"зрачки - реакция на свет"].value==u"+"}<u><b>+</b></u>{else:}<u><b>-</b></u>{end:}</td></tr>
+<tr><td>Температура</td></tr>
+<tr><td><b>{action[u"температура"].value}</b></td></tr>
+</table></td>
+
+<td width=17%><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td>Кожные покровы</td></tr>
+{: value=action[u"кожные покровы"].value }
+<tr><td>{if: value==u"обычные"}<u><b>{end:}обычные{if: value==u"}обычные"}</b></u>{end:}<br>
+{if: value==u"бледные"}<u><b>{end:}бледные{if: value==u"бледные"}</b></u>{end:}<br>
+{if: value==u"акроцианоз"}<u><b>{end:}акроцианоз{if: value==u"акроцианоз"}</b></u>{end:}<br>
+{if: value==u"цианотичные"}<u><b>{end:}цианотичные{if: value==u"цианотичные"}</b></u>{end:}<br>
+{if: value==u"}эластичные"}<u><b>{end:}эластичные{if: value==u"}эластичные"}</b></u>{end:}<br>
+{if: value==u"сухие"}<u><b>{end:}сухие{if: value==u"сухие"}</b></u>{end:}<br>
+{if: value==u"влажные"}<u><b>{end:}влажные{if: value==u"влажные"}</b></u>{end:}<br>
+{if: value==u"профуз. пот."}<u><b>{end:}профуз. пот.{if: value==u"профуз. пот."}</b></u>{end:}</td></tr>
+<tr><td>Тоны сердца</td></tr>
+{: value=action[u"тоны сердца"].value }
+<tr><td>{if: value==u"чистые"}<u><b>{end:}чистые{if: value==u"чистые"}</b></u>{end:}<br>
+{if: value==u"приглушены"}<u><b>{end:}приглушены{if: value==u"приглушены"}</b></u>{end:}<br>
+{if: value==u"глухие"}<u><b>{end:}глухие{if: value==u"глухие"}</b></u>{end:}</td></tr>
+<tr><td>Сердцебиение</td></tr>
+{: value=action[u"сердцебиение"].value }
+<tr><td>{if: value==u"ритмичное"}<u><b>{end:}ритмичное{if: value==u"ритмичное"}</b></u>{end:}<br>
+{if: value==u"аритмичное"}<u><b>{end:}аритмичное{if: value==u"аритмичное"}</b></u>{end:}<br>
+{if: value==u"экстрасистолия"}<u><b>{end:}экстрасистолия{if: value==u"экстрасистолия"}</b></u>{end:}<br>
+{if: value==u"мерцание"}<u><b>{end:}мерцание{if: value==u"мерцание"}</b></u>{end:}<br>
+{if: value==u"фибрилляция"}<u><b>{end:}фибрилляция{if: value==u"фибрилляция"}</b></u>{end:}<br>
+{if: value==u"парок. тахикард."}<u><b>{end:}парок. тахикард.{if: value==u"парок. тахикард."}</b></u>{end:}<br>
+{if: value==u"отсутствует"}<u><b>{end:}отсутствует{if: value==u"отсутствует"}</b></u>{end:}</td></tr>
+<tr><td>Частота пульса</td></tr>
+<tr><td>в 1 мин. <b>{action[u"частота пульса в 1 мин."].value}</b><br>
+наполнение <b>{action[u"частота пульса - наполнение"].value}</b><br>
+напряжение <b>{action[u"частота пульса - напряжение"].value}</b><br>
+АД <b>{action[u"частота пульса - АД"].value}</b></td></tr>
+</table></td>
+
+<td width=17%><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td>Дыхание</td></tr>
+{: value=action[u"дыхание"].value }
+<tr><td>{if: value==u"везикулярное"}<u><b>{end:}везикулярное{if: value==u"везикулярное"}</b></u>{end:}<br>
+{if: value==u"ослабленное"}<u><b>{end:}ослабленное{if: value==u"ослабленное"}</b></u>{end:}<br>
+{if: value==u"жесткое"}<u><b>{end:}жесткое{if: value==u"жесткое"}</b></u>{end:}<br>
+{if: value==u"бронхиальное"}<u><b>{end:}бронхиальное{if: value==u"бронхиальное"}</b></u>{end:}<br>
+{if: value==u"смешанное"}<u><b>{end:}смешанное{if: value==u"смешанное"}</b></u>{end:}<br>
+{if: value==u"пуэриальное"}<u><b>{end:}пуэриальное{if: value==u"пуэриальное"}</b></u>{end:}</td></tr>
+<tr><td>Частота дыхан.<br>
+в 1 минуту: <b>{action[u"частота дыхания в 1 минуту"].value}</b></td></tr>
+<tr><td>Хрипы в легких</td></tr>
+{: value=action[u"хрипы в легких"].value }
+<tr><td>{if: value==u"сухие"}<u><b>{end:}сухие{if: value==u"сухие"}</b></u>{end:}<br>
+{if: value==u"влажные"}<u><b>{end:}влажные{if: value==u"влажные"}</b></u>{end:}<br>
+{if: value==u"крепитирующие"}<u><b>{end:}крепитирующие{if: value==u"крепитирующие"}</b></u>{end:}</td></tr>
+<tr><td>Живот</td></tr>
+{: value=action[u"живот"].value }
+<tr><td>{if: value==u"обычной формы"}<u><b>{end:}обычной формы{if: value==u"обычной формы"}</b></u>{end:}<br>
+{if: value==u"втянут"}<u><b>{end:}втянут{if: value==u"втянут"}</b></u>{end:}<br>
+{if: value==u"вздут"}<u><b>{end:}вздут{if: value==u"вздут"}</b></u>{end:}<br>
+{if: value==u"асимметричный"}<u><b>{end:}асимметричный{if: value==u"асимметричный"}</b></u>{end:}<br>
+{if: value==u"мягкий"}<u><b>{end:}мягкий{if: value==u"мягкий"}</b></u>{end:}<br>
+{if: value==u"напряжен"}<u><b>{end:}напряжен{if: value==u"напряжен"}</b></u>{end:}<br>
+{if: value==u"доскообразный"}<u><b>{end:}доскообразный{if: value==u"доскообразный"}</b></u>{end:}<br>
+{if: value==u"безболезненный"}<u><b>{end:}безболезненный{if: value==u"безболезненный"}</b></u>{end:}<br>
+{if: value==u"болезненный"}<u><b>{end:}болезненный{if: value==u"болезненный"}</b></u>{end:}</td></tr>
+<tr><td>Диспептические<br>
+явления<br>
+<b>{action[u"диспептические явления"].value}</b></td></tr>
+</table></td>
+
+<td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td>Жалобы, анамнез, допол. объективно                              ЭКГ <b>{action[u"ЭКГ"].value}</b></td></tr>
+<tr><td>{action[u"Жалобы, анамнез, допол. объективно"].value}</td></tr>
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="right">Проведенное лечение</td></tr>
+<tr><td>{action[u"Проведенное лечение"].value}</td></tr>
+</table></td></tr>
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="right">Эффект от лечения</td></tr>
+<tr><td>{action[u"Эффект от лечения"].value}</td></tr>
+</table></td></tr>
+</table></td>
+</tr>
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:0"> </p></td></tr>
+
+<tr><td>
+Диагноз: основной {: string = event.diagnosises[0].MKB.descr if len(event.diagnosises) else ''}<u><font face="Courier">{string + "_"*(50 - len(string)) }</font></u><br>
+сопутствующий {: string = event.diagnosises[1].MKB.descr if len(event.diagnosises) > 1 else ''}<u><font face="Courier">{ string + "_"*(60-len(string)) }</font></u><br>
+осложнения {: string = event.diagnosises[2].MKB.descr if len(event.diagnosises) > 2 else ''}<u><font face="Courier">{ string + "_"*(60-len(string)) }</font></u>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:0"> </p></td></tr>
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><b>Подпись врача_____________________________</b></td><td align="center"><b>Проверил старший врач_____________________________</b></td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>

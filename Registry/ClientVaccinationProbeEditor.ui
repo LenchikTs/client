@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ClientVaccinationProbeEditor</class>
+ <widget class="QDialog" name="ClientVaccinationProbeEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>337</width>
+    <height>359</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="11" column="2">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="11" column="1">
+    <widget class="CDateEdit" name="edtResultDate"/>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="lbResultDate">
+     <property name="text">
+      <string>Дата результата</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1" colspan="2">
+    <widget class="QComboBox" name="cmbProbeType">
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Предвакцинальная</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Поствакцинальная</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Календарная</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="13" column="0" colspan="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="lblResult">
+     <property name="text">
+      <string>Результат</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="CDateEdit" name="edtReactionDate"/>
+   </item>
+   <item row="2" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="1" colspan="2">
+    <widget class="CPersonComboBoxEx" name="cmbPerson"/>
+   </item>
+   <item row="9" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbResult"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="CDateEdit" name="edtDate"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblProbe">
+     <property name="text">
+      <string>Проба</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbReaction"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblReaction">
+     <property name="text">
+      <string>Реакция</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lblRelegateOrg">
+     <property name="text">
+      <string>Направитель</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbProbe"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblSeria">
+     <property name="text">
+      <string>Серия</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblDose">
+     <property name="text">
+      <string>Доза</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QDoubleSpinBox" name="edtDose">
+     <property name="decimals">
+      <number>3</number>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblPerson">
+     <property name="text">
+      <string>Врач</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblDate">
+     <property name="text">
+      <string>Дата</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblReactionDate">
+     <property name="text">
+      <string>Дата реакции</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtSeria"/>
+   </item>
+   <item row="7" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="lbProbeType">
+     <property name="text">
+      <string>Тип пробы</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblProbeIdentification">
+     <property name="text">
+      <string>Идентификатор МИБП</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="CVaccinationProbeIdentificationComboBox" name="cmbProbeIdentification"/>
+   </item>
+   <item row="8" column="1" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="COrgComboBox" name="cmbRelegateOrg"/>
+     </item>
+     <item>
+      <widget class="QToolButton" name="btnSelectRelegateOrg">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>30</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CVaccinationProbeIdentificationComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Registry/VaccinationIdentificationComboBox</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cmbProbe</tabstop>
+  <tabstop>edtDate</tabstop>
+  <tabstop>cmbPerson</tabstop>
+  <tabstop>cmbReaction</tabstop>
+  <tabstop>cmbResult</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ClientVaccinationProbeEditor</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ClientVaccinationProbeEditor</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

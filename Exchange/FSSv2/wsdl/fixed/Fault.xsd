@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sedo="http://www.fss.ru/integration/types/sedo/v01" xmlns="http://www.fss.ru/integration/types/fault/v01" elementFormDefault="qualified" targetNamespace="http://www.fss.ru/integration/types/fault/v01" version="1.0">
+
+    <xs:complexType name="CommonFault">
+        <xs:annotation>
+            <xs:documentation>
+
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element minOccurs="0" name="uuid" type="xs:string"/>
+            <xs:element minOccurs="0" name="code" type="xs:string"/> <!--TODO: пока система активно дорабатывается не стоит мспользовать enum для кодов-->
+            <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="InternalFault">
+        <xs:annotation>
+            <xs:documentation>
+                Внутренняя ошибка. Если произошла не класифицируемая ошибка сервиса
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="CommonFault"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <xs:element name="internalFault" type="InternalFault">
+        <xs:annotation>
+            <xs:documentation>
+                Внутренняя ошибка. Если произошла не класифицируемая ошибка сервиса
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+</xs:schema>

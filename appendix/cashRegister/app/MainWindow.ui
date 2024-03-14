@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CMainWindow</class>
+ <widget class="QMainWindow" name="CMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>558</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Самсон-Касса</string>
+  </property>
+  <widget class="CMdiArea" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>551</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPreferences">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <addaction name="actConnection"/>
+    <addaction name="separator"/>
+    <addaction name="actAppPreferences"/>
+    <addaction name="actDecor"/>
+   </widget>
+   <widget class="QMenu" name="menuReports">
+    <property name="title">
+     <string>Отчёты</string>
+    </property>
+    <addaction name="actReportX"/>
+    <addaction name="actReportLastDocument"/>
+    <addaction name="actReportOfdExchangeStatus"/>
+    <addaction name="actReportQuantity"/>
+    <addaction name="actReportOperators"/>
+    <addaction name="actReportHours"/>
+    <addaction name="actReportShiftTotalCounters"/>
+    <addaction name="actReportFnTotalCounters"/>
+    <addaction name="separator"/>
+    <addaction name="actReportOfdTest"/>
+    <addaction name="actReportCashRegisterInfo"/>
+    <addaction name="actReportRegistration"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Сессия</string>
+    </property>
+    <addaction name="actLogin"/>
+    <addaction name="actLogout"/>
+    <addaction name="separator"/>
+    <addaction name="actQuit"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="actAbout"/>
+    <addaction name="actAboutQt"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuReports"/>
+   <addaction name="menuPreferences"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>Соединение с ККМ</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="action1">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Настройки ККМ</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>Настройки соединения с САМСОН</string>
+   </property>
+  </action>
+  <action name="actLogin">
+   <property name="text">
+    <string>Подключиться к базе данных</string>
+   </property>
+  </action>
+  <action name="actQuit">
+   <property name="text">
+    <string>Закрыть программу</string>
+   </property>
+  </action>
+  <action name="actLogout">
+   <property name="text">
+    <string>Отключиться от базы данных</string>
+   </property>
+  </action>
+  <action name="actConnection">
+   <property name="text">
+    <string>База данных</string>
+   </property>
+  </action>
+  <action name="actDecor">
+   <property name="text">
+    <string>Внешний вид</string>
+   </property>
+  </action>
+  <action name="actAppPreferences">
+   <property name="text">
+    <string>Умолчания</string>
+   </property>
+  </action>
+  <action name="actAbout">
+   <property name="text">
+    <string>О програме</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actAboutQt">
+   <property name="text">
+    <string>O Qt</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutQtRole</enum>
+   </property>
+  </action>
+  <action name="actReportX">
+   <property name="text">
+    <string>X-отчет</string>
+   </property>
+  </action>
+  <action name="actReportOfdExchangeStatus">
+   <property name="text">
+    <string>Отчет о состоянии расчетов</string>
+   </property>
+  </action>
+  <action name="actReportLastDocument">
+   <property name="text">
+    <string>Копия последнего документа</string>
+   </property>
+  </action>
+  <action name="actReportCashRegisterInfo">
+   <property name="text">
+    <string>Печать информации о ККТ</string>
+   </property>
+  </action>
+  <action name="actReportOfdTest">
+   <property name="text">
+    <string>Диагностика соединения с ОФД</string>
+   </property>
+  </action>
+  <action name="actReportQuantity">
+   <property name="text">
+    <string>Отчет количеств</string>
+   </property>
+  </action>
+  <action name="actReportOperators">
+   <property name="text">
+    <string>Отчет по кассирам</string>
+   </property>
+  </action>
+  <action name="actReportHours">
+   <property name="text">
+    <string>Отчет по часам</string>
+   </property>
+  </action>
+  <action name="actReportRegistration">
+   <property name="text">
+    <string>Печать итогов регистрации / перерегистрации</string>
+   </property>
+  </action>
+  <action name="actReportShiftTotalCounters">
+   <property name="text">
+    <string>Счетчики итогов смены</string>
+   </property>
+  </action>
+  <action name="actReportFnTotalCounters">
+   <property name="text">
+    <string>Счетчики итогов ФН</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CMdiArea</class>
+   <extends>QWidget</extends>
+   <header>library/MdiArea.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

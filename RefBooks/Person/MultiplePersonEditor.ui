@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MultiplePersonEditorDialog</class>
+ <widget class="QDialog" name="MultiplePersonEditorDialog">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>672</width>
+    <height>449</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Сотрудники: групповой редактор</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="9" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkExternalQuota">
+     <property name="text">
+      <string>Внешняя квота</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="4">
+    <widget class="QCheckBox" name="chkAvailableForSuspendedAppointment">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Сотрудник доступен для постановки в ЖОЗ внешними системами</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkPrimaryQuota">
+     <property name="text">
+      <string>Первичная квота</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkShowTypeTemplate">
+     <property name="text">
+      <string>Фильтрация шаблонов</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4">
+    <widget class="QSpinBox" name="edtTimelineAccessibilityDays">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>50</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Если это поле заполнено (не 0),
+то указанная значение используется как количество дней начиная с текущего на которые видно расписание.</string>
+     </property>
+     <property name="suffix">
+      <string/>
+     </property>
+     <property name="maximum">
+      <number>999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="3" colspan="3">
+    <widget class="QSpinBox" name="edtConsultancyQuota">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Доля (%) амбулаторного приёма, доступная для записи другим врачам</string>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4" colspan="2">
+    <widget class="CDateEdit" name="edtLastAccessibleTimelineDate">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Если это поле заполнено,
+то указанная дата используется как предельная дата до которой видно расписание.</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="5">
+    <widget class="CDbComboBox" name="cmbUserRightsProfile">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkTimelineAccessibilityDays">
+     <property name="text">
+      <string>Расписание видимо на</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2" colspan="4">
+    <widget class="QComboBox" name="cmbShowTypeTemplate">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>показывать все доступные шаблоны</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>показывать шаблоны текущего пользователя</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>показывать шаблоны со СНИЛС текущего пользователя</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="7" column="3" colspan="3">
+    <widget class="QSpinBox" name="edtOwnQuota">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Доля (%) амбулаторного приёма, доступная для записи самому врачу</string>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3" colspan="3">
+    <widget class="QSpinBox" name="edtPrimaryQuota">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Доля (%) амбулаторного приёма, доступная для записи из регистратуры</string>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="QCheckBox" name="chkAvailableForExternal">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Информация о сотруднике доступна для внешних систем</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4" colspan="2">
+    <widget class="QComboBox" name="cmbAvailableForSuspendedAppointment">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Да</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkConsultancyQuota">
+     <property name="text">
+      <string>Консультативная квота</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkLastAccessibleTimelineDate">
+     <property name="text">
+      <string>Расписание видимо до</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="5">
+    <widget class="QLabel" name="lblTimelineAccessibilityDaysSuffix">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>дней</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QCheckBox" name="chkUserRightsProfile">
+     <property name="text">
+      <string>Профиль прав</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="QCheckBox" name="chkAvailableForStand">
+     <property name="toolTip">
+      <string>Информация о сотруднике доступна для стендового расписания</string>
+     </property>
+     <property name="text">
+      <string>Информация о сотруднике доступна для стендового расписания</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0" colspan="6">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="3" colspan="3">
+    <widget class="QSpinBox" name="edtExternalQuota">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Доля (%) амбулаторного приёма, доступная для записи из внешних систем</string>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4" colspan="2">
+    <widget class="QComboBox" name="cmbAvailableForStand">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Да</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="4" colspan="2">
+    <widget class="QComboBox" name="cmbAvailableForExternal">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Да</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkOwnQuota">
+     <property name="text">
+      <string>Врачебная квота</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0" colspan="6">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="2" rowspan="6">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDbComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/DbComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>MultiplePersonEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>MultiplePersonEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUserRightsProfile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbUserRightsProfile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>405</x>
+     <y>22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAvailableForExternal</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbAvailableForExternal</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>219</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAvailableForSuspendedAppointment</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbAvailableForSuspendedAppointment</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAvailableForStand</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbAvailableForStand</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>160</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>542</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkLastAccessibleTimelineDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtLastAccessibleTimelineDate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>615</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkTimelineAccessibilityDays</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtTimelineAccessibilityDays</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>187</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkPrimaryQuota</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtPrimaryQuota</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkOwnQuota</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtOwnQuota</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkConsultancyQuota</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtConsultancyQuota</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkExternalQuota</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtExternalQuota</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>318</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkShowTypeTemplate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbShowTypeTemplate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>352</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

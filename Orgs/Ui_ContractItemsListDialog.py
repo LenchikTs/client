@@ -1,0 +1,168 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'D:\PROJECTS\samson\UP_s11\client_test\Orgs\ContractItemsListDialog.ui'
+#
+# Created by: PyQt4 UI code generator 4.11.4
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_ContractItemsListDialog(object):
+    def setupUi(self, ContractItemsListDialog):
+        ContractItemsListDialog.setObjectName(_fromUtf8("ContractItemsListDialog"))
+        ContractItemsListDialog.setWindowModality(QtCore.Qt.ApplicationModal)
+        ContractItemsListDialog.resize(689, 450)
+        ContractItemsListDialog.setSizeGripEnabled(True)
+        ContractItemsListDialog.setModal(True)
+        self.gridLayout_2 = QtGui.QGridLayout(ContractItemsListDialog)
+        self.gridLayout_2.setMargin(4)
+        self.gridLayout_2.setSpacing(4)
+        self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
+        self.splitter = QtGui.QSplitter(ContractItemsListDialog)
+        self.splitter.setOrientation(QtCore.Qt.Horizontal)
+        self.splitter.setObjectName(_fromUtf8("splitter"))
+        self.grbContractItemsFilter = QtGui.QGroupBox(self.splitter)
+        self.grbContractItemsFilter.setObjectName(_fromUtf8("grbContractItemsFilter"))
+        self.gridLayout = QtGui.QGridLayout(self.grbContractItemsFilter)
+        self.gridLayout.setMargin(4)
+        self.gridLayout.setSpacing(4)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.lblFinanceSource = QtGui.QLabel(self.grbContractItemsFilter)
+        self.lblFinanceSource.setWordWrap(True)
+        self.lblFinanceSource.setObjectName(_fromUtf8("lblFinanceSource"))
+        self.gridLayout.addWidget(self.lblFinanceSource, 0, 0, 1, 1)
+        self.cmbFinanceSource = CRBComboBox(self.grbContractItemsFilter)
+        self.cmbFinanceSource.setObjectName(_fromUtf8("cmbFinanceSource"))
+        self.gridLayout.addWidget(self.cmbFinanceSource, 0, 1, 1, 3)
+        self.lblResolution = QtGui.QLabel(self.grbContractItemsFilter)
+        self.lblResolution.setObjectName(_fromUtf8("lblResolution"))
+        self.gridLayout.addWidget(self.lblResolution, 2, 0, 1, 1)
+        self.cmbResolution = CStrComboBox(self.grbContractItemsFilter)
+        self.cmbResolution.setObjectName(_fromUtf8("cmbResolution"))
+        self.gridLayout.addWidget(self.cmbResolution, 2, 1, 1, 3)
+        self.lblPriceList = QtGui.QLabel(self.grbContractItemsFilter)
+        self.lblPriceList.setObjectName(_fromUtf8("lblPriceList"))
+        self.gridLayout.addWidget(self.lblPriceList, 4, 0, 1, 1)
+        self.cmbPriceList = QtGui.QComboBox(self.grbContractItemsFilter)
+        self.cmbPriceList.setObjectName(_fromUtf8("cmbPriceList"))
+        self.cmbPriceList.addItem(_fromUtf8(""))
+        self.cmbPriceList.addItem(_fromUtf8(""))
+        self.cmbPriceList.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbPriceList, 4, 1, 1, 3)
+        self.lblPeriod = QtGui.QLabel(self.grbContractItemsFilter)
+        self.lblPeriod.setObjectName(_fromUtf8("lblPeriod"))
+        self.gridLayout.addWidget(self.lblPeriod, 5, 0, 1, 1)
+        self.edtBegDate = CDateEdit(self.grbContractItemsFilter)
+        self.edtBegDate.setCalendarPopup(True)
+        self.edtBegDate.setObjectName(_fromUtf8("edtBegDate"))
+        self.gridLayout.addWidget(self.edtBegDate, 5, 1, 1, 1)
+        self.label_6 = QtGui.QLabel(self.grbContractItemsFilter)
+        self.label_6.setObjectName(_fromUtf8("label_6"))
+        self.gridLayout.addWidget(self.label_6, 5, 2, 1, 1)
+        spacerItem = QtGui.QSpacerItem(83, 153, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem, 7, 1, 1, 1)
+        self.edtEndDate = CDateEdit(self.grbContractItemsFilter)
+        self.edtEndDate.setCalendarPopup(True)
+        self.edtEndDate.setObjectName(_fromUtf8("edtEndDate"))
+        self.gridLayout.addWidget(self.edtEndDate, 5, 3, 1, 1)
+        self.buttonBoxFilterContract = QtGui.QDialogButtonBox(self.grbContractItemsFilter)
+        self.buttonBoxFilterContract.setStandardButtons(QtGui.QDialogButtonBox.Apply|QtGui.QDialogButtonBox.Reset)
+        self.buttonBoxFilterContract.setObjectName(_fromUtf8("buttonBoxFilterContract"))
+        self.gridLayout.addWidget(self.buttonBoxFilterContract, 8, 0, 1, 4)
+        self.cmbGrouping = CStrComboBox(self.grbContractItemsFilter)
+        self.cmbGrouping.setObjectName(_fromUtf8("cmbGrouping"))
+        self.gridLayout.addWidget(self.cmbGrouping, 1, 1, 1, 3)
+        self.lblGrouping = QtGui.QLabel(self.grbContractItemsFilter)
+        self.lblGrouping.setObjectName(_fromUtf8("lblGrouping"))
+        self.gridLayout.addWidget(self.lblGrouping, 1, 0, 1, 1)
+        self.cmbEnableInAccounts = QtGui.QComboBox(self.grbContractItemsFilter)
+        self.cmbEnableInAccounts.setObjectName(_fromUtf8("cmbEnableInAccounts"))
+        self.cmbEnableInAccounts.addItem(_fromUtf8(""))
+        self.cmbEnableInAccounts.addItem(_fromUtf8(""))
+        self.cmbEnableInAccounts.addItem(_fromUtf8(""))
+        self.gridLayout.addWidget(self.cmbEnableInAccounts, 6, 1, 1, 3)
+        self.lblEnableInAccounts = QtGui.QLabel(self.grbContractItemsFilter)
+        self.lblEnableInAccounts.setObjectName(_fromUtf8("lblEnableInAccounts"))
+        self.gridLayout.addWidget(self.lblEnableInAccounts, 6, 0, 1, 1)
+        self.tblItems = CTableView(self.splitter)
+        self.tblItems.setTabKeyNavigation(False)
+        self.tblItems.setAlternatingRowColors(True)
+        self.tblItems.setObjectName(_fromUtf8("tblItems"))
+        self.gridLayout_2.addWidget(self.splitter, 0, 0, 1, 2)
+        self.hboxlayout = QtGui.QHBoxLayout()
+        self.hboxlayout.setMargin(0)
+        self.hboxlayout.setSpacing(4)
+        self.hboxlayout.setObjectName(_fromUtf8("hboxlayout"))
+        self.label = QtGui.QLabel(ContractItemsListDialog)
+        self.label.setObjectName(_fromUtf8("label"))
+        self.hboxlayout.addWidget(self.label)
+        spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.hboxlayout.addItem(spacerItem1)
+        self.gridLayout_2.addLayout(self.hboxlayout, 1, 0, 1, 1)
+        self.buttonBox = QtGui.QDialogButtonBox(ContractItemsListDialog)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Close)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.gridLayout_2.addWidget(self.buttonBox, 1, 1, 1, 1)
+        self.statusBar = QtGui.QStatusBar(ContractItemsListDialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.statusBar.sizePolicy().hasHeightForWidth())
+        self.statusBar.setSizePolicy(sizePolicy)
+        self.statusBar.setSizeGripEnabled(False)
+        self.statusBar.setObjectName(_fromUtf8("statusBar"))
+        self.gridLayout_2.addWidget(self.statusBar, 2, 0, 1, 1)
+
+        self.retranslateUi(ContractItemsListDialog)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), ContractItemsListDialog.close)
+        QtCore.QMetaObject.connectSlotsByName(ContractItemsListDialog)
+        ContractItemsListDialog.setTabOrder(self.tblItems, self.cmbFinanceSource)
+        ContractItemsListDialog.setTabOrder(self.cmbFinanceSource, self.cmbGrouping)
+        ContractItemsListDialog.setTabOrder(self.cmbGrouping, self.cmbResolution)
+        ContractItemsListDialog.setTabOrder(self.cmbResolution, self.cmbPriceList)
+        ContractItemsListDialog.setTabOrder(self.cmbPriceList, self.edtBegDate)
+        ContractItemsListDialog.setTabOrder(self.edtBegDate, self.edtEndDate)
+        ContractItemsListDialog.setTabOrder(self.edtEndDate, self.cmbEnableInAccounts)
+        ContractItemsListDialog.setTabOrder(self.cmbEnableInAccounts, self.buttonBoxFilterContract)
+        ContractItemsListDialog.setTabOrder(self.buttonBoxFilterContract, self.buttonBox)
+
+    def retranslateUi(self, ContractItemsListDialog):
+        ContractItemsListDialog.setWindowTitle(_translate("ContractItemsListDialog", "Список записей", None))
+        self.grbContractItemsFilter.setTitle(_translate("ContractItemsListDialog", "Фильтр", None))
+        self.lblFinanceSource.setText(_translate("ContractItemsListDialog", "Источник финансирования", None))
+        self.lblResolution.setText(_translate("ContractItemsListDialog", "Основание", None))
+        self.lblPriceList.setText(_translate("ContractItemsListDialog", "Прайс-лист", None))
+        self.cmbPriceList.setItemText(0, _translate("ContractItemsListDialog", "не задано", None))
+        self.cmbPriceList.setItemText(1, _translate("ContractItemsListDialog", "да", None))
+        self.cmbPriceList.setItemText(2, _translate("ContractItemsListDialog", "нет", None))
+        self.lblPeriod.setText(_translate("ContractItemsListDialog", "Период действия", None))
+        self.label_6.setText(_translate("ContractItemsListDialog", "по", None))
+        self.lblGrouping.setText(_translate("ContractItemsListDialog", "Группа", None))
+        self.cmbEnableInAccounts.setItemText(0, _translate("ContractItemsListDialog", "все", None))
+        self.cmbEnableInAccounts.setItemText(1, _translate("ContractItemsListDialog", "отображаются", None))
+        self.cmbEnableInAccounts.setItemText(2, _translate("ContractItemsListDialog", "не отображаются", None))
+        self.lblEnableInAccounts.setText(_translate("ContractItemsListDialog", "Отображение в разделе Счета", None))
+        self.tblItems.setWhatsThis(_translate("ContractItemsListDialog", "список записей", "ура!"))
+        self.label.setText(_translate("ContractItemsListDialog", "всего: ", None))
+        self.statusBar.setToolTip(_translate("ContractItemsListDialog", "A status bar", None))
+        self.statusBar.setWhatsThis(_translate("ContractItemsListDialog", "A status bar.", None))
+
+from library.DateEdit import CDateEdit
+from library.StrComboBox import CStrComboBox
+from library.TableView import CTableView
+from library.crbcombobox import CRBComboBox

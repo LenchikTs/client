@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+{setPageSize('A4')}
+{setOrientation('P')}
+{setLeftMargin(5)} {setTopMargin(5)} {setBottomMargin(2)} {setRightMargin(2)}
+
+{: currentAction = None}
+{for: action in event.actions}
+{if: action.name == u"Поступление"}{: currentAction = action}{end:}
+{end:}
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr>
+<td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Паспорт: серия<u>{:string =  client.document.serial}{" " + string + " "*(5-len(string))}</u> №{: string = client.document.number}<u><font face="Courier">{" " + string + " "*(6 - len(string)) }</font></u></td></tr>
+<tr><td>Кем выдан{: string = client.document.origin}<u><font face="Courier">{ " "*1 + string + " "*(16-len(string)) }</font></u></td></tr>
+<tr><td>Дата выдачи{: string = unicode(client.document.date)}<u><font face="Courier">{ " "*1 + string + " "*(15-len(string)) }</font></u></td></tr>
+<tr><td>Стр. полис №{: string = client.policy.number}<u><font face="Courier">{ " "*1 + string + " "*(7-len(string)) }</font></u>серия{: string = client.policy.serial}<u><font face="Courier">{ " "*1 + string + " "*(5-len(string)) }</font></u></td></tr>
+<tr><td>Кто выдал{: string = client.policy.insurer.shortName}<u><font face="Courier">{ " "*1 + string + " "*(16-len(string)) }</font></u></td></tr>
+<tr><td>Дата выдачи{: string = unicode(client.policy.begDate)}<u><font face="Courier">{ " "*1 + string + " "*(15-len(string)) }</font></u></td></tr>
+</table></td>
+<td></td><td bgcolor=#000000 width=2></td>
+<td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Код формы по ОКУД<u><font face="Courier">        </font></u></td></tr>
+<tr><td>Код учреждения по ОКПО{: string = currentOrganisation.OKPO}<u><font face="Courier">{ " "*1 + string + " "*(6-len(string)) }</font></u></td></tr>
+<tr><td></td></tr>
+<tr><td><table width=100% border="1">
+<tr><td></td><td align="center">Медицинская документация<br>
+Форма № 003/у<br>
+Утверждена Минздравом СССР<br>
+04.10.80 г.   № 1030</td></tr>
+</table></td></tr>
+</table></td>
+</tr>
+</table></td></tr>
+
+<tr style="font-size: 1px"><td bgcolor=#000000></td></tr>
+
+<tr><td></td></tr>
+
+<tr><td align="center"><b>МЕДИЦИНСКАЯ КАРТА № <u>{client.id}</u></b></td></tr>
+
+<tr><td align="center"><b>СТАЦИОНАРНОГО БОЛЬНОГО</b></td></tr>
+
+<tr><td>Дата и время поступления{: string = str(currentAction.begDate) + (currentAction[u"Время поступления"].value.toString(u",  hh ч. mm мин.") if currentAction[u"Время поступления"].value else "")}<u><font face="Courier">{ " "*1 + string + " "*(27-len(string)) }</font></u></td></tr>
+
+<tr><td>Дата и время выписки{: string = str(currentAction.endDate)}<u><font face="Courier">{ " "*1 + string + " "*(28-len(string)) }</font></u></td></tr>
+
+<tr><td>Отделение{: string = (currentAction[u"Направлен в отделение"].value if currentAction[u"Направлен в отделение"].value else "")}<u><font face="Courier">{ " "*1 + string + " "*(18-len(string)) }</font></u> палата №<u><font face="Courier">           </font></u></td></tr>
+
+<tr><td>Проведено койко-дней<u><font face="Courier">                              </font></u></td></tr>
+
+<tr><td>Виды транспортировки: 
+на каталке, 
+в кресле, 
+может идти 
+(подчеркнуть)</td></tr>
+
+<tr><td>Группа крови<u><font face="Courier">         </font></u>Резус-принадлежность<u><font face="Courier">         </font></u></td></tr>
+
+<tr><td>Побочные действия лекарств (непереносимость)<u><font face="Courier">                     </font></u></td></tr>
+
+<tr><td><u><font face="Courier">                                     </font></u></td></tr>
+
+<tr><td align="center">название препарата, характер побочного действия</td></tr>
+
+<tr><td><u><font face="Courier">                                     </font></u></td></tr>
+
+<tr><td>1.  Фамилия, имя, отчество{: string = client.lastName}<u><font face="Courier">{ " "*1 + string + " "*(27-len(string)) }</font></u></td></tr>
+
+<tr><td>{: string = client.firstName + " " + client.patrName}<u><font face="Courier">{ " "*1 + string + " "*(27-len(string)) }</font></u> 2.  Пол{if: client.sexCode == 1}{: string = u"мужской"}{elif: client.sexCode == 2}{: string=u"женский"}{else:}{: string = ""}{end:}<u><font face="Courier">{ " "*1 + string + " "*(6-len(string)) }</font></u></td></tr>
+
+<tr><td>3.  Возраст{: string = client.age}<!--Стандартная функция calcAge плохо форматирует возраст (????????????)--><u><font face="Courier">{ " "*1 + string + " "*(10-len(string)) }</font></u> (полных лет,   для детей: до 1 года - месяцев,  до 1 месяца - дней)</td></tr>
+
+<tr><td>4.  Постоянное место жительства: {:incity = (str(client.locAddress.KLADRCode)[8:11] == '000')}{if: incity}<u>{end:}город{if: incity}</u>{end:}, {if: not incity}<u>{end:}село{if: not incity}</u>{end:} 
+(подчеркнуть)</td></tr>
+
+<tr><td>{: string = client.regAddress.city + "  " + client.regAddress.street}<u><font face="Courier">{ " "*1 + string + " "*(36-len(string)) }</font></u></td></tr>
+
+<tr><td align="center">вписать адрес, указав для приезжих: область, район, населенный пункт, адрес родственников</td></tr>
+
+<tr><td>{: string = u"д. "  + client.regAddress.number + ((u" корп. " + client.regAddress.corpus) if (client.regAddress.corpus != "") else "") + u" кв. " + client.regAddress.flat}{if: len(client.phones)}{: string = string + u"  тел. " + client.phones}{end:}<u><font face="Courier">{ " "*1 + string + " "*(36-len(string)) }</font></u></td></tr>
+
+<tr><td align="center">и № телефона</td></tr>
+
+<tr><td>5.  Место работы, профессия или должность{: string = client.work.shortName[0:21]}<u><font face="Courier">{ " "*1 + string + " "*(21-len(string)) }</font></u></td></tr>
+
+<tr><td>{: string = client.work.shortName[21:58]}<u><font face="Courier">{string + " "*(37 - len(string)) }</font></u></td></tr>
+
+<tr><td align="center">для учащихся - место учебы; для детей - название детского учреждения, школы; для инвалидов - род</td></tr>
+
+<tr><td>{: string = client.work.post}{if: len(client.socStatuses)}
+{: socCode = client.socStatuses[-1].code}
+{if: socCode == '01' or (socCode >= '08' and socCode <= '09') or (socCode >= '010' and socCode <= '012') or (socCode >= '081' and socCode <= '085')}
+{if: len(client.work.post)}{: string = string + u", "}{end:}
+{: string = string + client.socStatuses[-1].name}
+{end:}
+{end:}<u><font face="Courier">{string + " "*(37 - len(string)) }</font></u></td></tr>
+
+<tr><td align="center">и группа инвалидности, ИОВ: {if: socCode == '011'}<u>да</u>,  нет{else:}да,  <u>нет</u>{end:} (подчеркнуть)</td></tr>
+
+<tr><td>6.  Кем направлен больной{: string = (currentAction[u"Кем направлен"].value.shortName if currentAction[u"Кем направлен"].value else "")}<u><font face="Courier">{ " "*1 + string + " "*(27-len(string)) }</font></u></td></tr>
+
+<tr><td align="center">название лечебного учреждения</td></tr>
+
+<tr><td>7.  Доставлен в стационар по экстренным показаниям: да, нет; 
+через
+{if: currentAction[u"Доставлен"].value == u"в первые 6часов"}{: string="6"}
+{elif: currentAction[u"Доставлен"].value == u"в течении 7-24 часов"}{: string="7-24"}
+{elif: currentAction[u"Доставлен"].value == u"позднее 24-х часов"}{: string=u"более 24"}
+{else:}{: string = u""}{end:}<u><font face="Courier">{ " "*1 + string + " "*(7-len(string)) }</font></u>
+часов после 
+{if: len(event.diagnosises) == 0 or event.diagnosises[0].traumaType.code == ""}<u>{end:}начала<br>
+заболевания{if: len(event.diagnosises) == 0 or event.diagnosises[0].traumaType.code == ""}</u>{end:}, 
+{if: len(event.diagnosises) and event.diagnosises[0].traumaType.code != ""}<u>{end:}получения травмы{if: len(event.diagnosises) and event.diagnosises[0].traumaType.code != ""}</u>{end:}; 
+госпитализирован в плановом порядке 
+(подчеркнуть)</td></tr>
+
+<tr><td>8.  Диагноз направившего учреждения{: string = (currentAction[u"Диагноз направителя"].value[:24] if currentAction[u"Диагноз направителя"].value else "") }<u><font face="Courier">{ " "*1 + string + " "*(24-len(string)) }</font></u></td></tr>
+
+<tr><td>{: string = (currentAction[u"Диагноз направителя"].value[24:61]  if currentAction[u"Диагноз направителя"].value else "")}<u><font face="Courier">{ string + " "*(37-len(string)) }</font></u></td></tr>
+
+<tr><td>9. Диагноз при поступлении{: string = (currentAction[u"Диагноз приемного отделения"].value if currentAction[u"Диагноз приемного отделения"].value else "")}<u><font face="Courier">{ " "*1 + string + " "*(27-len(string)) }</font></u></td></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000 width=2></td><td bgcolor=#000000></td></tr>
+<tr><td>10. Диагноз клинический</td><td bgcolor=#000000 width=2></td><td>Дата установления</td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000 width=2></td><td bgcolor=#000000></td></tr>
+<tr><td><!--Заключительный диагноз -->{for: diagnosis in event.diagnosises}
+{if: diagnosis.type.code == '2'}{diagnosis.MKB.descr}{end:}
+{end:}</td><td bgcolor=#000000 width=2></td><td>{for: diagnosis in event.diagnosises}
+{if: diagnosis.type.code == '2'}{diagnosis.setDate}{end:}
+{end:}</td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000 width=2></td><td bgcolor=#000000></td></tr>
+<tr><td>{if: len(event.diagnosises) > 1}{event.diagnosises[0].MKB.descr}{end:}</td><td bgcolor=#000000 width=2></td><td>{if: len(event.diagnosises) > 1}{event.diagnosises[0].setDate}{end:}</td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000 width=2></td><td bgcolor=#000000></td></tr>
+<tr><td>{if: len(event.diagnosises) > 2}{event.diagnosises[1].MKB.descr}{end:}</td><td bgcolor=#000000 width=2></td><td>{if: len(event.diagnosises) > 2}{event.diagnosises[1].setDate}{end:}</td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000 width=2></td><td bgcolor=#000000></td></tr>
+<tr><td>{if: len(event.diagnosises) > 3}{event.diagnosises[2].MKB.descr}{end:}</td><td bgcolor=#000000 width=2></td><td>{if: len(event.diagnosises) > 3}{event.diagnosises[2].setDate}{end:}</td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000 width=2></td><td bgcolor=#000000></td></tr>
+</table></td></tr>
+
+<tr><td>11. Диагноз заключительный клинический</td></tr>
+
+<tr><td>        а) основной:<u><font face="Courier">                               </font></u></td></tr>
+
+<tr><td><u><font face="Courier">                                     </font></u></td></tr>
+
+<tr><td><u><font face="Courier">                                     </font></u></td></tr>
+
+</table>
+</body>
+</html>

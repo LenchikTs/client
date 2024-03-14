@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+
+<!--<center><h1>Медицинская карта пациента</h1></center> -->
+
+<table border=0 width=100%>
+
+<tr><td colspan=2><!--Пациент -->
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Код: <b>{'*'+currentOrganisation.miacCode+'.'+client.id+'*'}</b></td></tr>
+<tr><td>Ф.И.О.: <b><big>{client.fullName}</big></b></td></tr>
+<tr><td>Пол: <b>{client.sex}</b></td></tr>
+<tr><td>Дата рождения: <b>{client.birthDate}</b></td></tr>
+<tr><td>Документ, удостоверяющий личность: <b>{client.document.type + u" серия " + client.document.serial + u" номер " + client.document.number}</b></td></tr>
+<tr><td>Медицинский полис: <b>{client.policy.type + u" серия " + client.policy.serial + u" номер " + client.policy.number + u" (выдан " + client.policy.insurer.fullName + ")"}</b></td></tr>
+<tr><td>Адрес регистрации: <b>{client.regAddress.town + u", " + client.regAddress.street + u", д." + client.regAddress.number + u", корп." + client.regAddress.corpus + u", кв. " + client.regAddress.flat }</b></td></tr>
+<tr><td>Адрес проживания: <b>{client.locAddress.town + u", " + client.locAddress.street + u", д." + client.locAddress.number + u", корп." + client.locAddress.corpus + u", кв. " + client.locAddress.flat }</b></td></tr>
+<tr><td>Телефон: <b>{client.phones}</b></td></tr>
+<tr><td>СНИЛС: <b>{client.SNILS}</b></td></tr>
+{if: len(client.permanentAttach.org.fullName)}<tr><td>Прикреплен: <b>{client.permanentAttach.org.fullName}</b> c {client.permanentAttach.begDate.date.toString("dd.MM.yyyy")}</td></tr>{end:}
+{if: len(client.temporaryAttach.org.fullName)}<tr><td>Временно прикреплен: <b>{client.temporaryAttach.org.fullName}</b> c {client.temporaryAttach.begDate.date.toString("dd.MM.yyyy")}</td></tr>{end:}
+<tr><td>Занятость: {if: len(client.work.shortName)}<b>{client.work.shortName}</b>, должность: <b>{client.work.post}</b>{end:}</td></tr>
+<tr><td>Соц. статусы: {for: socStatus in client.socStatuses}
+{socStatus.classes[0]}: <b>{socStatus.name}</b>; 
+{end:}</td></tr>
+<!--Соц. статусы: те, которые подтверждены текущими документами!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<tr><td>Группа крови: <b>{client.bloodType}</b></td></tr>
+<tr><td>Аллергии:{for: allergy in client.allergies}
+<b>{allergy.name}</b> (степень - <b>{(u"неизвестно", u"малая", u"средняя", u"высокая", u"строгая")[allergy.power]}</b>); 
+{end:}</td></tr>
+<tr><td>Лекарственные непереносимости: {for: intolerance in client.intolerances}
+<b>{intolerance.name}</b> (степень - <b>{(u"неизвестно", u"малая", u"средняя", u"высокая", u"строгая")[intolerance.power]}</b>); 
+{end:}</td></tr>
+{if:client.work.hurts}
+<tr><td>Вредность и факторы: 
+{ for: i, hurt in enumerate(client.work.hurts)}
+<b>{hurt.name}</b> (стаж - <b>{hurt.stage}</b>); 
+{end:}</td></tr>
+{end:}
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+
+
+<tr><td align=center colspan=2><big><b>Лист уточнённых диагнозов:</b></big></td></tr>
+
+<tr><td colspan=2><big><b>Хронические заболевания:</b></big></td></tr>
+{for: diagnosis in reversed(sorted([x for x in diagnosises if (x.type.code == '2' and x.character.code in ['2','3','4'])], key=lambda item: item.setDate.date))} <!--только основные??? -->
+<tr><td><big><i><b>{diagnosis.MKB}</b></i></big></td><td><i><b>{diagnosis.MKB.descr}</b></i> {if: len(str(diagnosis.setDate))} с {diagnosis.setDate}{end:} {if: len(diagnosis.dispanser.name)}диспансер: <b>{diagnosis.dispanser.name}</b>{end:} {if: len(diagnosis.traumaType.name)}травма: <b>{diagnosis.traumaType.name}</b>{end:}</td></tr>
+{end:}
+
+<tr><td colspan=2><big><b>Острые заболевания:</b></big></td></tr>
+{for: diagnosis in reversed(sorted([x for x in diagnosises if x.type.code == '2' and x.character.code == '1'], key = lambda item: item.setDate.date))}
+<tr><td><big><i><b>{diagnosis.MKB}</b></i></big></td><td><i><b>{diagnosis.MKB.descr}</b></i> {if: len(str(diagnosis.setDate))} с {diagnosis.setDate}{end:}{if: len(str(diagnosis.endDate))} по {diagnosis.endDate}{end:}</td></tr>
+{end:}
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+
+
+
+<tr><td align=center colspan=2><big><b>Мероприятия:</b></big></td></tr>
+<tr><td colspan=3><!--Мероприятия -->
+<table cellpadding=0 cellspacing=0 width=100%>
+{for: act in sorted([x for x in actions], key = lambda item: item.begDate.date)}
+<!--<tr><td>Статус: <b>{if: act.status == 0}начато{elif: act.status == 1}ожидание{elif: act.status == 2}закончено{elif: act.status == 3}отменено{end:}</b></td></tr> -->
+<tr><td><b>{act.begDate.date.toString("dd.MM.yyyy")}</b> <b>{act.name}</b> назначил: <b>{act.setPerson.longName}</b></td></tr>
+<tr><td>
+{for: (i, prop) in enumerate([x for x in act if unicode(x.value) != ''])}
+<b>{prop.name}</b>:<i> {unicode(prop.value)}</i>;{end:}</td></tr>
+<tr><td><b>{act.endDate.date.toString("dd.MM.yyyy")}</b>
+{if: act.showTime}, время окончания: <b>{act.endDate.time.toString("hh.mm")}</b>{end:} выполнил: <b>{act.person.longName}</b></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:7"> </p></td></tr>
+
+{end:}
+</table></td></tr>
+
+
+
+<tr><td align=center colspan=2><big><b>Временная утрата трудоспособности:</b></big></td></tr>
+
+{for: tempInvalid in reversed(sorted(tempInvalids, key=lambda item: item.begDate.date))}
+<tr><td colspan=3><b>{tempInvalid.MKB}</b> ({tempInvalid.reason.name}) c <b>{tempInvalid.begDate}</b> по <b>{tempInvalid.endDate}</b> серия <b>{tempInvalid.serial}</b> номер <b>{tempInvalid.number}</b> - <b>{(u'Открыт', u'Закрыт', u'Продлён', u'Передан')[tempInvalid.closed]}</b></td></tr>
+{end:}
+</table>
+
+</body>
+</html>

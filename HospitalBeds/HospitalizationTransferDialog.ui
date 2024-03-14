@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HospitalizationTransferDialog</class>
+ <widget class="QDialog" name="HospitalizationTransferDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>531</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Параметры перевода</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>4</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="rightMargin">
+    <number>4</number>
+   </property>
+   <property name="bottomMargin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblPerson">
+     <property name="text">
+      <string>Переводящий врач</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbMKBResult"/>
+   </item>
+   <item row="0" column="3">
+    <widget class="QTimeEdit" name="edtTime"/>
+   </item>
+   <item row="6" column="4">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>208</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lblMKBResult">
+     <property name="text">
+      <string>Исход</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbDiseaseCharacter</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="4">
+    <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblDateTime">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Дата и время</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="lblMesSpecification">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Результат МЭС</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMesSpecification</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="4">
+    <widget class="CPersonComboBoxEx" name="cmbPerson"/>
+   </item>
+   <item row="7" column="1" colspan="3">
+    <widget class="CRBComboBox" name="cmbDiseaseCharacter"/>
+   </item>
+   <item row="12" column="0" colspan="5">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblDiagnosis">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Диагноз</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtDiagnosisEnd</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="lblMes">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>МЭС</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMes</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="CICDCodeEditEx" name="edtDiagnosis">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="17" column="0" colspan="5">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1" colspan="4">
+    <widget class="CRBComboBox" name="cmbMesSpecification"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblOrgStructure">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Подразделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblDiagnosisEnd">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Диагноз закл.</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtDiagnosisEnd</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="4">
+    <spacer name="horizontalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>208</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="13" column="0" colspan="4">
+    <widget class="QCheckBox" name="chkDropFeed">
+     <property name="text">
+      <string>Отменить питание после перевода</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblDiseaseCharacter">
+     <property name="text">
+      <string>Характер</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbDiseaseCharacter</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1" colspan="4">
+    <widget class="CMESComboBox" name="cmbMes"/>
+   </item>
+   <item row="5" column="4">
+    <spacer name="horizontalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>208</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="4">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>208</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="1" colspan="3">
+    <widget class="CICDCodeEditEx" name="edtDiagnosisEnd">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="lblResultEvent">
+     <property name="text">
+      <string>Результа&amp;т</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>cmbResultEvent</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1" colspan="4">
+    <widget class="CRBComboBox" name="cmbResultEvent">
+     <property name="whatsThis">
+      <string>результат осмотра</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Результат</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="CDateEdit" name="edtDate"/>
+   </item>
+   <item row="14" column="0" colspan="2">
+    <widget class="QCheckBox" name="chkDropPatron">
+     <property name="text">
+      <string>Убрать лицо по уходу после перевода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="4">
+    <widget class="CPersonComboBoxEx" name="cmbExecPerson"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblExecPerson">
+     <property name="text">
+      <string>Лечащий врач</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblHospitalBed">
+     <property name="text">
+      <string>Койка</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="4">
+    <widget class="CHospitalBedFindComboBox" name="cmbHospitalBed"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CICDCodeEditEx</class>
+   <extends>QLineEdit</extends>
+   <header>library/ICDCodeEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CMESComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/MES/MESComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CHospitalBedFindComboBox</class>
+   <extends>QComboBox</extends>
+   <header>HospitalBeds/HospitalBedFindComboBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtDate</tabstop>
+  <tabstop>edtTime</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>cmbPerson</tabstop>
+  <tabstop>cmbExecPerson</tabstop>
+  <tabstop>edtDiagnosis</tabstop>
+  <tabstop>edtDiagnosisEnd</tabstop>
+  <tabstop>cmbDiseaseCharacter</tabstop>
+  <tabstop>cmbMKBResult</tabstop>
+  <tabstop>cmbMes</tabstop>
+  <tabstop>cmbMesSpecification</tabstop>
+  <tabstop>cmbResultEvent</tabstop>
+  <tabstop>chkDropFeed</tabstop>
+  <tabstop>chkDropPatron</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>HospitalizationTransferDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>HospitalizationTransferDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

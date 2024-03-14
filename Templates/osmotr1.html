@@ -1,0 +1,140 @@
+<html>
+<body style="font-family: Arial; font-size: 8pt; color: black;">
+{setPageSize('A4')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+{action.endDate}. Осмотр {action.name} ({action[u'место'].value if action[u'место'].value else '' })
+<HR>
+<table style="font-family: Arial; font-size: 9pt; color: black;" border="2" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td colspan="3"><b>Жалобы:</b>
+ {action[u'жалобы'].value if action[u'жалобы'].value else ''} </td>
+</tr>
+<tr>
+<td colspan="3"><b>Объективно:</b> состояние
+ {action[u'состояние'].value if action[u'состояние'].value else '' }
+</td>
+</tr>
+<tr>
+<td colspan="3"><b>Кожа</b>
+ {action[u'кожа'].value if action[u'кожа'].value else '' }
+<b> Зев </b>
+ {action[u'зев'].value if action[u'зев'].value else '' }
+</td>
+</tr>
+<tr>
+<td colspan="3"><b>ЛОР-органы</b>
+ {action[u'ЛОР-органы'].value if action[u'ЛОР-органы'].value else '' }</td>
+</tr>
+<tr>
+<td colspan="3"><b>Глаза</b>
+ {action[u'глаза'].value if action[u'глаза'].value else ''} </td>
+</tr>
+<tr>
+<td colspan="3"><b>Пульс</b>
+ {action[u'пульс'].value if action[u'пульс'].value else ''}
+<b>Тоны сердца</b>
+ {action[u'тоны сердца'].value if action[u'тоны сердца'].value else '' }</td>
+</tr>
+<tr>
+<td colspan="3"><b>АД</b>
+ {action[u'АД'].value if action[u'АД'].value else '' }
+<b>. В легких дыхание</b>
+ {action[u'дыхание'].value if action[u'дыхание'].value else '' }
+<b>, хрипы</b>
+ {action[u'хрипы'].value if action[u'хрипы'].value else ''} 
+</td>
+</tr>
+<tr>
+<td colspan="3"><b>Живот</b>
+ {action[u'живот'].value if action[u'живот'].value else ''} 
+<b>Печень</b>
+ {action[u'печень'].value if action[u'печень'].value else '' }</td>
+</tr>
+<tr>
+<td colspan="3"><b>Селезенка</b>
+ {action[u'селезенка'].value if action[u'селезенка'].value else '' }</td>
+</tr>
+<tr>
+<td colspan="3"><b>Периферические лимф.узлы</b>
+ {action[u'периф.лиф.узлы'].value if action[u'периф.лиф.узлы'].value else '' }
+<b>Отеки</b>
+ {action[u'отеки'].value if action[u'отеки'].value else ''} </td>
+</tr>
+<tr>
+<td colspan="3"><b>Суставы</b>
+ {action[u'суставы'].value if action[u'суставы'].value else '' }</td>
+</tr>
+<tr>
+<td colspan="3"><b>Неврологический статус</b>
+ {action[u'неврологический статус'].value if action[u'неврологический статус'].value else '' }</td>
+</tr>
+<tr>
+<td colspan="3"><b>Психологический статус</b>
+ {action[u'психологический статус'].value if action[u'психологический статус'].value else '' }</td>
+</tr>
+<tr>
+<td colspan="3"><b>Диагноз</b>
+ {action[u'диагноз'].value if action[u'диагноз'].value else '' }</td>
+</tr>
+<tr>
+<td colspan="3"><b>Рекомендовано:</b>
+ {action[u'рекомендации'].value if action[u'рекомендации'].value else '' }</td>
+</tr>
+</tbody>
+</table>
+<HR>
+<B>Примечание</B> {action.note}
+</body></html>
+<HTML> 
+<BODY STYLE="font-family: Arial; font-size: 8pt; color: black">
+{setPageSize('A5')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 7pt; color: black">
+<TR>
+    <TD align="left"   COLSPAN=1>&nbsp;код: <FONT SIZE=+1>{client.id}</FONT></TD>
+    <TD align="center" COLSPAN=2><B><u>СПб ГУЗ Городская поликлиника № 120</u></B></TD>
+    <TD align="right"  COLSPAN=1><FONT FACE="Code 3 de 9" SIZE=+2>*{client.id}*</FONT></TD>
+</TR>
+<TR>
+    <TD align="left"   COLSPAN=1><B><u>&nbsp;{currentDate}</u></B></TD>
+    <TD align="center" COLSPAN=2><B>{action.name}</B></TD>    <TD align="right"  COLSPAN=1>
+    {if:len(client.socStatuses)}
+    <TABLE BORDER=1>
+    <TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100>
+      Л {client.socStatuses[-1].code}
+    </TD></TR></TABLE>
+   {end:}
+</TD></TR>
+</TABLE><BR/>
+&nbsp; ФИО: <FONT SIZE=+1><B>{client.fullName}</B></FONT><BR/>
+&nbsp; ДР:  <B>{client.birthDate}</B> (<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС: <B>{client.SNILS}</B><BR/>
+&nbsp; <B>{client.document}</B>.  
+&nbsp;Полис: <B>{client.policy}</B><BR/>
+&nbsp; Рег.: <B>{client.regAddress}</B><BR/>
+&nbsp; Прож.: <B>{client.locAddress}</B><BR/>
+&nbsp; Тел.: <B> {client.phones}</B>
+
+<HR>
+
+<TABLE BORDER="1" WIDTH="100%" CELLSPACING="0" CELLPADDING="2" STYLE="font-family: Arial; font-size: 8pt; color: black">
+    <TR> <TH> №             </TH> 
+         <TH> Показатель  </TH>
+         <TH> Значение    </TH>
+         <TH> Ед.изм-ия   </TH>
+         <TH> Норма       </TH>
+    </TR>
+    {for: prop in action}
+    <TR> <TD> { prop.descr}  </TD> 
+         <TD> { prop.name }  </TD>
+         <TD> {  prop.value if prop.value else ''} </TD>
+         <TD> {prop.unit}  </TD>
+         <TD> {prop.norm}  </TD>
+    </TR>
+    {end:}
+</TABLE>
+
+</BODY> </HTML>

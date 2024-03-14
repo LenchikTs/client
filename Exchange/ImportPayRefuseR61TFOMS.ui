@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>653</width>
+    <height>399</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Импорт реестров - Ростовская область</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0,2,0" rowminimumheight="0,0,0,0,0">
+   <item row="4" column="0">
+    <layout class="QHBoxLayout">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnImport">
+       <property name="text">
+        <string>начать импортирование</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="text">
+        <string>закрыть</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <layout class="QHBoxLayout">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>импортировать из</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtFileName"/>
+     </item>
+     <item>
+      <widget class="QToolButton" name="btnSelectFile">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="CProgressBar" name="progressBar">
+     <property name="value">
+      <number>24</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTabWidget" name="tabRegime">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabFLC">
+      <attribute name="title">
+       <string>ФЛК</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="chkUpdateAccounts">
+         <property name="text">
+          <string>Разделить реестры по страховым компаниям</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <layout class="QHBoxLayout" name="_2">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="lblOutputDir">
+           <property name="text">
+            <string>Сохранить реестры в</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="edtOutputDir"/>
+         </item>
+         <item>
+          <widget class="QToolButton" name="btnSelectDir">
+           <property name="text">
+            <string>...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="chkUpdatePolicy">
+         <property name="text">
+          <string>Обновить полисные данные</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabMEK">
+      <attribute name="title">
+       <string>МЭК</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabReMEK">
+      <attribute name="title">
+       <string>повторный МЭК</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QTextBrowser" name="log"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CProgressBar</class>
+   <extends>QProgressBar</extends>
+   <header>library/ProgressBar.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkUpdateAccounts</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblOutputDir</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>75</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUpdateAccounts</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtOutputDir</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUpdateAccounts</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>btnSelectDir</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>617</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

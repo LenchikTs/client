@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>cryptoPage</class>
+ <widget class="QWidget" name="cryptoPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>498</width>
+    <height>202</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Криптография</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblCsp">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>130</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&amp;Криптопровайдер</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbCsp</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="cmbCsp"/>
+   </item>
+   <item row="0" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QRadioButton" name="rbnOwnPK">
+     <property name="text">
+      <string>Ключ пользователя по &amp;СНИЛС</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QRadioButton" name="rbnCustomPK">
+     <property name="text">
+      <string>&amp;Произвольный ключ пользователя</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="2">
+    <widget class="CCertComboBox" name="cmbUserCert">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblOrgCert">
+     <property name="text">
+      <string>Ключ медицинской &amp;организации</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbOrgCert</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="2">
+    <widget class="CCertComboBox" name="cmbOrgCert">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>4</number>
+     </property>
+     <item>
+      <widget class="QCheckBox" name="chkWarnAboutCertExpiration">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>П&amp;редупреждать об истечении срока действия сертификата за </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="edtCertExpirationWarnPeriod">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblCertExpirationWarnPeriod">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>&amp;дней</string>
+       </property>
+       <property name="buddy">
+        <cstring>edtCertExpirationWarnPeriod</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="5" column="0">
+    <spacer name="verticalSpacertCryptography">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>129</width>
+       <height>218</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CCertComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">library/CertComboBox</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cmbCsp</tabstop>
+  <tabstop>rbnOwnPK</tabstop>
+  <tabstop>rbnCustomPK</tabstop>
+  <tabstop>cmbUserCert</tabstop>
+  <tabstop>cmbOrgCert</tabstop>
+  <tabstop>chkWarnAboutCertExpiration</tabstop>
+  <tabstop>edtCertExpirationWarnPeriod</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>rbnCustomPK</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbUserCert</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>368</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkWarnAboutCertExpiration</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtCertExpirationWarnPeriod</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>393</x>
+     <y>114</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkWarnAboutCertExpiration</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblCertExpirationWarnPeriod</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>466</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

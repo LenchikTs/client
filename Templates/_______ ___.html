@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+{setPageSize('A4')}
+{setOrientation('P')}
+{setLeftMargin(5)} {setTopMargin(5)} {setBottomMargin(5)} {setRightMargin(10)}
+
+{: currentAction = None}
+{for: action in event.actions}
+{if: action.name == u"Справка КЭК"}{: currentAction = action}{end:}
+{end:}
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><b><font size="5">Справка КЭК № <u>{currentAction[u"Номер"].value if currentAction[u"Номер"].value else "       "}</u></font></b></td></tr>
+<tr><td>Дана{: string = client.shortName}<u><font face="Courier">{ " "*1 + string + " "*(25-len(string)) }</font></u>, {: string = client.birthDate.date.year()}<u><font face="Courier">{string}</font></u> г.р.<br>
+в том, что он(а) нуждается в следующих видах медицинской реабилитации:</td></tr>
+<tr><td><b><big>1. Восстановительная терапия</big></b></td></tr>
+<tr><td>конкретные виды восстановительного лечения, с указанием формы проведения<br>
+(амбулаторной, стационарной, на дому), сроков проведения.</td></tr>
+<tr><td>
+{: string = currentAction[u"Восстановительная терапия"].value[:35] if currentAction[u"Восстановительная терапия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Восстановительная терапия"].value[35:70] if currentAction[u"Восстановительная терапия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Восстановительная терапия"].value[70:105] if currentAction[u"Восстановительная терапия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Восстановительная терапия"].value[105:140] if currentAction[u"Восстановительная терапия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Восстановительная терапия"].value[140:175] if currentAction[u"Восстановительная терапия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Восстановительная терапия"].value[175:210] if currentAction[u"Восстановительная терапия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>2. Реконструктивная хирургия</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Реконструктивная хирургия"].value[:35] if currentAction[u"Реконструктивная хирургия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Реконструктивная хирургия"].value[35:70] if currentAction[u"Реконструктивная хирургия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Реконструктивная хирургия"].value[70:105] if currentAction[u"Реконструктивная хирургия"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>3. Протезно-ортопедическая помощь</big></b></td></tr>
+<tr><td>конкретные виды протезирования, ортезирования</td></tr>
+<tr><td>
+{: string = currentAction[u"Протезно-ортопедическая помощь"].value[:35] if currentAction[u"Протезно-ортопедическая помощь"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Протезно-ортопедическая помощь"].value[35:70] if currentAction[u"Протезно-ортопедическая помощь"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Протезно-ортопедическая помощь"].value[70:105] if currentAction[u"Протезно-ортопедическая помощь"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>4. Санаторно-курортное лечение</big></b></td></tr>
+<tr><td>с предписанием профиля, краткости, сезона, срока</td></tr>
+<tr><td>
+{: string = currentAction[u"Санаторно-курортное лечение"].value[:35] if currentAction[u"Санаторно-курортное лечение"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Санаторно-курортное лечение"].value[35:70] if currentAction[u"Санаторно-курортное лечение"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Санаторно-курортное лечение"].value[70:105] if currentAction[u"Санаторно-курортное лечение"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>5. Технические средства медицинской реабилитации</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Технические средства медицинской реабилитации"].value[:35] if currentAction[u"Технические средства медицинской реабилитации"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Технические средства медицинской реабилитации"].value[35:70] if currentAction[u"Технические средства медицинской реабилитации"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Технические средства медицинской реабилитации"].value[70:105] if currentAction[u"Технические средства медицинской реабилитации"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>6. Психологическая реалибитация</big></b></td></tr>
+<tr><td>конкретные виды психологической реабилитации  (психотерапия, психологическая<br>
+коррекция, психологическое консультирование)</td></tr>
+<tr><td>
+{: string = currentAction[u"Психологическая реалибитация"].value[:35] if currentAction[u"Психологическая реалибитация"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Психологическая реалибитация"].value[35:70] if currentAction[u"Психологическая реалибитация"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Психологическая реалибитация"].value[70:105] if currentAction[u"Психологическая реалибитация"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b>Председатель КЭК: </b><!--currentAction[u"Председатель КЭК"].value if currentAction[u"Председатель КЭК"].value else "" --></td></tr>
+<tr><td><b>Зав. отделением: </b>{""}</td></tr>
+<tr><td><b>Лечащий врач: </b> <!--{currentAction.setPerson.shortName} --></td></tr>
+<tr><td>Дата выдачи: {currentAction.begDate}</td></tr>
+<tr><td>Печать ЛПУ: </td></tr>
+</table>
+</body>
+</html>

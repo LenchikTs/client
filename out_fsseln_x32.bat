@@ -1,0 +1,1 @@
+c:\Python27\Scripts\pyinstaller appendix\fsselnv2\main.py --icon=icons\Icon2.ico --add-data i18n;i18n -n fsseln --distpath out\dist32 --workpath out\build32 --noconfirm --noconsole --paths appendix\fsselnv2

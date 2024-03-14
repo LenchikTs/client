@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>jobsOperatingPage</class>
+ <widget class="QWidget" name="jobsOperatingPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>651</width>
+    <height>405</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Выполнение работ</string>
+  </property>
+  <property name="toolTip">
+   <string/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="2" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="1">
+    <widget class="QCheckBox" name="chkJobTicketEndDateAskingIsRequired">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="2">
+    <spacer name="horizontalSpacer_8">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>168</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblJobsOperatingIdentifierScan">
+     <property name="text">
+      <string>Выбор &amp;идентификатора</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbJobsOperatingIdentifierScan</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblJobTicketEndDateAskingIsRequired">
+     <property name="text">
+      <string>Требовать подтверждения &amp;времени исполнения Работы</string>
+     </property>
+     <property name="buddy">
+      <cstring>chkJobTicketEndDateAskingIsRequired</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbJobsOperatingIdentifierScan">
+     <item>
+      <property name="text">
+       <string>Идентификатор направления</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Идентификатор биоматериала</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Идентификатор пробы</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>chkJobTicketEndDateAskingIsRequired</tabstop>
+  <tabstop>cmbJobsOperatingIdentifierScan</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

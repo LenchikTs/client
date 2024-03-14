@@ -1,0 +1,134 @@
+<html>
+<body>
+{setPageSize('A4')} {setOrientation('P')} {setMargins(1)} 
+<table width="100%" border="1">
+<tr>
+<td>
+<table width="100%" border="1">
+  <tr>
+    <td width="95%" colspan="2"><b>{currentOrganisation.shortName}</b></td>
+    <td align="right"><b>Код ОГРН:&nbsp;{currentOrganisation.OGRN}</b></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+	 <b> <font size="+1"> Медицинская карта амбулаторного больного № </font> </b> 
+	</td>
+	<td align="right">
+	  <b><font size="+3">{client.id}</font></b>
+	</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+	  <b><font size="+2">{client.fullName}</font></b>
+	</td>
+	<td align="right">
+	  <b>Пол:&nbsp;{client.sex}</b>
+	</td>
+  </tr>
+  <tr>
+    <td colspan="3">
+	<b>Дата рождения:&nbsp;{client.birthDate} Поликлиника по месту жительства: </b>
+	</td> 
+  </tr>	
+<tr>
+<td colspan="3">
+<b>Прикрепление: {client.permanentAttach.orgStructure.name}<b>
+</td>
+</tr>
+  <tr>	
+	<td>
+	 <b>Отношение к работе: {if: len(client.work.shortName)}Работает{else:} Не работает {end:}</b>
+ 	</td>
+	<td>
+	  <b>Образование:  {if:len(client.socStatuses)} {for: s in client.socStatuses}{if:s.classes==u"образование"}{s.name+" "}{end:}{end:}{end:}</b>
+	</td>
+	<td>
+	  <b>Отрасль:</b>
+	</td>
+  </tr>
+  <tr>  	
+	<td colspan="3">
+	 <b>Место работы (учебы), должность: {client.work.shortName} {client.work.post} </b>	</td>	
+  </tr>
+  <tr>
+    <td colspan="3">&nbsp;
+	</td>
+  </tr> 
+  <tr>
+    <td>
+	  <b>СНИЛС: {client.SNILS} </b>
+	</td>
+	<td>
+	  <b>Социальное положение:  {if:len(client.socStatuses)} {for: s in client.socStatuses}{if:s.classes==u"Социальный статус"}{s.name+" "}{end:}{end:}{end:}</b>
+	</td>
+	<td>
+	  <b>Житель:  {:incity = (str(client.locAddress.KLADRCode)[8:11] == '000')}{if: incity}<u>{end:}городской{if: incity}</u>{end:}, {if: not incity}<u>{end:}сельский{if: not incity}</u>{end:}  </b> 
+	</td>
+  </tr>
+</table>
+</td>
+<td width="5%">
+{if:len(client.socStatuses)}
+     <font size="+3"><b>Л</b></font>
+    {end:}
+
+</td>
+</tr>
+</table>
+<table width="100%" border="1">
+ <tr>
+   <td>
+     <b>Паспортные данные: {client.document.type} {client.document.serial} {client.document.number} {client.document.date} </b>
+   </td>
+ </tr>
+ <tr>
+   <td>
+    <b> Адрес проживания: {client.locAddress} </b>
+   </td>
+ </tr>
+  <tr>
+    <td>
+	 <b>Адрес регистрации: {client.regAddress} </b>
+    </td>
+  </tr>	
+  <tr>
+    <td>
+	 <b> Контактные данные: {client.phones} </b>
+    </td>
+  </tr>	
+</table>
+
+<table width="100%">
+<tr>
+  <td>
+    <b> СМК: {client.policy.insurer}</b>
+  </td>
+</tr>
+<tr>
+  <td>
+    <b> Серия/Номер: {client.policy.serial} {client.policy.number} </b>
+  </td>
+</tr>
+<tr>
+  <td>
+    <b> Период действия: с: {client.policy.begDate}  по: {client.policy.endDate}</b>
+  </td>
+</tr>
+</table>
+{if:len(client.socStatuses)}
+<b>Документы, подтверждающие льготы:</b>
+<table width="100%">
+{for: s in client.socStatuses}
+{if: s.classes.items[0].group and s.classes.items[0].group.name == u'льгота'}
+<tr>
+ <td><b>Код льготы: {s.code}</b></td>
+ <td><b>Документ: {s.document.documentTypeName}</b></td>
+ <td><b>Серия: {s.document.serial}</b></td>
+ <td><b>№: {s.document.number}</b></td>
+</tr>
+{end:}
+{end:}
+</table>
+{end:}
+</body>
+</html>

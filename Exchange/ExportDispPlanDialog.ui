@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ExportDispPlanDialog</class>
+ <widget class="QDialog" name="ExportDispPlanDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>914</width>
+    <height>681</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Экспорт списка лиц, запланированных для проведения профилактических мероприятий</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="7" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnExport">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Экспорт</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Год</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="sbYear">
+       <property name="minimum">
+        <number>2017</number>
+       </property>
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Месяцы: с</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cmbMonthFrom">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>января</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>февраля</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>марта</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>апреля</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>мая</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>июня</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>июля</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>августа</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>сентября</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>октября</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ноября</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>декабря</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>по</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cmbMonthTo">
+       <property name="currentIndex">
+        <number>11</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>январь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>февраль</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>март</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>апрель</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>май</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>июнь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>июль</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>август</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>сентябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>октябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ноябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>декабрь</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Вид мероприятия:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cmbKind">
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="6" column="0">
+    <widget class="QProgressBar" name="pbExportProgress">
+     <property name="format">
+      <string>%v из %m</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblPlanCount">
+     <property name="text">
+      <string>Запланировано: 0</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="CTableView" name="tblDispPlan">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>3</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblExportStatus">
+     <property name="text">
+      <string>Отправка пакетов...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="CTableView" name="tblDispPlanErrors">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Ошибки:</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

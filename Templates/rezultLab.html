@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    
+<html>
+<head>{ setPageSize('A5') }{ setOrientation('P') }{ setLeftMargin(10.0) }{ setTopMargin(5.0) }{ setRightMargin(10.0) }{ setBottomMargin(10.0) }
+<!--Главный скрипт-->
+<!--Конец главного скрипта-->
+
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+{for: tissue in takenTissueJournalItems}
+{: actions = tissue.actions if tissue else []}
+{: event = actions[0].event if len(actions) else None}
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td width=20%><img src="blank/image/lecheb_center.jpg"></td><td width=60% align=center><b>{currentOrganisation.shortName}</b></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+Ф.И.О.: <b>{tissue.client.shortName}</b>  Диагноз: <b>{event.diagnosises[0].MKB.code if event and len(event.diagnosises) else ""}</b><br>
+<font size=1>(пациента)</font><br>
+Ф.И.О.: <b>{event.setPerson.shortName if event else ""}</b>  Номер и/б: <b>{tissue.client.identification.byCode["77"]}</b><br>
+<font size=1>(врача)</font><br>
+Дата рождения: <b>{tissue.client.birthDate.date.toString("dd.MM.yy")}</b>  Пол <b>{tissue.client.sex}</b><br>
+Дата взятия анализа: <b>{tissue.datetimeTaken.date.toString("dd.MM.yy")}</b>  Дата выдачи анализа: <b>{currentDate.date.toString("dd.MM.yy")}</b>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:42"> </p></td></tr>
+
+<tr><td align=center>
+<big><b>{actionType.name if actionType.name else u"Результаты лабораторных исследований"}</b></big><!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:42"> </p></td></tr>
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td align=center>Анализ</td><td align=center>Результат</td><td align=center>Норма</td></tr>
+{for: act in actions}
+
+ {for: (i, prop) in enumerate(act)}
+ {if: prop.visibleInTableRedactor > 0 and act.status == 2 and prop.value}
+   <tr><td align=left>{act.name if (prop.name == u"Результат" or prop.name == u"результат") else prop.name}</td><td align=center>{unicode(prop.value)}</td><td align=center>{prop.norm}</td></tr>
+  {end:}
+ {end:}
+{end:}
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:42"> </p></td></tr>
+
+<tr><td align=right>
+Врач КЛД___________________________________
+</td></tr>
+</table>
+
+<!--НОВАЯ СТРАНИЦА-->
+<p style="page-break-after: always"><font color=#FFFFFF>.</font></p>
+{end:}
+</body>
+</html>

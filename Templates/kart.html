@@ -1,0 +1,79 @@
+<HTML><BODY>
+<HR>
+<CENTER>ТАКОЙ ВОТ ТАЛОНЧЕГ - 110% яду!</CENTER>
+<HR>
+код: {client.id}&nbsp;<FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT><BR/>
+ФИО: <B>{client.fullName}</B><BR/>
+Ф: <B>{client.lastName}</B><BR/>
+И: <B>{client.firstName}</B><BR/>
+О: <B>{client.patrName}</B><BR/>
+
+ДР:  <B>{client.birthDate}</B>(<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС:<B>{client.SNILS}</B><BR/>
+Док: <B>{client.document}</B><BR/>
+Док-тип:   <B>{client.document.type}</B><BR/>
+Док-серия: <B>{client.document.serial}</B><BR/>
+Док-номер: <B>{client.document.number}</B><BR/>
+
+Полис:<B>{client.policy}</B><BR/>
+Полис-тип:<B>{client.policy.type}</B><BR/>
+Полис-CK:<B>{client.policy.insurer}</B><BR/>
+Полис-серия:<B>{client.policy.serial}</B><BR/>
+Полис-номер:<B>{client.policy.number}</B><BR/>
+Полис-нач.дата:<B>{client.policy.begDate}</B><BR/>
+Полис-нач.дата:<B>{client.policy.endDate}</B><BR/>
+
+
+Рег:<B>{client.regAddress}</B><BR/>
+Рег-КЛАДР:<B>      {client.regAddress.KLADRCode}</B><BR/>
+Рег-КЛАДР улицы:<B>{client.regAddress.KLADRStreetCode}</B><BR/>
+Рег-город:<B>      {client.regAddress.city}</B><BR/>
+Рег-улица:<B>      {client.regAddress.street}</B><BR/>
+Рег-дом:<B>        {client.regAddress.number}</B><BR/>
+Рег-корпус:<B>     {client.regAddress.corpus}</B><BR/>
+Рег-квартира:<B>   {client.regAddress.flat}</B><BR/>
+Рег-текст:<B>      {client.regAddress.freeInput}</B><BR/>
+
+
+Прож:<B>{client.locAddress}</B><BR/>
+Прож-КЛАДР:<B>      {client.locAddress.KLADRCode}</B><BR/>
+Прож-КЛАДР улицы:<B>{client.locAddress.KLADRStreetCode}</B><BR/>
+Прож-город:<B>      {client.locAddress.city}</B><BR/>
+Прож-улица:<B>      {client.locAddress.street}</B><BR/>
+Прож-дом:<B>        {client.locAddress.number}</B><BR/>
+Прож-корпус:<B>     {client.locAddress.corpus}</B><BR/>
+Прож-квартира:<B>   {client.locAddress.flat}</B><BR/>
+Прож-текст:<B>      {client.locAddress.freeInput}</B><BR/>
+
+Тел:<B>{client.phones}</B><BR/>
+
+
+соц.статусы:<B>     {client.socStatuses}</B><BR/>
+
+{if:len(client.socStatuses)}
+<TABLE>
+<TR><TD>код</TD><TD>имя</TD><TD>всё</TD></TR>
+{for: s in client.socStatuses}
+    <TR><TD>{s.code}</TD><TD>{s.name}</TD><TD>{s}</TD></TR>
+{end:}
+</TABLE>
+{end:}
+
+<TABLE BORDER=3><TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100><FONT SIZE=+5>
+{if:len(client.socStatuses)}
+Л
+{else:}
+Х
+{end:}
+</TR></TD></FONT></TABLE>
+
+занятость:<B>{client.work}</B><BR/>
+занятость-орг.:<B>{client.work.shortName}</B><BR/>
+занятость-должность:<B>{client.work.post}</B><BR/>
+занятость-ОКВЕД:<B>{client.work.OKVED}</B><BR/>
+
+<HR>
+Сегодня:<B>{currentDate}</B><BR/>
+Сейчас:<B>{currentTime}</B><BR/>
+
+</BODY></HTML>
+

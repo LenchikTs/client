@@ -1,0 +1,10 @@
+/home/notifier/.samson-vista/*log {
+    missingok
+    notifempty
+    daily
+    dateext
+    compress
+    delaycompress
+    maxage 2
+    rotate 2
+}

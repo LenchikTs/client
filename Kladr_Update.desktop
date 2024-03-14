@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Kladr_Update
+Name[ru]=КЛАДР
+Comment=
+Icon=/opt/client/icons/s11.png
+Exec=/opt/client/install/bin/kladr_update.sh
+Path=/opt/client
+Terminal=false
+StartupNotify=false

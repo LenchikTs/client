@@ -1,0 +1,90 @@
+<HTML><BODY>
+{setOrientation('Landscape')}
+код: <B>{client.id}</B>&nbsp;<FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT>
+СНИЛС: <B>{client.SNILS}</B> Дата <B>{currentDate}</B>
+<HR>
+<H3>ТАЛОН АМБУЛАТОРНОГО ПАЦИЕНТА</H3>
+<TABLE BORDER=0 WIDTH="100%%" cellpadding="0" cellspacing="0">
+<TR><TD>ФИО</TD><TD COLSPAN=5><B>{client.fullName}</B></TD></TR>
+<TR><TD>Пол</TD><TD COLSPAN=5><B>{client.sex}</TD></B></TR>
+<TR><TD>Дата рождения</TD><TD><B> {client.birthDate}</B> ({client.age}) </TD></TR>
+<TR><TD>Тел</TD><TD COLSPAN=5><B>{client.phones}</B></TD></TR>
+<TR><TD>Полис ОМС</TD><TD COLSPAN=5><B>{client.policy}</B></TD></TR>
+<TR><TD>Документ</TD><TD COLSPAN=5><B>{client.document}</B></TD></TR>
+<TR><TD>Прописан</TD><TD COLSPAN=5><B>{client.regAddress}</B></TD></TR>
+<TR><TD>Проживает</TD><TD COLSPAN=5><B>{client.locAddress}</B></TD></TR>
+<TR><TD COLSPAN=5>Организован: 1-Да, 2-Нет.  Ясли-Сад ___, Школа № ___ ГЗ 123</TD></TR>
+</TABLE>
+<H4>СЛУЧАЙ ПОЛИКЛИНИЧЕСКОГО ОБЛУЖИВАНИЯ</H4>
+<TABLE BORDER=0 WIDTH="100%%" cellpadding="0" cellspacing="0">
+<TR><TD VALIGN="TOP"><SMALL>Цель:</SMALL></TD>           <TD COLSPAN=2><SMALL>01-Леч.Диагн.,02-Консультант., 03-Диспансер., 04-Профилакт., 05-Профилакт.осмотр, 06-Проф.осмотр, 07-Реабилитация,14-Мед.соц, 15-конст.смерти, 16-патронаж, 18-платный, 27-дн.стац. 99-Прочее</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Случай:</SMALL></TD>         <TD COLSPAN=2><SMALL>1-Первичный, 2-Повторный</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Порядок направления:</SMALL></TD>  <TD COLSPAN=2><SMALL>1-планово, 2-экстрено, 3-самотеком, 4-принудительно</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Исход:</SMALL></TD>          <TD COLSPAN=2><SMALL>01-Выздоровление, 02-Улучшение, 03-Динам.наблюд.,Направлен: 04- на госпит., 05- в дн.стац., 06-в стац.на дому, 07-на консул.,08-на внеш.консул.;09-Справка для путевки,99-Смерть</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Инвалидность:</SMALL></TD>   <TD COLSPAN=2><SMALL>1-Уст.впервые, 2-Подтверждена, 3-Усилена, 4-Снижена, 5-Снята</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Группа:</SMALL></TD>         <TD><SMALL>1,2,3,4,Д</SMALL></TD><TD><SMALL>Дата освидетельствования __/__/______</SMALL></TD></TR>
+</TABLE>
+
+
+<H4>ЗАБОЛЕВАНИЯ</H4>
+<TABLE BORDER=2 WIDTH="100%" cellpadding="0" cellspacing="0">
+<TR>
+    <TD VALIGN="TOP" WIDTH="5%%">№</TD>
+    <TD VALIGN="TOP" WIDTH="70%%">Наименование диагноза заболевания</TD>
+    <TD VALIGN="TOP" WIDTH="10%%">Код по МКБ</TD>
+    <TD VALIGN="TOP" WIDTH="5%%">Хар. забол.</TD>
+    <TD VALIGN="TOP" WIDTH="5%%">Дисп учет</TD>
+    <TD VALIGN="TOP" WIDTH="5%%">Травма</TD>
+</TR>
+<TR><TD>1</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+<TR><TD>2</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<TABLE BORDER=0 WIDTH="100%%" cellpadding="0" cellspacing="0">
+<TR><TD VALIGN="TOP"><SMALL>Характер:</SMALL></TD>  <TD COLSPAN=2 VALIGN="TOP"><SMALL>1-Острое, 2-Хрон.выявл.впервые, 3-Ранее известное, 4-обостр.хрон</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Дисп.учет:</TD>         <TD COLSPAN=2 VALIGN="TOP"><SMALL>1-Состоит; 2-Взят, 6-повторно; 3-Снят, 4- по вызд-ю, 5- смерть </SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Травма:</SMALL></TD>    <TD VALIGN="TOP"><SMALL>Произв:</SMALL></TD><TD><SMALL>01-Промышл, 02-Стройка, 03-Дор.-трансп, 04-С/Х, 05-Прочее</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>&nbsp;</SMALL></TD>     <TD VALIGN="TOP"><SMALL>Не связ.произв:</SMALL></TD><TD><SMALL>06-Бытовая, 07-Уличная, 08-Дор.-трансп,09-Школьная, 10-Спорт, 11-Прочее, 12-Тер.акт</SMALL></TD></TR>
+</TABLE>
+<H4>ПОСЕЩЕНИЯ</H4>
+<TABLE BORDER=2 WIDTH="100%%" cellpadding="0" cellspacing="0">
+<TR>
+    <TD VALIGN="TOP" WIDTH="5%%">№</TD>
+    <TD VALIGN="TOP" WIDTH="30%%">Дата посещения</TD>
+    <TD VALIGN="TOP" WIDTH="30%%">Врач</TD>
+    <TD VALIGN="TOP" WIDTH="30%%">Специальность</TD>
+    <TD VALIGN="TOP" WIDTH="5%%">Место</TD>
+</TR>
+<TR><TD>1</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+<TR><TD>2</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<TABLE BORDER=0 WIDTH="100%%" cellpadding="0" cellspacing="0">
+<TR><TD VALIGN="TOP"><SMALL>Место посещения:</SMALL></TD><TD VALIGN="TOP"><SMALL>1-Амбулаторно, 2-На дому, 3-Актив на дому, 4-на выезде .</SMALL></TD></TR>
+</TABLE>
+<H4>ВРЕМЕННАЯ УТРАТА</H4>
+<TABLE BORDER=0 WIDTH="100%%" cellpadding="0" cellspacing="0">
+<TR><TD>Серия</TD><TD> ___________________ </TD></TR>
+<TR><TD>Номер</TD><TD>___________________ </TD></TR>
+<TR><TD>Тип</TD><TD> больничный, справка </TD></TR>
+<TR><TD>Причина</TD><TD> 1-заболевание, 2- проф.забол., 3- несч.случ.в быту, 4- несч.случ.на произв., 5- по уходу, 6- карантин,7- пост.вакц.осложн.,8- СКЛ, 9-дородовый,10- послеродовый </TD></TR>
+<TR><TD>Пол</TD><TD>_____________ </TD></TR>
+<TR><TD>Возраст</TD><TD>_________ </TD></TR>
+</TABLE>
+<TABLE BORDER=2 WIDTH="100%%" cellpadding="0" cellspacing="0">
+<TR>
+    <TD VALIGN="TOP" WIDTH="3%%">№</TD>
+    <TD VALIGN="TOP" WIDTH="40%%">Дата открытия</TD>
+    <TD VALIGN="TOP" WIDTH="40%%">Дата закрытия</TD>
+    <TD VALIGN="TOP" WIDTH="5%%">Результат</TD>
+    <TD VALIGN="TOP" WIDTH="5%%">Режим</TD>
+    <TD VALIGN="TOP" WIDTH="5%%">Нарушения</TD>
+    <TD VALIGN="TOP" WIDTH="2%%">Внешний</TD>
+</TR>
+<TR><TD>1</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+<TR><TD>2</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+</TABLE>
+<TABLE BORDER=0 WIDTH="100%%" cellpadding="0" cellspacing="0">
+<TR><TD VALIGN="TOP"><SMALL>Результат:</SMALL></TD><TD VALIGN="TOP"><SMALL>1-годен к труду, 2-нетрудоспособен., 3-на КЭК.</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Режим:</SMALL></TD><TD VALIGN="TOP"><SMALL>1-стацинар, 2-амбулатор., 3-домашний, 4-постельный,5-санаторий.</SMALL></TD></TR>
+<TR><TD VALIGN="TOP"><SMALL>Нарушения:</SMALL></TD><TD VALIGN="TOP"><SMALL>1-режим, 2-не явка, 3-опьянение, 4-выход на работу, 5-уход,6-выезд,7-отказ.</SMALL></TD></TR>
+</TABLE>
+</BODY></HTML>

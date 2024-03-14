@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Samson_new
+Name[ru]=САМСОН
+Comment=
+Icon=/opt/client/icons/s11.png
+Exec=python2 /opt/client/s11main.py
+Path=/opt/client/
+Terminal=false
+StartupNotify=false

@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PreCreateEventDialog</class>
+ <widget class="QDialog" name="PreCreateEventDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>795</width>
+    <height>611</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Новое обращение</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <item row="21" column="1" colspan="2">
+    <widget class="CClientRelationComboBoxPatron" name="cmbClientRelationId"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblOrg">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;ЛПУ</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbOrg</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="CPolyclinicComboBox" name="cmbOrg"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblEventType">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Цель</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbEventType</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbEventType"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblSrcRegion">
+     <property name="text">
+      <string>Субъект</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="2">
+    <widget class="CKLADRComboBox" name="cmbSrcCity"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblSrcCity">
+     <property name="text">
+      <string>Район</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="CKladrOkatoComboBox" name="cmbSrcRegion"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblRelegate">
+     <property name="text">
+      <string>Направление</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="0">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="lblDays">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Дней</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtDays</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1" colspan="2">
+    <widget class="QCheckBox" name="chkUseCurrentDate">
+     <property name="text">
+      <string>Устанавливать текущую дату по умолчанию</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="CDateEdit" name="edtSrcDate">
+       <property name="displayFormat">
+        <string>dd.MM.yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblN">
+       <property name="text">
+        <string>№</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtSrcNumber">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblRelegatePerson">
+       <property name="text">
+        <string>Направил</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CPersonComboBoxEx" name="cmbRelegatePerson">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblSL">
+       <property name="text">
+        <string>/</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtRelegatePerson"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblSrcMKB">
+       <property name="text">
+        <string>МКБ</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CICDCodeEditEx" name="edtSrcMKB">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblVoucher">
+     <property name="text">
+      <string>Путевка</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="lblVoucherSerial">
+       <property name="text">
+        <string>серия</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtVoucherSerial"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblVoucherNumber">
+       <property name="text">
+        <string>номер</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="edtVoucherNumber">
+       <property name="inputMask">
+        <string>999999999999999; </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblVoucherBegDate">
+       <property name="text">
+        <string>с</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CDateEdit" name="edtVoucherBegDate">
+       <property name="displayFormat">
+        <string>dd.MM.yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblVoucherEndDate">
+       <property name="text">
+        <string>по</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CDateEdit" name="edtVoucherEndDate">
+       <property name="displayFormat">
+        <string>dd.MM.yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lblPersonal">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Врач</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbPerson</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1" colspan="2">
+    <widget class="CPersonComboBoxEx" name="cmbPerson"/>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="lblEventSetDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&amp;Дата c</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtEventSetDate</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="CCreateEventDateEdit" name="edtEventSetDate">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTimeEdit" name="edtEventSetTime">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="displayFormat">
+        <string>HH:mm</string>
+       </property>
+       <property name="currentSectionIndex">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblEventDate">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>по</string>
+       </property>
+       <property name="buddy">
+        <cstring>edtEventDate</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CCreateEventDateEdit" name="edtEventDate">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTimeEdit" name="edtEventTime">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="displayFormat">
+        <string>HH:mm</string>
+       </property>
+       <property name="currentSectionIndex">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>458</width>
+         <height>21</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="12" column="1">
+    <widget class="QSpinBox" name="edtDays">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="2">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>826</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="13" column="0">
+    <widget class="QLabel" name="lblExternalId">
+     <property name="toolTip">
+      <string>Внешний идентификатор</string>
+     </property>
+     <property name="text">
+      <string>Номер документа</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtExternalId"/>
+   </item>
+   <item row="14" column="0">
+    <widget class="QLabel" name="lblAssistantId">
+     <property name="text">
+      <string>Ассистент</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="1" colspan="2">
+    <widget class="CPersonComboBoxEx" name="cmbAssistantId"/>
+   </item>
+   <item row="15" column="0">
+    <widget class="QLabel" name="lblCuratorId">
+     <property name="text">
+      <string>Куратор</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="1" colspan="2">
+    <widget class="CPersonComboBoxEx" name="cmbCuratorId"/>
+   </item>
+   <item row="16" column="0">
+    <widget class="QLabel" name="lblTissueType">
+     <property name="text">
+      <string>Тип биоматериала</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbTissueType">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0" colspan="3">
+    <widget class="QCheckBox" name="chkSelectPreviousActions">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Отметить действия добавленные в прошлый раз</string>
+     </property>
+    </widget>
+   </item>
+   <item row="23" column="0" colspan="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblRelegateOrg">
+     <property name="text">
+      <string>Направитель</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="CPolyclinicComboBox" name="cmbRelegateOrg"/>
+     </item>
+     <item>
+      <widget class="QToolButton" name="btnSelectRelegateOrg">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="btnCopyRelegateOrgId">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="arrowType">
+        <enum>Qt::LeftArrow</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="11" column="1" colspan="2">
+    <widget class="QWidget" name="addVisitsWidget" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QCheckBox" name="chkAddVisits">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Добавить визиты по длительности</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="cmbWeekProfile">
+          <item>
+           <property name="text">
+            <string>по пятидневной рабочей неделе</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>по шестидневной рабочей неделе</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>по семидневной рабочей неделе</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>318</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="19" column="1" colspan="2">
+    <widget class="COrgStructureComboBox" name="cmbDirectedToOSId"/>
+   </item>
+   <item row="20" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbDirectedProfileId"/>
+   </item>
+   <item row="19" column="0">
+    <widget class="QLabel" name="lblDirectedToOSId">
+     <property name="text">
+      <string>Направлен в отделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="20" column="0">
+    <widget class="QLabel" name="lblDirectedProfileId">
+     <property name="text">
+      <string>Профиль</string>
+     </property>
+    </widget>
+   </item>
+   <item row="21" column="0">
+    <widget class="QLabel" name="lblClientRelationId">
+     <property name="text">
+      <string>Лицо по уходу</string>
+     </property>
+    </widget>
+   </item>
+   <item row="22" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPolyclinicComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CCreateEventDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>Events/CreateEventDateEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CICDCodeEditEx</class>
+   <extends>QLineEdit</extends>
+   <header>library/ICDCodeEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CKLADRComboBox</class>
+   <extends>QComboBox</extends>
+   <header>KLADR/kladrComboxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CKladrOkatoComboBox</class>
+   <extends>QComboBox</extends>
+   <header>KLADR/kladrComboxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CClientRelationComboBoxPatron</class>
+   <extends>QComboBox</extends>
+   <header>Registry/Utils.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cmbOrg</tabstop>
+  <tabstop>cmbEventType</tabstop>
+  <tabstop>cmbSrcCity</tabstop>
+  <tabstop>cmbSrcRegion</tabstop>
+  <tabstop>cmbRelegateOrg</tabstop>
+  <tabstop>btnSelectRelegateOrg</tabstop>
+  <tabstop>btnCopyRelegateOrgId</tabstop>
+  <tabstop>edtSrcDate</tabstop>
+  <tabstop>edtSrcNumber</tabstop>
+  <tabstop>cmbRelegatePerson</tabstop>
+  <tabstop>edtRelegatePerson</tabstop>
+  <tabstop>edtSrcMKB</tabstop>
+  <tabstop>edtVoucherSerial</tabstop>
+  <tabstop>edtVoucherNumber</tabstop>
+  <tabstop>edtVoucherBegDate</tabstop>
+  <tabstop>edtVoucherEndDate</tabstop>
+  <tabstop>cmbPerson</tabstop>
+  <tabstop>edtEventSetDate</tabstop>
+  <tabstop>edtEventSetTime</tabstop>
+  <tabstop>edtEventDate</tabstop>
+  <tabstop>edtEventTime</tabstop>
+  <tabstop>chkUseCurrentDate</tabstop>
+  <tabstop>chkAddVisits</tabstop>
+  <tabstop>cmbWeekProfile</tabstop>
+  <tabstop>edtDays</tabstop>
+  <tabstop>edtExternalId</tabstop>
+  <tabstop>cmbAssistantId</tabstop>
+  <tabstop>cmbCuratorId</tabstop>
+  <tabstop>cmbTissueType</tabstop>
+  <tabstop>chkSelectPreviousActions</tabstop>
+  <tabstop>cmbDirectedToOSId</tabstop>
+  <tabstop>cmbDirectedProfileId</tabstop>
+  <tabstop>cmbClientRelationId</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>PreCreateEventDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>256</x>
+     <y>404</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>PreCreateEventDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>324</x>
+     <y>404</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

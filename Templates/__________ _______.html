@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+{setPageSize('A4')}
+{setOrientation('P')}
+{setLeftMargin(5)} {setTopMargin(5)} {setBottomMargin(5)} {setRightMargin(10)}
+
+{: currentAction = None}
+{for: action in event.actions}
+{if: action.name == u"Переводно эпикриз"}{: currentAction = action}{end:}
+{end:}
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center"><b><font size="5">Переводной эпикриз № <u>{currentAction[u"Номер"].value if currentAction[u"Номер"].value else "       "}</u></font></b></td></tr>
+<tr><td>Дана{: string = client.shortName}<u><font face="Courier">{ " "*1 + string + " "*(25-len(string)) }</font></u>, {: string = client.birthDate.date.year()}<u><font face="Courier">{string}</font></u> г.р.<br>
+в том, что он(а) находилась(лся) в отделении:{: string = (currentAction[u"Отделение"].value if currentAction[u"Отделение"].value else "")}<u><font face="Courier">{ " "*1 + string + " "*(18-len(string)) }</font></u><br>
+с {: string = str(currentAction.begDate)}<u><font face="Courier">{string + " "*(10 - len(string)) }</font></u> по {: string = str(currentAction.endDate)}<u><font face="Courier">{string + " "*(10 - len(string)) }</font></u></td></tr>
+<tr><td><b><big>Анамнез:</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Анамнез"].value[:35] if currentAction[u"Анамнез"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Анамнез"].value[35:70] if currentAction[u"Анамнез"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Анамнез"].value[175:210] if currentAction[u"Анамнез"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>Диагноз:</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Диагноз"].value[:35] if currentAction[u"Диагноз"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Диагноз"].value[35:70] if currentAction[u"Диагноз"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Диагноз"].value[70:105] if currentAction[u"Диагноз"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>Жалобы:</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Жалобы"].value[:35] if currentAction[u"Жалобы"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Жалобы"].value[35:70] if currentAction[u"Жалобы"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Жалобы"].value[70:105] if currentAction[u"Жалобы"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>Лечение:</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Лечение"].value[:35] if currentAction[u"Лечение"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Лечение"].value[35:70] if currentAction[u"Лечение"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Лечение"].value[70:105] if currentAction[u"Лечение"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>Обследование:</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Обследование"].value[:35] if currentAction[u"Обследование"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Обследование"].value[35:70] if currentAction[u"Обследование"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Обследование"].value[70:105] if currentAction[u"Обследование"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>Операции:</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Операции"].value[:35] if currentAction[u"Операции"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Операции"].value[35:70] if currentAction[u"Операции"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Операции"].value[70:105] if currentAction[u"Операции"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+<tr><td><b><big>Переведен в</big></b></td></tr>
+<tr><td>
+{: string = currentAction[u"Переведен в"].value[:35] if currentAction[u"Переведен в"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Переведен в"].value[35:70] if currentAction[u"Переведен в"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u><br>
+{: string = currentAction[u"Переведен в"].value[70:105] if currentAction[u"Переведен в"].value else ""}<u><font face="Courier">{string + " "*(35 - len(string)) }</font></u>
+</td></tr>
+
+<tr><td><b>Лечащий врач: </b> <!--{currentAction.setPerson.shortName} --></td></tr>
+<tr><td>Дата выдачи: {currentAction.begDate}</td></tr>
+<tr><td>Печать ЛПУ: </td></tr>
+</table>
+</body>
+</html>

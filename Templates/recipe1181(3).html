@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+{setPageSize('A4')}
+{setOrientation('Landscape')}
+{setMargins(0)}
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:400; font-style:normal;">
+<div style="page-break-after:always;">
+<table width=100%>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=40%>
+
+<tr><td>
+<table width=25%>
+<tr><td>
+Наименование медицинской организации:</td></tr>
+<tr><td width=25%>Штамп</td>
+<td width=40%><table width=100% border="1" cellpadding=0 cellspacing=0><tr><td align="center" style="font-size:10pt">
+{currentOrganisation.infisCode}
+</td></tr></table></td><td width=35%></td></tr>
+<tr><td width=25%>ОГРН</td>
+<td width=40%><table width=100% border="1" cellpadding=0 cellspacing=0><tr><td align="center" style="font-size:10pt">
+{currentOrganisation.OGRN}
+</td></tr></table></td><td width=35%></td></tr>
+
+</table>
+</td><td align=right >
+<b>Утверждена</b><br>
+<b>Приказом Министерства здравоохранения <br>
+Российской Федерации от 20 декабря 2012 г. № 1181 н<br>Форма № 1-МИ<br>экз.1</b>
+</td></tr>
+</table>
+
+<!--2-->
+<table font-size:10pt width=40%>
+<!--<tr>
+<td height=10 colspan=3 style="font-size:1pt"></td>
+</tr>-->
+<tr><td colspan=3><table border="0" cellpadding=2 cellspacing=0><tr>
+<td valign="bottom"><table border="0" cellpadding=0 cellspacing=0>
+<td><table border="1" cellpadding=0 cellspacing=0><tr>
+<td>
+<table cellpadding=0 cellspacing=0><tr><td><font>Источник финансирования при льготном<br>обеспечении(нужное подчеркнуть):</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Источник финансирования'].value==u'Федеральный'}<u>{end:} 1) федеральный бюджет{if: action[u'Источник финансирования'].value==u'100%'}</u>{end:}</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Источник финансирования'].value==u'Субъект РФ'}<u>{end:} 2)бюджет субъекта<br>Российской Федерации{if: action[u'Источник финансирования'].value==u'100%'}</u>{end:}</font></td></tr>
+</table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td><font>Процент оплаты пациентом:</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Процент льготы'].value==u'50%'}<u>{end:} 1) 100%{if: action[u'Процент льготы'].value==u'50%'}</u>{end:}</font></td></tr>
+<tr><td align="left"><font >{if: action[u'Процент льготы'].value==u'100%'}<u>{end:} 2) Бесплатно{if: action[u'Процент льготы'].value==u'100%'}</u>{end:}<br>(нужное подчеркнуть)</font></td></tr>
+<br>
+</table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td align="center"><font>Рецепт действителен в течение<br>(указать срок действия):</font></td></tr><tr><td align="center"><font>{action[u'Действителен в течение'].value}</font></td></tr></table></td>
+</tr></table></td>
+</tr></table></td></tr>
+<br>
+<!--5-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0 width=100%><tr>
+<td><table cellpadding=0 cellspacing=0 width=100%><tr>
+<td align="left"><font>РЕЦЕПТ&nbsp;Серия&nbsp;{"".join(action[u'Серия и номер бланка'].value.split()[:1])}&nbsp;N&nbsp;{"".join(action[u'Серия и номер бланка'].value.split()[1:])} Дата выдачи от {action.endDate.toString("dd.MM.yyyy")}</font></td><td  
+</table></td>
+</tr></table></td></tr>
+<br>
+_________________ " Пациенту с хроническим заболеванием"
+<br>
+Ф.И.О. пациента: {client.fullName}
+<br>
+Дата рождения {client.birthDate.date.toString("dd.MM.yyyy")}
+<br>
+<!--9-->
+Номер страхового медицинского полиса:{" "+client.policy.serial} {client.policy.number}
+<br>
+<!--10-->
+Номер медицинской карты пациента: <u>{client.id}</u>
+<br>
+<!--12-->
+Ф.И.О. медицинского работника: <u>{" "+action.person.longName}</u>
+<br>
+Код лечащего врача: {action.person.regionalCode}
+<br>
+Номер телефона медицинского работника: ___________________</small>
+<br>
+Наименование медицинского изделия: <u>{" "+action[u'Выписано'].value}</u>
+<br>
+Количество единиц: <u>{" "+action[u'Количество единиц'].value}</u> 
+<br>
+Подпись медицинского работника ___________________________________<br>
+<br>
+Личная печать медицинского работника 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	М.П.<br>
+<br>
+<br>
+------------&nbsp;(заполняется специалистом аптечной организации)&nbsp;------------
+<br>
+<br>
+Отпущено по рецепту;
+<br>
+Дата отпуска "__"______ _____ г.
+<br>
+Наименование медицинского изделия:</font> {"."*25}
+<br>
+Количество единиц {"."*23}
+<br>
+На общую сумму {"."*27}
+<br>
+------------------------------------------&nbsp;(линия&nbsp;отрыва)&nbsp;-----------------------------------------<br>
+Корешок рецепта Серия {"".join(action[u'Серия и номер бланка'].value.split()[:1])} N {"".join(action[u'Серия и номер бланка'].value.split()[1:])} Дата выдачи от {action.endDate.toString("dd.MM.yyyy")}
+<br>
+Наименование медицинского изделия: {"_"*75}
+<br>
+Количество единиц {"_"*25}
+</table>
+</td>
+<td>
+<table cellpadding=0 cellspacing=0 width=40%>
+
+<tr><td>
+<table width=25%>
+<tr><td>
+Наименование медицинской организации:</td></tr>
+<tr><td width=25%>Штамп</td>
+<td width=40%><table width=100% border="1" cellpadding=0 cellspacing=0><tr><td align="center" style="font-size:10pt">
+{currentOrganisation.infisCode}
+</td></tr></table></td><td width=35%></td></tr>
+<tr><td width=25%>ОГРН</td>
+<td width=40%><table width=100% border="1" cellpadding=0 cellspacing=0><tr><td align="center" style="font-size:10pt">
+{currentOrganisation.OGRN}
+</td></tr></table></td><td width=35%></td></tr>
+
+</table>
+</td><td align=right >
+<b>Утверждена</b><br>
+<b>Приказом Министерства здравоохранения <br>
+Российской Федерации от 20 декабря 2012 г. № 1181 н<br>Форма № 1-МИ<br>экз.2</b>
+</td></tr>
+</table>
+
+<!--2-->
+<table font-size:10pt width=40%>
+<!--<tr>
+<td height=10 colspan=3 style="font-size:1pt"></td>
+</tr>-->
+<tr><td colspan=3><table border="0" cellpadding=2 cellspacing=0><tr>
+<td valign="bottom"><table border="0" cellpadding=0 cellspacing=0>
+<td><table border="1" cellpadding=0 cellspacing=0><tr>
+<td>
+<table cellpadding=0 cellspacing=0><tr><td><font>Источник финансирования при льготном<br>обеспечении(нужное подчеркнуть):</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Источник финансирования'].value==u'Федеральный'}<u>{end:} 1) федеральный бюджет{if: action[u'Источник финансирования'].value==u'100%'}</u>{end:}</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Источник финансирования'].value==u'Субъект РФ'}<u>{end:} 2)бюджет субъекта<br>Российской Федерации{if: action[u'Источник финансирования'].value==u'100%'}</u>{end:}</font></td></tr>
+</table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td><font>Процент оплаты пациентом:</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Процент льготы'].value==u'50%'}<u>{end:} 1) 100%{if: action[u'Процент льготы'].value==u'50%'}</u>{end:}</font></td></tr>
+<tr><td align="left"><font >{if: action[u'Процент льготы'].value==u'100%'}<u>{end:} 2) Бесплатно{if: action[u'Процент льготы'].value==u'100%'}</u>{end:}<br>(нужное подчеркнуть)</font></td></tr>
+<br>
+</table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td align="center"><font>Рецепт действителен в течение<br>(указать срок действия):</font></td></tr><tr><td align="center"><font>{action[u'Действителен в течение'].value}</font></td></tr></table></td>
+</tr></table></td>
+</tr></table></td></tr>
+<br>
+<!--5-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0 width=100%><tr>
+<td><table cellpadding=0 cellspacing=0 width=100%><tr>
+<td align="left"><font>РЕЦЕПТ&nbsp;Серия&nbsp;{"".join(action[u'Серия и номер бланка'].value.split()[:1])}&nbsp;N&nbsp;{"".join(action[u'Серия и номер бланка'].value.split()[1:])} Дата выдачи от {action.endDate.toString("dd.MM.yyyy")}</font></td><td  
+</table></td>
+</tr></table></td></tr>
+<br>
+_________________ " Пациенту с хроническим заболеванием"
+<br>
+Ф.И.О. пациента: {client.fullName}
+<br>
+Дата рождения {client.birthDate.date.toString("dd.MM.yyyy")}
+<br>
+<!--9-->
+Номер страхового медицинского полиса:{" "+client.policy.serial} {client.policy.number}
+<br>
+<!--10-->
+Номер медицинской карты пациента: <u>{client.id}</u>
+<br>
+<!--12-->
+Ф.И.О. медицинского работника: <u>{" "+action.person.longName}</u>
+<br>
+Код лечащего врача: {action.person.regionalCode}
+<br>
+Номер телефона медицинского работника: ___________________</small>
+<br>
+Наименование медицинского изделия: <u>{" "+action[u'Выписано'].value}</u>
+<br>
+Количество единиц: <u>{" "+action[u'Количество единиц'].value}</u> 
+<br>
+Подпись медицинского работника ___________________________________<br>
+<br>
+Личная печать медицинского работника 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	М.П.<br>
+<br>
+<br>
+--------------------------------------&nbsp;(заполняется специалистом аптечной организации)&nbsp;----------------------------------------
+<br>
+<br>
+Отпущено по рецепту;
+<br>
+Дата отпуска "__"______ _____ г.
+<br>
+Наименование медицинского изделия:</font> {"."*25}
+<br>
+Количество единиц {"."*23}
+<br>
+На общую сумму {"."*27}
+<br>
+------------------------------------------&nbsp;(линия&nbsp;отрыва)&nbsp;-----------------------------------------<br>
+Корешок рецепта Серия {"".join(action[u'Серия и номер бланка'].value.split()[:1])} N {"".join(action[u'Серия и номер бланка'].value.split()[1:])} Дата выдачи от {action.endDate.toString("dd.MM.yyyy")}
+<br>
+Наименование медицинского изделия: {"_"*75}
+<br>
+Количество единиц {"_"*25}
+</table>
+</td><tr>
+</table >
+
+
+
+
+<table cellpadding=0 cellspacing=0 width=50%>
+
+<tr><td>
+<table width=25%>
+<tr><td>
+Наименование медицинской организации:</td></tr>
+<tr><td width=25%>Штамп</td>
+<td width=40%><table width=100% border="1" cellpadding=0 cellspacing=0><tr><td align="center" style="font-size:10pt">
+{currentOrganisation.infisCode}
+</td></tr></table></td><td width=35%></td></tr>
+<tr><td width=25%>ОГРН</td>
+<td width=40%><table width=100% border="1" cellpadding=0 cellspacing=0><tr><td align="center" style="font-size:10pt">
+{currentOrganisation.OGRN}
+</td></tr></table></td><td width=35%></td></tr>
+
+</table>
+</td><td align=right >
+<b>Утверждена</b><br>
+<b>Приказом Министерства здравоохранения <br>
+Российской Федерации от 20 декабря 2012 г. № 1181 н<br>Форма № 1-МИ<br>экз.3</b>
+</td></tr>
+</table>
+
+<!--2-->
+<table font-size:10pt width=50%>
+<!--<tr>
+<td height=10 colspan=3 style="font-size:1pt"></td>
+</tr>-->
+<tr><td colspan=3><table border="0" cellpadding=2 cellspacing=0><tr>
+<td valign="bottom"><table border="0" cellpadding=0 cellspacing=0>
+<td><table border="1" cellpadding=0 cellspacing=0><tr>
+<td>
+<table cellpadding=0 cellspacing=0><tr><td><font>Источник финансирования при льготном<br>обеспечении(нужное подчеркнуть):</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Источник финансирования'].value==u'Федеральный'}<u>{end:} 1) федеральный бюджет{if: action[u'Источник финансирования'].value==u'100%'}</u>{end:}</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Источник финансирования'].value==u'Субъект РФ'}<u>{end:} 2)бюджет субъекта<br>Российской Федерации{if: action[u'Источник финансирования'].value==u'100%'}</u>{end:}</font></td></tr>
+</table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td><font>Процент оплаты пациентом:</font></td></tr>
+<tr><td align="left"><font>{if: action[u'Процент льготы'].value==u'50%'}<u>{end:} 1) 100%{if: action[u'Процент льготы'].value==u'50%'}</u>{end:}</font></td></tr>
+<tr><td align="left"><font >{if: action[u'Процент льготы'].value==u'100%'}<u>{end:} 2) Бесплатно{if: action[u'Процент льготы'].value==u'100%'}</u>{end:}<br>(нужное подчеркнуть)</font></td></tr>
+<br>
+</table></td>
+<td><table cellpadding=0 cellspacing=0><tr><td align="center"><font>Рецепт действителен в течение<br>(указать срок действия):</font></td></tr><tr><td align="center"><font>{action[u'Действителен в течение'].value}</font></td></tr></table></td>
+</tr></table></td>
+</tr></table></td></tr>
+<br>
+<!--5-->
+<tr><td colspan=3><table cellpadding=0 cellspacing=0 width=100%><tr>
+<td><table cellpadding=0 cellspacing=0 width=100%><tr>
+<td align="left"><font>РЕЦЕПТ&nbsp;Серия&nbsp;{"".join(action[u'Серия и номер бланка'].value.split()[:1])}&nbsp;N&nbsp;{"".join(action[u'Серия и номер бланка'].value.split()[1:])} Дата выдачи от {action.endDate.toString("dd.MM.yyyy")}</font></td><td  
+</table></td>
+</tr></table></td></tr>
+<br>
+_________________ " Пациенту с хроническим заболеванием"
+<br>
+Ф.И.О. пациента: {client.fullName}
+<br>
+Дата рождения {client.birthDate.date.toString("dd.MM.yyyy")}
+<br>
+<!--9-->
+Номер страхового медицинского полиса:{" "+client.policy.serial} {client.policy.number}
+<br>
+<!--10-->
+Номер медицинской карты пациента: <u>{client.id}</u>
+<br>
+<!--12-->
+Ф.И.О. медицинского работника: <u>{" "+action.person.longName}</u>
+<br>
+Код лечащего врача: {action.person.regionalCode}
+<br>
+Номер телефона медицинского работника: ___________________</small>
+<br>
+Наименование медицинского изделия: <u>{" "+action[u'Выписано'].value}</u>
+<br>
+Количество единиц: <u>{" "+action[u'Количество единиц'].value}</u> 
+<br>
+Подпись медицинского работника ___________________________________<br>
+<br>
+Личная печать медицинского работника 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	М.П.<br>
+<br>
+<br>
+--------------------------------------&nbsp;(заполняется специалистом аптечной организации)&nbsp;----------------------------------------
+<br>
+<br>
+Отпущено по рецепту;
+<br>
+Дата отпуска "__"______ _____ г.
+<br>
+Наименование медицинского изделия:</font> {"."*25}
+<br>
+Количество единиц {"."*23}
+<br>
+На общую сумму {"."*27}
+<br>
+------------------------------------------&nbsp;(линия&nbsp;отрыва)&nbsp;-----------------------------------------<br>
+Корешок рецепта Серия {"".join(action[u'Серия и номер бланка'].value.split()[:1])} N {"".join(action[u'Серия и номер бланка'].value.split()[1:])} Дата выдачи от {action.endDate.toString("dd.MM.yyyy")}
+<br>
+Наименование медицинского изделия: {"_"*75}
+<br>
+Количество единиц {"_"*25}
+</table>
+
+</body>
+</html>

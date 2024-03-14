@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ActionTypeComboBoxExPopup</class>
+ <widget class="QWidget" name="ActionTypeComboBoxExPopup">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>506</width>
+    <height>326</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="tabPosition">
+      <enum>QTabWidget::South</enum>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabClientRelation">
+      <attribute name="title">
+       <string>Результат поиска</string>
+      </attribute>
+      <layout class="QVBoxLayout">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="CTreeView" name="tblActionTypeFind"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabSearch">
+      <attribute name="title">
+       <string>&amp;Поиск</string>
+      </attribute>
+      <layout class="QGridLayout">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="6" column="1" colspan="4">
+        <widget class="QCheckBox" name="chkPreferableOrgStructure">
+         <property name="text">
+          <string>Признак &quot;является предпочитаемой&quot; для подразделения</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="4">
+        <widget class="QLineEdit" name="edtCode"/>
+       </item>
+       <item row="11" column="0" colspan="2">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>231</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="11" column="4">
+        <widget class="QDialogButtonBox" name="buttonBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="standardButtons">
+          <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+         </property>
+         <property name="centerButtons">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>141</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="1" colspan="4">
+        <widget class="QLineEdit" name="edtNomenclatureCode"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblName">
+         <property name="text">
+          <string>Наименование</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="4">
+        <widget class="QLineEdit" name="edtName"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblCode">
+         <property name="text">
+          <string>Код</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblNomenclatureCode">
+         <property name="text">
+          <string>Номенклатурный код</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lblServiceType">
+         <property name="text">
+          <string>Вид услуги</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="lblSex">
+         <property name="text">
+          <string>Пол</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="lblAge">
+         <property name="text">
+          <string>Возраст с</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="4">
+        <widget class="CActionServiceTypeComboBox" name="cmbServiceType"/>
+       </item>
+       <item row="7" column="1" colspan="4">
+        <widget class="QComboBox" name="cmbSex">
+         <item>
+          <property name="text">
+           <string>не задано</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Мужской</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Женский</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="1" colspan="4">
+        <widget class="QCheckBox" name="chkPreferable">
+         <property name="text">
+          <string>Признак &quot;является предпочитаемой&quot; для ЛПУ</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QSpinBox" name="spbAgeFor"/>
+       </item>
+       <item row="9" column="2">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>по</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="3">
+        <widget class="QSpinBox" name="spbAgeTo">
+         <property name="maximum">
+          <number>150</number>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="4">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="lblOrgStructure">
+         <property name="text">
+          <string>Подразделение</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="4">
+        <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTreeView</class>
+   <extends>QTableView</extends>
+   <header location="global">library/TreeView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionServiceTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Events/ActionServiceType.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>edtCode</tabstop>
+  <tabstop>edtName</tabstop>
+  <tabstop>edtNomenclatureCode</tabstop>
+  <tabstop>cmbServiceType</tabstop>
+  <tabstop>chkPreferable</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>chkPreferableOrgStructure</tabstop>
+  <tabstop>cmbSex</tabstop>
+  <tabstop>spbAgeFor</tabstop>
+  <tabstop>spbAgeTo</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>tblActionTypeFind</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

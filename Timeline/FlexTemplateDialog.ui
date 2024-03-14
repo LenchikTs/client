@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FlexTemplateDialog</class>
+ <widget class="QDialog" name="FlexTemplateDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>447</width>
+    <height>516</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Шаблон скользящего графика</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="CCalendarWidget" name="calendarWidget"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="CPersonTimeTableView" name="tblTimeTable"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QCheckBox" name="chkRemoveExistingSchedules">
+     <property name="text">
+      <string>Удалить предыдущее расписание</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CPersonTimeTableView</class>
+   <extends>QTableView</extends>
+   <header>Timeline/PersonTimeTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CCalendarWidget</class>
+   <extends>QCalendarWidget</extends>
+   <header>library/CalendarWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>calendarWidget</tabstop>
+  <tabstop>tblTimeTable</tabstop>
+  <tabstop>chkRemoveExistingSchedules</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>FlexTemplateDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>676</x>
+     <y>702</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>FlexTemplateDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>704</x>
+     <y>702</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

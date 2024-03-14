@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EventFilterDialog</class>
+ <widget class="QDialog" name="EventFilterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>390</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Фильтр событий</string>
+  </property>
+  <layout class="QGridLayout">
+   <property name="leftMargin">
+    <number>4</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="rightMargin">
+    <number>4</number>
+   </property>
+   <property name="bottomMargin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="20" column="0" colspan="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lbRegionalCode">
+     <property name="text">
+      <string>Региональный код</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtAge"/>
+   </item>
+   <item row="11" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtPeriod"/>
+   </item>
+   <item row="3" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtEGISZ"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lbMedicalAidKind">
+     <property name="text">
+      <string>Вид помощи</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lbEGISZ">
+     <property name="text">
+      <string>&amp;Код ЕГИСЗ</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtEGISZ</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbPurpose"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lbProfile">
+     <property name="text">
+      <string>&amp;Профиль</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbProfile</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbProfile">
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>не задано</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Да</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="lbSex">
+     <property name="text">
+      <string>Пол</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMedicalAidType</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtRegionalCode"/>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lbMedicalAidType">
+     <property name="text">
+      <string>Тип помощи</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbMedicalAidType</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbMedicalAidKind">
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>не задано</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Не активна</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Активна</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="18" column="0">
+    <widget class="QLabel" name="lbMaxDuration">
+     <property name="text">
+      <string>Макс.длительность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0">
+    <widget class="QLabel" name="lbMinDuration">
+     <property name="text">
+      <string>Мин.длительность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1" colspan="2">
+    <widget class="CRBComboBox" name="cmbMedicalAidType"/>
+   </item>
+   <item row="17" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtMinDuration"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lbCode">
+     <property name="text">
+      <string>&amp;Код</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtCode</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1" colspan="2">
+    <widget class="QComboBox" name="cmbSex"/>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="lbAge">
+     <property name="text">
+      <string>Возраст</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtAge</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="lbPeriod">
+     <property name="text">
+      <string>Период</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtPeriod</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtMaxDuration"/>
+   </item>
+   <item row="2" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtName"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lbPurpose">
+     <property name="text">
+      <string>Назначение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="0">
+    <widget class="QLabel" name="lbSingleInPeriod">
+     <property name="text">
+      <string>Раз в</string>
+     </property>
+    </widget>
+   </item>
+   <item row="19" column="0">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="QLineEdit" name="edtCode"/>
+   </item>
+   <item row="16" column="1" colspan="2">
+    <widget class="QComboBox" name="cmbSingleInPeriod"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lbName">
+     <property name="text">
+      <string>&amp;Наименование</string>
+     </property>
+     <property name="buddy">
+      <cstring>edtName</cstring>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtCode</tabstop>
+  <tabstop>edtAge</tabstop>
+  <tabstop>edtPeriod</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>EventFilterDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>EventFilterDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>275</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>282</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+</head> 
+<body style="font-family: Arial; font-size: 8pt; color: black;">
+{setPageSize('A4')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+Дата: {action.endDate}. Осмотр: {action.name} 
+<HR>
+<p style="font-family: Arial; font-size: 9pt; color: black;">
+    {for: prop in action}
+     {if: prop.value}
+       
+     <b>{prop.name} </b>
+      <i> {prop.value if prop.value else ''},</i>
+     {end:}
+    {end:}
+</p>
+{if: tempInvalid.duration>0}
+<HR/>
+<B>Больничный лист №</b>{tempInvalid.serial} {tempInvalid.number}<b> Срок </b>{tempInvalid.duration} дн.&nbsp;(c {tempInvalid.begDate} по {tempInvalid.endDate})
+{end:}
+<HR>
+{if: action.note}
+<p > 
+<B>Примечание</B> {action.note}
+<HR>
+</p>
+{end:}
+
+<B>Врач:____________________/</B><u>{action.person.shortName}</u><b>/</b>    
+</body></html>

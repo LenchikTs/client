@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ActionTypeGroupEditorDialog</class>
+ <widget class="QDialog" name="ActionTypeGroupEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>548</width>
+    <height>381</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Редактирование шаблона назначения действий</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::ExpandingFieldsGrow</enum>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="lblGroupCode">
+       <property name="text">
+        <string>Код</string>
+       </property>
+       <property name="buddy">
+        <cstring>edtGroupCode</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="edtGroupCode"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lblGroupName">
+       <property name="text">
+        <string>Наименование</string>
+       </property>
+       <property name="buddy">
+        <cstring>edtGroupName</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="edtGroupName"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="lblGroupAvailability">
+       <property name="text">
+        <string>Доступность</string>
+       </property>
+       <property name="buddy">
+        <cstring>cmbAvailability</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="cmbAvailability">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>Всем</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>По специальности</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Владельцу</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lblEnableOffset">
+       <property name="text">
+        <string>Учитывать хронологию</string>
+       </property>
+       <property name="buddy">
+        <cstring>chkEnableOffset</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="chkEnableOffset">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblGroupName_3">
+     <property name="text">
+      <string>Выбранные типы действий</string>
+     </property>
+     <property name="buddy">
+      <cstring>tblActionTypes</cstring>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="CInDocTableView" name="tblActionTypes"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btnAddActions">
+       <property name="text">
+        <string>Добавить действия</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnDelActions">
+       <property name="text">
+        <string>Удалить действия</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CInDocTableView</class>
+   <extends>QTableView</extends>
+   <header>library/InDocTable.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ActionTypeGroupEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ActionTypeGroupEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

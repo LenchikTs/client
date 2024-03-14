@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ItemEditorDialog</class>
+ <widget class="QDialog" name="ItemEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>485</width>
+    <height>513</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ChangeMe!</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="2" column="0" colspan="2">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabMain">
+      <attribute name="title">
+       <string>&amp;Основная информация</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="17" column="0">
+        <widget class="QLabel" name="lblSex">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Пол</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbSex</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="1">
+        <widget class="QComboBox" name="cmbSex">
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>М</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ж</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="17" column="2" colspan="2">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>141</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="18" column="0">
+        <widget class="QLabel" name="lblAge">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Возраст</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbBegAgeUnit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="3">
+        <widget class="QToolButton" name="btnSelectLocalService">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbOtherService"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="lblFederalCode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Федеральный код</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtFederalCode</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="lblOKSOName">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Наименование по ОКСО</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtOKSOName</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="3">
+        <widget class="QToolButton" name="btnSelectAltLocalService">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLabel" name="lblProvinceService">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Услуга для областного населения</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbProvinceService</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="lblOKSOCode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Код по &amp;ОКСО</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtOKSOCode</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbLocalService"/>
+       </item>
+       <item row="12" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbProvinceService"/>
+       </item>
+       <item row="13" column="3">
+        <widget class="QToolButton" name="btnSelectOtherService">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="lblRegionalCode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Региональный код</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtRegionalCode</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0">
+        <widget class="QLabel" name="lblAltLocalService">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Альтернативная услуга для местного населения</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbAltLocalService</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="3">
+        <widget class="QToolButton" name="btnSelectAltProvinceService">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="lblLocalService">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Услуга для местного населения</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbLocalService</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="lblUsishCode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Код &amp;ЕГИСЗ</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtFederalCode</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0">
+        <widget class="QLabel" name="lblAltOtherService">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Альтернативная услуга для прочего населения</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbAltOtherService</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbAltOtherService"/>
+       </item>
+       <item row="12" column="3">
+        <widget class="QToolButton" name="btnSelectProvinceService">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="3">
+        <widget class="QToolButton" name="btnAltSelectOtherService">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbAltLocalService"/>
+       </item>
+       <item row="15" column="0">
+        <widget class="QLabel" name="lblAltProvinceService">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Альтернативная услуга для областного населения</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbAltProvinceService</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QLabel" name="lblOtherService">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Услуга для прочего населения</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbOtherService</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="3">
+        <widget class="QLineEdit" name="edtOKSOName"/>
+       </item>
+       <item row="15" column="1" colspan="2">
+        <widget class="CRBComboBox" name="cmbAltProvinceService"/>
+       </item>
+       <item row="8" column="1" colspan="3">
+        <widget class="QLineEdit" name="edtUsishCode"/>
+       </item>
+       <item row="9" column="1" colspan="3">
+        <widget class="QLineEdit" name="edtRegionalCode"/>
+       </item>
+       <item row="19" column="0">
+        <widget class="QLabel" name="lblMKBFilter">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Фильтр диагнозов по МКБ</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtMKBFilter</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblCode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Код</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtCode</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="3">
+        <widget class="QLineEdit" name="edtCode"/>
+       </item>
+       <item row="19" column="1" colspan="3">
+        <widget class="QLineEdit" name="edtMKBFilter"/>
+       </item>
+       <item row="6" column="1" colspan="3">
+        <widget class="QLineEdit" name="edtOKSOCode"/>
+       </item>
+       <item row="4" column="1" colspan="3">
+        <widget class="QLineEdit" name="edtName"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="lblName">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Наименование</string>
+         </property>
+         <property name="buddy">
+          <cstring>edtName</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="1" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QComboBox" name="cmbBegAgeUnit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Д</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Н</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>М</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Г</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="edtBegAgeCount">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="inputMask">
+            <string>000; </string>
+           </property>
+           <property name="maxLength">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblAgeSep">
+           <property name="text">
+            <string>по</string>
+           </property>
+           <property name="buddy">
+            <cstring>cmbEndAgeUnit</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmbEndAgeUnit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Д</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Н</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>М</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Г</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="edtEndAgeCount">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="inputMask">
+            <string>000; </string>
+           </property>
+           <property name="maxLength">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="1" colspan="3">
+        <widget class="QLineEdit" name="edtFederalCode"/>
+       </item>
+       <item row="22" column="0">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>73</width>
+           <height>16</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="10" column="1" colspan="3">
+        <widget class="CRBComboBox" name="cmbMedicalAidProfile"/>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="lblMedicalAidProfile">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Профиль МП</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbMedicalAidProfile</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="21" column="0" colspan="4">
+        <widget class="QCheckBox" name="chkIsHigh">
+         <property name="text">
+          <string>Является врачебной специальностью</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabMedicalAidProfiles">
+      <attribute name="title">
+       <string>&amp;Профили мед.помощи</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="CInDocTableView" name="tblMedicalAidProfiles"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabIdentification">
+      <attribute name="title">
+       <string>&amp;Идентификация</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="CInDocTableView" name="tblIdentification"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CInDocTableView</class>
+   <extends>QTableView</extends>
+   <header>library/InDocTable.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>edtCode</tabstop>
+  <tabstop>edtName</tabstop>
+  <tabstop>edtOKSOName</tabstop>
+  <tabstop>edtOKSOCode</tabstop>
+  <tabstop>edtFederalCode</tabstop>
+  <tabstop>edtUsishCode</tabstop>
+  <tabstop>edtRegionalCode</tabstop>
+  <tabstop>cmbLocalService</tabstop>
+  <tabstop>btnSelectLocalService</tabstop>
+  <tabstop>cmbProvinceService</tabstop>
+  <tabstop>btnSelectProvinceService</tabstop>
+  <tabstop>cmbOtherService</tabstop>
+  <tabstop>btnSelectOtherService</tabstop>
+  <tabstop>cmbAltLocalService</tabstop>
+  <tabstop>btnSelectAltLocalService</tabstop>
+  <tabstop>cmbAltProvinceService</tabstop>
+  <tabstop>btnSelectAltProvinceService</tabstop>
+  <tabstop>cmbAltOtherService</tabstop>
+  <tabstop>btnAltSelectOtherService</tabstop>
+  <tabstop>cmbSex</tabstop>
+  <tabstop>cmbBegAgeUnit</tabstop>
+  <tabstop>edtBegAgeCount</tabstop>
+  <tabstop>cmbEndAgeUnit</tabstop>
+  <tabstop>edtEndAgeCount</tabstop>
+  <tabstop>edtMKBFilter</tabstop>
+  <tabstop>tblMedicalAidProfiles</tabstop>
+  <tabstop>tblIdentification</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ItemEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>515</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ItemEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>515</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

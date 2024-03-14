@@ -1,0 +1,20 @@
+<HTML><BODY>
+{if:len(client.socStatuses)}
+<TABLE BORDER=2><TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100><FONT SIZE=+2>
+Л {client.socStatuses[-1].code}
+</TR></TD></FONT></TABLE>
+{end:}
+&nbsp; код: <FONT SIZE=+2>{client.id}</FONT>&nbsp;<FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT> СПб ГУЗ Городская поликлиника № 120 <BR/>
+&nbsp; <B>{currentDate}</B> ТАЛОН АМБУЛАТОРНОГО ПАЦИЕНТА<BR/>
+&nbsp; ФИО: <FONT SIZE=+2><B>{client.fullName}</B></FONT><BR/>
+&nbsp; ДР:  <B>{client.birthDate}</B> (<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС: <B>{client.SNILS}</B><BR/>
+&nbsp; <B>{client.document}</B>.<BR/> 
+&nbsp;Полис: <B>{client.policy}</B><BR/>
+&nbsp; Рег.: <B>{client.regAddress}</B><BR/>
+&nbsp; Прож.: <B>{client.locAddress}</B><BR/>
+&nbsp; Тел.: <B> {client.phones}</B>
+<HR>
+&nbsp; {visit.type}<BR/>
+&nbsp; <FONT SIZE=+1><B>{person.fullName}</B> (<B>{person.specialityName}</B>) прием <B>{visit.timeRange}</B><BR/>
+&nbsp; явиться <B>{visit.date}</B> в кабинет № <B>{visit.office}</B>. Время: <B>{visit.time}, #{visit.num}</B></FONT>
+</BODY></HTML>

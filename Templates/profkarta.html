@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta name="qrichtext" content="1">
+</head>
+
+<body style="font-family: 'MS Shell Dlg 2'; font-size: 10pt; font-weight: 400; font-style: normal;">
+{setPageSize('A4')} {setOrientation('L')} {setLeftMargin(5)}
+{setTopMargin(5)} {setBottomMargin(5)} {setRightMargin(5)}
+
+<table cellpadding="50" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td width="50%">
+<table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="font-family: Arial; font-size: 14pt; color: black;" align="center"><b>ОКОНЧАТЕЛЬНЫЙ ДИАГНОЗ</b></td>
+</tr>
+<tr>
+<td>____________________________________________________________</td>
+</tr>
+<tr>
+<td>____________________________________________________________</td>
+</tr>
+<tr>
+<td>нуждается в дообследовании (каком)
+____________________________</td>
+</tr>
+<tr>
+<td>____________________________________________________________</td>
+</tr>
+<tr>
+<td>нуждается в амбулаторном лечении (у кого)
+______________________</td>
+</tr>
+<tr>
+<td>нуждается в стационарном лечении (где)
+_________________________</td>
+</tr>
+<tr>
+<td>нуждается в диспансерном наблюдении (у кого)
+___________________</td>
+</tr>
+<tr>
+<td>По профессии: годен полностью, не
+годен, годен без _______________</td>
+</tr>
+<tr>
+<td>_____________________________________________________________</td>
+</tr>
+<tr>
+<td>_____________________________________________________________</td>
+</tr>
+<tr>
+<td><br>
+<br>
+</td>
+</tr>
+<tr>
+<td style="font-family: Arial; font-size: 14pt; color: black;" align="center"><b>ЗАКЛЮЧЕНИЕ</b></td>
+</tr>
+<tr>
+<td><br>
+<br>
+</td>
+</tr>
+<tr>
+<td>
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+<table width="100%">
+<tbody>
+<tr>
+<td style="font-family: Arial; font-size: 10pt; color: black;" align="center">{currentOrganisation.shortName}</td>
+</tr>
+
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td style="font-family: Arial; font-size: 12pt; color: black;" align="center"><b>Профпатолог</b><br></td>
+</tr>
+<tr>
+<td><span style="font-weight: bold;">Годен
+к работе</span> ____________________________________________<br></td>
+</tr>
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td width="40%"><b>Согласно
+&nbsp;
+Приказу</b></td>
+<td><b>№_________________</b></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td><br><b>прил.</b> ______ <b>п.п.</b>
+___________________________________________</td>
+</tr>
+<tr>
+<td align="center"><br>"_____"
+______________ 200__ г. Врач __________</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="50%">
+<table cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><b>{currentOrganisation.shortName}</b></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td style="font-family: Arial; font-size: 12pt; color: black;" align="center"><b>КАРТА ПРОФИЛАКТИЧЕСКОГО ОСМОТРА</b></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Дата осмотра <b>{currentDate}</b></td>
+</tr>
+<tr>
+<td>код: <font size="+1"><b>{client.id}</b></font>&nbsp;<font face="Code 3 de 9" size="+2">*{client.id}*</font>
+</td>
+</tr>
+<hr>
+<tr>
+<td align="center">
+<font size="+2"> <B>{client.lastName}<BR/>
+{client.firstName} {client.patrName}</B><BR/>
+<HR>
+</font>
+</td>
+</tr>
+<tr>
+<td style="font-family: Arial; font-size: 9pt; color: black;" align="left">ДР: <b>{client.birthDate}</b> (<b>{client.age}</b>),
+Пол: <b>{client.sex}</b>,СНИЛС: <b>{client.SNILS}</b>
+</td>
+</tr>
+<tr>
+<td>Документ: <b>{client.document}</b>.</td>
+</tr>
+<tr>
+<td>Полис: <b>{client.policy}</b></td>
+</tr>
+<tr>
+<td>Рег.: <b>{client.regAddress}</b></td>
+</tr>
+<tr>
+<td>Прож.: <b>{client.locAddress}</b></td>
+</tr>
+<tr>
+<td>Занятость: <b>{client.work.shortName}</b></td>
+</tr>
+<tr>
+<td><b>{client.work.post}</b> ОКВЭД: <b>{client.work.OKVED}</b></td>
+</tr>
+<tr>
+<td>ВРЕДНОСТЬ:
+{if:client.work.hurts}
+<b><u>{client.work.hurts[0].name}
+({client.work.hurts[0].code}) </u></b><br>
+ФАКТОРЫ:<u><b>
+{if: client.work.hurts[0].factors}
+{for: j, factor in enumerate(client.work.hurts[0].factors)}
+&nbsp; {factor.code},{end:}
+{end:}
+</b></u><br>
+Cтаж работы во вредных условиях:<u><b>
+{client.work.hurts[0].stage} лет.</b></u><br>
+{else:}
+<br><br>ФАКТОРЫ:<br>
+<br>Cтаж работы во вредных условиях:<br>
+{end:}
+</td>
+</tr>
+<tr>
+<td>Профмаршрут ___________________________________________<br></td>
+</tr>
+<tr>
+<td>________________________________________________________</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

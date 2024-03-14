@@ -1,0 +1,2261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ContractEditorDialog</class>
+ <widget class="QDialog" name="ContractEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1086</width>
+    <height>821</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_8">
+   <property name="margin">
+    <number>2</number>
+   </property>
+   <property name="spacing">
+    <number>2</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QSplitter" name="splitter_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <property name="margin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblFinance">
+         <property name="text">
+          <string>Тип финансирования</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="CRBComboBox" name="cmbFinance">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="lblBegDate">
+         <property name="text">
+          <string>Период с</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="7" colspan="2">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>356</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblGrouping">
+         <property name="text">
+          <string>Группа</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLabel" name="lblEndDate">
+         <property name="text">
+          <string>по</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="edtGrouping">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maxLength">
+          <number>64</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QLineEdit" name="edtNumber">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>3</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maxLength">
+          <number>64</number>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="9">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLineEdit" name="edtFinanceSubtypeCode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maxLength">
+          <number>16</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="CDateEdit" name="edtEndDate">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="7" colspan="2">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>356</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="7" colspan="2">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>356</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="lblRecipient">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Получатель&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="CDateEdit" name="edtDate">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1" colspan="6">
+        <widget class="COrgComboBox" name="cmbRecipient"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="lblFinanceSubtypeCode">
+         <property name="text">
+          <string>Подтип</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="CDateEdit" name="edtBegDate">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="displayFormat">
+          <string>dd.MM.yyyy</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QLabel" name="lblNumber">
+         <property name="text">
+          <string>Номер</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="7">
+        <widget class="QToolButton" name="btnSelectRecipient">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lblResolution">
+         <property name="text">
+          <string>Основание</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="lblDate">
+         <property name="text">
+          <string>Дата</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLabel" name="lblRecipientOGRN">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>ОГРН</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="lblRecipientINN">
+         <property name="text">
+          <string>ИНН</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="8">
+        <spacer name="horizontalSpacer_20">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>352</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="9" column="8">
+        <spacer name="horizontalSpacer_22">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>352</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="edtRecipientINN">
+         <property name="inputMask">
+          <string>9999999999; </string>
+         </property>
+         <property name="maxLength">
+          <number>10</number>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="6">
+        <widget class="QLineEdit" name="edtResolution">
+         <property name="maxLength">
+          <number>64</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="7" colspan="2">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>356</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="11" column="1" colspan="6">
+        <widget class="COrgComboBox" name="cmbPayer"/>
+       </item>
+       <item row="12" column="1">
+        <widget class="QLineEdit" name="edtPayerINN">
+         <property name="inputMask">
+          <string>9999999999; </string>
+         </property>
+         <property name="maxLength">
+          <number>10</number>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="8">
+        <spacer name="horizontalSpacer_13">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>352</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="lblRecipientAccount">
+         <property name="text">
+          <string>Р/C</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="COrgAccComboBox" name="cmbPayerAccount"/>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="lblPayer">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Плательщик&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1" colspan="6">
+        <widget class="QLineEdit" name="edtRecipientBank">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="8">
+        <spacer name="horizontalSpacer_19">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>352</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="8" column="1">
+        <widget class="COrgAccComboBox" name="cmbRecipientAccount"/>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLabel" name="lblRecipientKBK">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>КБК</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="1" colspan="6">
+        <widget class="QLineEdit" name="edtPayerBank">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="7">
+        <widget class="QToolButton" name="btnSelectPayer">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0">
+        <widget class="QLabel" name="lblPayerBank">
+         <property name="text">
+          <string>Банк</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="QLabel" name="lblPayerKBK">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>КБК</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLabel" name="lblPayerINN">
+         <property name="text">
+          <string>ИНН</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="3" colspan="4">
+        <widget class="QLineEdit" name="edtPayerOGRN">
+         <property name="maxLength">
+          <number>64</number>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="3" colspan="4">
+        <widget class="QLineEdit" name="edtRecipientOGRN">
+         <property name="maxLength">
+          <number>64</number>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="2">
+        <widget class="QLabel" name="lblPayerOGRN">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>ОГРН</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="8">
+        <spacer name="horizontalSpacer_21">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>352</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="lblRecipientBank">
+         <property name="text">
+          <string>Банк</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="8">
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>352</width>
+           <height>17</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="8" column="3" colspan="4">
+        <widget class="QLineEdit" name="edtRecipientKBK">
+         <property name="maxLength">
+          <number>30</number>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QLabel" name="lblPayerAccount">
+         <property name="text">
+          <string>Р/C</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" colspan="9">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="3" colspan="4">
+        <widget class="QLineEdit" name="edtPayerKBK">
+         <property name="maxLength">
+          <number>30</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1252</width>
+         <height>828</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <property name="margin">
+         <number>4</number>
+        </property>
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tabSpecification">
+           <attribute name="title">
+            <string>Спецификация</string>
+           </attribute>
+           <layout class="QGridLayout" name="_2">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="1" column="0">
+             <widget class="CInDocTableView" name="tblSpecification"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabTariff">
+           <attribute name="title">
+            <string>Тариф</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QSplitter" name="splitter_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="handleWidth">
+               <number>3</number>
+              </property>
+              <widget class="QWidget" name="pnlTariffFilter" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>5</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>5</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="lblCode">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="sizeIncrement">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="baseSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Код услуги начинается с</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="edtCode">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>3</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="sizeIncrement">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="baseSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="chkFilterDate">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="sizeIncrement">
+                     <size>
+                      <width>1</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="baseSize">
+                     <size>
+                      <width>1</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Действующие на дату</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="CDateEdit" name="edtFilterDate">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>1</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>120</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="sizeIncrement">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="baseSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="btnApplyFilter">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="sizeIncrement">
+                     <size>
+                      <width>1</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="baseSize">
+                     <size>
+                      <width>1</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Применить</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QLabel" name="lblEventType">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Событие</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="CRBComboBox" name="cmbEventType"/>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblTariffType">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Тарифицируется</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="cmbTariffType"/>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblTariffBatch">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Группа</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="edtTariffBatch">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maxLength">
+                     <number>100</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblService">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string>Услуга</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="CRBServiceComboBox" name="cmbService"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="CInDocTableView" name="tblTariffs">
+               <property name="selectionBehavior">
+                <enum>QAbstractItemView::SelectRows</enum>
+               </property>
+              </widget>
+              <widget class="QWidget" name="pnlTariff" native="true">
+               <layout class="QGridLayout" name="gridLayout">
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QSplitter" name="splitter">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="handleWidth">
+                   <number>3</number>
+                  </property>
+                  <property name="childrenCollapsible">
+                   <bool>false</bool>
+                  </property>
+                  <widget class="CInDocTableView" name="tblTariffExpense"/>
+                  <widget class="CInDocTableView" name="tblTariffAttach"/>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabContingent">
+           <attribute name="title">
+            <string>Контингент</string>
+           </attribute>
+           <layout class="QGridLayout" name="_3">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="CInDocTableView" name="tblContingent"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabContragent ">
+           <attribute name="title">
+            <string>Контрагенты</string>
+           </attribute>
+           <layout class="QGridLayout" name="_4">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="CInDocTableView" name="tblContragents"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabMisc">
+           <attribute name="title">
+            <string>Прочее</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="26" column="3">
+             <widget class="QLabel" name="lblExpensePrecision">
+              <property name="text">
+               <string>Точность представления статей затрат</string>
+              </property>
+              <property name="buddy">
+               <cstring>edtExpensePrecision</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="2" colspan="9">
+             <widget class="QCheckBox" name="chkExposeDisciplineByMonth">
+              <property name="text">
+               <string>На каждый месяц отдельно</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="2" colspan="9">
+             <widget class="QCheckBox" name="chkExposeDisciplineByBatch">
+              <property name="text">
+               <string>На каждую группу тарифа отдельно</string>
+              </property>
+             </widget>
+            </item>
+            <item row="25" column="3" colspan="8">
+             <spacer name="horizontalSpacer_11">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>410</width>
+                <height>17</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="7" column="0" colspan="2">
+             <widget class="QLabel" name="lblExposeIfContinuedEventFinished">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Продлённые события выставлять, если закрыто продолжение</string>
+              </property>
+              <property name="buddy">
+               <cstring>chkExposeIfContinuedEventFinished</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="10">
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="33" column="1">
+             <spacer>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>131</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="21" column="2">
+             <widget class="QDoubleSpinBox" name="edtCoefficient">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>99.999899999999997</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="25" column="2">
+             <widget class="QDoubleSpinBox" name="edtRegionalTariffRegulationFactor">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>9999.999900000000707</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="2">
+             <widget class="QLabel" name="lblDefaultExportFormat">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Формат экспорта счетов по умолчанию</string>
+              </property>
+              <property name="buddy">
+               <cstring>cmbDefaultExportFormat</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="10">
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="30" column="3" colspan="2">
+             <widget class="QToolButton" name="btnCalculation">
+              <property name="text">
+               <string>...</string>
+              </property>
+             </widget>
+            </item>
+            <item row="24" column="9" colspan="2">
+             <spacer name="horizontalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>278</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="22" column="2">
+             <widget class="QDoubleSpinBox" name="edtCoefficientEx">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>99.999899999999997</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="22" column="0" colspan="2">
+             <widget class="QLabel" name="lblCoefficientEx">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Коэффициент тарифа при превышении предела</string>
+              </property>
+              <property name="buddy">
+               <cstring>edtCoefficientEx</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="23" column="0" colspan="2">
+             <widget class="QLabel" name="lblCoefficientEx2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Коэффициент тарифа при превышении второго предела</string>
+              </property>
+              <property name="buddy">
+               <cstring>edtCoefficientEx2</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="23" column="2">
+             <widget class="QDoubleSpinBox" name="edtCoefficientEx2">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>99.999899999999997</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="2">
+             <widget class="QCheckBox" name="chkExposeIfContinuedEventFinished">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="25" column="0" colspan="2">
+             <widget class="QLabel" name="lblRegionalTariffRegulationFactor">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Коэффициент районного регулирования тарифов</string>
+              </property>
+              <property name="buddy">
+               <cstring>edtRegionalTariffRegulationFactor</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="28" column="2">
+             <widget class="QDoubleSpinBox" name="edtLimitExceeding">
+              <property name="decimals">
+               <number>2</number>
+              </property>
+              <property name="maximum">
+               <double>999999999.990000009536743</double>
+              </property>
+             </widget>
+            </item>
+            <item row="29" column="2">
+             <widget class="QDoubleSpinBox" name="edtLimitOfFinancing">
+              <property name="maximum">
+               <double>999999999.990000009536743</double>
+              </property>
+             </widget>
+            </item>
+            <item row="30" column="2">
+             <widget class="QDoubleSpinBox" name="edtActualAmount">
+              <property name="maximum">
+               <double>999999999.990000009536743</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="10">
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="30" column="7" colspan="4">
+             <spacer name="horizontalSpacer_16">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="21" column="3" colspan="8">
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="22" column="3" colspan="8">
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>410</width>
+                <height>17</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="23" column="3" colspan="8">
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>410</width>
+                <height>18</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="28" column="3" colspan="8">
+             <spacer name="horizontalSpacer_14">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="29" column="3" colspan="8">
+             <spacer name="horizontalSpacer_15">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="19" column="9" colspan="2">
+             <spacer name="horizontalSpacer_17">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>261</width>
+                <height>19</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="20" column="9" colspan="2">
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>278</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="26" column="0" colspan="2">
+             <widget class="QLabel" name="lblPricePrecision">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Точность представления цены тарифа</string>
+              </property>
+              <property name="buddy">
+               <cstring>edtPricePrecision</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="26" column="2">
+             <widget class="QSpinBox" name="edtPricePrecision">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximum">
+               <number>9</number>
+              </property>
+              <property name="value">
+               <number>2</number>
+              </property>
+             </widget>
+            </item>
+            <item row="26" column="4">
+             <widget class="QSpinBox" name="edtExpensePrecision">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximum">
+               <number>9</number>
+              </property>
+              <property name="value">
+               <number>2</number>
+              </property>
+             </widget>
+            </item>
+            <item row="26" column="7" colspan="4">
+             <spacer name="horizontalSpacer_12">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="19" column="0" colspan="2">
+             <widget class="QLabel" name="lblPriceList">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Прайс-лист</string>
+              </property>
+              <property name="buddy">
+               <cstring>cmbPriceList</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="20" column="0" colspan="2">
+             <widget class="QLabel" name="lblPriceListExternal">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip">
+               <string>Ищет тарифы в указанном договоре, если их нет в данном</string>
+              </property>
+              <property name="text">
+               <string>Источник тарифов</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0" colspan="2">
+             <widget class="QLabel" name="lblExposeDiscipline">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Формировать счёт</string>
+              </property>
+              <property name="buddy">
+               <cstring>chkExposeDisciplineByMonth</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QLabel" name="lblActionExposition">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Выставлять мероприятия</string>
+              </property>
+              <property name="buddy">
+               <cstring>cmbDateOfActionExposition</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QLabel" name="lblVisitExposition">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Выставлять визиты</string>
+              </property>
+              <property name="buddy">
+               <cstring>cmbDateOfVisitExposition</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="21" column="0" colspan="2">
+             <widget class="QLabel" name="lblCoefficient">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Коэффициент тарифа</string>
+              </property>
+              <property name="buddy">
+               <cstring>edtCoefficient</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="24" column="0" colspan="2">
+             <widget class="QLabel" name="lblOrgCategory">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Категория ЛПУ</string>
+              </property>
+              <property name="buddy">
+               <cstring>edtOrgCategory</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="28" column="0" colspan="2">
+             <widget class="QLabel" name="lblLimitExceeding">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Предел превышения</string>
+              </property>
+             </widget>
+            </item>
+            <item row="29" column="0" colspan="2">
+             <widget class="QLabel" name="lblLimitOfFinancing">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Лимит финансирования</string>
+              </property>
+             </widget>
+            </item>
+            <item row="30" column="0" colspan="2">
+             <widget class="QLabel" name="lblActualAmount">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Фактическая сумма</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="2" colspan="9">
+             <widget class="QCheckBox" name="chkExposeDisciplineByClient">
+              <property name="text">
+               <string>На каждого пациента отдельно</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="2" colspan="9">
+             <widget class="QCheckBox" name="chkExposeDisciplineByEvent">
+              <property name="text">
+               <string>На каждое событие отдельно</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="2">
+             <widget class="QCheckBox" name="chkExposeExternalServices">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0" colspan="2">
+             <widget class="QLabel" name="lblExposeExternalServices">
+              <property name="text">
+               <string>Выставлять услуги, выполненные в других ЛПУ</string>
+              </property>
+              <property name="buddy">
+               <cstring>chkExposeExternalServices</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="31" column="0">
+             <widget class="QLabel" name="lblPayType">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Тип расчета</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="3">
+             <widget class="QLabel" name="lblExposeByLastEventContract">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Продлеваемые события выставлять по договору продолжения</string>
+              </property>
+              <property name="buddy">
+               <cstring>chkExposeByLastEventContract</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="4">
+             <widget class="QCheckBox" name="chkExposeByLastEventContract">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2" colspan="3">
+             <widget class="QComboBox" name="cmbDateOfCsgExposition">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>Независимо от законченности события, дата КСГ в периоде договора</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>По законченным событиям, дата КСГ в периоде договора</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>По законченным событиям, дата окончания события в периоде договора</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QLabel" name="lblCsgExposition">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Выставлять КСГ</string>
+              </property>
+              <property name="buddy">
+               <cstring>cmbDateOfCsgExposition</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="31" column="9" colspan="2">
+             <spacer name="horizontalSpacer_18">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>261</width>
+                <height>19</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="32" column="2" colspan="3">
+             <widget class="QCheckBox" name="chkDisableInAccounts">
+              <property name="text">
+               <string>Не отображать в разделе Счета</string>
+              </property>
+             </widget>
+            </item>
+            <item row="26" column="12">
+             <spacer name="horizontalSpacer_23">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="32" column="7" colspan="4">
+             <spacer name="horizontalSpacer_24">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="17" column="2" colspan="3">
+             <widget class="QCheckBox" name="chkExposeByAccountType">
+              <property name="text">
+               <string>Разделять по типам реестров счетов</string>
+              </property>
+             </widget>
+            </item>
+            <item row="26" column="5">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Точность представления значения коэфф.тарифа</string>
+              </property>
+             </widget>
+            </item>
+            <item row="27" column="8" colspan="3">
+             <spacer name="horizontalSpacer_25">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="26" column="6">
+             <widget class="QSpinBox" name="edtTariffCoeffValuePrecision">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximum">
+               <number>9</number>
+              </property>
+              <property name="value">
+               <number>2</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" colspan="3">
+             <widget class="CRBComboBox" name="cmbDefaultExportFormat">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="sizeAdjustPolicy">
+               <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" colspan="3">
+             <widget class="QComboBox" name="cmbDateOfVisitExposition">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>Независимо от законченности события, дата визита в периоде договора</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>По законченным событиям, дата визита в периоде договора</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>По законченным событиям, дата окончания события в периоде договора</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="2" column="2" colspan="3">
+             <widget class="QComboBox" name="cmbDateOfActionExposition">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>Независимо от законченности события, дата мероприятия в периоде договора</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>По законченным событиям, дата мероприятия в периоде договора</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>По законченным событиям, дата окончания события в периоде договора</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="11" column="2" colspan="3">
+             <widget class="QComboBox" name="cmbExposeDisciplineByInsurer">
+              <item>
+               <property name="text">
+                <string>Без разделения по страховым компаниям</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>На каждую страховую компанию отдельно (группировка по ОГРН)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>На каждый филиал страховой компании отдельно</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="19" column="2" colspan="3">
+             <widget class="CPriceListComboBoxEx" name="cmbPriceList"/>
+            </item>
+            <item row="20" column="2" colspan="3">
+             <widget class="CPriceListComboBox" name="cmbPriceListExternal"/>
+            </item>
+            <item row="24" column="2" colspan="5">
+             <widget class="QLineEdit" name="edtOrgCategory">
+              <property name="maxLength">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="5" colspan="2">
+             <widget class="QComboBox" name="cmbActionExposition">
+              <item>
+               <property name="text">
+                <string>по врачу мероприятия</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>по врачу события</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="5" colspan="2">
+             <widget class="QComboBox" name="cmbVisitExposition">
+              <item>
+               <property name="text">
+                <string>по врачу визита</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>по врачу события</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="31" column="2" colspan="3">
+             <widget class="QComboBox" name="cmbPayType">
+              <item>
+               <property name="text">
+                <string>не задано</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>наличный</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>безналичный</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>комбинированный</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="5" column="2">
+             <widget class="QCheckBox" name="chkOnlyEventsPassedExpertise">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="18" column="2">
+             <widget class="QCheckBox" name="chkExposeDisciplineByOncology">
+              <property name="text">
+               <string>Онкологические случаи отдельно</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="lblOnlyEventsPassedExpertise">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Выставлять только прошедшие экспертизу События</string>
+              </property>
+              <property name="buddy">
+               <cstring>chkOnlyEventsPassedExpertise</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="2">
+             <widget class="QCheckBox" name="chkExposeDisciplineBySourceOrg">
+              <property name="text">
+               <string>На каждого направителя отдельно</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabNote">
+           <attribute name="title">
+            <string>Примечание</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QTextEdit" name="edtNote"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabAttributes">
+           <attribute name="title">
+            <string>Атрибуты</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="CInDocTableView" name="tblAttributes"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabTariffCoefficients">
+           <attribute name="title">
+            <string>Коэффициенты тарифа</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <property name="margin">
+             <number>4</number>
+            </property>
+            <item>
+             <widget class="CInDocTableView" name="tblTariffCoefficients"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="layoutButtons">
+     <property name="spacing">
+      <number>4</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblTarifs">
+       <property name="text">
+        <string>Тарифы:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAdd">
+       <property name="text">
+        <string>Добавить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnImport">
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Импорт</string>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnExport">
+       <property name="text">
+        <string>Экспорт</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnImportXML">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Импорт из XML</string>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnExportXML">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Экспорт в XML</string>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnImportCSV">
+       <property name="text">
+        <string>Импорт из CSV</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnExportXLS">
+       <property name="text">
+        <string>Экспорт в XLS</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CPrintButton" name="btnPrint">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Печать</string>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblTariffStatus">
+       <property name="text">
+        <string>Кол-во записей: 0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CInDocTableView</class>
+   <extends>QTableView</extends>
+   <header>library/InDocTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgComboBox</class>
+   <extends>QComboBox</extends>
+   <header>OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgAccComboBox</class>
+   <extends>QComboBox</extends>
+   <header>OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPriceListComboBox</class>
+   <extends>QComboBox</extends>
+   <header>PriceListComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPriceListComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>PriceListComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPrintButton</class>
+   <extends>QPushButton</extends>
+   <header>library/PrintTemplates.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBServiceComboBox</class>
+   <extends>QComboBox</extends>
+   <header>RefBooks/Service/RBServiceComboBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cmbFinance</tabstop>
+  <tabstop>edtGrouping</tabstop>
+  <tabstop>edtResolution</tabstop>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>cmbRecipient</tabstop>
+  <tabstop>edtRecipientINN</tabstop>
+  <tabstop>cmbRecipientAccount</tabstop>
+  <tabstop>edtRecipientBank</tabstop>
+  <tabstop>cmbPayer</tabstop>
+  <tabstop>edtPayerINN</tabstop>
+  <tabstop>cmbPayerAccount</tabstop>
+  <tabstop>edtPayerBank</tabstop>
+  <tabstop>btnImport</tabstop>
+  <tabstop>btnExport</tabstop>
+  <tabstop>btnImportXML</tabstop>
+  <tabstop>btnExportXML</tabstop>
+  <tabstop>btnImportCSV</tabstop>
+  <tabstop>btnPrint</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ContractEditorDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1234</x>
+     <y>1036</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>472</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ContractEditorDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1234</x>
+     <y>1036</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

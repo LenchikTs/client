@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProfileYearReportSetupDialog</class>
+ <widget class="QDialog" name="ProfileYearReportSetupDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>491</width>
+    <height>236</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Годовой отчет за ЛПУ по профилям</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="5" column="0">
+    <widget class="QCheckBox" name="chkEnableMKB">
+     <property name="text">
+      <string>Коды диагнозов по МКБ</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="CICDCodeEdit" name="edtMKBFrom">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="inputMask">
+      <string>A00.00; </string>
+     </property>
+     <property name="text">
+      <string>A.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblReceivedCnd">
+     <property name="text">
+      <string>Состояние при поступлении</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbReceivedCnd">
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>л:Лёгкая форма</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>с:Средне-тяжелая форма</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>т:Тяжелая форма</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblOrder">
+     <property name="text">
+      <string>Характер госпитализации</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="QComboBox" name="cmbOrder">
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Плановые</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Экстренные</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblAgeFrom">
+     <property name="text">
+      <string>Возраст с</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="3">
+    <widget class="CICDCodeEdit" name="edtMKBTo">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="inputMask">
+      <string>a00.00; </string>
+     </property>
+     <property name="text">
+      <string>Z99.9</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QSpinBox" name="edtAgeFrom">
+     <property name="maximum">
+      <number>150</number>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QLabel" name="lblAgeTo">
+     <property name="text">
+      <string>по</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QSpinBox" name="edtAgeTo">
+     <property name="maximum">
+      <number>150</number>
+     </property>
+     <property name="value">
+      <number>150</number>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QLabel" name="lblAgeYears">
+     <property name="text">
+      <string>лет</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>56</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="0">
+    <spacer name="spacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>129</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblReportYear">
+     <property name="text">
+      <string>Отчётный год</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="3">
+    <widget class="QSpinBox" name="edtReportYear">
+     <property name="minimum">
+      <number>2000</number>
+     </property>
+     <property name="maximum">
+      <number>2500</number>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1" colspan="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CICDCodeEdit</class>
+   <extends>QLineEdit</extends>
+   <header>library/ICDCodeEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>edtReportYear</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ProfileYearReportSetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>102</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ProfileYearReportSetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkEnableMKB</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtMKBFrom</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>232</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkEnableMKB</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtMKBTo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>308</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

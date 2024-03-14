@@ -1,0 +1,38 @@
+<HTML><BODY>
+{setPageSize('A5')}
+{setOrientation('Landscape')}
+{setMargins(10)}
+
+<HR>
+<CENTER>ÒÀÊÎÉ ÂÎÒ ÒÀËÎÍ×ÅÃ - 127% ÿäó!</CENTER>
+<HR>
+<TABLE>
+<TR><TD>{pdf417(p38test()):h}</TD></TR>
+
+<!--
+p38test() == 
+p38code('1027802751701', '1357', '41043', '4008', '4104300000002535', 'I67', '1', 100, 1, '3780115', u'4.5+80 ìêã+ìêã/äîçà', 1.234, u'008-656-445 65', '083', '1', QDate(2008, 3, 25))
+
+p38code(OGRN, 
+        doctorCode, 
+        orgCode, 
+        series, 
+        number, 
+        MKB, 
+        fundingCode, 
+        benefitPersent, 
+        isIUN, 
+        remedyCode, 
+        remedyDosage, 
+        remedyQuantity, 
+        SNILS, 
+        personBenefitCategory, 
+        periodOfValidity, 
+        date)
+-->
+</TABLE>
+<HR>
+
+
+</BODY></HTML>
+

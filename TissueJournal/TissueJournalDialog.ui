@@ -1,0 +1,2237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TissueJournalDialog</class>
+ <widget class="QDialog" name="TissueJournalDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1142</width>
+    <height>1017</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_6">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+   <widget class="QScrollArea" name="scrollArea">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>845</width>
+        <height>930</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+    <widget class="QTabWidget" name="mainTabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabTissue">
+      <attribute name="title">
+       <string>&amp;Биоматериал</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0" colspan="3">
+        <widget class="CTextBrowser" name="txtClientInfoBrowser"/>
+       </item>
+       <item row="1" column="0" colspan="3">
+        <widget class="QSplitter" name="splitter_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="childrenCollapsible">
+          <bool>false</bool>
+         </property>
+         <widget class="QWidget" name="pnlFilter" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="pnlSmartFilter" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="margin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QSplitter" name="splitter">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <widget class="QTreeView" name="treeOrgStructure"/>
+                <widget class="QTabWidget" name="tabWidgetFilter">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="tabCalendar">
+                  <attribute name="title">
+                   <string>По дате</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout">
+                   <property name="margin">
+                    <number>2</number>
+                   </property>
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QRadioButton" name="btnCalendar">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QRadioButton" name="btnDateRange">
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QWidget" name="pnDateRange" native="true">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_6">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="margin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QLabel" name="lblDateFrom">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Дата с: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="CDateEdit" name="edtDateFrom">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="calendarPopup">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="lblDateTo">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>по: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="CDateEdit" name="edtDateTo">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="calendarPopup">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="CCalendarWidget" name="calendar"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="tabClient">
+                  <attribute name="title">
+                   <string>По пациенту</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_3">
+                   <property name="margin">
+                    <number>2</number>
+                   </property>
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QCheckBox" name="chkFilterId">
+                     <property name="text">
+                      <string>Код</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0" colspan="3">
+                    <widget class="QLineEdit" name="edtFilterId">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="inputMask">
+                      <string/>
+                     </property>
+                     <property name="maxLength">
+                      <number>32767</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QCheckBox" name="chkFilterLastName">
+                     <property name="text">
+                      <string>Фамилия</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="0">
+                    <widget class="QCheckBox" name="chkFilterFirstName">
+                     <property name="text">
+                      <string>Имя</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="0">
+                    <widget class="QCheckBox" name="chkFilterPatrName">
+                     <property name="text">
+                      <string>Отчество</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="8" column="0">
+                    <widget class="QCheckBox" name="chkFilterBirthDay">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Дата рожд</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="8" column="1">
+                    <widget class="CDateEdit" name="edtFilterBirthDay">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="calendarPopup">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="8" column="2">
+                    <spacer name="horizontalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item row="0" column="1" colspan="2">
+                    <widget class="CRBComboBox" name="cmbFilterAccountingSystem">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1" colspan="2">
+                    <widget class="QLineEdit" name="edtFilterLastName">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1" colspan="2">
+                    <widget class="QLineEdit" name="edtFilterFirstName">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="1" colspan="2">
+                    <widget class="QLineEdit" name="edtFilterPatrName">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+                <widget class="CTableView" name="tblTissueTypes"/>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="grpStaticFilter">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Фильтр</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <property name="margin">
+               <number>2</number>
+              </property>
+              <property name="spacing">
+               <number>2</number>
+              </property>
+              <item row="4" column="0">
+               <widget class="QCheckBox" name="chkRelegateOrg">
+                <property name="text">
+                 <string>Направитель</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="1" colspan="2">
+               <widget class="CRBServiceComboBox" name="cmbService">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QCheckBox" name="chkStatus">
+                <property name="text">
+                 <string>Статус</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1" colspan="2">
+               <widget class="COrgComboBox" name="cmbRelegateOrg">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QCheckBox" name="chkPreliminaryResult">
+                <property name="text">
+                 <string>Предварительный результат</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="1" colspan="2">
+               <widget class="CPersonComboBoxEx" name="cmbExecPerson">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="0">
+               <widget class="QLabel" name="lblService">
+                <property name="text">
+                 <string>Профиль оплаты</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QComboBox" name="cmbClientSex">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>М</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ж</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="6" column="1" colspan="2">
+               <widget class="QComboBox" name="cmbPreliminaryResult">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Не определен</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Получен</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Без результата</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QCheckBox" name="chkUrgent">
+                <property name="text">
+                 <string>Срочно</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="0">
+               <widget class="QLabel" name="lblExecPerson">
+                <property name="text">
+                 <string>Ответственный</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="1" colspan="2">
+               <widget class="CRBComboBox" name="cmbFinanceType">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="3">
+               <widget class="QCheckBox" name="chkTissueType">
+                <property name="text">
+                 <string>Не учитывать тип биоматериала</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QCheckBox" name="chkClientSex">
+                <property name="text">
+                 <string>Пол</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="1" colspan="2">
+               <widget class="CActionTypeComboBox" name="cmbActionType">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="3">
+               <widget class="QCheckBox" name="chkWithoutSampling">
+                <property name="text">
+                 <string>Без пробоподготовки</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="0">
+               <widget class="QLabel" name="lblFinanceType">
+                <property name="text">
+                 <string>Тип финансирования</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="1" colspan="2">
+               <widget class="COrgStructureComboBox" name="cmbExecOrgStructure">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="0">
+               <widget class="QLabel" name="lblActionType">
+                <property name="text">
+                 <string>Тип действия</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1" colspan="2">
+               <widget class="CActionStatusComboBox" name="cmbStatus">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>1</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="1" colspan="2">
+               <widget class="CPolyclinicComboBox" name="cmbExecOrg">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="0" rowspan="4" colspan="3">
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item>
+                 <spacer name="horizontalSpacer_5">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="CApplyResetDialogButtonBox" name="buttonBoxFilter">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="standardButtons">
+                   <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+                  </property>
+                  <property name="centerButtons">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="11" column="0">
+               <widget class="QLabel" name="lblExecOrgStructure">
+                <property name="text">
+                 <string>Подразделение</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" colspan="3">
+               <widget class="QWidget" name="pnlIBM" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="margin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QCheckBox" name="chkIBM">
+                   <property name="text">
+                    <string>ИБМ</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtIBM">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="7" column="1" colspan="2">
+               <widget class="CRBComboBox" name="cmbEventType">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="QLabel" name="lblEventType">
+                <property name="text">
+                 <string>Тип события</string>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="0">
+               <widget class="QCheckBox" name="chkExecOrg">
+                <property name="text">
+                 <string>Место выполнения</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pnlTissueJotnalAndActions" native="true">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QSplitter" name="splitter_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="childrenCollapsible">
+              <bool>false</bool>
+             </property>
+             <widget class="QWidget" name="pnlTissueJournal" native="true">
+              <layout class="QGridLayout" name="gridLayout_4">
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="spacing">
+                <number>4</number>
+               </property>
+               <item row="0" column="0" colspan="5">
+                <widget class="CTableView" name="tblTissueJournal"/>
+               </item>
+               <item row="1" column="0" colspan="2">
+                <widget class="QLabel" name="lblTissueJournalCount">
+                 <property name="text">
+                  <string>Список забора тканей пуст</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="4">
+                <widget class="QLabel" name="lblAllActionsCount">
+                 <property name="text">
+                  <string>Количество всех связанных действий</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2" colspan="2">
+                <widget class="QLabel" name="lblClientCount">
+                 <property name="text">
+                  <string>Количиство пациентов</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="pnlActions" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <property name="spacing">
+                <number>4</number>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="CTableView" name="tblTissueJournalActions"/>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblActionsCount">
+                 <property name="text">
+                  <string>Список действий пуст</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="CProbeWorkListPage" name="tabProbeWorkList">
+      <attribute name="title">
+       <string>Р&amp;абочий лист</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tabResult">
+      <attribute name="title">
+       <string>&amp;Результаты</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_13">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QSplitter" name="splitter_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="childrenCollapsible">
+          <bool>false</bool>
+         </property>
+         <widget class="QWidget" name="pnlResultFilter" native="true">
+          <layout class="QGridLayout" name="gridLayout_12">
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QSplitter" name="splitter_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="childrenCollapsible">
+              <bool>false</bool>
+             </property>
+             <widget class="QWidget" name="pnlResultTissueTypePeriodEventType" native="true">
+              <layout class="QGridLayout" name="gridLayout_10">
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="spacing">
+                <number>2</number>
+               </property>
+               <item row="2" column="1">
+                <widget class="CDateEdit" name="edtResultDateFrom">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>по</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="1" colspan="3">
+                <widget class="CRBServiceComboBox" name="cmbResultService"/>
+               </item>
+               <item row="0" column="0" colspan="4">
+                <widget class="CTableView" name="tblResultTissueType"/>
+               </item>
+               <item row="5" column="0">
+                <widget class="QCheckBox" name="chkResultTissueRegistrator">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Регистратор биоматериала</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="lblResultService">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Профиль оплаты</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="chkResultRelegateOrg">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Направитель</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1" colspan="3">
+                <widget class="CPersonComboBoxEx" name="cmbResultTissueRegistrator">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QCheckBox" name="chkResultEventType">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Тип события</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" colspan="3">
+                <widget class="COrgComboBox" name="cmbResultRelegateOrg">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1" colspan="3">
+                <widget class="CRBComboBox" name="cmbResultEventType">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="edtResultTissueIdentifierFrom">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="toolTip">
+                  <string>Идентификатор биоматериала, нижняя граница
+Если отсутствует верхняя граница('по') проверяет не полное вхождение</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <widget class="CDateEdit" name="edtResultDateTo">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="CDateEdit" name="edtResultActionEndDateFrom">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QLabel" name="lblResultTissueIdentifierTo">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>по: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="lblResultTo">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>по: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QCheckBox" name="chkResultActionEndDate">
+                 <property name="text">
+                  <string>Дата окончания действия с</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="3">
+                <widget class="QLineEdit" name="edtResultTissueIdentifierTo">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="toolTip">
+                  <string>Идентификатор биоматериала, верхняя граница</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="3">
+                <widget class="CDateEdit" name="edtResultActionEndDateTo">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QCheckBox" name="chkResultTakenDatetime">
+                 <property name="text">
+                  <string>Дата забора с: </string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lblResultTissueIdentifierFrom">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>ИБМ с: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="lblResultEquipment">
+                 <property name="text">
+                  <string>Оборудование</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1" colspan="3">
+                <widget class="CRBComboBox" name="cmbResultEquipment"/>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QTreeView" name="tblResultActionType"/>
+             <widget class="QGroupBox" name="grpResultActionsFilter">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Фильтр действий</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_11">
+               <property name="margin">
+                <number>4</number>
+               </property>
+               <property name="spacing">
+                <number>4</number>
+               </property>
+               <item row="1" column="0" colspan="3">
+                <widget class="CTableView" name="tblResultTests"/>
+               </item>
+               <item row="0" column="0" colspan="3">
+                <widget class="QTabWidget" name="tabWidgetResultActionsFilter">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="tabResultActionsFilterMain">
+                  <attribute name="title">
+                   <string>Основной</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_15">
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QCheckBox" name="chkResultUrgent">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Срочно</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QCheckBox" name="chkResultStatus">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Статус</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="0">
+                    <widget class="QCheckBox" name="chkResultFinance">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Тип финансирования</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="0">
+                    <widget class="QCheckBox" name="chkResultOnlyTests">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Только тесты</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QCheckBox" name="chkResultClientSex">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Пол</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QComboBox" name="cmbResultClientSex">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>М</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Ж</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="7" column="0">
+                    <widget class="QLabel" name="lblResultExecOrg">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Место выполнения</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QCheckBox" name="chkResultPreliminaryResult">
+                     <property name="text">
+                      <string>Предварительный результат</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="4">
+                    <widget class="QSpinBox" name="edtResultSamplingNumberTo"/>
+                   </item>
+                   <item row="7" column="1" colspan="5">
+                    <widget class="COrgComboBox" name="cmbResultExecOrg">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1" colspan="5">
+                    <widget class="QComboBox" name="cmbResultPreliminaryResult">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>Не определен</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Получен</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Без результата</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="0" column="5">
+                    <spacer name="horizontalSpacer_6">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item row="0" column="3">
+                    <widget class="QLabel" name="lblResultSamplingNumberTo">
+                     <property name="text">
+                      <string>по: </string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1" colspan="5">
+                    <widget class="CRBComboBox" name="cmbResultFinanceType">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="lblResultSamplingNumberFrom">
+                     <property name="text">
+                      <string>Номер пробы с:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="1" colspan="5">
+                    <widget class="QCheckBox" name="chkResultWithoutSampling">
+                     <property name="text">
+                      <string>Без пробоподготовки</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QSpinBox" name="edtResultSamplingNumberFrom"/>
+                   </item>
+                   <item row="2" column="1" colspan="5">
+                    <widget class="CActionStatusComboBox" name="cmbResultStatus">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="tabResultActionsFilterExtension">
+                  <attribute name="title">
+                   <string>Расширенный</string>
+                  </attribute>
+                  <layout class="QGridLayout" name="gridLayout_16">
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QCheckBox" name="chkResultActionSetPerson">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Назначивший</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="COrgStructureComboBox" name="cmbResultActionSetPersonOrgStructure">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="CRBComboBox" name="cmbResultActionSetPersonSpeciality">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="CPersonComboBoxEx" name="cmbResultActionSetPerson">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QCheckBox" name="chkResultActionExecPerson">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Исполнитель</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0" colspan="2">
+                    <widget class="Line" name="line">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="CPersonComboBoxEx" name="cmbResultActionExecPerson">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="0">
+                    <widget class="QCheckBox" name="chkResultClientId">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Код пациента</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="0" colspan="2">
+                    <widget class="Line" name="line_2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="1">
+                    <widget class="CRBComboBox" name="cmbResultClientIdAccountingSystem">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="7" column="0" colspan="2">
+                    <widget class="QLineEdit" name="edtResultClientId">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="0">
+                    <widget class="QCheckBox" name="chkResultActionAssistant">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Ассистент</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1">
+                    <widget class="CPersonComboBoxEx" name="cmbResultActionAssistant">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="CApplyResetDialogButtonBox" name="buttonBoxResult">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="standardButtons">
+                  <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QSplitter" name="splitter_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="childrenCollapsible">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="pnlResultActions" native="true">
+           <layout class="QGridLayout" name="gridLayout_8">
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="CTableView" name="tblResultActions"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lblResultActionsCount">
+              <property name="text">
+               <string>Количество действий: </string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pnlResultProperties" native="true">
+           <layout class="QGridLayout" name="gridLayout_9">
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>4</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="CTableView" name="tblResultProperties"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lblResultPropertiesCount">
+              <property name="text">
+               <string>Количество свойств: </string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+		</item>
+      </layout>
+     </widget>
+    </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QStatusBar" name="statusBar">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>A status bar</string>
+     </property>
+     <property name="whatsThis">
+      <string>A status bar.</string>
+     </property>
+     <property name="sizeGripEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+     <property name="centerButtons">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBoxEx</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBoxEx.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Events/ActionTypeComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CTextBrowser</class>
+   <extends>QTextBrowser</extends>
+   <header>library/TextBrowser.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPolyclinicComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CCalendarWidget</class>
+   <extends>QCalendarWidget</extends>
+   <header>library/CalendarWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBServiceComboBox</class>
+   <extends>QComboBox</extends>
+   <header>RefBooks/Service/RBServiceComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CApplyResetDialogButtonBox</class>
+   <extends>QDialogButtonBox</extends>
+   <header>library/DialogButtonBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CProbeWorkListPage</class>
+   <extends>QWidget</extends>
+   <header>TissueJournal/ProbeWorkListPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CActionStatusComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Events/ActionStatus.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>mainTabWidget</tabstop>
+  <tabstop>txtClientInfoBrowser</tabstop>
+  <tabstop>treeOrgStructure</tabstop>
+  <tabstop>tabWidgetFilter</tabstop>
+  <tabstop>calendar</tabstop>
+  <tabstop>btnCalendar</tabstop>
+  <tabstop>btnDateRange</tabstop>
+  <tabstop>edtDateFrom</tabstop>
+  <tabstop>edtDateTo</tabstop>
+  <tabstop>chkFilterId</tabstop>
+  <tabstop>cmbFilterAccountingSystem</tabstop>
+  <tabstop>edtFilterId</tabstop>
+  <tabstop>chkFilterLastName</tabstop>
+  <tabstop>edtFilterLastName</tabstop>
+  <tabstop>chkFilterFirstName</tabstop>
+  <tabstop>edtFilterFirstName</tabstop>
+  <tabstop>chkFilterPatrName</tabstop>
+  <tabstop>edtFilterPatrName</tabstop>
+  <tabstop>chkFilterBirthDay</tabstop>
+  <tabstop>edtFilterBirthDay</tabstop>
+  <tabstop>tblTissueTypes</tabstop>
+  <tabstop>chkIBM</tabstop>
+  <tabstop>edtIBM</tabstop>
+  <tabstop>chkTissueType</tabstop>
+  <tabstop>chkWithoutSampling</tabstop>
+  <tabstop>chkUrgent</tabstop>
+  <tabstop>chkClientSex</tabstop>
+  <tabstop>cmbClientSex</tabstop>
+  <tabstop>chkRelegateOrg</tabstop>
+  <tabstop>cmbRelegateOrg</tabstop>
+  <tabstop>chkStatus</tabstop>
+  <tabstop>cmbStatus</tabstop>
+  <tabstop>chkPreliminaryResult</tabstop>
+  <tabstop>cmbPreliminaryResult</tabstop>
+  <tabstop>cmbEventType</tabstop>
+  <tabstop>cmbService</tabstop>
+  <tabstop>cmbActionType</tabstop>
+  <tabstop>cmbFinanceType</tabstop>
+  <tabstop>cmbExecOrgStructure</tabstop>
+  <tabstop>cmbExecPerson</tabstop>
+  <tabstop>chkExecOrg</tabstop>
+  <tabstop>cmbExecOrg</tabstop>
+  <tabstop>buttonBoxFilter</tabstop>
+  <tabstop>tblTissueJournal</tabstop>
+  <tabstop>tblTissueJournalActions</tabstop>
+  <tabstop>tblResultTissueType</tabstop>
+  <tabstop>chkResultRelegateOrg</tabstop>
+  <tabstop>cmbResultRelegateOrg</tabstop>
+  <tabstop>chkResultTakenDatetime</tabstop>
+  <tabstop>edtResultDateFrom</tabstop>
+  <tabstop>edtResultDateTo</tabstop>
+  <tabstop>chkResultActionEndDate</tabstop>
+  <tabstop>edtResultActionEndDateFrom</tabstop>
+  <tabstop>edtResultActionEndDateTo</tabstop>
+  <tabstop>edtResultTissueIdentifierFrom</tabstop>
+  <tabstop>edtResultTissueIdentifierTo</tabstop>
+  <tabstop>chkResultTissueRegistrator</tabstop>
+  <tabstop>cmbResultTissueRegistrator</tabstop>
+  <tabstop>chkResultEventType</tabstop>
+  <tabstop>cmbResultEventType</tabstop>
+  <tabstop>cmbResultEquipment</tabstop>
+  <tabstop>cmbResultService</tabstop>
+  <tabstop>tblResultActionType</tabstop>
+  <tabstop>tabWidgetResultActionsFilter</tabstop>
+  <tabstop>chkResultUrgent</tabstop>
+  <tabstop>edtResultSamplingNumberFrom</tabstop>
+  <tabstop>edtResultSamplingNumberTo</tabstop>
+  <tabstop>chkResultClientSex</tabstop>
+  <tabstop>cmbResultClientSex</tabstop>
+  <tabstop>chkResultStatus</tabstop>
+  <tabstop>cmbResultStatus</tabstop>
+  <tabstop>chkResultPreliminaryResult</tabstop>
+  <tabstop>cmbResultPreliminaryResult</tabstop>
+  <tabstop>chkResultFinance</tabstop>
+  <tabstop>cmbResultFinanceType</tabstop>
+  <tabstop>chkResultOnlyTests</tabstop>
+  <tabstop>chkResultWithoutSampling</tabstop>
+  <tabstop>cmbResultExecOrg</tabstop>
+  <tabstop>chkResultActionSetPerson</tabstop>
+  <tabstop>cmbResultActionSetPersonOrgStructure</tabstop>
+  <tabstop>cmbResultActionSetPersonSpeciality</tabstop>
+  <tabstop>cmbResultActionSetPerson</tabstop>
+  <tabstop>chkResultActionExecPerson</tabstop>
+  <tabstop>cmbResultActionExecPerson</tabstop>
+  <tabstop>chkResultActionAssistant</tabstop>
+  <tabstop>cmbResultActionAssistant</tabstop>
+  <tabstop>chkResultClientId</tabstop>
+  <tabstop>cmbResultClientIdAccountingSystem</tabstop>
+  <tabstop>edtResultClientId</tabstop>
+  <tabstop>tblResultTests</tabstop>
+  <tabstop>buttonBoxResult</tabstop>
+  <tabstop>tblResultActions</tabstop>
+  <tabstop>tblResultProperties</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkStatus</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbStatus</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>750</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>345</x>
+     <y>751</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>TissueJournalDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>852</x>
+     <y>980</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultEventType</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultEventType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>94</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>553</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultStatus</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultStatus</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>656</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>652</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultFinance</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultFinanceType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>700</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>517</x>
+     <y>700</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultActionSetPerson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultActionSetPersonOrgStructure</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>594</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>594</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultActionSetPerson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultActionSetPerson</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>594</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>598</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultActionSetPerson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultActionSetPersonSpeciality</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>594</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>66</x>
+     <y>598</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultActionExecPerson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultActionExecPerson</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>606</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>606</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultClientId</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultClientIdAccountingSystem</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>618</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>618</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultClientId</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtResultClientId</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>618</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>622</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultTissueRegistrator</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultTissueRegistrator</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>169</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>553</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultActionAssistant</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultActionAssistant</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>610</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>610</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkClientSex</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbClientSex</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>706</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>345</x>
+     <y>707</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultClientSex</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultClientSex</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>64</x>
+     <y>634</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>635</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkRelegateOrg</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbRelegateOrg</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>153</x>
+     <y>728</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>345</x>
+     <y>729</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultRelegateOrg</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultRelegateOrg</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>227</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>547</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkPreliminaryResult</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbPreliminaryResult</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>772</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>345</x>
+     <y>773</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultPreliminaryResult</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbResultPreliminaryResult</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>678</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>517</x>
+     <y>676</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCalendar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>calendar</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>112</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCalendar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pnDateRange</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>253</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDateRange</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pnDateRange</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>133</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDateRange</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>calendar</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>91</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkIBM</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtIBM</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>64</x>
+     <y>642</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>643</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultActionEndDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtResultActionEndDateFrom</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>116</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>251</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultActionEndDate</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtResultActionEndDateTo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>86</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultTakenDatetime</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtResultDateFrom</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>267</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkResultTakenDatetime</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtResultDateTo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkExecOrg</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbExecOrg</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>916</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

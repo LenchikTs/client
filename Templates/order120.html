@@ -1,0 +1,36 @@
+<HTML>
+<BODY STYLE="font-family: Arial; font-size: 8pt; color: black">
+{setPageSize('A5')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 7pt; color: black">
+<TR>
+    <TD align="left"   COLSPAN=1>&nbsp;код: <FONT SIZE=+1>{client.id}</FONT></TD>
+    <TD align="center" COLSPAN=2><B><u>СПб ГУЗ Городская поликлиника № 120</u></B></TD>
+    <TD align="right"  COLSPAN=1><FONT FACE="Code 3 de 9" SIZE=+2>*{client.id}*</FONT></TD>
+</TR>
+<TR>
+    <TD align="left"   COLSPAN=1><B><u>&nbsp;{currentDate}</u></B></TD>
+    <TD align="center" COLSPAN=2><B>ТАЛОН АМБУЛАТОРНОГО ПАЦИЕНТА</B></TD>
+    <TD align="right"  COLSPAN=1>
+    {if:len(client.socStatuses)}
+    <TABLE BORDER=1>
+    <TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100>
+      Л {client.socStatuses[-1].code}
+    </TD></TR></TABLE>
+   {end:}
+</TD></TR>
+</TABLE><BR/>
+&nbsp; ФИО: <FONT SIZE=+1><B>{client.fullName}</B></FONT><BR/>
+&nbsp; ДР:  <B>{client.birthDate}</B> (<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС: <B>{client.SNILS}</B><BR/>
+&nbsp; <B>{client.document}</B>.<BR/> 
+&nbsp;Полис: <B>{client.policy}</B><BR/>
+&nbsp; Рег.: <B>{client.regAddress}</B><BR/>
+&nbsp; Прож.: <B>{client.locAddress}</B><BR/>
+&nbsp; Тел.: <B> {client.phones}</B>
+<TD STYLE="font-family: Arial; font-size: 7pt; color: black">
+&nbsp; <u>{visit.type}</u><BR/>
+&nbsp; <B>{person.fullName}</B> (<B>{person.specialityName}</B>) прием <B>{visit.timeRange}</B><BR/>
+&nbsp; явиться <B><BIG>{visit.date}</BIG></B> в кабинет № <B><BIG>{visit.office}</BIG></B>. Время: <B><BIG>{visit.time}, #{visit.num}</BIG></B>
+</TD>
+</BODY></HTML>

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+{: QDate = type(client.birthDate.date)}
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Министерство здравоохранения<br>
+Российской Федерации<br>
+{currentOrganisation.shortName}<br>
+наименование учреждения</td>
+<td>Медицинская документация<br>
+Форма № 066/у-02<br>
+Утверждена приказом Минздрава России<br>
+от 30.12.2002 №413</td></tr>
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:2"> </p></td></tr>
+
+
+<tr><td align=center>
+<b>СТАТИСТИЧЕСКАЯ КАРТА ВЫБЫВШЕГО ИЗ СТАЦИОНАРА<br>
+круглосуточного пребывания, дневного стационара при больничном<br>
+учреждении, дневного стационара при амбулаторно-поликлиническом<br>
+учреждении, стационара на дому<br>
+№ медицинской карты {client.id}</b>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:0"> </p></td></tr>
+
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>1. Код пациента: * <b>{client.id}</b> 2. Ф.И.О.: <b>{client.fullName}</b></td></tr>
+<tr><td>3. Пол: {if: client.sex==u'М'}<u>муж - 1</u>; жен - 2{else:}муж - 1; <u>жен - 2</u>{end:}                 4. Дата рождения <b>{client.birthDate.date.toString("dd.MM.yyyy")}</b></td></tr>
+<tr><td>5. Документ, удостов. личность: название, серия, номер <b>{client.document.type + u" серия " + client.document.serial + u" номер " + client.document.number}</b></td></tr>
+<tr><td>6. Адрес: регистрация по месту жительства: <b>{client.regAddress.town + u", " + client.regAddress.street + u", д." + client.regAddress.number + u", корп." + client.regAddress.corpus + u", кв. " + client.regAddress.flat }</b></td></tr>
+<tr><td>7. Код территории проживания: <b>{client.locAddress.KLADRCode[:5]}</b> Житель:{:incity = (str(client.locAddress.KLADRCode)[8:11] == '000')} {if: incity}<u>город - 1</u>; село - 2{else:}город - 1; <u>село - 2</u>{end:}.</td></tr>
+<tr><td>8. Страховой полис (серия, номер): <b>{client.policy.serial + " " + client.policy.number}</b><br>
+Выдан: кем <b>{client.policy.insurer.shortName}</b> Код терр.: __ __ __</td></tr>
+<tr><td>9. Вид оплаты: {: vf = event.visits[-1].finance.code if len(event.visits) else ''}{if: vf=='2'}<u>{end:}1 - ОМС{if: vf=='2'}</u>{end:}; 
+{if: vf=='1'}<u>{end:}2 - бюджет{if: vf=='1'}</u>{end:}; 
+{if: vf=='3' or vf=='4'}<u>{end:}3 - платные услуги{if: vf=='3' or vf=='4'}</u>{end:}, в.т.ч. 
+{if: vf=='3'}<u>{end:}4 - ДМС{if: vf=='3'}</u>{end:}; 
+{if: vf=='5' or vf==''}<u>{end:}5 - другое{if: vf=='5' or vf==''}</u>{end:}</td></tr>
+<tr><td>10.Социальный статус: {if: client.birthDate.date.month() < 9}{: schoolDate = QDate(client.birthDate.date.year() + 7, 9, 1)}{else:}{: schoolDate = QDate(client.birthDate.date.year() + 8, 9, 1)}{end:}<!--{"client.socStatuses[-1].classes"}-->
+{if: schoolDate > QDate.currentDate()}<u>{end:}дошкольник - 1{if: schoolDate > QDate.currentDate()}</u>{end:}: организован - 2; неорганизован - 3;
+ {if: schoolDate <= QDate.currentDate() and schoolDate.addYears(10) > QDate.currentDate()}<u>{end:}учащийся - 4{if: schoolDate < QDate.currentDate() and schoolDate.addYears(10) > QDate.currentDate()}</u>{end:};
+ {if: unicode(client.work) != ''}<u>{end:}работает - 5{if: unicode(client.work) != ''}</u>{end:};<br>
+{if: schoolDate.addYears(10) <= QDate.currentDate() and unicode(client.work) == ''}<u>{end:}не работает - 6{if: schoolDate.addYears(10) <= QDate.currentDate() and unicode(client.work) == ''}</u>{end:};
+ {if: unicode(client.regAddress) == ''}<u>{end:}БОМЖ - 7{if: unicode(client.regAddress) == ''}</u>{end:};
+ {: pens = ((client.sexCode == 1 and client.birthDate.date.addYears(60) <= QDate.currentDate()) or (client.sexCode == 2 and client.birthDate.date.addYears(55) <= QDate.currentDate()))}{if: pens}<u>{end:}пенсионер - 8{if: pens}</u>{end:};
+ военнослужащий - 9, Код ___;<br>
+член семьи военнослужащего - 10.</td></tr>
+<tr>{if: len(client.socStatuses)}{: socCode=client.socStatuses[-1].code}{else:}{: socCode='0'}{end:}<td>11. Категория льготности:
+ {if: socCode == '011'}<u>{end:}инвалид ВОВ - 1{if: socCode == '011'}</u>{end:};
+ {if: socCode == '02' or socCode == '020'}<u>{end:}участник ВОВ - 2{if: socCode == '02' or socCode == '020'}</u>{end:};
+ воин-интернационалист - 3;<br>
+{if: socCode >= '092' and socCode <= '129'}<u>{end:}лицо, подвергшееся радиационному облучению - 4{if: socCode >= '092' and socCode <= '129'}</u>{end:};
+ {if: socCode >= '092' and socCode <= '102'}<u>{end:}в т.ч. в Чернобыле - 5{if: socCode >= '092' and socCode <= '102'}</u>{end:};
+ {if: socCode == '081'}<u>{end:}инв. I гр. - 6{if: socCode == '081'}</u>{end:};
+ {if: socCode == '082'}<u>{end:}инв. II гр. - 7{if: socCode == '082'}</u>{end:};<br>
+{if: socCode == '083'}<u>{end:}инв. III гр. - 8{if: socCode == '083'}</u>{end:};
+ {if: socCode == '09' or socCode == '084'}<u>{end:}ребенок-инвалид - 9{if: socCode == '09' or socCode == '084'}</u>{end:}; 
+инвалид с детства - 10; прочие - 11.</td></tr>
+
+<!--Стационар - поступление -->{: currentAction = None}
+{for: action in event.actions}
+{if: action.name == u"Поступление"}{: currentAction = action}{end:}
+{end:}
+<tr><td>12. Кем направлен: <b>{currentAction[u"Кем направлен"].value if currentAction else ''}</b> ; № напр. <b>{currentAction[u"№ направления"].value if currentAction else ''}</b> Дата: <b>{currentAction[u"Дата направления"].value.date.toString("dd.MM.yyyy") if currentAction else ''}</b></td></tr>
+<tr><td>13. Кем доставлен: <b>{currentAction[u"Кем доставлен"].value if currentAction else ''}</b> Код <b>{currentAction[u"Код"].value if currentAction else ''}</b> Номер наряда <b>{currentAction[u"Наряд"].value if currentAction else ''}</b></td></tr>
+<tr><td>14. Диагноз направившего учреждения <b>{currentAction[u"Диагноз направителя"].value if currentAction else ''}</b></td></tr>
+<tr><td>15. Диагноз приемного отделения <b>{currentAction[u"Диагноз приемного отделения"].value if currentAction else ''}</b></td></tr>
+<tr>{:piano = currentAction[u"Доставлен в состоянии опьянения"].value if currentAction else ''}<td>16. Доставлен в состоянии опьянения: **
+ {if: piano==u"Алкогольного"}<u>{end:}Алкогольного - 1{if: piano==u"Алкогольного"}</u>{end:};
+ {if: piano==u"Наркотического"}<u>{end:}Наркотического - 2{if: piano==u"Наркотического"}</u>{end:}.</td></tr>
+<tr>{:hospit = currentAction[u"Госпитализирован"].value if currentAction else ''}<td>17. Госпитализирован по поводу данного заболевания в текущем году:<br>
+{if: hospit==u"первично"}<u>{end:}первично - 1{if: hospit==u"первично"}</u>{end:};
+ {if: hospit==u"повторно"}<u>{end:}повторно - 2{if: hospit==u"повторно"}</u>{end:};
+ {if: hospit==u"по экстренным показаниям"}<u>{end:}по экстренным показаниям - 3{if: hospit==u"по экстренным показаниям"}</u>{end:};
+ {if: hospit==u"в плановом порядке"}<u>{end:}в плановом порядке - 4{if: hospit==u"в плановом порядке"}</u>{end:}.</td></tr>
+<tr>{:dostav = currentAction[u"Доставлен"].value if currentAction else ''}<td>18. Доставлен в стационар от начала заболевания (получения травмы):
+ {if: dostav==u"в первые 6часов"}<u>{end:}в первые 6 часов - 1{if: dostav==u"в первые 6часов"}</u>{end:};<br>
+{if: dostav==u"в течении 7-24 часов"}<u>{end:}в теч. 7-24 часов - 2{if: dostav==u"в течении 7-24 часов"}</u>{end:};
+ {if: dostav==u"позднее 24-х часов"}<u>{end:}позднее 24 часов - 3{if: dostav==u"позднее 24-х часов"}</u>{end:}.</td></tr>
+<tr>{if: len(event.diagnosises) > 0}{:tr=event.diagnosises[0].traumaType.code}{else:}{:tr='0'}{end:}<td>19. Травма:
+ {if: tr>='01' and tr<='05'}<u>{end:}- производственная{if: tr>='01' and tr<='05'}</u>{end:}:
+ {if: tr=='01'}<u>{end:}промышленная - 1{if: tr=='01'}</u>{end:};
+ {if: tr=='03'}<u>{end:}транспортная - 2, в т.ч. ДТП - 3{if: tr=='03'}</u>{end:};
+ {if: tr=='04'}<u>{end:}с/хоз - 4{if: tr=='04'}</u>{end:};
+ {if: tr=='02' or tr=='05'}<u>{end:}прочие - 5{if: tr=='02' or tr=='05'}</u>{end:};<br>
+{if: tr>='06' and tr<='12'}<u>{end:}не производственная{if: tr>='06' and tr<='12'}</u>{end:}:
+ {if: tr=='06'}<u>{end:}бытовая - 6{if: tr=='06'}</u>{end:};
+ {if: tr=='07'}<u>{end:}уличная - 7{if: tr=='07'}</u>{end:};
+ {if: tr=='08'}<u>{end:}транспортная - 8, в т.ч. ДТП - 9{if: tr=='08'}</u>{end:}; {if: tr=='09'}<u>{end:}школьная - 10{if: tr=='09'}</u>{end:};<br>
+{if: tr=='10'}<u>{end:}спортивная - 11{if: tr=='10'}</u>{end:};
+ противоправная травма - 12;
+ {if: tr=='11'}<u>{end:}прочие - 13{if: tr=='11'}</u>{end:}.</td></tr>
+<tr><td>20. Дата поступления в приёмное отделение: <b>{currentAction.begDate.date.toString("dd.MM.yyyy") if currentAction else ''}</b> Время <b>{currentAction.begDate.time.toString("hh.mm") if currentAction else ''}</b></td></tr>
+<tr><td>21. Название отделения<b>{currentAction[u"Направлен в отделение"].value if currentAction else ''}</b><br>
+Дата поступления <b>{currentAction[u"Дата перевода"].value.date.toString("dd.MM.yyyy") if currentAction else ''}</b> Время <b>{str(currentAction[u"Время перевода"].value) if currentAction else ''}</b>.</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:20"> </p></td></tr>
+
+<tr><td>Подпись врача приемного отделения__________________________________________ Код <b>{currentAction.person.code}</b><br>
+__________________________________________________________________________</td></tr>
+<tr><td>
+     * - идентификационный номер пациента или иной, принятый в ЛПУ<br>
+     ** - определение состояния опьянения осуществляется в соответствии с порядком, установленным Минздравом России</td></tr>
+</table>
+
+
+
+
+<!--НОВАЯ СТРАНИЦА-->
+<p style="page-break-after: always"></p>
+
+
+
+
+<table cellpadding=0 cellspacing=0 width=100%>
+<!--Стационар - выписка -->{: currentAction = None}
+{for: action in event.actions}
+{if: action.name == u"Выписка"}{: currentAction = action}{end:}
+{end:}
+<tr><td>22. Дата выписки (смерти): <b>{currentAction.begDate.date.toString("dd.MM.yyyy") if currentAction else ''}</b>Время <b>{currentAction.begDate.time.toString("hh.mm")  if currentAction else ''}</b></td></tr>
+<tr><td>23. Продолжительность госпитализации (койко-дней): <b>{str(currentAction[u"Продолжительность госпитализации"].value) if currentAction else ''}</b></td></tr>
+<tr>{: ishod = currentAction[u"Исход госпитализации"].value if currentAction else ''}<td>24. Исход госпитализации:
+ {if: ishod==u"выписан" or ishod==u"выписан в дневной стационар" or ishod==u"выписан в круглосуточный стационар"}<u>{end:}выписан - 1{if: ishod==u"выписан" or ishod==u"выписан в дневной стационар" or ishod==u"выписан в круглосуточный стационар"}</u>{end:};
+ в т.ч. {if:  ishod==u"выписан в дневной стационар"}<u>{end:}в дневной стационар - 2{if:  ishod==u"выписан в дневной стационар"}</u>{end:};
+ {if:  ishod==u"выписан в круглосуточный стационар"}<u>{end:}в круглосуточный стационар - 3{if:  ishod==u"выписан в круглосуточный стационар"}</u>{end:};<br>
+{if:  ishod==u"переведен в другой стационар"}<u>{end:}переведен в другой стационар - 4{if:  ishod==u"переведен в другой стационар"}</u>{end:}</td></tr>
+<tr>{: er = event.result.code}<td>24.1 Результат госпитализации:
+ {if: er=='01'}<u>{end:}выздоровление - 1;{if: er=='01'}</u>{end:}
+ {if: er=='02'}<u>{end:}улучшение - 2;{if: er=='02'}</u>{end:}
+ {if: er>='03' and er <= '32'}<u>{end:}без перемен - 3;{if: er>='03' and er <= '32'}</u>{end:}
+ ухудшение - 4;<br>
+{if: er=='01'}<u>{end:}здоров - 5;{if: er=='01'}</u>{end:}
+ {if: er=='99'}<u>{end:}умер - 6.{if: er=='99'}</u>{end:}</td></tr>
+<tr><td>25. Листок нетрудоспособности: открыт <b>{tempInvalid.begDate.date.toString("dd.MM.yyyy")}</b> закрыт<b>{tempInvalid.endDate.date.toString("dd.MM.yyyy")}</b></td></tr>
+<tr><td>25.1. {if: tempInvalid.reason.code == '5'}<u>{end:}По уходу за больным{if: tempInvalid.reason.code == '5'}</u>{end:}  Полных лет: <b>{tempInvalid.age}</b> Пол: {if: tempInvalid.sex==u'М'}<u>{end:}муж - 1;{if: tempInvalid.sex==u'М'}</u>{end:}   {if: tempInvalid.sex==u'Ж'}<u>{end:}жен - 2{if: tempInvalid.sex==u'Ж'}</u>{end:}</td></tr>
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>26. Движение пациента по отделениям:</td></tr>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td align=center>№</td><td align=center>Код<br>отделения</td><td align=center>Профиль коек</td><td align=center>Код<br>врача</td><td align=center>Дата<br>поступления</td><td align=center>Дата<br>выписки,<br>перевода <font size="1">3)</font></td><td align=center>Код диагноза<br>по МКБ</td><td align=center>Код<br>медицинского<br>стандарта <font size="1">1)</font></td><td align=center>Код<br>прерванного<br>случая <font size="1">2)</font></td><td align=center>Вид<br>оплаты</td></tr>
+<tr><td align=center>1</td><td align=center>2</td><td align=center>3</td><td align=center>4</td><td align=center>5</td><td align=center>6</td><td align=center>7</td><td align=center>8</td><td align=center>9</td><td align=center>10</td></tr>
+{for: (i, act) in enumerate([x for x in event.actions if x.name == u'Движение'])}
+<tr><td><b>{str(i+1)+"."}</b></td><td><b>{act[u"койка"].value.orgStructure.infisInternalCode if act[u"койка"].value else ""}</b></td><td><b>{act[u"койка"].value.profile.name if act[u"койка"].value else ""}</b></td><td><b>{act.person.code}</b></td><td><b>{act.begDate.date.toString("dd.MM.yy")}</b></td><td><b>{act.endDate.date.toString("dd.MM.yy")}</b></td><td><b>{act[u"Диагноз"].value}</b></td><td><b>{act[u"Код медицинского стандарта"].value}</b></td><td><b>{act[u"Код прерванного случая"].value}</b></td><td><b>{act[u"Вид оплаты"].value}</b></td></tr>
+{end:}
+</table></td></tr>
+</table></td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:12"> </p></td></tr>
+
+<!--Лечение - оперативное -->
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>27. Хирургические операции (обозначить: основную операцию, использование спец. аппаратуры):</td></tr>
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td align=center rowspan=2>Дата,<br>час</td><td align=center rowspan=2>Код<br>хирурга</td><td align=center rowspan=2>Код<br>отделения</td><td align=center colspan=2>Операция</td><td align=center colspan=2>Осложнение</td><td align=center rowspan=2>Анестезия *</td><td align=center colspan=3>Использование<br>спец. аппаратуры</td><td align=center rowspan=2>Вид<br>оплаты</td></tr>
+<tr><td align=center>наименование</td><td align=center>код</td><td align=center>наименование</td><td align=center>код</td><td align=center>энд.</td><td align=center>лазер</td><td align=center>криог.</td></tr>
+<tr><td align=center>1</td><td align=center>2</td><td align=center>3</td><td align=center>4</td><td align=center>5</td><td align=center>6</td><td align=center>7</td><td align=center>8</td><td align=center>9</td><td align=center>10</td><td align=center>11</td><td align=center>12</td></tr>
+{for: (i, act) in enumerate([x for x in event.actions if x.name == u'Оперативное'])}
+<tr><td align=center><b>{act.begDate.datetime.toString("dd.MM, hh")}</b></td><td align=center><b>{act.person.code}</b></td><td align=center><b>{act[u"Код отделения"].value}</b></td><td align=center><b>{act[u"Наименование операции"].value}</b></td><td align=center><b>{act[u"Код операции"].value}</b></td><td align=center><b>{act[u"Осложнение"].value}</b></td><td align=center><b>{act[u"Код осложнения"].value}</b></td><td align=center><b>{'1' if act[u"Анестезия"].value == u'общая' else ('2' if act[u"Анестезия"].value == u'местная' else '')}</b></td><td align=center><b>{act[u"Использование энд."].value}</b></td><td align=center><b>{act[u"Использование лазера"].value}</b></td><td align=center><b>{act[u"Использование криог."].value}</b></td><td align=center><b>{act[u"Вид оплаты"].value}</b></td></tr>
+{end:}
+</table></td></tr>
+<tr><td>* Анестезия: общая - 1, местная - 2.</td></tr>
+</table></td></tr>
+<tr><td>  
+<table cellpadding=0 cellspacing=0 width=100%>
+<!-- Лабораторные исследования - RW, AIDS -->{: actionRW = None}{: actionAIDS = None}
+{for: action in event.actions}
+{if: action.name == u"RW"}{: actionRW = action}
+{elif: action.name == u"AIDS"}{: actionAIDS = action}
+{end:}
+{end:}
+<tr><td>28. Обследован:  </td><td>RW 1</td><td><table border="1"><tr><td>{actionRW[u"Результат"].value if actionRW else ""}</td></tr></table></td><td>AIDS 2</td><td><table border="1"><tr><td>{actionAIDS[u"Результат"].value if actionAIDS else ""}</td></tr></table></td></tr>
+</table>
+</td></tr>
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>29. Диагноз стационара (при выписке):</td></tr>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td align=center></td><td align=center>Основное заболевание</td><td align=center>Код<br>МКБ</td><td align=center>Осложнение</td><td align=center>Код<br>МКБ</td><td align=center>Сопутствующее<br>заболевание</td><td align=center>Код<br>МКБ</td></tr>
+<tr><td align=center>Клинический<br>заключительный</td><td align=center><b><i>{if: len(event.diagnosises)}{event.diagnosises[0].MKB.descr}{end:}</i></b></td><td align=center><b>{if: len(event.diagnosises)}{event.diagnosises[0].MKB}{end:}</b></td><td align=center><b>{if: len(event.diagnosises) > 1}{event.diagnosises[1].MKB.descr}{end:}</b></td><td align=center>{if: len(event.diagnosises) > 1}{event.diagnosises[1].MKB}{end:}</td><td align=center>{if: len(event.diagnosises) > 2}{event.diagnosises[2].MKB.descr}{end:}</td><td align=center>{if: len(event.diagnosises) > 2}{event.diagnosises[2].MKB}{end:}</td></tr>
+<tr><td align=center>Паталого-<br>анатомический</td><td align=center><b><i></i></b></td><td align=center><b></b></td><td align=center><b></b></td><td align=center></td><td align=center></td><td align=center></td></tr>
+</table>
+</td></tr>
+</table></td></tr>
+<tr><td>30. В случае смерти указать основную причину<br>
+_______________________________________________________________________________________________________<br>
+___________________________________________________________________________код по МКБ__________________</td></tr>
+<!--Прочие - справки - дефекты догоспитального этапа -->{: currentAction = None}
+{for: action in event.actions}
+{if: action.name == u"Дефекты догоспитального этапа"}{: currentAction = action}{end:}
+{end:}
+<tr><td>31. Дефекты догоспитального этапа:
+ {if: currentAction and currentAction[u"несвоевременность госпитализации"].value == u'да'}<u>{end:}несвоевременность госпитализации - 1{if: currentAction and currentAction[u"несвоевременность госпитализации"].value == u'да'}</u>{end:};
+ {if: currentAction and currentAction[u"недостаточный объем клинико-диагностического исследования"].value == u'да'}<u>{end:}недостаточный объем<br>
+клинико-диагностического исследования - 2{if: currentAction and currentAction[u"недостаточный объем клинико-диагностического исследования"].value == u'да'}</u>{end:};
+ {if: currentAction and currentAction[u"неправильная тактика лечения"].value == u'да'}<u>{end:}неправильная тактика лечения - 3{if: currentAction and currentAction[u"неправильная тактика лечения"].value == u'да'}</u>{end:};
+ {if: currentAction and currentAction[u"несовпадение диагноза"].value == u'да'}<u>{end:}несовпадение диагноза - 4{if: currentAction and currentAction[u"несовпадение диагноза"].value == u'да'}</u>{end:}</td></tr>
+</table>
+</td></tr>
+
+
+<tr style="font-size:1px"><td> <p style="margin-top:10"> </p></td></tr>
+
+<tr><td>
+Подпись лечащего врача ___________________________________<br>
+<br>
+Подпись заведующего отделением ___________________________
+</td></tr>
+
+<tr><td align=center>___________________________________</td></tr>
+
+<tr><td>
+<font size="1">1)</font> Проставляется в случае утверждения в субъекте Российской Федерации в установленном порядке.<br>
+<font size="1">2)</font> Заполняется при использовании в системе оплаты<br>
+<font size="1">3)</font> При выписке, переводе из отделения реанимации указать время пребывания в часах.
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<HTML>
+ <BODY>
+   {:setPageSize('30x22')}
+   {:setOrientation('P')}
+   {:setLeftMargin(0)}
+   {:setTopMargin(1)}
+   {:setRightMargin(0)}
+   {:setBottomMargin(0)}
+    <TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 6pt; color: black">
+      <TR><TD ALIGN="left" style="font-family:code 3 de 9; font-size:20pt;">{'*%07d*'%number}</TD></TR>
+      <TR><TD ALIGN="left">{serial}#{'%08d'%(number)}</TD></TR>
+   </TABLE>
+ </BODY>
+</HTML> 
+

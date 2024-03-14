@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CCashRegister</class>
+ <widget class="QDialog" name="CCashRegister">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>620</width>
+    <height>532</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="grpState">
+     <property name="title">
+      <string>Состояние</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="margin">
+       <number>4</number>
+      </property>
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblModel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>ККМ:</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="lblModelValue">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="text">
+         <string>АТОЛ 30Ф</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="lblOfdExchange">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>ОФД:</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="lblOfdExchangeValue">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="text">
+         <string>ok</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="grpSession">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Смена</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <property name="margin">
+       <number>4</number>
+      </property>
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="btnOpenSession">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Открыть</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="btnCloseSession">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Закрыть</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QGroupBox" name="grpDoc">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Документ</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_9">
+      <property name="margin">
+       <number>4</number>
+      </property>
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="btnPrintDuplicate">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Печатать дубликат</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="QTabWidget" name="tabMain">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="documentMode">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="tabAccounts">
+      <attribute name="title">
+       <string>&amp;Счета</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="1" colspan="2">
+        <widget class="CInDocTableView" name="tblAccounts"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btnCashPayment">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Наличная оплата</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="btnCardPayment">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&amp;Электронная оплата</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QGroupBox" name="grpAccounts">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Фильтр</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <property name="margin">
+           <number>4</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="4" column="0" colspan="2">
+           <widget class="QLabel" name="lblAccountContractNumber">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>&amp;Номер договора</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtAccountContractNumber</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="20" column="0" colspan="2">
+           <widget class="CApplyResetDialogButtonBox" name="buttonBoxAccounts">
+            <property name="standardButtons">
+             <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="0" colspan="2">
+           <widget class="QLineEdit" name="edtAccountNumber"/>
+          </item>
+          <item row="12" column="1">
+           <widget class="CDateEdit" name="edtAccountBegDate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>dd.MM.yyyy</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0" colspan="2">
+           <widget class="QLabel" name="lblAccountNumber">
+            <property name="text">
+             <string>Номер &amp;счёта</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtAccountNumber</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="0">
+           <widget class="QLabel" name="lblAccountEndDate">
+            <property name="text">
+             <string>&amp;по</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtAccountEndDate</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="COrgStructureComboBox" name="cmbAccountOrgStructure"/>
+          </item>
+          <item row="7" column="0" colspan="2">
+           <widget class="QLineEdit" name="edtAccountContractResolution"/>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="QLineEdit" name="edtAccountContractNumber"/>
+          </item>
+          <item row="8" column="0" colspan="2">
+           <widget class="QLabel" name="lblAccountContractGrouping">
+            <property name="text">
+             <string>&amp;Группа договора</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtAccountContractGrouping</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="18" column="0" colspan="2">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="13" column="1">
+           <widget class="CDateEdit" name="edtAccountEndDate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>dd.MM.yyyy</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QLabel" name="lblAccountContractResolution">
+            <property name="text">
+             <string>&amp;Основание договора</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtAccountContractResolution</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0" colspan="2">
+           <widget class="QLineEdit" name="edtAccountContractGrouping"/>
+          </item>
+          <item row="12" column="0">
+           <widget class="QLabel" name="lblAccountBegDate">
+            <property name="text">
+             <string>&amp;Дата счёта c</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtAccountBegDate</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="CPersonComboBox" name="cmbAccountAuthor"/>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="lblAccountOrgStructure">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>130</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Под&amp;разделение</string>
+            </property>
+            <property name="buddy">
+             <cstring>cmbAccountOrgStructure</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QLabel" name="lblAccountAuthor">
+            <property name="text">
+             <string>&amp;Автор счёта</string>
+            </property>
+            <property name="buddy">
+             <cstring>cmbAccountAuthor</cstring>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabPayedAccounts">
+      <attribute name="title">
+       <string>&amp;Оплаченные счета</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btnCashRefund">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>&amp;Наличный возврат</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QGroupBox" name="grpPayedAccounts">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Фильтр</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <property name="margin">
+           <number>4</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="13" column="0">
+           <widget class="QLabel" name="lblPayedAccountEndDate">
+            <property name="text">
+             <string>&amp;по</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtPayedAccountEndDate</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="1">
+           <widget class="CDateEdit" name="edtPayedAccountEndDate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>dd.MM.yyyy</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QLabel" name="lblPayedAccountContractNumber">
+            <property name="text">
+             <string>&amp;Номер договора</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtPayedAccountContractNumber</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="QLineEdit" name="edtPayedAccountContractNumber"/>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QLabel" name="lblPayedAccountContractResolution">
+            <property name="text">
+             <string>&amp;Основание договора</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtPayedAccountContractResolution</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0" colspan="2">
+           <widget class="QLineEdit" name="edtPayedAccountContractGrouping"/>
+          </item>
+          <item row="18" column="0" colspan="2">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="12" column="0">
+           <widget class="QLabel" name="lblPayedAccountBegDate">
+            <property name="text">
+             <string>&amp;Дата счёта c</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtPayedAccountBegDate</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="1">
+           <widget class="CDateEdit" name="edtPayedAccountBegDate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>dd.MM.yyyy</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0" colspan="2">
+           <widget class="QLineEdit" name="edtPayedAccountContractResolution"/>
+          </item>
+          <item row="8" column="0" colspan="2">
+           <widget class="QLabel" name="lblPayedAccountContractGrouping">
+            <property name="text">
+             <string>&amp;Группа договора</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtPayedAccountContractGrouping</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0" colspan="2">
+           <widget class="QLabel" name="lblPayedAccountNumber">
+            <property name="text">
+             <string>Номер &amp;счёта</string>
+            </property>
+            <property name="buddy">
+             <cstring>edtPayedAccountNumber</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="0" colspan="2">
+           <widget class="QLineEdit" name="edtPayedAccountNumber"/>
+          </item>
+          <item row="19" column="0" colspan="2">
+           <widget class="CApplyResetDialogButtonBox" name="buttonBoxPayedAccounts">
+            <property name="standardButtons">
+             <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="COrgStructureComboBox" name="cmbPayedAccountOrgStructure"/>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="CPersonComboBox" name="cmbPayedAccountAuthor"/>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>&amp;Автор счёта</string>
+            </property>
+            <property name="buddy">
+             <cstring>cmbPayedAccountAuthor</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="lblPayedAccountOrgStructure">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>130</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Под&amp;разделение</string>
+            </property>
+            <property name="buddy">
+             <cstring>cmbPayedAccountOrgStructure</cstring>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="btnCardRefund">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>&amp;Электронный возврат</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="CInDocTableView" name="tblPayedAccounts"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabCash">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="title">
+       <string>На&amp;личность</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <property name="margin">
+        <number>4</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="1" column="0" colspan="2">
+        <widget class="QPushButton" name="btnPutToCash">
+         <property name="text">
+          <string>Внести</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QDoubleSpinBox" name="edtCashSum">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="prefix">
+          <string notr="true"/>
+         </property>
+         <property name="decimals">
+          <number>2</number>
+         </property>
+         <property name="maximum">
+          <double>99999999.989999994635582</double>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblCashSum">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Сумма в кассе </string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QPushButton" name="btnTakeFromCash">
+         <property name="text">
+          <string>Изъять</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CInDocTableView</class>
+   <extends>QTableView</extends>
+   <header location="global">library/InDocTable.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header location="global">library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CPersonComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Orgs/PersonComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CApplyResetDialogButtonBox</class>
+   <extends>QDialogButtonBox</extends>
+   <header location="global">library/DialogButtonBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>btnOpenSession</tabstop>
+  <tabstop>btnCloseSession</tabstop>
+  <tabstop>btnPrintDuplicate</tabstop>
+  <tabstop>tabMain</tabstop>
+  <tabstop>tblAccounts</tabstop>
+  <tabstop>btnCashPayment</tabstop>
+  <tabstop>btnCardPayment</tabstop>
+  <tabstop>cmbAccountOrgStructure</tabstop>
+  <tabstop>cmbAccountAuthor</tabstop>
+  <tabstop>edtAccountContractNumber</tabstop>
+  <tabstop>edtAccountContractResolution</tabstop>
+  <tabstop>edtAccountContractGrouping</tabstop>
+  <tabstop>edtAccountNumber</tabstop>
+  <tabstop>edtAccountBegDate</tabstop>
+  <tabstop>edtAccountEndDate</tabstop>
+  <tabstop>buttonBoxAccounts</tabstop>
+  <tabstop>tblPayedAccounts</tabstop>
+  <tabstop>cmbPayedAccountOrgStructure</tabstop>
+  <tabstop>cmbPayedAccountAuthor</tabstop>
+  <tabstop>edtPayedAccountContractNumber</tabstop>
+  <tabstop>edtPayedAccountContractResolution</tabstop>
+  <tabstop>edtPayedAccountContractGrouping</tabstop>
+  <tabstop>edtPayedAccountNumber</tabstop>
+  <tabstop>edtPayedAccountBegDate</tabstop>
+  <tabstop>edtPayedAccountEndDate</tabstop>
+  <tabstop>buttonBoxPayedAccounts</tabstop>
+  <tabstop>btnPutToCash</tabstop>
+  <tabstop>btnTakeFromCash</tabstop>
+  <tabstop>btnCashRefund</tabstop>
+  <tabstop>btnCardRefund</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PersonsListDialog</class>
+ <widget class="QDialog" name="PersonsListDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>906</width>
+    <height>545</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Список записей</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="4" column="2">
+    <widget class="QComboBox" name="boxLPU"/>
+   </item>
+   <item row="2" column="2">
+    <widget class="CRBComboBox" name="boxSpec"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="QCheckBox" name="chkUserRightsProfile">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Профиль прав</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QCheckBox" name="chkStrPodr">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Структурное подразделение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="CDbComboBox" name="cmbUserRightsProfile"/>
+   </item>
+   <item row="0" column="2">
+    <widget class="COrgStructureComboBox" name="boxStrPodr"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QCheckBox" name="chkUserLogin">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Регистрационное имя</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QComboBox" name="cmbActivity"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QCheckBox" name="chkSpec">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Специальность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QCheckBox" name="chkActivity">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Вид деятельности</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QCheckBox" name="chkLPU">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Внешнее ЛПУ</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QCheckBox" name="chkSurname">
+     <property name="text">
+      <string>Фамилия</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="CRBComboBox" name="cmbPost"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QCheckBox" name="chkPost">
+     <property name="text">
+      <string>Должность</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QLineEdit" name="edtSurname"/>
+   </item>
+   <item row="7" column="2">
+    <widget class="QLineEdit" name="edtUserLogin"/>
+   </item>
+   <item row="11" column="0" colspan="3">
+    <layout class="QHBoxLayout">
+     <property name="spacing">
+      <number>4</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>всего: </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chkOnlyOwn">
+       <property name="text">
+        <string>Только свои</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chkOnlyWorking">
+       <property name="text">
+        <string>Только работающие</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chkChairPerson">
+       <property name="text">
+        <string>Председатель ВК</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Close</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="8" column="2">
+    <widget class="QLineEdit" name="edtSNILS"/>
+   </item>
+   <item row="9" column="0" colspan="3">
+    <widget class="CTableView" name="tblItems">
+     <property name="whatsThis">
+      <string comment="ура!">список записей</string>
+     </property>
+     <property name="tabKeyNavigation">
+      <bool>false</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QCheckBox" name="chkSNILS">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>СНИЛС</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDbComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/DbComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>chkStrPodr</tabstop>
+  <tabstop>boxStrPodr</tabstop>
+  <tabstop>chkSpec</tabstop>
+  <tabstop>boxSpec</tabstop>
+  <tabstop>chkActivity</tabstop>
+  <tabstop>cmbActivity</tabstop>
+  <tabstop>chkLPU</tabstop>
+  <tabstop>boxLPU</tabstop>
+  <tabstop>chkUserRightsProfile</tabstop>
+  <tabstop>cmbUserRightsProfile</tabstop>
+  <tabstop>chkOnlyOwn</tabstop>
+  <tabstop>chkOnlyWorking</tabstop>
+  <tabstop>chkChairPerson</tabstop>
+  <tabstop>chkUserLogin</tabstop>
+  <tabstop>edtUserLogin</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>PersonsListDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>778</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>777</x>
+     <y>420</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

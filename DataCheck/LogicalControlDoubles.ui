@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LogicalControlDoubles</class>
+ <widget class="QDialog" name="LogicalControlDoubles">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>617</width>
+    <height>363</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Контроль двойников</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="0" column="0" colspan="7">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <item row="1" column="7">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="chkLastNameClient">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Фамилия</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="chkPolicyClient">
+        <property name="text">
+         <string>Полис</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="chkBirthDateClient">
+        <property name="text">
+         <string>Дата рождения</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="chkPatrNameClient">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Отчество</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="chkFirstNameClient">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Имя</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="chkDocumentsClient">
+        <property name="text">
+         <string>Документы</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="chkSNILSClient">
+        <property name="text">
+         <string>СНИЛС</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="chkSexClient">
+        <property name="text">
+         <string>Пол пациента</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="7">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="5">
+       <widget class="QLabel" name="lblBirthDateFilter">
+        <property name="text">
+         <string>по</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="CDateEdit" name="edtBirthDateFilterFrom">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QCheckBox" name="chkLimitFilter">
+        <property name="text">
+         <string>Ограничить поиск до</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QLabel" name="lblLastNameFilter">
+        <property name="text">
+         <string>по</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QCheckBox" name="chkBirthDateFilter">
+        <property name="text">
+         <string>Ограничить даты с</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QCheckBox" name="chkLastNameFilter">
+        <property name="text">
+         <string>Ограничить фамилии с</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="6">
+       <widget class="CDateEdit" name="edtBirthDateFilterTo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLineEdit" name="edtLastNameFilterFrom">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="6">
+       <widget class="QLineEdit" name="edtLastNameFilterTo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4">
+       <widget class="QLineEdit" name="edtLimitFilter">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="5" colspan="2">
+       <widget class="QLabel" name="lblLimitFilter">
+        <property name="text">
+         <string>записей</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="7">
+    <widget class="CProgressBar" name="prbControlDoubles"/>
+   </item>
+   <item row="2" column="0" colspan="7">
+    <widget class="CControlDoublesPopupMenu" name="tblDoubleClients">
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="btnNewTuning">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Новое условие</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Всего записей:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>214</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLabel" name="lblCountRecords">
+     <property name="text">
+      <string>0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="5">
+    <widget class="QPushButton" name="btnBeginCheck">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Начать проверку</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="6">
+    <widget class="QPushButton" name="btnEndCheck">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Закрыть</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QPushButton" name="btnPrint">
+     <property name="text">
+      <string>Печать</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CProgressBar</class>
+   <extends>QProgressBar</extends>
+   <header>library/ProgressBar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CControlDoublesPopupMenu</class>
+   <extends>QListWidget</extends>
+   <header>DataCheck/ControlDoublesPopupMenu.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>chkLastNameClient</tabstop>
+  <tabstop>chkFirstNameClient</tabstop>
+  <tabstop>chkPatrNameClient</tabstop>
+  <tabstop>chkSexClient</tabstop>
+  <tabstop>chkBirthDateClient</tabstop>
+  <tabstop>chkDocumentsClient</tabstop>
+  <tabstop>chkPolicyClient</tabstop>
+  <tabstop>chkSNILSClient</tabstop>
+  <tabstop>chkLastNameFilter</tabstop>
+  <tabstop>edtLastNameFilterFrom</tabstop>
+  <tabstop>edtLastNameFilterTo</tabstop>
+  <tabstop>chkBirthDateFilter</tabstop>
+  <tabstop>edtBirthDateFilterFrom</tabstop>
+  <tabstop>edtBirthDateFilterTo</tabstop>
+  <tabstop>chkLimitFilter</tabstop>
+  <tabstop>edtLimitFilter</tabstop>
+  <tabstop>tblDoubleClients</tabstop>
+  <tabstop>btnNewTuning</tabstop>
+  <tabstop>btnPrint</tabstop>
+  <tabstop>btnBeginCheck</tabstop>
+  <tabstop>btnEndCheck</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkBirthDateFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtBirthDateFilterFrom</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>463</x>
+     <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkBirthDateFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtBirthDateFilterTo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>579</x>
+     <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkLastNameFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtLastNameFilterFrom</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>463</x>
+     <y>13</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkLastNameFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtLastNameFilterTo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>579</x>
+     <y>13</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkLimitFilter</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>edtLimitFilter</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>463</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

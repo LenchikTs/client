@@ -1,0 +1,81 @@
+<HTML><BODY>
+{setPageSize('A4')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+<HR>
+<CENTER>БЕГУНОК ДД</CENTER>
+<HR>
+код: {client.id}&nbsp;<FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT><BR/>
+ФИО: <B>{client.fullName}</B><BR/>
+ДР:  <B>{client.birthDate}</B>(<B>{client.age}</B>),&nbsp;Пол: <B>{client.sex}</B>,&nbsp;СНИЛС:<B>{client.SNILS}</B><BR/>
+Док: <B>{client.document}</B><BR/>
+Полис:<B>{client.policy}</B><BR/>
+Рег:<B>{client.regAddress}</B><BR/>
+Прож:<B>{client.locAddress}</B><BR/>
+Work:<B>{client.work}</B><BR/>
+<HR>
+{if: present('diagnostics')}
+<P>Осмотры</P>
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="2">
+    <TR> <TH> №             </TH> 
+         <TH> Тип           </TH>
+         <TH> Специальность </TH>
+         <TH> Врач          </TH>
+         <TH> Назначен      </TH>
+         <TH> Выполнен      </TH>
+         <TH> ГрЗд          </TH>
+         <TH> Код МКБ       </TH>
+         <TH> Характер      </TH>
+         <TH> Стадия        </TH>
+         <TH> ДН            </TH>
+         <TH> СКЛ           </TH>
+         <TH> Госп.         </TH>
+         <TH> Результат     </TH>
+    </TR>
+
+    {for: i, diagnostic in enumerate(diagnostics) }
+    <TR> <TD> {i+1} </TD> 
+         <TD> {diagnostic.type}        </TD>
+         <TD> {diagnostic.speciality}  </TD>
+         <TD> {diagnostic.person}      </TD>
+         <TD> {diagnostic.setDate}     </TD>
+         <TD> {diagnostic.endDate}     </TD>
+         <TD> {diagnostic.healthGroup} </TD>
+         <TD> {diagnostic.MKB}         </TD>
+         <TD> {diagnostic.character if diagnostic.character != '0' else ''} </TD>
+         <TD> {diagnostic.stage}       </TD>
+         <TD> {diagnostic.dispanser}   </TD>
+         <TD> {diagnostic.sanatorium}  </TD>
+         <TD> {diagnostic.hospital}    </TD>
+         <TD> {diagnostic.result if diagnostic.result != 0 else ''}      </TD>
+    </TR>
+    {end:}
+</TABLE>
+{end:}
+
+
+{if: present('actions')}
+<P>Мероприятия</P>
+
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="2">
+    <TR> <TH> №             </TH> 
+         <TH> Наименование  </TH>
+         <TH> Назначено     </TH>
+         <TH> Начато        </TH>
+         <TH> Окончено      </TH>
+         <TH> Исполнитель   </TH>
+    </TR>
+
+    {for: i, action in enumerate(actions) }
+    <TR> <TD> {i+1} </TD> 
+         <TD> {action.type}          </TD>
+         <TD> {action.directionDate} </TD>
+         <TD> {action.begDate}       </TD>
+         <TD> {action.endDate}       </TD>
+         <TD> {action.person}        </TD>
+    </TR>
+    {end:}
+</TABLE>
+{end:}
+
+</BODY></HTML>

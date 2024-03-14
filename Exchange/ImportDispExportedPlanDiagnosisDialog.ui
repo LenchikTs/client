@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImportDispExportedPlanDiagnosisDialog</class>
+ <widget class="QDialog" name="ImportDispExportedPlanDiagnosisDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>716</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Список граждан из ТФОМС, запланированных на диспансерные осмотры</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Год:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="sbYear">
+       <property name="minimum">
+        <number>2017</number>
+       </property>
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Месяц</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cmbMonth">
+       <property name="currentIndex">
+        <number>11</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>январь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>февраль</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>март</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>апрель</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>май</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>июнь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>июль</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>август</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>сентябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>октябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ноябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>декабрь</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSelectNotFound">
+       <property name="text">
+        <string>Выбрать не найденных</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnRefresh">
+       <property name="text">
+        <string>Загрузить список</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblExpPlanCount">
+     <property name="text">
+      <string>На сервисе: 0 записей</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="CTableView" name="tblExportedPlan">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>3</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Ошибки при удалении:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="CTableView" name="tblExportedPlanErrors">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblDeleteStatus">
+     <property name="text">
+      <string>Отправка пакетов...</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QProgressBar" name="pbDeleteProgress">
+     <property name="format">
+      <string>%v из %m</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSelectAll">
+       <property name="text">
+        <string>Выбрать всех</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnDeleteSelected">
+       <property name="text">
+        <string>Удалить выбранные</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>F088AddActions30Dialog</class>
+ <widget class="QDialog" name="F088AddActions30Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1129</width>
+    <height>231</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Выберите действия</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="1" column="9">
+    <widget class="QPushButton" name="btnSelectClearAll">
+     <property name="text">
+      <string>Очистить выбор</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="10">
+    <widget class="QPushButton" name="btnCancel">
+     <property name="text">
+      <string>Отмена</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="6">
+    <widget class="QLineEdit" name="edtFindByCode">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="8">
+    <widget class="QPushButton" name="btnSelectAll">
+     <property name="text">
+      <string>Выбрать всё</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QCheckBox" name="chkCheckMKB">
+     <property name="text">
+      <string>Учитывать диагноз:</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="lblSelectedCount">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Количество выбранных</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="7">
+    <widget class="QPushButton" name="btnSave">
+     <property name="text">
+      <string>ОК</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="11">
+    <widget class="CTableView" name="tblF088AddActions30">
+     <property name="selectionMode">
+      <enum>QAbstractItemView::MultiSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QCheckBox" name="chkCheckAge">
+     <property name="text">
+      <string>Учитывать возраст</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="4">
+    <widget class="QLabel" name="lblFindByCode">
+     <property name="text">
+      <string>| Поиск по коду или наименованию</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QCheckBox" name="chkAdditional">
+     <property name="text">
+      <string>Дополнительное</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5" colspan="2">
+    <widget class="QComboBox" name="cmbCheckMKB">
+     <item>
+      <property name="text">
+       <string>основное заболевание</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>осложнения основного заболевания</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>сопутствующие заболевания</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>осложнения сопутствующих заболеваний</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="7" colspan="4">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CTableView</class>
+   <extends>QTableView</extends>
+   <header>library/TableView.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tblF088AddActions30</tabstop>
+  <tabstop>edtFindByCode</tabstop>
+  <tabstop>btnSave</tabstop>
+  <tabstop>btnSelectAll</tabstop>
+  <tabstop>btnSelectClearAll</tabstop>
+  <tabstop>btnCancel</tabstop>
+  <tabstop>chkCheckMKB</tabstop>
+  <tabstop>cmbCheckMKB</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnSave</sender>
+   <signal>clicked()</signal>
+   <receiver>F088AddActions30Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>658</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>216</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkCheckMKB</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbCheckMKB</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>216</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>332</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

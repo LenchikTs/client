@@ -1,0 +1,44 @@
+<HTML><BODY>
+{setPageSize('A4')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0">
+<TR><TD align="left"   COLSPAN=3>Министерство здравоохранения и социального развития РФ</TD>
+    <TD align="right"  COLSPAN=2>Медицинская документация</TD></TR>
+<TR><TD align="right"  COLSPAN=5>Форма N 025/у-04</TD></B></TR>
+<TR><TD align="left"   COLSPAN=1><B><u>{currentOrganisation.shortName}</u></B></TD>
+    <TD align="right"  COLSPAN=4><FONT FACE="Code 3 de 9" SIZE=+3>*{client.id}*</FONT></TD></TR>
+<TR><TH align="right"  COLSPAN=5>
+    <TABLE BORDER=3>
+    <TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100><FONT SIZE=+3>
+     {if:len(client.socStatuses)}
+      Л {client.socStatuses[-1].code}
+     {end:}
+    </TR></TD></FONT></TABLE>
+</TH></TR>
+<TR><TH COLSPAN=5><BIG>МЕДИЦИНСКАЯ КАРТА АМБУЛАТОРНОГО БОЛЬНОГО № <FONT SIZE=+3><B><i>{client.id}</i></B></FONT></BIG></TH></TR>
+</TABLE>
+<HR>                
+<FONT SIZE=+2>
+<CENTER><B>{client.lastName}</B></CENTER><BR/>
+<CENTER><B>{client.firstName} {client.patrName}</CENTER></B>
+</FONT>
+<HR>
+СНИЛС:<B>{client.SNILS}</B><BR/>
+Дата рождения:  <B>{client.birthDate}</B>(<B>{client.age}</B>)<BR/>
+Пол: <B>{client.sex}</B><BR/>
+Документ: <B>{client.document}</B><BR/>
+Полис:<B>{client.policy}</B><BR/>
+Адрес регистрации:<B>{client.regAddress}</B><BR/>
+Адрес проживания: <B>{client.locAddress}</B><BR/>
+Тел:<B>{client.phones}</B><BR/>
+Место работы:<B>{client.work.shortName}</B><BR/>
+должность:<B>{client.work.post}</B><BR/>
+ОКВЕД:<B>{client.work.OKVED}</B><BR/>
+<HR>
+Дата:<B>{currentDate}</B><BR/>
+Время:<B>{currentTime}</B><BR/>
+</SMALL>
+
+</BODY></HTML>
+

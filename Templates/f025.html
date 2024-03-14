@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+
+{setPageSize('A3')}
+{setOrientation('P')}
+{setLeftMargin(5)} {setTopMargin(5)} {setBottomMargin(5)} {setRightMargin(5)}
+
+{: QDate = type(client.birthDate.date)}
+<!--Первая страница -->
+<table width=100% cellpadding=0 cellspacing=0>
+<tr>
+<td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td align="center">Министерство здравоохранения и социального</td></tr>
+<tr><td align="center">развития Российской Федерации</td></tr>
+<tr><td align="center">{: string = currentOrganisation.shortName}<u><font face="Courier">{ " "*(27-len(string)/2) + string + " "*(28-(len(string)+1)/2) }</font></u></td></tr>
+<tr><td align="center">(наименование медицинского учреждения)</td></tr>
+<tr><td align="center">{:string = currentOrganisation.address[0:55]}<font face="Courier"><i><b><u>{" "*(27-len(string)/2) + string + " "*(28-(len(string)+1)/2)}</u></b></i></font></td></tr>
+<tr><td align="center">{:string = currentOrganisation.address[55:100]}<font face="Courier"><i><b><u>{" "*(27-len(string)/2) + string + " "*(28-(len(string)+1)/2)}</u></b></i></font></td></tr>
+<tr><td align="center">(адрес)</td></tr>
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>Код ОГРН</td><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td><i><b>{currentOrganisation.OGRN}</b></i></td></tr>
+</table></td><td></td></tr>
+</table></td></tr>
+</table></td>
+<td>Медицинская документация<br><br>
+Форма № 025-12/у_____<br><br>
+утверждена приказом Минздравсоцразвития России<br>
+от 22.11.2004 №255
+</td>
+</tr>
+
+<tr><td colspan=2 align="center"><center><b>ТАЛОН АМБУЛАТОРНОГО ПАЦИЕНТА</b></center></td></tr>
+
+<tr><td colspan=2><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td></td><td align="right"><b>№ медицинской карты</b></td><td><i><b><u>{client.id}</u></b></i></td><td><b>Дата</b></td><td><table border=1><tr><td><i><b>{event.execDate.date.toString("dd.MM.yy")}</b></i></td></tr></table></td></tr>
+</table></td></tr>
+
+<tr><td colspan=2><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td><table cellpadding=0 cellspacing=0>
+<tr><td valign="center"><table cellpadding="2"><tr><td>1. Код категории льготы</td></tr></table></td><td><table width=100% border="1"><tr><td>{if: len(client.socStatuses)}{: string = client.socStatuses[-1].code}{else:}{: string=""}{end:}<font face="Courier">{string + " "*(3 - len(string)) }</font></td></tr></table></td></tr></table></td>
+<td>2. Номер страхового полиса ОМС</td><td><table width=100% border="1"><tr><td><i><b>{client.policy.serial + ' ' + client.policy.number + u' выдан ' + client.policy.insurer.title}</b></i></td></tr></table></td></tr>
+<tr><td></td><td>3. СНИЛС</td><td><table border="1"><tr><td>{: string = client.SNILS}<font face="Courier">{ " "*0 + string + " "*(20-len(string)) }</font></td></tr></table></td></tr>
+</table></td></tr>
+
+<tr><td colspan=2><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000></td><td bgcolor=#000000></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td><table width=100% border="1">
+
+<tr><td>4. Пациент: код</td><td><i><b>{client.id}</b></i></td><td colspan=2>ф.и.о. <i><b>{client.fullName}</b></i></td></tr>
+
+<tr><td colspan=2>5. Пол:          {if: client.sex ==  u'М'}<u>{end:}1 - муж.{if: client.sex ==  u'М'}</u>{end:};  {if: client.sex == u'Ж' }<u>{end:}2 - жен. {if: client.sex == u'Ж' }</u>{end:}</td><td>6. Дата рождения</td><td><i><b>{str(client.birthDate) + u" (возраст " + unicode(client.age) + ")"}</b></i></td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td>7. Документ, удостоверяющий личность (название, серия и номер): <i><b>{client.document.type + u" серия " + client.document.serial + u" № " + client.document.number}</b></i></td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td>8. Адрес регистрации по месту жительства: <i><b>{ unicode(client.regAddress)[0:100]}</b></i></td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td><table border="1" width=100%>
+<tr><td><i><b>{unicode(client.regAddress)[100:200]}</b></i></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></td><td>9. Житель: {:incity = (str(client.locAddress.KLADRCode)[8:11] == '000')}{if: incity}<u>1 - город</u>; 2 - сел{else:}1 - город; <u>2 - сел</u>{end:}</td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>10. Социальный статус, в т.ч., занятость: {if: client.birthDate.date.month() < 9}{: schoolDate = QDate(client.birthDate.date.year() + 7, 9, 1)}{else:}{: schoolDate = QDate(client.birthDate.date.year() + 8, 9, 1)}{end:}<!--{"client.socStatuses[-1].classes"}-->
+{if: schoolDate > QDate.currentDate()}<u>{end:}1. - дошкольник{if: schoolDate > QDate.currentDate()}</u>{end:}: 
+1.1.- организован, 
+1.2.</td><td>- неорганизован, </td><td>{if: schoolDate <= QDate.currentDate() and schoolDate.addYears(10) > QDate.currentDate()}<u>{end:}2 - учащийся{if: schoolDate < QDate.currentDate() and schoolDate.addYears(10) > QDate.currentDate()}</u>{end:}, 
+{if: unicode(client.work) != ''}<u>{end:}3 - работающий{if: unicode(client.work) != ''}</u>{end:},</td></tr>
+<tr><td>{if: schoolDate.addYears(10) <= QDate.currentDate() and unicode(client.work) == ''}<u>{end:}4 - неработающий{if: schoolDate.addYears(10) <= QDate.currentDate() and unicode(client.work) == ''}</u>{end:}; 
+{: pens = ((client.sexCode == 1 and client.birthDate.date.addYears(60) <= QDate.currentDate()) or (client.sexCode == 2 and client.birthDate.date.addYears(55) <= QDate.currentDate()))}{if: pens}<u>{end:}5 - пенсионер{if: pens}</u>{end:}; 
+6 - военнослужащий, код</td><td><table cellpadding=0 cellspacing=0 border="1"><tr><td width=15></td><td width=15></td><td width=15></td></tr></table></td><td>7 - член семьи военнослужащего; 
+{if: unicode(client.regAddress) == ''}<u>{end:}8 - без определенного места жительства{if: unicode(client.regAddress) == ''}</u>{end:}</td></tr>
+</table>
+</td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td>11. Инвалидность: {if: len(client.socStatuses)}{: socCode=client.socStatuses[-1].code}{else:}{: socCode='0'}{end:}
+{if: socCode == '081'}<u>{end:}1 - I гр.{if: socCode == '081'}</u>{end:}, 
+{if: socCode == '082'}<u>{end:}2 - II гр.{if: socCode == '082'}</u>{end:}, 
+{if: socCode == '083'}<u>{end:}3 - III гр.{if: socCode == '083'}</u>{end:}, 
+4 - установлена впервые в жизни, 
+{if: socCode >= '081' and socCode <= '083'}<u>{end:}5 степень инвалидности - <i><b>{if: socCode >= '081' and socCode <= '083'}{str(int(socCode) - 80)}{end:}</b></i>{if: socCode >= '081' and socCode <= '083'}</u>{end:}, 
+{if: socCode == '09' or socCode == '084'}<u>{end:}6 - ребенок-инвалид{if: socCode=='09' or socCode == '084'}</u>{end:}, 
+7 - инвалид с детства, 
+8 - снята</td><td bgcolor=#000000 width=1></td></tr>
+
+</table></td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td colspan=2></td></tr>
+
+<tr><td colspan=2><table cellpadding=0 cellspacing=0 width=100% border=1>
+<tr><td bgcolor=#000000 width=1></td><td>12. Специалист: код</td><td><i><b>{event.execPerson.code}</b></i></td><td>ф.и.о. <i><b>{event.execPerson.longName}</b></i></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>13. Специалист: код</td><td><i><b></b></i></td><td>ф.и.о. <i><b></b></i></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td colspan=3>14. Вид оплаты:      {: vf = event.visits[-1].finance.code}
+{if: vf=='2'}<u>{end:}1 - ОМС{if: vf=='2'}</u>{end:}; 
+{if: vf=='1'}<u>{end:}2 - бюджет{if: vf=='1'}</u>{end:}; 
+{if: vf=='3' or vf=='4'}<u>{end:}3 - платные услуги{if: vf=='3' or vf=='4'}</u>{end:}, в.т.ч. 
+{if: vf=='3'}<u>{end:}4 - ДМС{if: vf=='3'}</u>{end:}; 
+{if: vf=='5' or vf==''}<u>{end:}5 - другое{if: vf=='5' or vf==''}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td colspan=3>15. Место обслуживания:                 {: vs = event.visits[-1].scene.code}
+{if: vs=='1'}<u>{end:}1 - поликлиника{if: vs=='1'}</u>{end:},     
+{if: vs=='2' or vs=='3'}<u>{end:}2 - на дому{if: vs=='2' or vs=='3'}</u>{end:},               в.т.ч. 
+{if: vs=='3'}<u>{end:}3 - актив{if: vs=='3'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td colspan=3>16. Цель посещения:    {: vt = event.visits[-1].type.code}
+{if: vt==''}<u>{end:}1 - заболевание{if: vt==''}</u>{end:}; 
+{if: vt==u'П'}<u>{end:}2 - профосмотр{if: vt==u'П'}</u>{end:}; 
+3 - патронаж; 
+{if: vt==u'Д' or vt==u'ДД' or vt==u'ДН'}<u>{end:}4 - другое{if: vt==u'Д' or vt==u'ДД' or vt==u'ДН'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+
+<tr><td bgcolor=#000000 width=1></td><td colspan=3>17. Результат обращения: {: er = event.result.code}
+{if: event.result.continued=='0'}<u>{end:}случай закончен{if: event.result.continued=='0'}</u>{end:}: 
+{if: er=='01'}<u>{end:}1 - выздоровл.{if: er=='01'}</u>{end:}; 
+{if: er=='02'}<u>{end:}2 - улучшение{if: er=='02'}</u>{end:}; 
+{if: er=='03'}<u>{end:}3 - динамическое набл.{if: er=='03'}</u>{end:}, 
+{if: er>='04' and er<='08'}<u>{end:}направлен{if: er>='04' and er<='08'}</u>{end:}: 
+{if: er=='04'}<u>{end:}4 - на госпитализацию{if: er=='04'}</u>{end:}, 
+{if: er=='05'}<u>{end:}5 - в дневной стационар{if: er=='05'}</u>{end:}, 
+{if: er=='06'}<u>{end:}6 - стационар на дому{if: er=='06'}</u>{end:}, 
+{if: er=='07'}<u>{end:}7 - на консульта-{if: er=='07'}</u>{end:}<br>
+{if: er=='07'}<u>{end:}цию{if: er=='07'}</u>{end:}, 
+{if: er=='08'}<u>{end:}8 - на консультацию в др. ЛПУ{if: er=='08'}</u>{end:}, 
+{if: er=='09'}<u>{end:}9 - справка для получения путевки{if: er=='09'}</u>{end:}, 
+{if: er=='10'}<u>{end:}10 - санаторно-курортная карта{if: er=='10'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000></td><td bgcolor=#000000></td><td bgcolor=#000000></td><td bgcolor=#000000></td></tr>
+</table></td></tr>
+
+<tr><td colspan=2><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td></td><td>См. на обороте</td></tr>
+</table></td></tr>
+</table>
+
+
+
+<!--Вторая страница -->
+<table width=100% cellpadding=0 cellspacing=0>
+<tr><td align="right">Оборотная сторона Талона амбулаторного пациента</td></tr>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr style="font-size: 1px"><td bgcolor=#000000 width=1></td><td bgcolor=#000000></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td><table border=1 width=100%>
+<tr><td>18. Диагноз код МКБ - 10</td><td><i><b>{if: len(event.diagnosises) > 0}{event.diagnosises[0].MKB}{end:}</b></i></td><td><i><b>{if: len(event.diagnosises) > 0}{event.diagnosises[0].MKB.descr}{end:}</b></i></td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td><table width=100% border="1">
+<tr><td colspan=2>19. Код мед. услуги (посещения, СМП, КЭС):</td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td></td></tr>
+<tr><td></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td></td></tr>
+<tr><td></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td></td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>20. Характер заболевания:  {if: len(event.diagnosises) > 0}{:dc=event.diagnosises[0].character.code}{else:}{:dc='0'}{end:}
+{if: dc=='1'}<u>{end:}1 - острое (+){if: dc=='1'}</u>{end:},
+{if: dc=='2'}<u>{end:}впервые в жизни установленное хроническое (+){if: dc=='2'}</u>{end:};
+{if: dc=='3' or dc=='4'}<u>{end:}2 - диагноз установлен в предыдущ. году или ранее (-){if: dc=='3' or dc=='4'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>21. Диспансерный учет:                                         {if: len(event.diagnosises) > 0}{:du=event.diagnosises[0].dispanser.code}{else:}{:du=''}{end:}
+{if: du=='1'}<u>{end:}1 - состоит{if: du=='1'}</u>{end:},                 
+{if: du=='2'}<u>{end:}2 - взят{if: du=='2'}</u>{end:},               
+{if: du=='3' or du=='4'}<u>{end:}3 - снят{if: du=='3' or du=='4'}</u>{end:},                в т.ч.
+{if: du=='4'}<u>{end:}4 - по выздоровлению{if: du=='4'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>22. Травма: {if: len(event.diagnosises) > 0}{:tr=event.diagnosises[0].traumaType.code}{else:}{:tr='0'}{end:}
+{if: tr>='01' and tr<='05'}<u>{end:}- производственная{if: tr>='01' and tr<='05'}</u>{end:}: 
+{if: tr=='01'}<u>{end:}1 - промышленная{if: tr=='01'}</u>{end:}; 
+{if: tr=='03'}<u>{end:}2 - транспортная{if: tr=='03'}</u>{end:}, в т.ч. 
+{if: tr=='03'}<u>{end:}3 - ДТП{if: tr=='03'}</u>{end:}; 
+{if: tr=='04'}<u>{end:}4 - сельскохозяйственная{if: tr=='04'}</u>{end:}; 
+{if: tr=='02' or tr=='05'}<u>{end:}5 - прочие{if: tr=='02' or tr=='05'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>
+{if: tr>='06' and tr<='12'}<u>{end:}не производственная{if: tr>='06' and tr<='12'}</u>{end:}: 
+{if: tr=='06'}<u>{end:}6 - бытовая{if: tr=='06'}</u>{end:}; 
+{if: tr=='07'}<u>{end:}7 - уличная{if: tr=='07'}</u>{end:}; 
+{if: tr=='08'}<u>{end:}8 - транспортная{if: tr=='08'}</u>{end:}, в т.ч. 
+{if: tr=='08'}<u>{end:}9 - ДТП{if: tr=='08'}</u>{end:}; 
+{if: tr=='09'}<u>{end:}10 - школьная{if: tr=='09'}</u>{end:}; 
+{if: tr=='10'}<u>{end:}11 - спортивная{if: tr=='10'}</u>{end:}; 
+{if: tr=='11'}<u>{end:}12 - прочие{if: tr=='11'}</u>{end:};</td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>
+{if: tr=='12'}<u>{end:}13 - полученная в результате террористических действий{if: tr=='12'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000></td><td bgcolor=#000000></td><td bgcolor=#000000></td></tr>
+</table>
+</td></tr>
+
+<tr></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr style="font-size: 1px"><td bgcolor=#000000 width=1></td><td bgcolor=#000000></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td><table border=1 width=100%>
+<tr><td>23. Диагноз код МКБ - 10</td><td><i><b>{if: len(event.diagnosises) > 1}{event.diagnosises[1].MKB}{end:}</b></i></td><td><i><b>{if: len(event.diagnosises) > 1}{event.diagnosises[1].MKB.descr}{end:}</b></i></td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td><table width=100% border="1">
+<tr><td colspan=2>19. Код мед. услуги (посещения, СМП, КЭС):</td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td></td></tr>
+<tr><td></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></td><td></td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>25. Характер заболевания:  {if: len(event.diagnosises) > 1}{:dc=event.diagnosises[1].character.code}{else:}{:dc='0'}{end:}
+{if: dc=='1'}<u>{end:}1 - острое (+){if: dc=='1'}</u>{end:},
+{if: dc=='2'}<u>{end:}впервые в жизни установленное хроническое (+){if: dc=='2'}</u>{end:};
+{if: dc=='3' or dc=='4'}<u>{end:}2 - диагноз установлен в предыдущ. году или ранее (-){if: dc=='3' or dc=='4'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>26. Диспансерный учет:                                         {if: len(event.diagnosises) > 1}{:du=event.diagnosises[1].dispanser.code}{else:}{:du='0'}{end:}
+{if: du=='1'}<u>{end:}1 - состоит{if: du=='1'}</u>{end:},                 
+{if: du=='2'}<u>{end:}2 - взят{if: du=='2'}</u>{end:},               
+{if: du=='3' or du=='4'}<u>{end:}3 - снят{if: du=='3' or du=='4'}</u>{end:},                в т.ч.
+{if: du=='4'}<u>{end:}4 - по выздоровлению{if: du=='4'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000 width=1></td><td bgcolor=#000000></td><td bgcolor=#000000 width=1></td></tr>
+</table></td></tr>
+
+<tr></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr style="font-size: 1px"><td bgcolor=#000000 width=1></td><td bgcolor=#000000></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>27. Заполняется только при изменении диагноза: ранее зарегистрированный диагноз</td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td><table border=1 width=100%>
+<tr><td>                                                      Код МКБ - 10                                                                     </td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td></tr></table></td><td></td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td><table border=1 width=100%>
+<tr><td>Дата регистрации изменяемого диагноза:                                               </td><td><table width=100% border="1"><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></td><td></td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000 width=1></td><td bgcolor=#000000></td><td bgcolor=#000000 width=1></td></tr>
+</table></td></tr>
+
+<tr></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr style="font-size: 1px"><td bgcolor=#000000 width=1></td><td bgcolor=#000000></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>28. Документ временной нетрудоспособности:   {: tic=tempInvalid.closed}
+1 - открыт;   
+2 - закрыт;</td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>29. Причина выдачи: {: tir=tempInvalid.reason.code}
+{if: tir>='1' and tir<='4'}<u>{end:}1 - заболевание{if: tir>='1' and tir<='4'}</u>{end:};    
+{if: tir=='5'}<u>{end:}2 - по уходу{if: tir=='5'}</u>{end:};    
+{if: tir=='6'}<u>{end:}3 - карантин{if: tir=='6'}</u>{end:};    
+4 - прерывание беременности;    
+{if: tir=='9' or tir=='10'}<u>{end:}5 - отпуск по беременности и родам{if: tir=='9' or tir=='10'}</u>{end:};    
+{if: tir=='8'}<u>{end:}6 - санаторно-курортное лечение{if: tir=='8'}</u>{end:}</td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td><table border=0 width=100%>
+<tr><td>    29.1 по уходу: пол {: tis=tempInvalid.sex}
+{if: tis=='1'}<u>{end:}1 - муж.{if: tis=='1'}</u>{end:}; 
+{if: tis=='2'}<u>{end:}2 - жен.{if: tis=='2'}</u>{end:}</td><td align="center">(возраст лица, получившего документ в/н)</td><td><table border="1"><tr><td width=15><i><b>{if: len(tempInvalid.age) > 0}{tempInvalid.age[0]}{end:}</b></i></td><td width=15><i><b>{if: len(tempInvalid.age) > 1}{tempInvalid.age[1]}{end:}</b></i></td></tr></table></td><td></td></tr>
+</table></td><td bgcolor=#000000 width=1></td></tr>
+<tr><td bgcolor=#000000 width=1></td><td>30. Рецептурный бланк серия и №, дата выписки: 30.1_____________________________; 30.2___________________________; <br>
+                       30.3_____________________________;  30.4_____________________________.</td><td bgcolor=#000000 width=1></td></tr>
+<tr style="font-size: 1px"><td bgcolor=#000000 width=1></td><td bgcolor=#000000></td><td bgcolor=#000000 width=1></td></tr>
+</table></td></tr>
+</table>
+
+
+</body>
+</html>

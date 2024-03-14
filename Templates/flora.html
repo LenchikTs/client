@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    
+<html>
+<head>
+<!--Главный скрипт-->
+<!--Конец главного скрипта-->
+
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td rowspan=4><img src="blank/image/lecheb_center.jpg"></td><td align=center><b><big>ОАО "ЛЕЧЕБНЫЙ ЦЕНТР"</big></b></td></tr>
+<tr><td>Пациент: {client.shortName} №и/б {client.id}</td></tr>
+<tr><td>Врач: {currentPerson.shortName} дата взятия образца {action.begDate}</td></tr>
+<tr><td>Диагноз: {event.diagnosises[0].MKB if len(event.diagnosises) else ""}</td></tr>
+</table>
+</td></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td rowspan=4 align=center valign=center width=10%><b>V</b></td><td width=20%>Лейкоциты</td><td>{action[u"V. Лейкоциты"]}</td></tr>
+<tr><td>Эпителий</td><td>{action[u"V. Эпителий"]}</td></tr>
+<tr><td>Микрофлора</td><td>{action[u"V. Микрофлора"]}</td></tr>
+<tr><td>Эритроциты</td><td>{action[u"V. Эритроциты"]}</td></tr>
+</table>
+</td></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td rowspan=4 align=center valign=center width=10%><b>C</b></td><td width=20%>Лейкоциты</td><td>{action[u"C. Лейкоциты"]}</td></tr>
+<tr><td>Эпителий</td><td>{action[u"C. Эпителий"]}</td></tr>
+<tr><td>Микрофлора</td><td>{action[u"C. Микрофлора"]}</td></tr>
+<tr><td>Эритроциты</td><td>{action[u"C. Эритроциты"]}</td></tr>
+</table>
+</td></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td rowspan=4 align=center valign=center width=10%><b>U</b></td><td width=20%>Лейкоциты</td><td>{action[u"U. Лейкоциты"]}</td></tr>
+<tr><td>Эпителий</td><td>{action[u"U. Эпителий"]}</td></tr>
+<tr><td>Микрофлора</td><td>{action[u"U. Микрофлора"]}</td></tr>
+</table>
+</td></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td>Грибы</td><td>{action[u"Грибы"]}</td></tr>
+<tr><td>Трихомонады</td><td>{action[u"Трихомонады"]}</td></tr>
+<tr><td>Гонококки</td><td>{action[u"Гонококки"]}</td></tr>
+</table>
+</td></tr>
+
+<tr><td>ПРИМЕЧАНИЕ
+</td></tr>
+
+<tr><td><table cellpadding=0 cellspacing=0 width=100%>
+<tr><td rowspan=2>Врач клинической лабораторной диагностики</td><td>Дата выдачи результата</td></tr>
+<tr><td>{action.endDate}</td></tr>
+</table>
+</td></tr>
+</table>
+
+</body>
+</html>

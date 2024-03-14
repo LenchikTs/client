@@ -1,0 +1,71 @@
+<HTML><BODY>
+{setPageSize('A4')}
+{setOrientation('P')}
+{setLeftMargin(5)}
+{setTopMargin(5)}
+{setBottomMargin(5)}
+{setRightMargin(5)}
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 7pt; color: black">
+<TR><TD align="left"   COLSPAN=3>Министерство здравоохранения и социального развития РФ</TD>
+    <TD align="right"  COLSPAN=2>Медицинская документация</TD></TR>
+<TR><TD align="left"   COLSPAN=3><B>ОГРН <u>{currentOrganisation.OGRN}</u></B></TD>
+    <TD align="right"  COLSPAN=2>Форма N 057/у-04</TD></B></TR>
+<TR><TD align="left"   COLSPAN=3><B><u>{currentOrganisation.shortName}</u></B></TD>
+    <TD align="right"  COLSPAN=2><FONT FACE="Code 3 de 9" SIZE=+2>*{client.id}*</FONT></TD></TR>
+<TR><TD align="left"   COLSPAN=3><B><i>{currentOrganisation.address}</i><BR/>Телефон: <i>{currentOrganisation.phone}</i></B></TD>
+    <TD align="right"  COLSPAN=2>
+    {if:len(client.socStatuses)}
+    <TABLE BORDER=1>
+    <TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100>
+      Л {client.socStatuses[-1].code}
+    </TR></TD>
+    </TABLE>
+   {end:}
+    </TD></TR>
+</TABLE>
+<p STYLE="font-family: Arial; font-size: 10pt; color: black"><CENTER>
+<B><u>{action.name}</u></B>
+</CENTER>
+</p><BR/>
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 5pt; color: black">
+<TR><TD align="center" COLSPAN=5 STYLE="font-family: Arial; font-size: 8pt; color: black"><b><i>{action[u'Куда направляется'].value if action[u'Куда направляется'].value else '' }</i></b></TD></TR>
+<TR><TD                COLSPAN=5><HR></TD></TR>
+<TR><TD align="center" COLSPAN=5>наименование медицинского учреждения,</TD></TR>
+<TR><TD align="center" COLSPAN=5>куда направлен пациент</TD></TR>
+</TABLE>
+
+<p STYLE="font-family: Arial; font-size: 8pt; color: black">
+ФИО: <FONT SIZE=+1><B><u>{client.lastName} {client.firstName} {client.patrName}</u></B>
+     </FONT><BR/>
+Дата рождения:  <B>{client.birthDate}</B>(<B>{client.age}</B>), Пол: <B>{client.sex}</B>
+СНИЛС <B><u>{client.SNILS}</u></B> (код: <B><u>{client.id}</u></B>)<BR/>
+Документ: <B>{client.document}</B><BR/>
+Полис:<B>{client.policy}</B><BR/>
+Адрес регистрации:<B>{client.regAddress}</B><BR/>
+Адрес проживания: <B>{client.locAddress}</B><BR/>
+Место работы:<B>{client.work.shortName}</B><BR/>
+должность:<B>{client.work.post}</B><BR/>
+Код Диагноза по МКБ <B> 
+
+ {for: diagnosis in event.diagnosises}
+  {diagnosis.MKB} {diagnosis.MKBEx if diagnosis.MKBEx else ''},&nbsp;
+{end:}
+
+</B><BR/>
+Обоснование направления:<B><u><i>{action[u'Обоснование направления'].value if action[u'Обоснование направления'].value else '' }
+                        </i></u></B>
+</p>
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 8pt; color: black">
+<TR><TD align="left"  COLSPAN=4><B>Должность медицинского работника, направившего больного</B></TD>
+    <TD align="right" COLSPAN=1><B><u>{action.person.post.name}</u></B></TD></TR>
+<TR><TD align="left"  COLSPAN=2><B>Фамилия, имя, отчество </B></TD>
+    <TD align="right" COLSPAN=3><B>_______________________/<u>{action.person.shortName}</u>/</B></TD></TR>
+<TR><TD> </TD></TR>
+<TR><TD align="left"  COLSPAN=2><B> Заведующий отделением </B></TD>
+    <TD align="right" COLSPAN=3><B>_______________________/_______________/</B></TD></TR>        
+</TABLE>
+Дата <B><u>{action.endDate}</u></B><BR/>
+М.П.
+
+</BODY></HTML>
+

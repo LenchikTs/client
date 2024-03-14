@@ -1,0 +1,6 @@
+#!/bin/bash
+# pyxbgen 1.24 не понимает русских букв в пути :(
+cp -r xsd_v1.35+703+увед_05.11.2020 xsd_v1.35
+pyxbgen --schema-root=xsd_v1.35  --schema-location=documents.xsd --module=v135_generated
+sed -i "s@`pwd`@.@g" v135_generated.py
+

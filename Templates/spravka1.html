@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+</head><body>
+{setPageSize('A4')} {setOrientation('P')} {setLeftMargin(5)}
+{setTopMargin(5)} {setBottomMargin(5)} {setRightMargin(5)}
+<table style="font-family: Arial; font-size: 7pt; color: black;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td colspan="2" align="left">Министерство
+здравоохранения и социального развития РФ</td>
+<td colspan="2" align="right">Медицинская
+документация</td>
+</tr>
+<tr>
+<td colspan="4" align="right"><b>Справка
+</b></td>
+</tr>
+<tr>
+<td colspan="2" align="left"><b><u><big>{currentOrganisation.shortName}</big></u></b></td>
+<td colspan="2" align="right"><font face="Code 3 de 9" size="+3">*{client.id}*</font></td>
+</tr>
+<tr>
+<td colspan="2" align="left"><span style="font-style: italic;"><span style="font-weight: bold;">Подразделение: {currentOrgStructure.fullName}</span></span></td>
+<td colspan="2" align="right"> {client.id}</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 18pt; color: black;" align="center"><b>С П Р А В К А
+</b></td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 12pt; color: black;">
+Дана <b><u>{client.fullName}</u></b><br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 12pt; color: black;">
+Дата рождения <u><b>{client.birthDate}</b>(<b>{client.age}</b>)</u><br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 12pt; color: black;">
+Адрес регистрации <u><b>{client.regAddress}</b></u>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 12pt; color: black;">
+Адрес проживания <u><b>{client.locAddress}</b></u><br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 12pt; color: black;">
+В том, что {u'она' if client.sex == u'Ж' else u'он'} наблюдается
+детской поликлиникой по адресу: пр.Космонавтов, д. 54<br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 12pt; color: black;">
+с ______________________ по настоящее время.<br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 12pt; color: black; text-align: right;">
+Проживает совместно с матерью
+____________________________________________________________________________________
+</td>
+</tr>
+<tr>
+<td colspan="4"></td>
+</tr>
+<tr>
+<td colspan="2" style="font-family: Arial; font-size: 12pt; color: black;" align="left">
+Дата <u><b>{currentDate}</b></u></td>
+<td style="font-family: Arial; font-size: 12pt; color: black;" colspan="2" align="right">Подпись
+____________________
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+</body></html>

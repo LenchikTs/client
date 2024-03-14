@@ -1,0 +1,10 @@
+
+[Desktop Entry]
+Type=Application
+Exec=python2 /opt/client/s11main.py
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name[ru_RU]=samson
+Name=samson
+Comment[ru_RU]=
+Comment=

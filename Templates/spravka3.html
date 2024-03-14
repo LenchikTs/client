@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+</head>
+<body>
+{setPageSize('A5')} {setOrientation('P')} {setLeftMargin(5)}
+{setTopMargin(5)} {setBottomMargin(5)} {setRightMargin(5)}
+<table style="font-family: Arial; font-size: 7pt; color: black;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td colspan="2" align="left">Министерство
+здравоохранения и социального развития РФ</td>
+<td colspan="2" align="right">Медицинская
+документация</td>
+</tr>
+<tr>
+<td colspan="4" align="right"><b>Справка
+</b></td>
+</tr>
+<tr>
+<td colspan="2" style="font-family: Arial; font-size: 9pt; color: black;" align="left"><b><u>{currentOrganisation.shortName}</u></b></td>
+<td colspan="2" align="right"><font face="Code 3 de 9" size="+2">*{client.id}*</font></td>
+</tr>
+<tr>
+<td colspan="2" align="left"><span style="font-style: italic;"><span style="font-weight: bold;">Подразделение: <B>{currentOrgStructure.fullName}</B></span></span></td>
+<td colspan="2" align="right"> {client.id}</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 14pt; color: black;" align="center"><b>С П Р А В К А
+</b></td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black;">
+Дана ребенку <b><u>{client.fullName}</u></b> в
+том, что {u'она' if client.sex == u'Ж' else u'он'}
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black;">с
+"_____"_____________20__г. по&nbsp;"_____"_____________20__г.
+{u'перенесла' if client.sex == u'Ж' else u'перенес'}<span style="text-decoration: underline;"><span style="text-decoration: underline;"></span></span><br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black;">_____________________________________________________________<br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black;">_____________________________________________________________<br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black;">_____________________________________________________________<br>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black;">В
+настоящее время {u'здорова' if client.sex == u'Ж' else u'здоров'} и
+может посещать детское&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black; text-align: left;">
+учреждение с "_____"_____________20__г.</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black; text-align: left;">Освобождение
+от занятий по физкультуре на&nbsp;___________ дней.</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black; text-align: left;">Освобождение
+от прфилактических прививок на&nbsp;________ дней.&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4" style="font-family: Arial; font-size: 10pt; color: black; text-align: left;">В
+контакте с инфекционными больными в течении 21 дня не&nbsp;
+{u'была'if client.sex == u'Ж' else u'был'} &nbsp;</td>
+</tr>
+<tr>
+<td colspan="4"></td>
+</tr>
+<tr>
+<td colspan="2" style="font-family: Arial; font-size: 9pt; color: black;" align="left">
+Дата <u><b>{currentDate}</b></u></td>
+<td style="font-family: Arial; font-size: 9pt; color: black;" colspan="2" align="right">Подпись
+____________________
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+</body></html>

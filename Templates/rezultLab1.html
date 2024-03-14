@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    
+<html>
+<head>{ setPageSize('A5') }{ setOrientation('P') }{ setLeftMargin(10.0) }{ setTopMargin(5.0) }{ setRightMargin(10.0) }{ setBottomMargin(10.0) }
+<!--Главный скрипт-->
+{: tissues = dict([])}
+{for: act in actions}
+	{tissues.data.setdefault(act.takenTissueJournal, []).append(act)}
+{end:}
+
+{: eval_strings = ["*(-----)", "(*----)", "(-*---)", "(--*--)", "(---*-)", "(----*)", "(-----)*"]}
+{: norm_bottom = lambda norm : float(norm[:(norm.find("-") if norm.find("-") != -1 else len(norm))].replace(",", "."))}
+{: norm_top = lambda norm : float(norm[(norm.find("-")+1 if norm.find("-") != -1 else 0):].replace(",", "."))}
+{: int_evaluation = lambda result, norm, norm_bottom, norm_top: (-1 if result < norm_bottom(norm) else (int((float(result) - norm_bottom(norm))/(norm_top(norm) - norm_bottom(norm))*4.999999999) if result <= norm_top(norm) else 5))}
+{: string_evaluation = lambda result, norm, norm_bottom, norm_top, int_evaluation: ["*(-----)", "(*----)", "(-*---)", "(--*--)", "(---*-)", "(----*)", "(-----)*"][int_evaluation(result, norm, norm_bottom, norm_top) + 1]}
+
+{: shows = dialogs.dialMultiBool(u"Необходимость указания колонки", [u"Указывать колонку 'Единица измерения'", u"Указывать колонку 'Норма'", u"Указывать колонку 'Оценка'"]).getVar()}
+{: show_unit = shows[0]}
+{: show_norm = shows[1]}
+{: show_eval = shows[2]}
+<!--Конец главного скрипта-->
+
+<meta name="qrichtext" content="1" />
+</head>
+<body style=" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;">
+{for: (i, tissue) in enumerate(tissues.data)}
+{: actions = tissues.data[tissue]}
+{: event = actions[0].event if len(actions) else None}
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100%>
+<tr><td width=20%><img src="blank/image/lecheb_center.jpg"></td><td width=60% align=center><b>{currentOrganisation.shortName}</b></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+Ф.И.О.: <b>{tissue.client.shortName}</b>  Диагноз: <b>{event.diagnosises[0].MKB.code if event and len(event.diagnosises) else ""}</b><br>
+<font size=1>(пациента)</font><br>
+Ф.И.О.: <b>{event.execPerson.shortName if event else ""}</b>  Номер и/б: <b>{tissue.client.identification.byCode["77"]}</b><br>
+<font size=1>(врача)</font><br>
+Дата рождения: <b>{tissue.client.birthDate.date.toString("dd.MM.yy")}</b>  Пол <b>{tissue.client.sex}</b><br>
+Дата взятия анализа: <b>{tissue.datetimeTaken.date.toString("dd.MM.yy")}</b>  Дата выдачи анализа: <b>{currentDate.date.toString("dd.MM.yy")}</b>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:42"> </p></td></tr>
+
+<tr><td align=center>
+<big><b>{actionType.name if actionType.name else u"Результаты лабораторных исследований"}</b></big>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:42"> </p></td></tr>
+
+<tr><td>
+<table cellpadding=0 cellspacing=0 width=100% border="1">
+<tr><td align=center>Анализ</td>
+<td align=center>Результат</td>
+{if: show_unit}<td align=center>Единица измерения</td>{end:}
+{if: show_norm}<td align=center>Норма</td>{end:}
+{if: show_eval}<td align=center>Оценка</td></tr>{end:}
+{for: act in actions}
+{for: (i, prop) in enumerate(act)}
+{if: prop.visibleInTableRedactor > 0}
+<tr>
+<td align=center>{act.name if (prop.name == u"Результат" or prop.name == u"результат") else prop.name}</td>
+<td align=center>{unicode(prop.value)}</td>
+{if: show_unit}<td align=center>{unicode(prop.unit)}</td>{end:}
+{if: show_norm}<td align=center>{prop.norm}</td>{end:}
+{if: show_eval}<td align=center>{string_evaluation(prop.value, prop.norm, norm_bottom, norm_top, int_evaluation)}</td></tr>{end:}
+{end:}
+{end:}
+{end:}
+</table>
+</td></tr>
+
+<tr style="font-size:1px"><td> <p style="margin-top:42"> </p></td></tr>
+
+<tr><td align=right>
+Врач КЛД___________________________________
+</td></tr>
+</table>
+
+<!--НОВАЯ СТРАНИЦА-->
+<p style="page-break-after: always"><font color=#FFFFFF>.</font></p>
+{end:}
+</body>
+</html>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SummaryOnServiceTypeSetupDialog</class>
+ <widget class="QDialog" name="SummaryOnServiceTypeSetupDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>511</width>
+    <height>305</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>параметры отчёта</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="5" column="1" colspan="2">
+    <widget class="QComboBox" name="cmbTypeNumberEvent">
+     <item>
+      <property name="text">
+       <string>не задано</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>номер документа</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>код карточки</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>129</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblOrgStructure">
+     <property name="text">
+      <string>&amp;Подразделение</string>
+     </property>
+     <property name="buddy">
+      <cstring>cmbOrgStructure</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1" colspan="4">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="4">
+    <widget class="COrgStructureComboBox" name="cmbOrgStructure"/>
+   </item>
+   <item row="3" column="1" colspan="4">
+    <widget class="CRBComboBox" name="cmbHospitalBedProfile"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblHospitalBedProfile">
+     <property name="text">
+      <string>Профиль</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblEventNumber">
+     <property name="text">
+      <string>Номер обращения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblOrder">
+     <property name="text">
+      <string>Порядок</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="4">
+    <widget class="QComboBox" name="cmbOrder">
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Плановый</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Экстренный</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Самотёком</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Принудительный</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Внутренний перевод</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Неотложная</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblServiceType">
+     <property name="text">
+      <string>Вид услуги</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="4">
+    <widget class="CActionServiceTypeComboBox" name="cmbServiceType"/>
+   </item>
+   <item row="0" column="4">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>74</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="2">
+    <widget class="CDateEdit" name="edtBegDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="lblBegDate">
+     <property name="text">
+      <string>Начало периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2">
+    <widget class="CDateEdit" name="edtEndDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="displayFormat">
+      <string>dd.MM.yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QTimeEdit" name="edtBegTime"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="lblEndDate">
+     <property name="text">
+      <string>Конец периода</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QComboBox" name="cmbDateType">
+     <item>
+      <property name="text">
+       <string>Дата выполнения</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Дата начала</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QTimeEdit" name="edtEndTime"/>
+   </item>
+   <item row="5" column="3" colspan="2">
+    <widget class="QLineEdit" name="edtEventNumber"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblFinance">
+     <property name="text">
+      <string>Тип финансирования</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="4">
+    <widget class="CRBComboBox" name="cmbFinance"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>COrgStructureComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/OrgStructComboBoxes.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>CActionServiceTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">Events/ActionServiceType.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cmbDateType</tabstop>
+  <tabstop>edtBegDate</tabstop>
+  <tabstop>edtBegTime</tabstop>
+  <tabstop>edtEndDate</tabstop>
+  <tabstop>edtEndTime</tabstop>
+  <tabstop>cmbOrgStructure</tabstop>
+  <tabstop>cmbHospitalBedProfile</tabstop>
+  <tabstop>cmbServiceType</tabstop>
+  <tabstop>cmbTypeNumberEvent</tabstop>
+  <tabstop>edtEventNumber</tabstop>
+  <tabstop>cmbOrder</tabstop>
+  <tabstop>cmbFinance</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SummaryOnServiceTypeSetupDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>102</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SummaryOnServiceTypeSetupDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

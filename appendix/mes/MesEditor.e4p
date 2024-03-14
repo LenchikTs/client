@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-4.6.dtd">
+<!-- eric4 project file for project MesEditor -->
+<!-- Saved: 2013-12-12, 18:45:53 -->
+<!-- Copyright (C) 2013 ООО "Виста",  -->
+<Project version="4.6">
+  <Language></Language>
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <ProjectType>Qt4</ProjectType>
+  <Description>Просмотр и редактирование МЭС</Description>
+  <Version>0.1</Version>
+  <Author>ООО "Виста"</Author>
+  <Email></Email>
+  <Sources>
+    <Source>main.py</Source>
+    <Source>Ui_MesList.py</Source>
+    <Source>MesInfo.py</Source>
+    <Source>MesEdit.py</Source>
+    <Source>MKBTree.py</Source>
+    <Source>RefBooksLocal/__init__.py</Source>
+    <Source>RefBooksLocal/RBMesGroup.py</Source>
+    <Source>RefBooksLocal/RBEquipmentGroup.py</Source>
+    <Source>RefBooksLocal/Ui_RBEquipment.py</Source>
+    <Source>RefBooksLocal/RBNutrientGroup.py</Source>
+    <Source>RefBooksLocal/Ui_RBMedicament.py</Source>
+    <Source>RefBooksLocal/Ui_RBEquipmentGroup.py</Source>
+    <Source>RefBooksLocal/RBMedicament.py</Source>
+    <Source>RefBooksLocal/Ui_RBBloodPreparationType.py</Source>
+    <Source>RefBooksLocal/Ui_RBMedicamentGroup.py</Source>
+    <Source>RefBooksLocal/ItemsListDialogEx.py</Source>
+    <Source>RefBooksLocal/RBServiceGroup.py</Source>
+    <Source>RefBooksLocal/Ui_RBVisitType.py</Source>
+    <Source>RefBooksLocal/RBSpeciality.py</Source>
+    <Source>RefBooksLocal/Ui_RBServiceGroup.py</Source>
+    <Source>RefBooksLocal/Ui_RBNutrient.py</Source>
+    <Source>RefBooksLocal/RBMedicamentGroup.py</Source>
+    <Source>RefBooksLocal/RBMedicamentDosageForm.py</Source>
+    <Source>RefBooksLocal/Ui_RBMedicamentDosageForm.py</Source>
+    <Source>RefBooksLocal/Ui_RBNutrientGroup.py</Source>
+    <Source>RefBooksLocal/RBService.py</Source>
+    <Source>RefBooksLocal/RBBloodPreparation.py</Source>
+    <Source>RefBooksLocal/Tables.py</Source>
+    <Source>RefBooksLocal/Ui_RBBloodPreparation.py</Source>
+    <Source>RefBooksLocal/Ui_RBMesGroup.py</Source>
+    <Source>RefBooksLocal/RBBloodPreparationType.py</Source>
+    <Source>RefBooksLocal/RBNutrient.py</Source>
+    <Source>RefBooksLocal/RBEquipment.py</Source>
+    <Source>RefBooksLocal/Ui_RBService.py</Source>
+    <Source>RefBooksLocal/RBVisitType.py</Source>
+    <Source>RefBooksLocal/Ui_RBSpeciality.py</Source>
+  </Sources>
+  <Forms>
+    <Form>MesList.ui</Form>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Resources>
+  </Resources>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <MainScript>main.py</MainScript>
+  <Vcs>
+    <VcsType>None</VcsType>
+    <VcsOptions>
+      <dict>
+        <key>
+          <string>add</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>checkout</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>commit</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>diff</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>export</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>global</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>history</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>log</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>remove</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>status</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>tag</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+        <key>
+          <string>update</string>
+        </key>
+        <value>
+          <list>
+            <string></string>
+          </list>
+        </value>
+      </dict>
+    </VcsOptions>
+    <VcsOtherData>
+      <dict>
+        <key>
+          <string>standardLayout</string>
+        </key>
+        <value>
+          <bool>True</bool>
+        </value>
+      </dict>
+    </VcsOtherData>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES" />
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES" />
+  </FiletypeAssociations>
+</Project>

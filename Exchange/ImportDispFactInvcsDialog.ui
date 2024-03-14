@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImportDispFactInvcsDialog</class>
+ <widget class="QDialog" name="ImportDispFactInvcsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>198</width>
+    <height>99</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Параметры</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Год</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="sbYear">
+       <property name="minimum">
+        <number>2017</number>
+       </property>
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Месяц</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cmbMonth">
+       <property name="currentIndex">
+        <number>11</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>январь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>февраль</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>март</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>апрель</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>май</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>июнь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>июль</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>август</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>сентябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>октябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ноябрь</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>декабрь</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="btnImport">
+       <property name="text">
+        <string>Импорт</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancel">
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

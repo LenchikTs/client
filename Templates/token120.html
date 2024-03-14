@@ -1,0 +1,32 @@
+<HTML>
+<BODY STYLE="font-family: Arial; font-size: 8pt; color: black">
+{setPageSize('A5')}
+{setOrientation('Portrait')}
+{setMargins(5)}
+
+<TABLE BORDER=0 WIDTH="100%" cellpadding="0" cellspacing="0" STYLE="font-family: Arial; font-size: 7pt; color: black">
+<TR>
+    <TD align="left"   COLSPAN=1>&nbsp;êîä: <FONT SIZE=+1>{client.id}</FONT></TD>
+    <TD align="center" COLSPAN=2><B><u>{currentOrganisation.shortName}</u></B></TD>
+    <TD align="right"  COLSPAN=1><FONT FACE="Code 3 de 9" SIZE=+2>*{client.id}*</FONT></TD>
+</TR>
+<TR>
+    <TD align="left"   COLSPAN=1><B><u>&nbsp;{currentDate}</u></B></TD>
+    <TD align="center" COLSPAN=2><B>ÒÀËÎÍ ÀÌÁÓËÀÒÎĞÍÎÃÎ ÏÀÖÈÅÍÒÀ</B></TD>
+    <TD align="right"  COLSPAN=1>
+    {if:len(client.socStatuses)}
+    <TABLE BORDER=1>
+    <TR><TD ALIGN="center" VALIGN="center" WIDTH=100 HEIGHT=100>
+      Ë {client.socStatuses[-1].code}
+    </TD></TR></TABLE>
+   {end:}
+</TD></TR>
+</TABLE><BR/>
+&nbsp; ÔÈÎ: <FONT SIZE=+1><B>{client.fullName}</B></FONT><BR/>
+&nbsp; ÄĞ:  <B>{client.birthDate}</B> (<B>{client.age}</B>),&nbsp;Ïîë: <B>{client.sex}</B>,&nbsp;ÑÍÈËÑ: <B>{client.SNILS}</B><BR/>
+&nbsp; <B>{client.document}</B>.<BR/> 
+&nbsp;Ïîëèñ: <B>{client.policy}</B><BR/>
+&nbsp; Ğåã.: <B>{client.regAddress}</B><BR/>
+&nbsp; Ïğîæ.: <B>{client.locAddress}</B><BR/>
+&nbsp; Òåë.: <B> {client.phones}</B>
+</BODY></HTML>

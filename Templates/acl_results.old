@@ -1,0 +1,10 @@
+<html>
+<body>
+{urlread('http://127.0.0.1:8080/acrossinfo/show.php', 
+           dict(lastName=u'рчрпчлнбю',
+                firstName=u'екемю',
+                patrName=u'юкейяюмдпнбмю',
+                sex=2,
+                birthDate='1990-05-07')) : h }
+</body>
+</html>

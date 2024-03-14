@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ItemFilterDialog</class>
+ <widget class="QDialog" name="ItemFilterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>549</width>
+    <height>335</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <item row="2" column="1" colspan="4">
+    <widget class="CPersonComboBox" name="cmbCreatePerson"/>
+   </item>
+   <item row="10" column="1">
+    <widget class="CDateEdit" name="edtConfirmBegDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblCreatePerson">
+     <property name="text">
+      <string>Инициатор</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="CDateEdit" name="edtSendBegDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="6" colspan="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblType">
+     <property name="text">
+      <string>Тип</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="7" colspan="2">
+    <widget class="QCheckBox" name="chkWithoutSendDate">
+     <property name="text">
+      <string>Без даты отправки</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblStatus">
+     <property name="text">
+      <string>Статус</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="lblConfirmFrom">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Подтверждение с</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblAddressTemplate">
+     <property name="text">
+      <string>Адрес</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="7" colspan="2">
+    <widget class="QCheckBox" name="chkRule">
+     <property name="text">
+      <string>Без правила</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="4">
+    <widget class="CRBComboBox" name="cmbKind"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblRule">
+     <property name="text">
+      <string>Правило</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="4">
+    <widget class="QLineEdit" name="edtAddressTemplate"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblKind">
+     <property name="text">
+      <string>Вид</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblRecipientTemplate">
+     <property name="text">
+      <string>Адресат</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="4">
+    <widget class="QComboBox" name="cmbStatus"/>
+   </item>
+   <item row="1" column="7" colspan="2">
+    <widget class="QCheckBox" name="chkAddressTemplate">
+     <property name="text">
+      <string>Без адреса</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lblSendFrom">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Отправка с</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="7" colspan="2">
+    <widget class="QCheckBox" name="chkCreatePerson">
+     <property name="text">
+      <string>Без инициатора</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="4">
+    <widget class="CNotificationRuleComboBox" name="cmbRule"/>
+   </item>
+   <item row="10" column="7" colspan="2">
+    <widget class="QCheckBox" name="chkWithoutConfirmDate">
+     <property name="text">
+      <string>Без подтверждения</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="7" colspan="2">
+    <widget class="QCheckBox" name="chkStatus">
+     <property name="text">
+      <string>Без статуса</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="7" colspan="2">
+    <widget class="QCheckBox" name="chkRecipientTemplate">
+     <property name="text">
+      <string>Без адресата</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="7">
+    <widget class="QCheckBox" name="chkType">
+     <property name="text">
+      <string>Без типа</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="7" colspan="2">
+    <widget class="QCheckBox" name="chkKind">
+     <property name="text">
+      <string>Без вида</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="4">
+    <widget class="QLineEdit" name="edtRecipientTemplate"/>
+   </item>
+   <item row="6" column="1" colspan="4">
+    <widget class="QComboBox" name="cmbType">
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Расписание</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Картотека</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Действие</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="12" column="7">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="7">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="2">
+    <widget class="QLabel" name="lblSendTo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>по</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="3">
+    <widget class="CDateEdit" name="edtSendEndDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2">
+    <widget class="QLabel" name="lblConfirmTo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>по</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="3">
+    <widget class="CDateEdit" name="edtConfirmEndDate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CPersonComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Orgs/PersonComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDateEdit</class>
+   <extends>QDateEdit</extends>
+   <header>library/DateEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CRBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>library/crbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CNotificationRuleComboBox</class>
+   <extends>QComboBox</extends>
+   <header>Utils.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ItemFilterDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ItemFilterDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
